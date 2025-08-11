@@ -7,6 +7,7 @@ plugins {
 android {
     namespace = "edu.unicauca.app.agrochat"
     compileSdk = 36
+    ndkVersion = "21.3.6528147"
 
     defaultConfig {
         applicationId = "edu.unicauca.app.agrochat"
@@ -38,19 +39,11 @@ android {
         compose = true
     }
 
-    packaging {
-        resources {
-            excludes += "/assets/gpt2_model.ms" // Asegúrate que la ruta sea correcta desde la raíz del APK
-            // O si quieres excluir todas las extensiones .ms en assets:
-            // excludes += "assets/**/*.ms"
-            // O para cualquier archivo .ms en cualquier lugar del APK (menos común para assets):
-            // excludes += "**/*.ms"
-
-            // Si tienes otros modelos con otras extensiones, añádelos también:
-            // excludes += "/assets/another_model.tflite"
-            // excludes += "assets/**/*.onnx"
-        }
-    }
+    //packaging {
+        //  resources {
+            //    excludes += "/assets/gpt2_model.ms" // Asegúrate que la ruta sea correcta desde la raíz del APK
+       // }
+    //}
 }
 
 dependencies {
