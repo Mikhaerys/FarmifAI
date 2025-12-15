@@ -84,6 +84,4 @@ tools/azure_env/
 temp_compatibility/
 assets_old/
 
-# Python scripts de desarrollo
-generate_embeddings.py
-generate_mindspore_compatible_embeddings.py
+

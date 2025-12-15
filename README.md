@@ -1,235 +1,132 @@
-# ARApp 🌱🤖
 
-Asistente agrícola inteligente para Android con IA completamente offline y capacidades de voz.
+# AgroChat (ARApp)
 
-## ✨ Características Principales
+Asistente agrícola para Android con IA offline: STT (Vosk), búsqueda semántica (MindSpore Lite), RAG y LLM local (llama.cpp). Opcionalmente permite LLM online (Groq).
 
-- **🎤 Reconocimiento de voz 100% offline** - Usa Vosk (sin Google/internet)
-- **🔊 Síntesis de voz (TTS)** - Nativo de Android
-- **🧠 IA Híbrida**:
-  - **Offline**: Búsqueda semántica con MindSpore Lite + LLM local (Llama 3.2)
-  - **Online**: Groq LLM para respuestas más fluidas (opcional)
-- **📱 UI moderna** - Jetpack Compose con modo voz y chat
-- **🌐 RAG (Retrieval Augmented Generation)** - Respuestas basadas en conocimiento agrícola
+## Requisitos
 
----
+- Android Studio + JDK 17
+- NDK 25.1.8937393 y CMake 3.22.1
+- `adb` (Android platform-tools)
+- Git LFS (el repo usa LFS para assets grandes)
+- Dispositivo Android arm64-v8a (recomendado) con USB debugging
 
-## 📋 Requisitos del Sistema
-
-### Para ejecutar la app:
-- Android 7.0+ (API 24)
-- ~1.5GB de espacio (incluye modelos de voz y LLM)
-- Arquitectura arm64-v8a
-
-### Para desarrollo:
-- Android Studio Hedgehog (2023.1.1) o superior
-- JDK 17
-- NDK 25.1.8937393 (para compilar código nativo)
-- CMake 3.22.1
-- Python 3.10+ (para regenerar embeddings)
-
----
-
-## 🚀 Instalación desde Cero
-
-### 1. Clonar el repositorio
+## Clonar y preparar (nuevo en el proyecto)
 
 ```bash
 git clone https://github.com/Bryan-Andres-Suarez-Sanchez/AgroChat_Project.git
 cd AgroChat_Project
-git checkout Integracion-voz
+
+git lfs install
+git lfs pull
 ```
 
-### 2. Descargar modelos grandes (no incluidos en git)
+Si estás trabajando en esta versión (diagnóstico visual + Llama autodetect):
 
-Los siguientes archivos son demasiado grandes para git y deben descargarse manualmente:
-
-#### a) Modelo de voz Vosk (español)
 ```bash
-# Descargar modelo de Vosk
-cd app/src/main/assets
-wget https://alphacephei.com/vosk/models/vosk-model-small-es-0.42.zip
-unzip vosk-model-small-es-0.42.zip
-mv vosk-model-small-es-0.42 model-es-small
-rm vosk-model-small-es-0.42.zip
-cd ../../../..
+git checkout feature/diagnostico-visual
 ```
 
-#### b) Modelo LLM offline (Llama 3.2 1B)
+## Compilar e instalar
+
 ```bash
-# Crear directorio para el modelo
-mkdir -p app/src/main/assets
-
-# Descargar modelo cuantizado (aproximadamente 770MB)
-# Opción 1: Desde Hugging Face
-wget -O app/src/main/assets/Llama-3.2-1B-Instruct-Q4_K_M.gguf \
-  "https://huggingface.co/bartowski/Llama-3.2-1B-Instruct-GGUF/resolve/main/Llama-3.2-1B-Instruct-Q4_K_M.gguf"
-```
-
-#### c) Modelo MindSpore Sentence Encoder (si no está)
-El archivo `sentence_encoder.ms` (~224MB) debería estar en el repositorio. Si no:
-```bash
-# Contactar al equipo para obtener el modelo
-# O regenerarlo siguiendo ARCHITECTURE.md
-```
-
-### 3. Configurar Android Studio
-
-1. Abrir Android Studio
-2. File → Open → Seleccionar carpeta `AgroChat_Project`
-3. Esperar a que Gradle sincronice
-4. Si hay errores de NDK:
-   - File → Settings → Android SDK → SDK Tools
-   - Instalar: NDK (Side by side) 25.1.8937393, CMake 3.22.1
-
-### 4. Compilar y ejecutar
-
-#### Desde Android Studio:
-1. Conectar dispositivo Android (USB debugging habilitado)
-2. Seleccionar dispositivo en la barra de herramientas
-3. Click en Run (▶️)
-
-#### Desde terminal:
-```bash
-# Compilar
-./gradlew assembleDebug
-
-# Instalar en dispositivo conectado
-adb install -r app/build/outputs/apk/debug/app-debug.apk
-
-# Iniciar la app
+./gradlew :app:assembleDebug
+./gradlew :app:installDebug
 adb shell am start -n edu.unicauca.app.agrochat/.MainActivity
 ```
 
-### 5. Verificar instalación
+Logs útiles:
 
-Al abrir la app debería ver:
-- ✅ Mensaje de bienvenida
-- ✅ Campo de texto para escribir preguntas
-- ✅ Botón de micrófono para voz
-- ✅ Indicador "Local" o "Online" arriba
-
----
-
-## ⚙️ Configuración Opcional
-
-### Habilitar LLM Online (Groq)
-
-1. Obtener API key gratis en [console.groq.com](https://console.groq.com)
-2. En la app, tocar el indicador "Local" (arriba a la derecha)
-3. Ingresar tu API key
-4. El indicador cambiará a "Online" cuando haya internet
-
----
-
-## 📁 Estructura del Proyecto
-
-```
-AgroChat_Project/
-├── app/
-│   ├── src/main/
-│   │   ├── java/edu/unicauca/app/agrochat/
-│   │   │   ├── MainActivity.kt           # UI principal (Compose)
-│   │   │   ├── llm/
-│   │   │   │   ├── GroqService.kt         # Cliente API Groq (online)
-│   │   │   │   └── LlamaService.kt        # LLM local con llama.cpp
-│   │   │   ├── mindspore/
-│   │   │   │   ├── MindSporeHelper.kt     # Wrapper JNI para MindSpore
-│   │   │   │   └── SemanticSearchHelper.kt # RAG y búsqueda semántica
-│   │   │   └── voice/
-│   │   │       └── VoiceHelper.kt         # STT (Vosk) y TTS
-│   │   ├── cpp/
-│   │   │   └── MindSporeNetnative.cpp     # Código nativo MindSpore
-│   │   ├── jniLibs/arm64-v8a/
-│   │   │   ├── libllama-android.so        # Biblioteca llama.cpp
-│   │   │   └── libmindspore-lite*.so      # Bibliotecas MindSpore
-│   │   └── assets/
-│   │       ├── agrochat_knowledge_base.json  # Base de conocimiento
-│   │       ├── kb_embeddings.npy             # Embeddings pre-calculados
-│   │       ├── sentence_encoder.ms           # Modelo MindSpore (224MB)
-│   │       ├── sentence_tokenizer.json       # Tokenizer
-│   │       ├── model-es-small/               # Modelo Vosk STT
-│   │       └── Llama-3.2-1B-Instruct-Q4_K_M.gguf  # LLM (770MB)
-│   └── build.gradle.kts
-├── nlp_dev/                               # Herramientas de desarrollo NLP
-│   ├── scripts/
-│   │   ├── export_sentence_encoder.py     # Exportar modelo a MindSpore
-│   │   └── generate_embeddings.py         # Generar embeddings
-│   └── data/datasets/
-│       └── agricultura_completo.json      # Dataset de entrenamiento
-├── ARCHITECTURE.md                        # Documentación técnica detallada
-└── README.md                              # Este archivo
-```
-
----
-
-## 🧪 Pruebas
-
-### Probar búsqueda semántica
 ```bash
-# Ver logs de búsqueda
-adb logcat -s SemanticSearchHelper | grep "Búsqueda"
+adb logcat -s MainActivity LlamaService LLamaAndroid SemanticSearchHelper PlantDiseaseClassifier
 ```
 
-### Probar LLM
+## Modelos/Assets usados por la app
+
+Todo lo que la app necesita en runtime está bajo `app/src/main/assets/` (y se versiona con Git LFS cuando aplica), excepto el modelo GGUF de Llama.
+
+- Búsqueda semántica (MindSpore):
+  - `sentence_encoder.ms` (embeddings)
+  - `sentence_tokenizer.json`
+  - `kb_embeddings.npy` + `agrochat_knowledge_base.json`
+- Voz (Vosk STT): `model-es-small/`
+- Diagnóstico visual (MindSpore):
+  - `plant_disease_model.ms`
+  - `plant_disease_labels.json`
+
+## Llama offline funcionando en el celular (GGUF)
+
+Por diseño, el modelo `.gguf` NO se guarda en el repositorio. La app lo carga desde el almacenamiento de la app en el teléfono:
+
+`/sdcard/Android/data/edu.unicauca.app.agrochat/files/`
+
+1) Consigue un modelo GGUF compatible (ej. Llama 3.x Instruct cuantizado).
+
+2) Cópialo al teléfono:
+
 ```bash
-# Ver logs de Llama
-adb logcat -s llama-android LlamaService
+tools/push_llama_model_to_device.sh /ruta/al/modelo.gguf
 ```
 
-### Preguntas de prueba
-- "¿Cómo cultivar tomates?"
-- "plagas en papa"
-- "fertilizante para maíz"
-- "pH del suelo"
+3) Reinicia la app y verifica logs:
 
----
-
-## 🔧 Solución de Problemas
-
-### Error: "No se encontró el modelo de voz"
-- Verificar que exista `app/src/main/assets/model-es-small/`
-- El directorio debe contener archivos como `am/final.mdl`
-
-### Error: "LLM no responde"
-- Verificar que exista el archivo `.gguf` en assets
-- Revisar logs: `adb logcat -s LlamaService`
-
-### Error de compilación NDK
 ```bash
-# Instalar NDK específico
-sdkmanager "ndk;25.1.8937393" "cmake;3.22.1"
+adb shell am force-stop edu.unicauca.app.agrochat
+adb shell am start -n edu.unicauca.app.agrochat/.MainActivity
+adb logcat -s MainActivity LlamaService LLamaAndroid
 ```
 
-### La app se cierra al iniciar
-- Verificar espacio disponible (necesita ~1.5GB)
-- Revisar logs: `adb logcat | grep -E "FATAL|Exception"`
+Debes ver algo como “Modelo cargado exitosamente”.
 
----
+## Diagnóstico visual (modelo Colombia)
 
-## 📚 Documentación Adicional
+El diagnóstico usa MindSpore Lite con `plant_disease_model.ms` + `plant_disease_labels.json` (21 clases, incluye Café).
 
-- **[ARCHITECTURE.md](ARCHITECTURE.md)** - Arquitectura técnica detallada
-- **[nlp_dev/README.md](nlp_dev/README.md)** - Desarrollo del sistema NLP
+Para debug:
 
----
+```bash
+adb logcat -s PlantDiseaseClassifier
+```
 
-## 🤝 Contribuir
+## Actualizar la base de conocimiento (KB) y embeddings
 
-1. Fork el repositorio
-2. Crear rama feature (`git checkout -b feature/nueva-funcionalidad`)
-3. Commit cambios (`git commit -am 'Agregar nueva funcionalidad'`)
-4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
-5. Crear Pull Request
+1) Edita `app/src/main/assets/agrochat_knowledge_base.json`.
 
----
+2) Regenera embeddings (requiere Python 3.10+):
 
-## 📄 Licencia
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -U pip
+pip install numpy torch transformers sentence-transformers
 
-MIT License - Ver [LICENSE](LICENSE) para más detalles.
+python generate_mindspore_compatible_embeddings.py
+python generate_embeddings.py
+```
 
----
+3) Recompila e instala.
 
-## 👥 Equipo
+Nota: el runtime valida la compatibilidad tokenizer/embeddings en logs cuando MindSpore está activo.
 
-Proyecto desarrollado por estudiantes de la Universidad del Cauca para el Hackathon Huawei 2024.
+## LLM online (Groq) (opcional)
+
+La app soporta modo online si configuras la API key dentro de la app (Settings).
+
+## Estructura (lo esencial)
+
+```
+app/src/main/java/edu/unicauca/app/agrochat/
+  MainActivity.kt
+  llm/LlamaService.kt
+  mindspore/SemanticSearchHelper.kt
+  vision/PlantDiseaseClassifier.kt
+
+app/src/main/assets/
+  sentence_encoder.ms
+  sentence_tokenizer.json
+  kb_embeddings.npy
+  agrochat_knowledge_base.json
+  plant_disease_model.ms
+  plant_disease_labels.json
+  model-es-small/
+```
