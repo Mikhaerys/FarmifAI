@@ -1681,6 +1681,75 @@
       ],
       "answer": "**Phytophthora en solanáceas (P. capsici, P. nicotianae)** \n\n**Agentes causales:**\n• Phytophthora capsici (principal en pimiento)\n• Phytophthora nicotianae (tomate, tabaco)\n• Oomicetos (no hongos verdaderos)\n• Producen zoosporas móviles en agua\n\n**Síntomas según órgano:**\n\n**Raíz y cuello:**\n• Pudrición acuosa marrón\n• Constricción del cuello\n• Marchitez irreversible\n• Muerte rápida de planta\n\n**Frutos (P. capsici):**\n• Pudrición acuosa que avanza rápido\n• Micelio blanco en superficie\n• Afecta frutos en contacto con suelo\n\n**Condiciones favorables:**\n• Suelos encharcados (CRÍTICO)\n• Temperatura 25-30°C\n• Riego por inundación o aspersión\n• Compactación del suelo\n\n**Control:**\n• Drenaje excelente del suelo\n• Camellones elevados\n• Riego por goteo (no mojar cuello)\n• Metalaxil-M (preventivo, resistencia existe)\n• Fosetil-Al, propamocarb\n• Fosfonatos (fosfito potásico)\n• Trichoderma harzianum (biocontrol)\n• Variedades tolerantes limitadas\n• Injerto en portainjertos resistentes\n• Rotación 3-4 años\n• Solarización",
       "keywords": ["phytophthora", "capsici", "pudricion", "raiz", "cuello", "pimiento", "marchitez"]
+    },
+    {
+      "id": 189,
+      "category": "enfermedad",
+      "questions": [
+        "¿Qué es el tizón norteño?",
+        "¿Qué causa el tizón norteño del maíz?",
+        "Información sobre tizón norteño"
+      ],
+      "answer": "**¿Qué es el Tizón Norteño del Maíz?**\n\nEl tizón norteño es una enfermedad fungosa causada por **Exserohilum turcicum** (antes llamado Helminthosporium turcicum). Es una de las enfermedades foliares más importantes del maíz a nivel mundial.\n\n**Características principales:**\n• Afecta principalmente las hojas\n• Reduce la capacidad fotosintética\n• Puede causar pérdidas del 30-50% en ataques severos\n• Más agresivo en climas frescos y húmedos\n• El hongo sobrevive en rastrojos de maíz\n\n**Nombre científico:** Exserohilum turcicum\n**Nombres comunes:** Tizón norteño, Northern Leaf Blight, Helmintosporiosis\n**Tipo de patógeno:** Hongo (Ascomycete)",
+      "keywords": ["tizon", "norteno", "que", "es", "exserohilum", "turcicum", "helminthosporium", "maiz", "hongo"]
+    },
+    {
+      "id": 190,
+      "category": "enfermedad",
+      "questions": [
+        "¿Cómo identificar el tizón norteño?",
+        "Síntomas del tizón norteño",
+        "¿Cómo se ve el tizón norteño en maíz?",
+        "Manchas en hojas de maíz forma cigarro"
+      ],
+      "answer": "**Síntomas del Tizón Norteño del Maíz**\n\n**Síntomas visuales característicos:**\n• **Manchas en forma de cigarro o canoa** (3-15 cm de largo)\n• Color inicial gris-verdoso\n• Evoluciona a marrón o pajizo al secarse\n• Bordes difusos, no muy definidos\n• Pueden fusionarse y secar hojas completas\n\n**Patrón de avance:**\n• Inicia en hojas inferiores\n• Progresa hacia arriba\n• En casos severos: muerte prematura del follaje\n\n**Condiciones que favorecen:**\n• Temperatura: 18-27°C (óptimo 20-25°C)\n• Humedad relativa alta (>90%)\n• Rocío prolongado sobre hojas\n• Lluvias frecuentes\n\n**Diferenciación de otras enfermedades:**\n• A diferencia de la roya: NO tiene pústulas\n• A diferencia de mancha gris: lesiones más grandes y alargadas",
+      "keywords": ["sintomas", "identificar", "tizon", "norteno", "manchas", "cigarro", "canoa", "hojas", "maiz"]
+    },
+    {
+      "id": 191,
+      "category": "enfermedad",
+      "questions": [
+        "¿Cómo controlar el tizón norteño?",
+        "Tratamiento para tizón norteño",
+        "Fungicida para tizón norteño maíz",
+        "¿Cómo curar el tizón norteño?"
+      ],
+      "answer": "**Control del Tizón Norteño del Maíz**\n\n**Control químico (fungicidas):**\n• **Triazoles:** Propiconazol, Tebuconazol, Epoxiconazol\n• **Estrobilurinas:** Azoxistrobin, Pyraclostrobin, Trifloxistrobin\n• **Mezclas recomendadas:** Azoxistrobin + Propiconazol\n\n**Momento de aplicación:**\n• Primera aplicación: V8-V10 (8-10 hojas)\n• Segunda aplicación: VT (emisión de espiga) si persiste\n• Aplicar ANTES de que llegue a las hojas superiores\n\n**Dosis típicas:**\n• Triazoles: 0.5-1.0 L/ha\n• Estrobilurinas: 0.3-0.5 L/ha\n• Mezclas comerciales: según etiqueta\n\n**Tecnología de aplicación:**\n• Volumen: 150-200 L/ha\n• Boquillas de cono hueco\n• Buena cobertura del follaje\n• Aplicar en horas frescas\n\n**Importante:** Rotar grupos químicos para evitar resistencia",
+      "keywords": ["control", "tratamiento", "fungicida", "tizon", "norteno", "curar", "aplicar", "triazol", "estrobilurina"]
+    },
+    {
+      "id": 192,
+      "category": "enfermedad",
+      "questions": [
+        "¿Cómo prevenir el tizón norteño?",
+        "Prevención del tizón norteño",
+        "Evitar tizón norteño en maíz"
+      ],
+      "answer": "**Prevención del Tizón Norteño del Maíz**\n\n**1. Selección de híbridos:**\n• Usar variedades con genes de resistencia (Ht1, Ht2, Ht3, HtN)\n• Consultar catálogos de semilleras\n• La resistencia parcial reduce severidad\n\n**2. Manejo de rastrojos:**\n• Enterrar o picar residuos de cosecha\n• El hongo sobrevive en rastrojos\n• Descomposición reduce inóculo\n\n**3. Rotación de cultivos:**\n• Alternar con soja, sorgo u otros no hospedantes\n• Mínimo 1-2 años sin maíz\n• Reduce presión de inóculo\n\n**4. Fecha de siembra:**\n• Evitar siembras muy tardías\n• Siembras tempranas escapan del pico de enfermedad\n\n**5. Densidad de siembra:**\n• No exceder densidad recomendada\n• Mayor ventilación = menos humedad foliar\n\n**6. Nutrición balanceada:**\n• Evitar exceso de nitrógeno\n• Plantas bien nutridas más resistentes",
+      "keywords": ["prevenir", "prevencion", "evitar", "tizon", "norteno", "hibridos", "resistencia", "rotacion", "rastrojos"]
+    },
+    {
+      "id": 193,
+      "category": "enfermedad",
+      "questions": [
+        "Mi maíz tiene manchas alargadas",
+        "Hojas de maíz con manchas grises",
+        "Se están secando las hojas del maíz",
+        "Manchas en forma de cigarro en maíz"
+      ],
+      "answer": "**Diagnóstico: Probable Tizón Norteño**\n\nBasado en los síntomas descritos (manchas alargadas/grises), es probable que sea **Tizón Norteño (Exserohilum turcicum)**.\n\n**Confirme observando:**\n✓ Manchas de 3-15 cm en forma de cigarro\n✓ Color gris-verdoso a marrón\n✓ Inicia en hojas inferiores\n✓ Sin pústulas (descarta roya)\n\n**Acción inmediata:**\n1. Si está en etapas V8-VT: aplicar fungicida\n2. Usar Azoxistrobin + Propiconazol o similar\n3. Dosis: según etiqueta del producto\n4. Repetir en 14-21 días si continúa lloviendo\n\n**Si el maíz ya está en llenado de grano (R3+):**\n• La aplicación puede no ser económica\n• Cosechar lo antes posible\n• Para próxima siembra: usar híbrido resistente\n\n**¿Necesita más ayuda?** Tome una foto de cerca de las manchas para confirmar.",
+      "keywords": ["manchas", "alargadas", "grises", "secando", "hojas", "maiz", "cigarro", "diagnostico"]
+    },
+    {
+      "id": 194,
+      "category": "enfermedad",
+      "questions": [
+        "¿Cuánto daño causa el tizón norteño?",
+        "Pérdidas por tizón norteño",
+        "¿Es grave el tizón norteño?"
+      ],
+      "answer": "**Impacto Económico del Tizón Norteño**\n\n**Pérdidas potenciales:**\n• Ataques leves: 5-15% de pérdida\n• Ataques moderados: 15-30% de pérdida\n• Ataques severos: 30-50% o más\n• En casos extremos con marchitez total: >70%\n\n**Factores que aumentan pérdidas:**\n• Infección temprana (antes de floración)\n• Afectación de hojas superiores (espiga y arriba)\n• Híbridos susceptibles\n• Alta presión de enfermedad continua\n\n**¿Cuándo es grave?**\n• Si >50% del área foliar afectada en floración\n• Si llega a las 3 hojas superiores\n• Si hay pronóstico de más lluvias\n\n**¿Cuándo es tolerable?**\n• Si inicia después del llenado de grano (R3+)\n• Si solo afecta hojas inferiores\n• Si el clima se torna seco\n\n**Recomendación económica:**\n• Costo de fungicida vs. valor de pérdida esperada\n• En maíz de alto potencial: proteger con fungicida\n• En maíz de bajo potencial: evaluar costo-beneficio",
+      "keywords": ["dano", "perdidas", "grave", "tizon", "norteno", "economico", "rendimiento", "impacto"]
     }
   ]
 }
