@@ -2103,9 +2103,10 @@ fun SettingsDialog(
     // Estados locales para configuración avanzada (se sincronizan al guardar)
     var showAdvanced by remember { mutableStateOf(false) }
     var localMaxTokens by remember { mutableStateOf(advancedMaxTokens) }
-    var localSimThreshold by remember { mutableStateOf(advancedSimilarityThreshold) }
-    var localKbThreshold by remember { mutableStateOf(advancedKbFastPathThreshold) }
-    var localCtxRelThreshold by remember { mutableStateOf(advancedContextRelevanceThreshold) }
+    // Mostrar los umbrales en porcentaje (0..100) en la UI, convertir a 0..1 al guardar
+    var localSimThreshold by remember { mutableStateOf(advancedSimilarityThreshold * 100f) }
+    var localKbThreshold by remember { mutableStateOf(advancedKbFastPathThreshold * 100f) }
+    var localCtxRelThreshold by remember { mutableStateOf(advancedContextRelevanceThreshold * 100f) }
     var localSystemPrompt by remember { mutableStateOf(advancedSystemPrompt) }
     var localUseLlmForAll by remember { mutableStateOf(advancedUseLlmForAll) }
     var localContextLength by remember { mutableStateOf(advancedContextLength) }
@@ -2408,12 +2409,12 @@ fun SettingsDialog(
                                     Text("$localContextLength", style = MaterialTheme.typography.bodySmall, color = AgroColors.TextPrimary, modifier = Modifier.width(40.dp))
                                 }
                                 
-                                // KB Fast Path Threshold
-                                Text("Umbral KB directa (sin LLM): ${String.format("%.2f", localKbThreshold)}", style = MaterialTheme.typography.labelMedium, color = AgroColors.TextSecondary)
+                                // KB Fast Path Threshold (mostrar como porcentaje 0..100)
+                                Text("Umbral KB directa (sin LLM): ${localKbThreshold.toInt()}%", style = MaterialTheme.typography.labelMedium, color = AgroColors.TextSecondary)
                                 Slider(
                                     value = localKbThreshold,
                                     onValueChange = { localKbThreshold = it },
-                                    valueRange = 0.5f..0.95f,
+                                    valueRange = 0f..100f,
                                     colors = SliderDefaults.colors(
                                         thumbColor = AgroColors.Accent,
                                         activeTrackColor = AgroColors.Accent
@@ -2421,24 +2422,24 @@ fun SettingsDialog(
                                 )
                                 Text("Mayor = más uso del LLM", style = MaterialTheme.typography.bodySmall, color = AgroColors.TextSecondary)
                                 
-                                // Similarity Threshold
-                                Text("Umbral mínimo similitud: ${String.format("%.2f", localSimThreshold)}", style = MaterialTheme.typography.labelMedium, color = AgroColors.TextSecondary)
+                                // Similarity Threshold (mostrar como porcentaje 0..100)
+                                Text("Umbral mínimo similitud: ${localSimThreshold.toInt()}%", style = MaterialTheme.typography.labelMedium, color = AgroColors.TextSecondary)
                                 Slider(
                                     value = localSimThreshold,
                                     onValueChange = { localSimThreshold = it },
-                                    valueRange = 0.2f..0.6f,
+                                    valueRange = 0f..100f,
                                     colors = SliderDefaults.colors(
                                         thumbColor = AgroColors.Accent,
                                         activeTrackColor = AgroColors.Accent
                                     )
                                 )
                                 
-                                // Context Relevance Threshold (NUEVO)
-                                Text("Umbral contexto relevante: ${String.format("%.2f", localCtxRelThreshold)}", style = MaterialTheme.typography.labelMedium, color = AgroColors.TextSecondary)
+                                // Context Relevance Threshold (mostrar como porcentaje 0..100)
+                                Text("Umbral contexto relevante: ${localCtxRelThreshold.toInt()}%", style = MaterialTheme.typography.labelMedium, color = AgroColors.TextSecondary)
                                 Slider(
                                     value = localCtxRelThreshold,
                                     onValueChange = { localCtxRelThreshold = it },
-                                    valueRange = 0.4f..0.8f,
+                                    valueRange = 0f..100f,
                                     colors = SliderDefaults.colors(
                                         thumbColor = AgroColors.Accent,
                                         activeTrackColor = AgroColors.Accent
@@ -2509,8 +2510,8 @@ fun SettingsDialog(
                                     Slider(
                                         value = localChatHistorySize.toFloat(),
                                         onValueChange = { localChatHistorySize = it.toInt() },
-                                        valueRange = 2f..10f,
-                                        steps = 7,
+                                        valueRange = 0f..100f,
+                                        steps = 99,
                                         colors = SliderDefaults.colors(
                                             thumbColor = AgroColors.Accent,
                                             activeTrackColor = AgroColors.Accent
@@ -2542,9 +2543,10 @@ fun SettingsDialog(
                                     onClick = {
                                         onSaveAdvancedSettings(
                                             localMaxTokens,
-                                            localSimThreshold,
-                                            localKbThreshold,
-                                            localCtxRelThreshold,
+                                            // Convertir porcentajes 0..100 a fracciones 0..1 para el almacenamiento interno
+                                            localSimThreshold / 100f,
+                                            localKbThreshold / 100f,
+                                            localCtxRelThreshold / 100f,
                                             localSystemPrompt,
                                             localUseLlmForAll,
                                             localContextLength,
