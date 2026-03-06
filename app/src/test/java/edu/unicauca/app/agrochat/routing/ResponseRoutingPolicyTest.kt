@@ -1,12 +1,13 @@
 package edu.unicauca.app.agrochat.routing
 
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotEquals
 import org.junit.Test
 
 class ResponseRoutingPolicyTest {
 
     @Test
-    fun `direct KB only for very high confidence`() {
+    fun `high confidence KB still routes through LLM with KB`() {
         val result = ResponseRoutingPolicy.decide(
             ResponseRoutingPolicy.Input(
                 hasRelatedKbSignal = true,
@@ -22,7 +23,8 @@ class ResponseRoutingPolicyTest {
             )
         )
 
-        assertEquals(ResponseRoutingPolicy.Decision.KB_DIRECT, result.decision)
+        assertEquals(ResponseRoutingPolicy.Decision.LLM_WITH_KB, result.decision)
+        assertEquals("high_confidence_kb_match_via_llm", result.reason)
     }
 
     @Test
@@ -123,5 +125,52 @@ class ResponseRoutingPolicyTest {
         )
 
         assertEquals(ResponseRoutingPolicy.Decision.ABSTAIN, result.decision)
+    }
+
+    @Test
+    fun `policy never emits KB direct path`() {
+        val scenarios = listOf(
+            ResponseRoutingPolicy.Input(
+                hasRelatedKbSignal = true,
+                hasGroundedKbSupport = true,
+                allowGeneralLlmMode = false,
+                skipKbDirect = false,
+                useLlmForAll = false,
+                bestSimilarityScore = 0.99f,
+                kbSupportScore = 0.95f,
+                kbCoverage = 0.91f,
+                kbUnknownRatio = 0.08f,
+                effectiveKbFastPathThreshold = 0.10f
+            ),
+            ResponseRoutingPolicy.Input(
+                hasRelatedKbSignal = true,
+                hasGroundedKbSupport = true,
+                allowGeneralLlmMode = false,
+                skipKbDirect = true,
+                useLlmForAll = false,
+                bestSimilarityScore = 0.94f,
+                kbSupportScore = 0.80f,
+                kbCoverage = 0.66f,
+                kbUnknownRatio = 0.18f,
+                effectiveKbFastPathThreshold = 0.25f
+            ),
+            ResponseRoutingPolicy.Input(
+                hasRelatedKbSignal = false,
+                hasGroundedKbSupport = false,
+                allowGeneralLlmMode = true,
+                skipKbDirect = false,
+                useLlmForAll = true,
+                bestSimilarityScore = 0.10f,
+                kbSupportScore = 0.09f,
+                kbCoverage = 0.10f,
+                kbUnknownRatio = 0.98f,
+                effectiveKbFastPathThreshold = 0.50f
+            )
+        )
+
+        scenarios.forEach { input ->
+            val result = ResponseRoutingPolicy.decide(input)
+            assertNotEquals(ResponseRoutingPolicy.Decision.KB_DIRECT, result.decision)
+        }
     }
 }

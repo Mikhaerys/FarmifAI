@@ -173,7 +173,7 @@ class MainActivity : ComponentActivity() {
         private const val PARITY_CONTEXT_RELEVANCE_THRESHOLD = 0.50f
         private const val PARITY_CONTEXT_LENGTH = 1800
         private const val PARITY_CHAT_HISTORY_SIZE = 10
-        private const val PARITY_MIN_MAX_TOKENS = 450
+        private const val PARITY_MIN_MAX_TOKENS = 300
         private const val PARITY_SYSTEM_PROMPT =
             "Eres FarmifAI, un asistente agrícola experto. Si se proporciona contexto de KB, úsalo como fuente principal y no inventes datos fuera de esa base. Si falta un dato en la KB, dilo explícitamente."
         private const val SAFE_MIN_SIMILARITY_THRESHOLD = 0.25f
@@ -190,6 +190,10 @@ class MainActivity : ComponentActivity() {
         private const val KB_RELATED_MIN_SUPPORT = 0.18f
         private const val KB_RELATED_MIN_COVERAGE = 0.16f
         private const val KB_RELATED_MAX_UNKNOWN_RATIO = 0.92f
+        private const val FAST_KB_MAX_TOKENS = 200
+        private const val RELATED_KB_MAX_TOKENS = 240
+        private const val GENERAL_MAX_TOKENS = 260
+        private const val CONTINUATION_MIN_TOKENS = 260
         
         fun setAppLocale(context: Context, languageCode: String): Context {
             val locale = Locale(languageCode)
@@ -246,15 +250,15 @@ class MainActivity : ComponentActivity() {
     
     // ===== CONFIGURACIÓN AVANZADA =====
     // Valores por defecto orientados a respuestas completas y grounding por KB
-    private var advancedMaxTokens by mutableStateOf(450) // Slider max 800
+    private var advancedMaxTokens by mutableStateOf(300) // Slider max 800
     private var advancedSimilarityThreshold by mutableStateOf(0.45f)
-    private var advancedKbFastPathThreshold by mutableStateOf(0.70f)
+    private var advancedKbFastPathThreshold by mutableStateOf(0.85f)
     private var advancedContextRelevanceThreshold by mutableStateOf(0.50f)
     private var advancedSystemPrompt by mutableStateOf(
-        "Eres FarmifAI, un asistente agrícola experto. Si se proporciona contexto de KB, úsalo como fuente principal y no inventes datos fuera de esa base. Si falta un dato en la KB, dilo explícitamente."
+        "Eres FarmifAI, asistente agricola. Responde SOLO sobre el tema preguntado usando el CONTEXTO. NO agregues informacion de otros temas. NO inventes. Se breve y preciso."
     )
     private var advancedUseLlmForAll by mutableStateOf(false)  // Priorizar KB directa cuando haya match claro
-    private var advancedContextLength by mutableStateOf(1800) // Slider max 3000
+    private var advancedContextLength by mutableStateOf(800) // Slider max 3000
     private var advancedDetectGreetings by mutableStateOf(true)  // Detectar saludos para KB directa (activado)
     private var advancedChatHistoryEnabled by mutableStateOf(true)  // Usar historial del chat como contexto (activado)
     private var advancedChatHistorySize by mutableStateOf(10)  // Ventana 1..20 mensajes anteriores
@@ -414,7 +418,7 @@ class MainActivity : ComponentActivity() {
                         advancedChatHistoryEnabled = advancedChatHistoryEnabled,
                         advancedChatHistorySize = advancedChatHistorySize,
                         onSaveAdvancedSettings = { maxTok, simThresh, kbThresh, ctxRelThresh, sysPrompt, llmAll, ctxLen, detectGreet, chatHistEnabled, chatHistSize ->
-                            advancedMaxTokens = maxTok.coerceIn(250, 900)
+                            advancedMaxTokens = maxTok.coerceIn(100, 900)
                             advancedSimilarityThreshold = simThresh.coerceIn(SAFE_MIN_SIMILARITY_THRESHOLD, SAFE_MAX_SIMILARITY_THRESHOLD)
                             advancedKbFastPathThreshold = kbThresh.coerceIn(SAFE_MIN_KB_FAST_PATH_THRESHOLD, SAFE_MAX_KB_FAST_PATH_THRESHOLD)
                             advancedContextRelevanceThreshold = ctxRelThresh.coerceIn(SAFE_MIN_CONTEXT_RELEVANCE_THRESHOLD, SAFE_MAX_CONTEXT_RELEVANCE_THRESHOLD)
@@ -833,14 +837,14 @@ class MainActivity : ComponentActivity() {
         isLlamaEnabled = prefs.getBoolean(KEY_LLAMA_ENABLED, true)
         
         // Configuración avanzada (valores por defecto al máximo de la UI)
-        advancedMaxTokens = prefs.getInt("advanced_max_tokens", 450).coerceIn(250, 900)
+        advancedMaxTokens = prefs.getInt("advanced_max_tokens", 300).coerceIn(100, 900)
         advancedSimilarityThreshold = prefs.getFloat("advanced_similarity_threshold", 0.45f).coerceIn(SAFE_MIN_SIMILARITY_THRESHOLD, SAFE_MAX_SIMILARITY_THRESHOLD)
-        advancedKbFastPathThreshold = prefs.getFloat("advanced_kb_fast_path_threshold", 0.70f).coerceIn(SAFE_MIN_KB_FAST_PATH_THRESHOLD, SAFE_MAX_KB_FAST_PATH_THRESHOLD)
+        advancedKbFastPathThreshold = prefs.getFloat("advanced_kb_fast_path_threshold", 0.85f).coerceIn(SAFE_MIN_KB_FAST_PATH_THRESHOLD, SAFE_MAX_KB_FAST_PATH_THRESHOLD)
         advancedContextRelevanceThreshold = prefs.getFloat("advanced_context_relevance_threshold", 0.50f).coerceIn(SAFE_MIN_CONTEXT_RELEVANCE_THRESHOLD, SAFE_MAX_CONTEXT_RELEVANCE_THRESHOLD)
         advancedSystemPrompt = prefs.getString("advanced_system_prompt", 
-            "Eres FarmifAI, un asistente agrícola experto. Si se proporciona contexto de KB, úsalo como fuente principal y no inventes datos fuera de esa base. Si falta un dato en la KB, dilo explícitamente.") ?: advancedSystemPrompt
+            "Eres FarmifAI, asistente agricola. Responde SOLO sobre el tema preguntado usando el CONTEXTO. NO agregues informacion de otros temas. NO inventes. Se breve y preciso.") ?: advancedSystemPrompt
         advancedUseLlmForAll = prefs.getBoolean("advanced_use_llm_for_all", false)
-        advancedContextLength = prefs.getInt("advanced_context_length", 1800).coerceIn(300, 3000)
+        advancedContextLength = prefs.getInt("advanced_context_length", 800).coerceIn(300, 3000)
         advancedDetectGreetings = prefs.getBoolean("advanced_detect_greetings", true)
         advancedChatHistoryEnabled = prefs.getBoolean("advanced_chat_history_enabled", true)
         advancedChatHistorySize = prefs.getInt("advanced_chat_history_size", 10).coerceIn(1, 20)
@@ -1097,7 +1101,12 @@ class MainActivity : ComponentActivity() {
         val kbSupportScore: Float,
         val kbCoverage: Float,
         val kbUnknownRatio: Float,
-        val enforcedKbAbstention: Boolean
+        val enforcedKbAbstention: Boolean,
+        val source: String,
+        val kbContextUsed: Boolean,
+        val kbContextLength: Int,
+        val retrievalLatencyMs: Long,
+        val generationLatencyMs: Long
     )
     
     /**
@@ -1394,6 +1403,10 @@ class MainActivity : ComponentActivity() {
                 AppLogger.log("MainActivity", "📊 Calidad: ${String.format("%.0f", qualityReport.qualityScore * 100)}% | " +
                     "Completa: ${qualityReport.isComplete} | Coherente: ${qualityReport.isCoherent} | " +
                     "Puede continuar: $canContinue")
+                AppLogger.log(
+                    "MainActivity",
+                    "KB_AUDIT source=${responseMeta.source} kbUsed=${responseMeta.kbContextUsed} kbChars=${responseMeta.kbContextLength} retrievalMs=${responseMeta.retrievalLatencyMs} generationMs=${responseMeta.generationLatencyMs} support=${String.format("%.2f", responseMeta.kbSupportScore)} coverage=${String.format("%.2f", responseMeta.kbCoverage)} unknown=${String.format("%.2f", responseMeta.kbUnknownRatio)}"
+                )
                 
                 AppLogger.log("MainActivity", "Respuesta: ${improvedResponse.take(50)}...")
                 
@@ -1550,17 +1563,20 @@ class MainActivity : ComponentActivity() {
         AppLogger.log("MainActivity", "🔍 BÚSQUEDA RAG - Query: '$userQuery'")
         AppLogger.log("MainActivity", "════════════════════════════════════════════════════════════")
 
+        val retrievalStartNs = System.nanoTime()
         val ragContext = semanticSearchHelper?.findTopKContexts(
             userQuery = userQuery,
             topK = 3,
             minScore = retrievalMinScore
         )
+        val retrievalLatencyMs = (System.nanoTime() - retrievalStartNs) / 1_000_000
 
         val combinedKBContext = ragContext?.combinedContext
         val bestMatch = ragContext?.contexts?.firstOrNull()
         val groundingAssessment = ragContext?.groundingAssessment
         val kbSupportScore = groundingAssessment?.supportScore ?: 0f
         val kbCoverage = groundingAssessment?.lexicalCoverage ?: 0f
+        val kbEntityCoverage = groundingAssessment?.entityCoverage ?: 0f
         val kbUnknownRatio = groundingAssessment?.unknownTokenRatio ?: 1f
         val hasGroundedKbSupport = bestMatch != null &&
             (groundingAssessment?.hasStrongSupport == true) &&
@@ -1568,12 +1584,19 @@ class MainActivity : ComponentActivity() {
             kbCoverage >= MIN_LEXICAL_COVERAGE_FOR_GROUNDED &&
             kbUnknownRatio <= MAX_UNKNOWN_RATIO_FOR_GROUNDED &&
             bestMatch.similarityScore >= effectiveSimilarityThreshold
-        val hasRelatedKbSignal = bestMatch != null && (
+        val hasRelatedCoreSignal = bestMatch != null && (
             bestMatch.similarityScore >= KB_RELATED_MIN_SCORE ||
                 kbSupportScore >= KB_RELATED_MIN_SUPPORT ||
-                kbCoverage >= KB_RELATED_MIN_COVERAGE ||
-                bestMatch.similarityScore >= effectiveKbFastPathThreshold.coerceAtMost(0.60f)
-            ) &&
+                (kbCoverage >= KB_RELATED_MIN_COVERAGE && kbEntityCoverage >= 0.20f) ||
+                (bestMatch.similarityScore >= effectiveKbFastPathThreshold.coerceAtMost(0.60f) && kbSupportScore >= 0.14f)
+            )
+        val hasWeakNoisySignal = bestMatch != null &&
+            kbUnknownRatio > 0.62f &&
+            kbSupportScore < 0.18f &&
+            (bestMatch.similarityScore < 0.28f || kbEntityCoverage < 0.20f)
+        val hasRelatedKbSignal = bestMatch != null &&
+            hasRelatedCoreSignal &&
+            !hasWeakNoisySignal &&
             kbUnknownRatio <= KB_RELATED_MAX_UNKNOWN_RATIO
         val hasKbContext = hasGroundedKbSupport || hasRelatedKbSignal
 
@@ -1586,7 +1609,7 @@ class MainActivity : ComponentActivity() {
         } ?: "none"
         AppLogger.log(
             "MainActivity",
-            "KB search: retrievalMin=$retrievalMinScore threshold=$effectiveSimilarityThreshold related=$hasRelatedKbSignal grounded=$hasGroundedKbSupport support=${String.format("%.2f", kbSupportScore)} coverage=${String.format("%.2f", kbCoverage)} unknown=${String.format("%.2f", kbUnknownRatio)} results=$kbResults"
+            "KB search: retrievalMs=$retrievalLatencyMs retrievalMin=$retrievalMinScore threshold=$effectiveSimilarityThreshold related=$hasRelatedKbSignal grounded=$hasGroundedKbSupport support=${String.format("%.2f", kbSupportScore)} coverage=${String.format("%.2f", kbCoverage)} entity=${String.format("%.2f", kbEntityCoverage)} unknown=${String.format("%.2f", kbUnknownRatio)} noisy=$hasWeakNoisySignal results=$kbResults"
         )
 
         val isSimpleGreeting = effectiveDetectGreetings && userQuery.lowercase().trim().let { q ->
@@ -1617,18 +1640,7 @@ class MainActivity : ComponentActivity() {
             "Decision route=${routeResult.decision} reason=${routeResult.reason} kbScore=${String.format("%.2f", bestMatch?.similarityScore ?: 0f)} support=${String.format("%.2f", kbSupportScore)} coverage=${String.format("%.2f", kbCoverage)} unknown=${String.format("%.2f", kbUnknownRatio)}"
         )
 
-        if (routeResult.decision == ResponseRoutingPolicy.Decision.KB_DIRECT && forcedContext == null && bestMatch != null) {
-            AppLogger.log("MainActivity", "Decision: KB_DIRECT high confidence id=${bestMatch.entryId}")
-            return@withContext ResponseMeta(
-                response = bestMatch.answer,
-                usedLlm = false,
-                kbSupported = true,
-                kbSupportScore = kbSupportScore,
-                kbCoverage = kbCoverage,
-                kbUnknownRatio = kbUnknownRatio,
-                enforcedKbAbstention = false
-            )
-        }
+        // KB_DIRECT path eliminated — always use LLM inference with KB context
 
         if (routeResult.decision == ResponseRoutingPolicy.Decision.ABSTAIN && !isSimpleGreeting && forcedContext == null) {
             val abstainResponse = buildKbInsufficientEvidenceResponse(userQuery, groundingAssessment)
@@ -1643,7 +1655,12 @@ class MainActivity : ComponentActivity() {
                 kbSupportScore = kbSupportScore,
                 kbCoverage = kbCoverage,
                 kbUnknownRatio = kbUnknownRatio,
-                enforcedKbAbstention = true
+                enforcedKbAbstention = true,
+                source = "KB_ABSTAIN",
+                kbContextUsed = false,
+                kbContextLength = 0,
+                retrievalLatencyMs = retrievalLatencyMs,
+                generationLatencyMs = 0L
             )
         }
         if (allowGeneralLlmMode) {
@@ -1663,13 +1680,27 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        val kbBudget = if (hasKbContext && !combinedKBContext.isNullOrBlank() && !rawChatHistoryContext.isNullOrBlank()) {
-            (effectiveContextLength * 0.70f).toInt().coerceIn(500, effectiveContextLength)
-        } else {
-            effectiveContextLength
+        val effectivePromptContextLength = when {
+            STRICT_TERMINAL_PARITY_MODE -> effectiveContextLength
+            forcedContext != null -> effectiveContextLength
+            hasGroundedKbSupport -> minOf(effectiveContextLength, 650)
+            hasKbContext -> minOf(effectiveContextLength, 760)
+            else -> minOf(effectiveContextLength, 700)
         }
-        val historyBudget = (effectiveContextLength - kbBudget).coerceAtLeast(200)
-        val kbContextForPrompt = combinedKBContext?.take(kbBudget)
+        val kbLen = combinedKBContext?.length ?: 0
+        val histLen = rawChatHistoryContext?.length ?: 0
+        val kbBudget: Int
+        val historyBudget: Int
+        if (hasKbContext && !combinedKBContext.isNullOrBlank() && !rawChatHistoryContext.isNullOrBlank()) {
+            // Dynamic allocation: give KB as much as it needs (up to 85%), rest for history
+            val kbNeed = kbLen.coerceAtMost((effectivePromptContextLength * 0.85f).toInt())
+            kbBudget = kbNeed.coerceIn(320, effectivePromptContextLength)
+            historyBudget = (effectivePromptContextLength - kbBudget).coerceAtLeast(90)
+        } else {
+            kbBudget = effectivePromptContextLength
+            historyBudget = effectivePromptContextLength
+        }
+        val kbContextForPrompt = truncateAtSentenceBoundary(combinedKBContext, kbBudget)
         val chatHistoryContext = rawChatHistoryContext?.take(historyBudget)
         val contextParts = mutableListOf<String>()
         if (hasKbContext && !kbContextForPrompt.isNullOrBlank()) {
@@ -1678,8 +1709,8 @@ class MainActivity : ComponentActivity() {
         if (!chatHistoryContext.isNullOrBlank()) {
             contextParts.add("=== HISTORIAL ===\n$chatHistoryContext")
         }
-        val autoContext = if (contextParts.isNotEmpty()) contextParts.joinToString("\n\n").take(effectiveContextLength) else null
-        val forcedContextForPrompt = forcedContext?.take(effectiveContextLength)
+        val autoContext = if (contextParts.isNotEmpty()) contextParts.joinToString("\n\n").take(effectivePromptContextLength) else null
+        val forcedContextForPrompt = forcedContext?.take(effectivePromptContextLength)
         val contextToPass = forcedContextForPrompt ?: autoContext
 
         val mode = when {
@@ -1694,7 +1725,7 @@ class MainActivity : ComponentActivity() {
         )
         AppLogger.log(
             "MainActivity",
-            "Context budget: max=$effectiveContextLength kbLen=${kbContextForPrompt?.length ?: 0} histLen=${chatHistoryContext?.length ?: 0} forcedLen=${forcedContextForPrompt?.length ?: 0} finalLen=${contextToPass?.length ?: 0}"
+            "Context budget: max=$effectivePromptContextLength kbLen=${kbContextForPrompt?.length ?: 0} histLen=${chatHistoryContext?.length ?: 0} forcedLen=${forcedContextForPrompt?.length ?: 0} finalLen=${contextToPass?.length ?: 0}"
         )
 
         withContext(Dispatchers.Main) {
@@ -1747,7 +1778,12 @@ $userQuery
                 allowGeneralLlmMode -> "$effectiveSystemPrompt\nNo hay evidencia suficiente en la KB para esta consulta. Puedes responder con conocimiento agrícola general, aclara que es orientación general y qué datos faltan."
                 else -> effectiveSystemPrompt
             }
-            val groqMaxTokens = maxOf(advancedMaxTokens, 200)
+            val groqMaxTokens = if (hasKbContext) {
+                minOf(maxOf(advancedMaxTokens, 160), 280)
+            } else {
+                minOf(maxOf(advancedMaxTokens, 160), 320)
+            }
+            val groqStartNs = System.nanoTime()
             val result = groqService!!.query(
                 userMessage = groqUserPrompt,
                 conversationHistory = history,
@@ -1757,6 +1793,7 @@ $userQuery
                     historyWindow = historyWindow
                 )
             )
+            val groqGenerationMs = (System.nanoTime() - groqStartNs) / 1_000_000
             result.fold(
                 onSuccess = { response ->
                         val cleanResponse = response.trim()
@@ -1772,7 +1809,12 @@ $userQuery
                                     kbSupportScore = kbSupportScore,
                                     kbCoverage = kbCoverage,
                                     kbUnknownRatio = kbUnknownRatio,
-                                    enforcedKbAbstention = false
+                                    enforcedKbAbstention = false,
+                                    source = if (hasKbContext) "LLM_GROQ_KB" else "LLM_GROQ_GENERAL",
+                                    kbContextUsed = hasKbContext,
+                                    kbContextLength = kbContextForPrompt?.length ?: 0,
+                                    retrievalLatencyMs = retrievalLatencyMs,
+                                    generationLatencyMs = groqGenerationMs
                                 )
                             }
                             AppLogger.log("MainActivity", "Groq response rejected by guard, fallback")
@@ -1788,23 +1830,39 @@ $userQuery
 
         if (isLlamaEnabled && isLlamaLoaded && llamaService != null) {
             val finalSystemPrompt = if (hasKbContext) {
-                "$effectiveSystemPrompt\nReglas obligatorias: usa SOLO el CONTEXTO KB como fuente factual; parafrasea en lenguaje natural (no copies literal); si falta evidencia, dilo explícitamente; no inventes; responde de forma completa."
+                "$effectiveSystemPrompt\nIMPORTANTE: Responde SOLO la pregunta del usuario. Usa UNICAMENTE datos relevantes del CONTEXTO. Si el CONTEXTO tiene informacion de varios temas, usa SOLO la parte que corresponde a la pregunta. NO divagues a otros temas. Responde en 2-4 oraciones."
             } else if (allowGeneralLlmMode) {
                 "$effectiveSystemPrompt\nNo hay evidencia suficiente en la KB para esta consulta. Puedes responder con conocimiento agrícola general, aclara que es orientación general y qué datos faltan para mayor precisión. No inventes cifras ni hechos específicos no verificables."
             } else {
                 effectiveSystemPrompt
             }
-            val baseMaxTokens = if (STRICT_TERMINAL_PARITY_MODE) maxOf(advancedMaxTokens, PARITY_MIN_MAX_TOKENS) else maxOf(advancedMaxTokens, 250)
-            val effectiveMaxTokens = if (hasKbContext) maxOf(baseMaxTokens, PARITY_MIN_MAX_TOKENS) else baseMaxTokens
+            val baseConfiguredMaxTokens = advancedMaxTokens.coerceIn(100, 900)
+            val effectiveMaxTokens = if (STRICT_TERMINAL_PARITY_MODE) {
+                maxOf(baseConfiguredMaxTokens, PARITY_MIN_MAX_TOKENS)
+            } else {
+                when {
+                    skipKbDirect -> maxOf(baseConfiguredMaxTokens, CONTINUATION_MIN_TOKENS)
+                    hasGroundedKbSupport -> baseConfiguredMaxTokens.coerceIn(120, FAST_KB_MAX_TOKENS)
+                    hasKbContext -> baseConfiguredMaxTokens.coerceIn(130, RELATED_KB_MAX_TOKENS)
+                    allowGeneralLlmMode -> baseConfiguredMaxTokens.coerceIn(120, GENERAL_MAX_TOKENS)
+                    else -> baseConfiguredMaxTokens.coerceIn(110, GENERAL_MAX_TOKENS)
+                }
+            }
+            AppLogger.log(
+                "MainActivity",
+                "Token budget: configured=$baseConfiguredMaxTokens effective=$effectiveMaxTokens hasKb=$hasKbContext grounded=$hasGroundedKbSupport continuation=$skipKbDirect"
+            )
 
             try {
+                val llamaStartNs = System.nanoTime()
                 val result = llamaService!!.generateAgriResponse(
                     userQuery = userQuery,
                     contextFromKB = contextToPass,
                     maxTokens = effectiveMaxTokens,
-                    maxContextLength = effectiveContextLength,
+                    maxContextLength = effectivePromptContextLength,
                     systemPrompt = finalSystemPrompt
                 )
+                val llamaGenerationMs = (System.nanoTime() - llamaStartNs) / 1_000_000
 
                 result.fold(
                     onSuccess = { response ->
@@ -1816,26 +1874,49 @@ $userQuery
                             val incomplete = kbGuardActive && !isResponseComplete(cleanResponse)
                             val ungrounded = kbGuardActive && !kbContextForPrompt.isNullOrBlank() &&
                                 !isResponseAnchoredToContext(cleanResponse, userQuery, kbContextForPrompt)
+                            val guardReasons = mutableListOf<String>()
+                            if (malformed) guardReasons.add("malformed")
+                            if (noInfoStyle) guardReasons.add("noinfo")
+                            if (incomplete) guardReasons.add("incomplete")
+                            if (ungrounded) guardReasons.add("ungrounded")
+                            val shouldFallbackToKb = kbGuardActive && (
+                                malformed ||
+                                    ungrounded ||
+                                    (noInfoStyle && hasGroundedKbSupport) ||
+                                    (incomplete && hasGroundedKbSupport)
+                                )
 
-                            if (malformed || noInfoStyle || incomplete || ungrounded) {
+                            if (shouldFallbackToKb) {
+                                val fallbackResponse = buildKbGroundedFallbackResponse(
+                                    userQuery = userQuery,
+                                    bestMatch = bestMatch,
+                                    combinedKBContext = combinedKBContext,
+                                    grounding = groundingAssessment,
+                                    failureReason = "llm_guard_${guardReasons.joinToString("_")}"
+                                )
                                 AppLogger.log(
                                     "MainActivity",
-                                    "LLM guard reject -> kb=$kbGuardActive malformed=$malformed noInfo=$noInfoStyle incomplete=$incomplete ungrounded=$ungrounded len=${cleanResponse.length} preview='${cleanResponse.take(120)}'"
+                                    "LLM guard fallback -> reasons=${guardReasons.joinToString(",")} len=${cleanResponse.length} mode=$mode"
                                 )
                                 return@withContext ResponseMeta(
-                                    response = buildKbGroundedFallbackResponse(
-                                        userQuery = userQuery,
-                                        bestMatch = bestMatch,
-                                        combinedKBContext = combinedKBContext,
-                                        grounding = groundingAssessment,
-                                        failureReason = "llm_guard_reject"
-                                    ),
+                                    response = fallbackResponse,
                                     usedLlm = false,
-                                    kbSupported = kbGuardActive,
+                                    kbSupported = true,
                                     kbSupportScore = kbSupportScore,
                                     kbCoverage = kbCoverage,
                                     kbUnknownRatio = kbUnknownRatio,
-                                    enforcedKbAbstention = false
+                                    enforcedKbAbstention = false,
+                                    source = "KB_FALLBACK_LLM_GUARD",
+                                    kbContextUsed = true,
+                                    kbContextLength = kbContextForPrompt?.length ?: 0,
+                                    retrievalLatencyMs = retrievalLatencyMs,
+                                    generationLatencyMs = llamaGenerationMs
+                                )
+                            }
+                            if (guardReasons.isNotEmpty()) {
+                                AppLogger.log(
+                                    "MainActivity",
+                                    "LLM guard warn (accepted) -> reasons=${guardReasons.joinToString(",")} len=${cleanResponse.length} mode=$mode"
                                 )
                             }
                             AppLogger.log("MainActivity", "LLM response: ${cleanResponse.length} chars mode=$mode")
@@ -1846,7 +1927,12 @@ $userQuery
                                 kbSupportScore = kbSupportScore,
                                 kbCoverage = kbCoverage,
                                 kbUnknownRatio = kbUnknownRatio,
-                                enforcedKbAbstention = false
+                                enforcedKbAbstention = false,
+                                source = if (hasKbContext) "LLM_LOCAL_KB" else "LLM_LOCAL_GENERAL",
+                                kbContextUsed = hasKbContext,
+                                kbContextLength = kbContextForPrompt?.length ?: 0,
+                                retrievalLatencyMs = retrievalLatencyMs,
+                                generationLatencyMs = llamaGenerationMs
                             )
                         } else {
                             AppLogger.log(
@@ -1889,7 +1975,16 @@ $userQuery
                 kbSupportScore = kbSupportScore,
                 kbCoverage = kbCoverage,
                 kbUnknownRatio = kbUnknownRatio,
-                enforcedKbAbstention = !kbSignal && !allowGeneralLlmMode
+                enforcedKbAbstention = !kbSignal && !allowGeneralLlmMode,
+                source = when {
+                    kbSignal -> "KB_FALLBACK_LLM_UNAVAILABLE"
+                    allowGeneralLlmMode -> "LLM_TEMP_FAILURE_UNAVAILABLE"
+                    else -> "KB_ABSTAIN_LLM_UNAVAILABLE"
+                },
+                kbContextUsed = kbSignal,
+                kbContextLength = combinedKBContext?.length ?: 0,
+                retrievalLatencyMs = retrievalLatencyMs,
+                generationLatencyMs = 0L
             )
         }
 
@@ -1909,7 +2004,7 @@ $userQuery
                 bestMatch = bestMatch,
                 combinedKBContext = combinedKBContext,
                 grounding = groundingAssessment,
-                failureReason = "llm_no_reliable_response"
+                failureReason = "llm_no_reliable_output"
             )
             allowGeneralLlmMode -> buildLlmTemporaryFailureResponse()
             else -> buildKbInsufficientEvidenceResponse(userQuery, groundingAssessment)
@@ -1922,8 +2017,29 @@ $userQuery
             kbSupportScore = kbSupportScore,
             kbCoverage = kbCoverage,
             kbUnknownRatio = kbUnknownRatio,
-            enforcedKbAbstention = !kbSignal && !allowGeneralLlmMode
+            enforcedKbAbstention = !kbSignal && !allowGeneralLlmMode,
+            source = when {
+                kbSignal -> "KB_FALLBACK_LLM_FAILURE"
+                allowGeneralLlmMode -> "LLM_TEMP_FAILURE"
+                else -> "KB_ABSTAIN_NO_SIGNAL"
+            },
+            kbContextUsed = kbSignal,
+            kbContextLength = combinedKBContext?.length ?: 0,
+            retrievalLatencyMs = retrievalLatencyMs,
+            generationLatencyMs = 0L
         )
+    }
+
+    private fun truncateAtSentenceBoundary(text: String?, maxLen: Int): String? {
+        if (text == null) return null
+        if (text.length <= maxLen) return text
+        val truncated = text.take(maxLen)
+        val lastEnd = maxOf(
+            truncated.lastIndexOf(". "),
+            truncated.lastIndexOf(".\n"),
+            truncated.lastIndexOf("---")
+        )
+        return if (lastEnd > maxLen * 0.5) truncated.substring(0, lastEnd + 1).trim() else truncated
     }
 
     private fun buildKbGroundedFallbackResponse(
@@ -1996,11 +2112,28 @@ $userQuery
         val allowedTokens = contextTokens + queryTokens + setOf(
             "recomendado", "recomendacion", "paso", "pasos", "opcion", "opciones",
             "importante", "riesgo", "control", "prevencion", "tratamiento", "siembra",
-            "cultivo", "riego", "fertilizacion", "plaga", "enfermedad"
+            "cultivo", "riego", "fertilizacion", "plaga", "enfermedad",
+            "preparar", "preparacion", "suelo", "seguir", "mayor", "menor",
+            "debe", "nivel", "forma", "adecuado", "correctamente", "espacio",
+            "suficiente", "condicion", "condiciones", "temperatura", "humedad",
+            "profundidad", "distancia", "planta", "semilla", "campo", "zona",
+            "crecimiento", "desarrollo", "alto", "bajo", "medio", "cantidad",
+            "proceso", "primera", "segundo", "tercero", "cuarto", "quinto",
+            "asegurar", "evitar", "aplicar", "utilizar", "reducir", "mejorar",
+            "mantener", "puede", "permite", "necesario", "ideal", "comun",
+            "tipo", "caso", "modo", "manera", "ejemplo", "incluir", "incluye",
+            "principal", "caracteristica", "problema", "solucion", "metodo",
+            "tecnica", "variedad", "produccion", "calidad", "rendimiento"
         )
         val unsupportedTokens = responseTokens - allowedTokens
         val unsupportedRatio = unsupportedTokens.size.toFloat() / responseTokens.size.toFloat()
-        return unsupportedRatio <= 0.55f
+        val maxUnsupportedRatio = when {
+            responseTokens.size >= 55 -> 0.50f
+            responseTokens.size >= 35 -> 0.58f
+            responseTokens.size >= 22 -> 0.64f
+            else -> 0.70f
+        }
+        return unsupportedRatio <= maxUnsupportedRatio
     }
 
     private fun extractInformativeTokens(text: String): Set<String> {
@@ -2046,15 +2179,18 @@ $userQuery
 
     private fun isNoInfoStyleResponse(text: String): Boolean {
         val lower = text.lowercase()
-        return listOf(
+        // Only trigger when the response's MAIN message is that it lacks info.
+        // Require these phrases to appear near the start (first 200 chars) to avoid
+        // false positives like "no se acumule" or "no se recomienda".
+        val noInfoPhrases = listOf(
             "no tengo información",
             "no tengo suficiente información",
             "no dispongo de información",
             "no tengo datos",
-            "no puedo responder",
-            "no se",
-            "no sé"
-        ).any { lower.contains(it) }
+            "no puedo responder"
+        )
+        val earlyText = lower.take(200)
+        return noInfoPhrases.any { earlyText.contains(it) }
     }
 
     private fun isMalformedLlmResponse(text: String): Boolean {
