@@ -73,9 +73,22 @@ function Test-AdbDeviceReady {
     return ($result.ExitCode -eq 0 -and $result.Output -match "device")
 }
 
-$repoRoot = (Resolve-Path $PSScriptRoot).Path
+$scriptRoot = (Resolve-Path $PSScriptRoot).Path
+$repoRoot = $null
+
+if (Test-Path (Join-Path $scriptRoot "gradlew.bat") -PathType Leaf) {
+    $repoRoot = $scriptRoot
+} elseif (Test-Path (Join-Path $scriptRoot "..\gradlew.bat") -PathType Leaf) {
+    $repoRoot = (Resolve-Path (Join-Path $scriptRoot "..")).Path
+} else {
+    throw "No se pudo determinar la raiz del repositorio desde: $scriptRoot"
+}
+
 $gradleWrapper = Join-Path $repoRoot "gradlew.bat"
-$publishScript = Join-Path $repoRoot "scripts\build_and_publish_apk.ps1"
+$publishScript = @(
+    Join-Path $scriptRoot "build_and_publish_apk.ps1"
+    Join-Path $repoRoot "scripts\build_and_publish_apk.ps1"
+) | Where-Object { Test-Path $_ -PathType Leaf } | Select-Object -First 1
 
 Require-Command "git"
 Require-Command "adb"
@@ -83,7 +96,7 @@ Require-Command "adb"
 if (-not (Test-Path $gradleWrapper -PathType Leaf)) {
     throw "No se encontro gradlew.bat en: $repoRoot"
 }
-if (-not (Test-Path $publishScript -PathType Leaf)) {
+if (-not $publishScript) {
     throw "No se encontro el script de publicacion: $publishScript"
 }
 
