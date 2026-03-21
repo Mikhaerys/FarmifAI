@@ -20915,6 +20915,3088 @@
         "iteracion",
         "general"
       ]
+    },
+    {
+      "id": 1061,
+      "category": "cultivo",
+      "questions": [
+        "Como influye fotosintesis en cafe",
+        "Que es fotosintesis en cafeto",
+        "Importancia de fotosintesis para produccion de cafe",
+        "Como manejar fotosintesis en un cafetal"
+      ],
+      "answer": "En cafe, fotosintesis cumple un papel clave en produccion de energia y biomasa. Para sostener buen desempeno conviene equilibrio de luz, agua y nutricion con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "fotosintesis",
+        "produccion",
+        "energia",
+        "biomasa",
+        "equilibrio",
+        "luz",
+        "agua",
+        "nutricion"
+      ]
+    },
+    {
+      "id": 1062,
+      "category": "cultivo",
+      "questions": [
+        "Como influye respiracion en cafe",
+        "Que es respiracion en cafeto",
+        "Importancia de respiracion para produccion de cafe",
+        "Como manejar respiracion en un cafetal"
+      ],
+      "answer": "En cafe, respiracion cumple un papel clave en consumo de energia para mantenimiento. Para sostener buen desempeno conviene evitar estres termico y desequilibrios con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "respiracion",
+        "consumo",
+        "energia",
+        "para",
+        "mantenimiento",
+        "evitar",
+        "estres",
+        "termico",
+        "desequilibrios"
+      ]
+    },
+    {
+      "id": 1063,
+      "category": "cultivo",
+      "questions": [
+        "Como influye transpiracion en cafe",
+        "Que es transpiracion en cafeto",
+        "Importancia de transpiracion para produccion de cafe",
+        "Como manejar transpiracion en un cafetal"
+      ],
+      "answer": "En cafe, transpiracion cumple un papel clave en regulacion hidrica y termica. Para sostener buen desempeno conviene manejo de sombra y humedad del suelo con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "transpiracion",
+        "regulacion",
+        "hidrica",
+        "termica",
+        "manejo",
+        "sombra",
+        "humedad",
+        "del",
+        "suelo"
+      ]
+    },
+    {
+      "id": 1064,
+      "category": "cultivo",
+      "questions": [
+        "Como influye apertura estomatica en cafe",
+        "Que es apertura estomatica en cafeto",
+        "Importancia de apertura estomatica para produccion de cafe",
+        "Como manejar apertura estomatica en un cafetal"
+      ],
+      "answer": "En cafe, apertura estomatica cumple un papel clave en intercambio gaseoso y uso de agua. Para sostener buen desempeno conviene mantener planta sin estres hidrico con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "apertura",
+        "estomatica",
+        "intercambio",
+        "gaseoso",
+        "uso",
+        "agua",
+        "mantener",
+        "planta",
+        "sin",
+        "estres",
+        "hidrico"
+      ]
+    },
+    {
+      "id": 1065,
+      "category": "cultivo",
+      "questions": [
+        "Como influye potencial hidrico en cafe",
+        "Que es potencial hidrico en cafeto",
+        "Importancia de potencial hidrico para produccion de cafe",
+        "Como manejar potencial hidrico en un cafetal"
+      ],
+      "answer": "En cafe, potencial hidrico cumple un papel clave en estado de agua en tejidos. Para sostener buen desempeno conviene definir riego de soporte y cobertura con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "potencial",
+        "hidrico",
+        "estado",
+        "agua",
+        "tejidos",
+        "definir",
+        "riego",
+        "soporte",
+        "cobertura"
+      ]
+    },
+    {
+      "id": 1066,
+      "category": "cultivo",
+      "questions": [
+        "Como influye balance fuente-sumidero en cafe",
+        "Que es balance fuente-sumidero en cafeto",
+        "Importancia de balance fuente-sumidero para produccion de cafe",
+        "Como manejar balance fuente-sumidero en un cafetal"
+      ],
+      "answer": "En cafe, balance fuente-sumidero cumple un papel clave en relacion entre hojas activas y carga de frutos. Para sostener buen desempeno conviene ajustar poda y nutricion con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "balance",
+        "fuente",
+        "sumidero",
+        "relacion",
+        "entre",
+        "hojas",
+        "activas",
+        "carga",
+        "frutos",
+        "ajustar",
+        "poda",
+        "nutricion"
+      ]
+    },
+    {
+      "id": 1067,
+      "category": "cultivo",
+      "questions": [
+        "Como influye particion de fotoasimilados en cafe",
+        "Que es particion de fotoasimilados en cafeto",
+        "Importancia de particion de fotoasimilados para produccion de cafe",
+        "Como manejar particion de fotoasimilados en un cafetal"
+      ],
+      "answer": "En cafe, particion de fotoasimilados cumple un papel clave en distribucion de carbohidratos en la planta. Para sostener buen desempeno conviene evitar exceso de carga con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "particion",
+        "fotoasimilados",
+        "distribucion",
+        "carbohidratos",
+        "planta",
+        "evitar",
+        "exceso",
+        "carga"
+      ]
+    },
+    {
+      "id": 1068,
+      "category": "cultivo",
+      "questions": [
+        "Como influye reserva de carbohidratos en cafe",
+        "Que es reserva de carbohidratos en cafeto",
+        "Importancia de reserva de carbohidratos para produccion de cafe",
+        "Como manejar reserva de carbohidratos en un cafetal"
+      ],
+      "answer": "En cafe, reserva de carbohidratos cumple un papel clave en capacidad de respuesta en floracion y brotacion. Para sostener buen desempeno conviene manejo poscosecha oportuno con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "reserva",
+        "carbohidratos",
+        "capacidad",
+        "respuesta",
+        "floracion",
+        "brotacion",
+        "manejo",
+        "poscosecha",
+        "oportuno"
+      ]
+    },
+    {
+      "id": 1069,
+      "category": "cultivo",
+      "questions": [
+        "Como influye eficiencia de uso de luz en cafe",
+        "Que es eficiencia de uso de luz en cafeto",
+        "Importancia de eficiencia de uso de luz para produccion de cafe",
+        "Como manejar eficiencia de uso de luz en un cafetal"
+      ],
+      "answer": "En cafe, eficiencia de uso de luz cumple un papel clave en conversion de radiacion en produccion. Para sostener buen desempeno conviene regular sombra segun ambiente con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "eficiencia",
+        "uso",
+        "luz",
+        "conversion",
+        "radiacion",
+        "produccion",
+        "regular",
+        "sombra",
+        "segun",
+        "ambiente"
+      ]
+    },
+    {
+      "id": 1070,
+      "category": "cultivo",
+      "questions": [
+        "Como influye eficiencia de uso de agua en cafe",
+        "Que es eficiencia de uso de agua en cafeto",
+        "Importancia de eficiencia de uso de agua para produccion de cafe",
+        "Como manejar eficiencia de uso de agua en un cafetal"
+      ],
+      "answer": "En cafe, eficiencia de uso de agua cumple un papel clave en produccion por unidad de agua consumida. Para sostener buen desempeno conviene suelo cubierto y riego oportuno con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "eficiencia",
+        "uso",
+        "agua",
+        "produccion",
+        "por",
+        "unidad",
+        "consumida",
+        "suelo",
+        "cubierto",
+        "riego",
+        "oportuno"
+      ]
+    },
+    {
+      "id": 1071,
+      "category": "cultivo",
+      "questions": [
+        "Como influye senescencia foliar en cafe",
+        "Que es senescencia foliar en cafeto",
+        "Importancia de senescencia foliar para produccion de cafe",
+        "Como manejar senescencia foliar en un cafetal"
+      ],
+      "answer": "En cafe, senescencia foliar cumple un papel clave en recambio natural de hojas. Para sostener buen desempeno conviene diferenciar proceso normal de dano sanitario con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "senescencia",
+        "foliar",
+        "recambio",
+        "natural",
+        "hojas",
+        "diferenciar",
+        "proceso",
+        "normal",
+        "dano",
+        "sanitario"
+      ]
+    },
+    {
+      "id": 1072,
+      "category": "cultivo",
+      "questions": [
+        "Como influye vigor vegetativo en cafe",
+        "Que es vigor vegetativo en cafeto",
+        "Importancia de vigor vegetativo para produccion de cafe",
+        "Como manejar vigor vegetativo en un cafetal"
+      ],
+      "answer": "En cafe, vigor vegetativo cumple un papel clave en capacidad de crecimiento de la planta. Para sostener buen desempeno conviene balancear carga productiva y nutricion con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "vigor",
+        "vegetativo",
+        "capacidad",
+        "crecimiento",
+        "planta",
+        "balancear",
+        "carga",
+        "productiva",
+        "nutricion"
+      ]
+    },
+    {
+      "id": 1073,
+      "category": "cultivo",
+      "questions": [
+        "Como influye dominancia apical en cafe",
+        "Que es dominancia apical en cafeto",
+        "Importancia de dominancia apical para produccion de cafe",
+        "Como manejar dominancia apical en un cafetal"
+      ],
+      "answer": "En cafe, dominancia apical cumple un papel clave en control del crecimiento por eje principal. Para sostener buen desempeno conviene definir arquitectura por poda con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "dominancia",
+        "apical",
+        "control",
+        "del",
+        "crecimiento",
+        "por",
+        "eje",
+        "principal",
+        "definir",
+        "arquitectura",
+        "poda"
+      ]
+    },
+    {
+      "id": 1074,
+      "category": "cultivo",
+      "questions": [
+        "Como influye relacion raiz-parte aerea en cafe",
+        "Que es relacion raiz-parte aerea en cafeto",
+        "Importancia de relacion raiz-parte aerea para produccion de cafe",
+        "Como manejar relacion raiz-parte aerea en un cafetal"
+      ],
+      "answer": "En cafe, relacion raiz-parte aerea cumple un papel clave en equilibrio funcional de absorcion y demanda. Para sostener buen desempeno conviene proteger sistema radicular con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "relacion",
+        "raiz",
+        "parte",
+        "aerea",
+        "equilibrio",
+        "funcional",
+        "absorcion",
+        "demanda",
+        "proteger",
+        "sistema",
+        "radicular"
+      ]
+    },
+    {
+      "id": 1075,
+      "category": "cultivo",
+      "questions": [
+        "Como influye plasticidad fisiologica en cafe",
+        "Que es plasticidad fisiologica en cafeto",
+        "Importancia de plasticidad fisiologica para produccion de cafe",
+        "Como manejar plasticidad fisiologica en un cafetal"
+      ],
+      "answer": "En cafe, plasticidad fisiologica cumple un papel clave en adaptacion de planta al ambiente. Para sostener buen desempeno conviene manejo diferenciado por lote con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "plasticidad",
+        "fisiologica",
+        "adaptacion",
+        "planta",
+        "ambiente",
+        "manejo",
+        "diferenciado",
+        "por",
+        "lote"
+      ]
+    },
+    {
+      "id": 1076,
+      "category": "cultivo",
+      "questions": [
+        "Como influye aclimatacion al sombreo en cafe",
+        "Que es aclimatacion al sombreo en cafeto",
+        "Importancia de aclimatacion al sombreo para produccion de cafe",
+        "Como manejar aclimatacion al sombreo en un cafetal"
+      ],
+      "answer": "En cafe, aclimatacion al sombreo cumple un papel clave en ajuste de la planta a menor radiacion. Para sostener buen desempeno conviene regular sombra sin extremos con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "aclimatacion",
+        "sombreo",
+        "ajuste",
+        "planta",
+        "menor",
+        "radiacion",
+        "regular",
+        "sombra",
+        "sin",
+        "extremos"
+      ]
+    },
+    {
+      "id": 1077,
+      "category": "cultivo",
+      "questions": [
+        "Como influye respuesta a deficit hidrico en cafe",
+        "Que es respuesta a deficit hidrico en cafeto",
+        "Importancia de respuesta a deficit hidrico para produccion de cafe",
+        "Como manejar respuesta a deficit hidrico en un cafetal"
+      ],
+      "answer": "En cafe, respuesta a deficit hidrico cumple un papel clave en reduccion de crecimiento y cuajado. Para sostener buen desempeno conviene acciones preventivas por etapa con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "respuesta",
+        "deficit",
+        "hidrico",
+        "reduccion",
+        "crecimiento",
+        "cuajado",
+        "acciones",
+        "preventivas",
+        "por",
+        "etapa"
+      ]
+    },
+    {
+      "id": 1078,
+      "category": "cultivo",
+      "questions": [
+        "Como influye respuesta a calor excesivo en cafe",
+        "Que es respuesta a calor excesivo en cafeto",
+        "Importancia de respuesta a calor excesivo para produccion de cafe",
+        "Como manejar respuesta a calor excesivo en un cafetal"
+      ],
+      "answer": "En cafe, respuesta a calor excesivo cumple un papel clave en estres metabolico y baja eficiencia. Para sostener buen desempeno conviene manejo de microclima con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "respuesta",
+        "calor",
+        "excesivo",
+        "estres",
+        "metabolico",
+        "baja",
+        "eficiencia",
+        "manejo",
+        "microclima"
+      ]
+    },
+    {
+      "id": 1079,
+      "category": "cultivo",
+      "questions": [
+        "Como influye respuesta a frio en cafe",
+        "Que es respuesta a frio en cafeto",
+        "Importancia de respuesta a frio para produccion de cafe",
+        "Como manejar respuesta a frio en un cafetal"
+      ],
+      "answer": "En cafe, respuesta a frio cumple un papel clave en ralentizacion fisiologica. Para sostener buen desempeno conviene escoger variedad y manejo adecuados con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "respuesta",
+        "frio",
+        "ralentizacion",
+        "fisiologica",
+        "escoger",
+        "variedad",
+        "manejo",
+        "adecuados"
+      ]
+    },
+    {
+      "id": 1080,
+      "category": "cultivo",
+      "questions": [
+        "Como influye dinamica de floracion en cafe",
+        "Que es dinamica de floracion en cafeto",
+        "Importancia de dinamica de floracion para produccion de cafe",
+        "Como manejar dinamica de floracion en un cafetal"
+      ],
+      "answer": "En cafe, dinamica de floracion cumple un papel clave en sincronizacion de eventos reproductivos. Para sostener buen desempeno conviene planificar labores por ventana con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "dinamica",
+        "floracion",
+        "sincronizacion",
+        "eventos",
+        "reproductivos",
+        "planificar",
+        "labores",
+        "por",
+        "ventana"
+      ]
+    },
+    {
+      "id": 1081,
+      "category": "cultivo",
+      "questions": [
+        "Como influye retencion de frutos en cafe",
+        "Que es retencion de frutos en cafeto",
+        "Importancia de retencion de frutos para produccion de cafe",
+        "Como manejar retencion de frutos en un cafetal"
+      ],
+      "answer": "En cafe, retencion de frutos cumple un papel clave en capacidad de mantener carga. Para sostener buen desempeno conviene evitar estres en cuajado con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "retencion",
+        "frutos",
+        "capacidad",
+        "mantener",
+        "carga",
+        "evitar",
+        "estres",
+        "cuajado"
+      ]
+    },
+    {
+      "id": 1082,
+      "category": "cultivo",
+      "questions": [
+        "Como influye aborto floral en cafe",
+        "Que es aborto floral en cafeto",
+        "Importancia de aborto floral para produccion de cafe",
+        "Como manejar aborto floral en un cafetal"
+      ],
+      "answer": "En cafe, aborto floral cumple un papel clave en perdida de flores sin cuajado. Para sostener buen desempeno conviene corregir estres hidrico y nutricional con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "aborto",
+        "floral",
+        "perdida",
+        "flores",
+        "sin",
+        "cuajado",
+        "corregir",
+        "estres",
+        "hidrico",
+        "nutricional"
+      ]
+    },
+    {
+      "id": 1083,
+      "category": "cultivo",
+      "questions": [
+        "Como influye llenado fisiologico de fruto en cafe",
+        "Que es llenado fisiologico de fruto en cafeto",
+        "Importancia de llenado fisiologico de fruto para produccion de cafe",
+        "Como manejar llenado fisiologico de fruto en un cafetal"
+      ],
+      "answer": "En cafe, llenado fisiologico de fruto cumple un papel clave en acumulacion de materia seca. Para sostener buen desempeno conviene priorizar potasio y agua con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "llenado",
+        "fisiologico",
+        "fruto",
+        "acumulacion",
+        "materia",
+        "seca",
+        "priorizar",
+        "potasio",
+        "agua"
+      ]
+    },
+    {
+      "id": 1084,
+      "category": "cultivo",
+      "questions": [
+        "Como influye madurez fisiologica en cafe",
+        "Que es madurez fisiologica en cafeto",
+        "Importancia de madurez fisiologica para produccion de cafe",
+        "Como manejar madurez fisiologica en un cafetal"
+      ],
+      "answer": "En cafe, madurez fisiologica cumple un papel clave en momento de maximo potencial de calidad. Para sostener buen desempeno conviene cosecha en punto adecuado con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "madurez",
+        "fisiologica",
+        "momento",
+        "maximo",
+        "potencial",
+        "calidad",
+        "cosecha",
+        "punto",
+        "adecuado"
+      ]
+    },
+    {
+      "id": 1085,
+      "category": "cultivo",
+      "questions": [
+        "Como influye eficiencia radicular en cafe",
+        "Que es eficiencia radicular en cafeto",
+        "Importancia de eficiencia radicular para produccion de cafe",
+        "Como manejar eficiencia radicular en un cafetal"
+      ],
+      "answer": "En cafe, eficiencia radicular cumple un papel clave en absorcion efectiva de agua y nutrientes. Para sostener buen desempeno conviene suelo aireado y sin compactacion con seguimiento por lote.",
+      "keywords": [
+        "cafe",
+        "fisiologia",
+        "eficiencia",
+        "radicular",
+        "absorcion",
+        "efectiva",
+        "agua",
+        "nutrientes",
+        "suelo",
+        "aireado",
+        "sin",
+        "compactacion"
+      ]
+    },
+    {
+      "id": 1086,
+      "category": "general",
+      "questions": [
+        "Como afecta deficit de presion de vapor al cafe",
+        "Riesgo de deficit de presion de vapor en caficultura",
+        "Que hacer en cafe frente a deficit de presion de vapor",
+        "Estrategia para manejar deficit de presion de vapor en cafetal"
+      ],
+      "answer": "En cafe, deficit de presion de vapor puede generar que aumenta demanda evaporativa y estres. Para reducir impacto, conviene regular sombra y humedad de suelo y ajustar decisiones por lote.",
+      "keywords": [
+        "cafe",
+        "clima",
+        "riesgo",
+        "deficit",
+        "presion",
+        "vapor",
+        "aumenta",
+        "demanda",
+        "evaporativa",
+        "estres",
+        "regular",
+        "sombra",
+        "humedad",
+        "suelo"
+      ]
+    },
+    {
+      "id": 1087,
+      "category": "general",
+      "questions": [
+        "Como afecta radiacion solar alta al cafe",
+        "Riesgo de radiacion solar alta en caficultura",
+        "Que hacer en cafe frente a radiacion solar alta",
+        "Estrategia para manejar radiacion solar alta en cafetal"
+      ],
+      "answer": "En cafe, radiacion solar alta puede generar que eleva temperatura foliar y riesgo fisiologico. Para reducir impacto, conviene microclima con sombreo manejado y ajustar decisiones por lote.",
+      "keywords": [
+        "cafe",
+        "clima",
+        "riesgo",
+        "radiacion",
+        "solar",
+        "alta",
+        "eleva",
+        "temperatura",
+        "foliar",
+        "fisiologico",
+        "microclima",
+        "con",
+        "sombreo",
+        "manejado"
+      ]
+    },
+    {
+      "id": 1088,
+      "category": "general",
+      "questions": [
+        "Como afecta olas de calor al cafe",
+        "Riesgo de olas de calor en caficultura",
+        "Que hacer en cafe frente a olas de calor",
+        "Estrategia para manejar olas de calor en cafetal"
+      ],
+      "answer": "En cafe, olas de calor puede generar que afectan floracion, cuajado y llenado. Para reducir impacto, conviene plan de contingencia hidrica y ajustar decisiones por lote.",
+      "keywords": [
+        "cafe",
+        "clima",
+        "riesgo",
+        "olas",
+        "calor",
+        "afectan",
+        "floracion",
+        "cuajado",
+        "llenado",
+        "plan",
+        "contingencia",
+        "hidrica"
+      ]
+    },
+    {
+      "id": 1089,
+      "category": "general",
+      "questions": [
+        "Como afecta lluvias intensas al cafe",
+        "Riesgo de lluvias intensas en caficultura",
+        "Que hacer en cafe frente a lluvias intensas",
+        "Estrategia para manejar lluvias intensas en cafetal"
+      ],
+      "answer": "En cafe, lluvias intensas puede generar que incrementan erosion y enfermedades. Para reducir impacto, conviene drenaje y cobertura permanente y ajustar decisiones por lote.",
+      "keywords": [
+        "cafe",
+        "clima",
+        "riesgo",
+        "lluvias",
+        "intensas",
+        "incrementan",
+        "erosion",
+        "enfermedades",
+        "drenaje",
+        "cobertura",
+        "permanente"
+      ]
+    },
+    {
+      "id": 1090,
+      "category": "general",
+      "questions": [
+        "Como afecta lluvias erraticas al cafe",
+        "Riesgo de lluvias erraticas en caficultura",
+        "Que hacer en cafe frente a lluvias erraticas",
+        "Estrategia para manejar lluvias erraticas en cafetal"
+      ],
+      "answer": "En cafe, lluvias erraticas puede generar que desincronizan etapas fenologicas. Para reducir impacto, conviene calendario flexible por senales de campo y ajustar decisiones por lote.",
+      "keywords": [
+        "cafe",
+        "clima",
+        "riesgo",
+        "lluvias",
+        "erraticas",
+        "desincronizan",
+        "etapas",
+        "fenologicas",
+        "calendario",
+        "flexible",
+        "por",
+        "senales",
+        "campo"
+      ]
+    },
+    {
+      "id": 1091,
+      "category": "general",
+      "questions": [
+        "Como afecta sequias prolongadas al cafe",
+        "Riesgo de sequias prolongadas en caficultura",
+        "Que hacer en cafe frente a sequias prolongadas",
+        "Estrategia para manejar sequias prolongadas en cafetal"
+      ],
+      "answer": "En cafe, sequias prolongadas puede generar que reducen vigor y productividad. Para reducir impacto, conviene conservacion de agua y suelo y ajustar decisiones por lote.",
+      "keywords": [
+        "cafe",
+        "clima",
+        "riesgo",
+        "sequias",
+        "prolongadas",
+        "reducen",
+        "vigor",
+        "productividad",
+        "conservacion",
+        "agua",
+        "suelo"
+      ]
+    },
+    {
+      "id": 1092,
+      "category": "general",
+      "questions": [
+        "Como afecta noches frias al cafe",
+        "Riesgo de noches frias en caficultura",
+        "Que hacer en cafe frente a noches frias",
+        "Estrategia para manejar noches frias en cafetal"
+      ],
+      "answer": "En cafe, noches frias puede generar que ralentizan procesos metabolicos. Para reducir impacto, conviene ajuste de manejo por altura y ajustar decisiones por lote.",
+      "keywords": [
+        "cafe",
+        "clima",
+        "riesgo",
+        "noches",
+        "frias",
+        "ralentizan",
+        "procesos",
+        "metabolicos",
+        "ajuste",
+        "manejo",
+        "por",
+        "altura"
+      ]
+    },
+    {
+      "id": 1093,
+      "category": "general",
+      "questions": [
+        "Como afecta amplitud termica extrema al cafe",
+        "Riesgo de amplitud termica extrema en caficultura",
+        "Que hacer en cafe frente a amplitud termica extrema",
+        "Estrategia para manejar amplitud termica extrema en cafetal"
+      ],
+      "answer": "En cafe, amplitud termica extrema puede generar que genera variacion en desarrollo. Para reducir impacto, conviene manejo de lote por ambiente y ajustar decisiones por lote.",
+      "keywords": [
+        "cafe",
+        "clima",
+        "riesgo",
+        "amplitud",
+        "termica",
+        "extrema",
+        "genera",
+        "variacion",
+        "desarrollo",
+        "manejo",
+        "lote",
+        "por",
+        "ambiente"
+      ]
+    },
+    {
+      "id": 1094,
+      "category": "general",
+      "questions": [
+        "Como afecta vientos fuertes al cafe",
+        "Riesgo de vientos fuertes en caficultura",
+        "Que hacer en cafe frente a vientos fuertes",
+        "Estrategia para manejar vientos fuertes en cafetal"
+      ],
+      "answer": "En cafe, vientos fuertes puede generar que causan estres mecanico y evaporativo. Para reducir impacto, conviene barreras vivas y cobertura y ajustar decisiones por lote.",
+      "keywords": [
+        "cafe",
+        "clima",
+        "riesgo",
+        "vientos",
+        "fuertes",
+        "causan",
+        "estres",
+        "mecanico",
+        "evaporativo",
+        "barreras",
+        "vivas",
+        "cobertura"
+      ]
+    },
+    {
+      "id": 1095,
+      "category": "general",
+      "questions": [
+        "Como afecta humedad relativa muy alta al cafe",
+        "Riesgo de humedad relativa muy alta en caficultura",
+        "Que hacer en cafe frente a humedad relativa muy alta",
+        "Estrategia para manejar humedad relativa muy alta en cafetal"
+      ],
+      "answer": "En cafe, humedad relativa muy alta puede generar que favorece enfermedades foliares. Para reducir impacto, conviene aireacion de copa y vigilancia y ajustar decisiones por lote.",
+      "keywords": [
+        "cafe",
+        "clima",
+        "riesgo",
+        "humedad",
+        "relativa",
+        "muy",
+        "alta",
+        "favorece",
+        "enfermedades",
+        "foliares",
+        "aireacion",
+        "copa",
+        "vigilancia"
+      ]
+    },
+    {
+      "id": 1096,
+      "category": "general",
+      "questions": [
+        "Como afecta humedad relativa muy baja al cafe",
+        "Riesgo de humedad relativa muy baja en caficultura",
+        "Que hacer en cafe frente a humedad relativa muy baja",
+        "Estrategia para manejar humedad relativa muy baja en cafetal"
+      ],
+      "answer": "En cafe, humedad relativa muy baja puede generar que sube transpiracion y estres. Para reducir impacto, conviene proteger suelo y sombreo y ajustar decisiones por lote.",
+      "keywords": [
+        "cafe",
+        "clima",
+        "riesgo",
+        "humedad",
+        "relativa",
+        "muy",
+        "baja",
+        "sube",
+        "transpiracion",
+        "estres",
+        "proteger",
+        "suelo",
+        "sombreo"
+      ]
+    },
+    {
+      "id": 1097,
+      "category": "general",
+      "questions": [
+        "Como afecta eventos de granizo al cafe",
+        "Riesgo de eventos de granizo en caficultura",
+        "Que hacer en cafe frente a eventos de granizo",
+        "Estrategia para manejar eventos de granizo en cafetal"
+      ],
+      "answer": "En cafe, eventos de granizo puede generar que danan tejido y predisponen infecciones. Para reducir impacto, conviene sanidad inmediata postevento y ajustar decisiones por lote.",
+      "keywords": [
+        "cafe",
+        "clima",
+        "riesgo",
+        "eventos",
+        "granizo",
+        "danan",
+        "tejido",
+        "predisponen",
+        "infecciones",
+        "sanidad",
+        "inmediata",
+        "postevento"
+      ]
+    },
+    {
+      "id": 1098,
+      "category": "general",
+      "questions": [
+        "Como afecta escasez de agua al cafe",
+        "Riesgo de escasez de agua en caficultura",
+        "Que hacer en cafe frente a escasez de agua",
+        "Estrategia para manejar escasez de agua en cafetal"
+      ],
+      "answer": "En cafe, escasez de agua puede generar que limita etapas sensibles. Para reducir impacto, conviene priorizar uso en momentos criticos y ajustar decisiones por lote.",
+      "keywords": [
+        "cafe",
+        "clima",
+        "riesgo",
+        "escasez",
+        "agua",
+        "limita",
+        "etapas",
+        "sensibles",
+        "priorizar",
+        "uso",
+        "momentos",
+        "criticos"
+      ]
+    },
+    {
+      "id": 1099,
+      "category": "general",
+      "questions": [
+        "Como afecta exceso de nubosidad al cafe",
+        "Riesgo de exceso de nubosidad en caficultura",
+        "Que hacer en cafe frente a exceso de nubosidad",
+        "Estrategia para manejar exceso de nubosidad en cafetal"
+      ],
+      "answer": "En cafe, exceso de nubosidad puede generar que reduce fotosintesis neta. Para reducir impacto, conviene ajustar sombra y densidad y ajustar decisiones por lote.",
+      "keywords": [
+        "cafe",
+        "clima",
+        "riesgo",
+        "exceso",
+        "nubosidad",
+        "reduce",
+        "fotosintesis",
+        "neta",
+        "ajustar",
+        "sombra",
+        "densidad"
+      ]
+    },
+    {
+      "id": 1100,
+      "category": "general",
+      "questions": [
+        "Como afecta cambio de patrones de lluvia al cafe",
+        "Riesgo de cambio de patrones de lluvia en caficultura",
+        "Que hacer en cafe frente a cambio de patrones de lluvia",
+        "Estrategia para manejar cambio de patrones de lluvia en cafetal"
+      ],
+      "answer": "En cafe, cambio de patrones de lluvia puede generar que afecta calendario tradicional. Para reducir impacto, conviene manejo basado en monitoreo y ajustar decisiones por lote.",
+      "keywords": [
+        "cafe",
+        "clima",
+        "riesgo",
+        "cambio",
+        "patrones",
+        "lluvia",
+        "afecta",
+        "calendario",
+        "tradicional",
+        "manejo",
+        "basado",
+        "monitoreo"
+      ]
+    },
+    {
+      "id": 1101,
+      "category": "general",
+      "questions": [
+        "Como afecta riesgo de deslizamiento al cafe",
+        "Riesgo de riesgo de deslizamiento en caficultura",
+        "Que hacer en cafe frente a riesgo de deslizamiento",
+        "Estrategia para manejar riesgo de deslizamiento en cafetal"
+      ],
+      "answer": "En cafe, riesgo de deslizamiento puede generar que compromete estabilidad de laderas. Para reducir impacto, conviene obras de conservacion y ajustar decisiones por lote.",
+      "keywords": [
+        "cafe",
+        "clima",
+        "riesgo",
+        "deslizamiento",
+        "compromete",
+        "estabilidad",
+        "laderas",
+        "obras",
+        "conservacion"
+      ]
+    },
+    {
+      "id": 1102,
+      "category": "general",
+      "questions": [
+        "Como afecta saturacion de suelo al cafe",
+        "Riesgo de saturacion de suelo en caficultura",
+        "Que hacer en cafe frente a saturacion de suelo",
+        "Estrategia para manejar saturacion de suelo en cafetal"
+      ],
+      "answer": "En cafe, saturacion de suelo puede generar que asfixia radicular y decaimiento. Para reducir impacto, conviene drenajes funcionales y ajustar decisiones por lote.",
+      "keywords": [
+        "cafe",
+        "clima",
+        "riesgo",
+        "saturacion",
+        "suelo",
+        "asfixia",
+        "radicular",
+        "decaimiento",
+        "drenajes",
+        "funcionales"
+      ]
+    },
+    {
+      "id": 1103,
+      "category": "general",
+      "questions": [
+        "Como afecta evapotranspiracion elevada al cafe",
+        "Riesgo de evapotranspiracion elevada en caficultura",
+        "Que hacer en cafe frente a evapotranspiracion elevada",
+        "Estrategia para manejar evapotranspiracion elevada en cafetal"
+      ],
+      "answer": "En cafe, evapotranspiracion elevada puede generar que acelera perdida de agua. Para reducir impacto, conviene cobertura y manejo hidrico y ajustar decisiones por lote.",
+      "keywords": [
+        "cafe",
+        "clima",
+        "riesgo",
+        "evapotranspiracion",
+        "elevada",
+        "acelera",
+        "perdida",
+        "agua",
+        "cobertura",
+        "manejo",
+        "hidrico"
+      ]
+    },
+    {
+      "id": 1104,
+      "category": "general",
+      "questions": [
+        "Como afecta anomalias climaticas al cafe",
+        "Riesgo de anomalias climaticas en caficultura",
+        "Que hacer en cafe frente a anomalias climaticas",
+        "Estrategia para manejar anomalias climaticas en cafetal"
+      ],
+      "answer": "En cafe, anomalias climaticas puede generar que incrementan incertidumbre. Para reducir impacto, conviene plan preventivo por escenarios y ajustar decisiones por lote.",
+      "keywords": [
+        "cafe",
+        "clima",
+        "riesgo",
+        "anomalias",
+        "climaticas",
+        "incrementan",
+        "incertidumbre",
+        "plan",
+        "preventivo",
+        "por",
+        "escenarios"
+      ]
+    },
+    {
+      "id": 1105,
+      "category": "general",
+      "questions": [
+        "Como afecta variabilidad intra-anual al cafe",
+        "Riesgo de variabilidad intra-anual en caficultura",
+        "Que hacer en cafe frente a variabilidad intra-anual",
+        "Estrategia para manejar variabilidad intra-anual en cafetal"
+      ],
+      "answer": "En cafe, variabilidad intra-anual puede generar que heterogeneiza respuesta de lotes. Para reducir impacto, conviene sectorizacion de decisiones y ajustar decisiones por lote.",
+      "keywords": [
+        "cafe",
+        "clima",
+        "riesgo",
+        "variabilidad",
+        "intra",
+        "anual",
+        "heterogeneiza",
+        "respuesta",
+        "lotes",
+        "sectorizacion",
+        "decisiones"
+      ]
+    },
+    {
+      "id": 1106,
+      "category": "cosecha",
+      "questions": [
+        "Defecto vinagre en cafe",
+        "Por que aparece vinagre en taza de cafe",
+        "Como prevenir vinagre en cafe",
+        "Que hacer si sale vinagre en un lote de cafe"
+      ],
+      "answer": "En cafe, el defecto vinagre suele relacionarse con sobrefermentacion o higiene deficiente. Para prevenirlo conviene control estricto de tiempos, con trazabilidad desde cosecha hasta bodega.",
+      "keywords": [
+        "cafe",
+        "defecto",
+        "calidad",
+        "taza",
+        "vinagre",
+        "sobrefermentacion",
+        "higiene",
+        "deficiente",
+        "control",
+        "estricto",
+        "tiempos"
+      ]
+    },
+    {
+      "id": 1107,
+      "category": "cosecha",
+      "questions": [
+        "Defecto fenolico en cafe",
+        "Por que aparece fenolico en taza de cafe",
+        "Como prevenir fenolico en cafe",
+        "Que hacer si sale fenolico en un lote de cafe"
+      ],
+      "answer": "En cafe, el defecto fenolico suele relacionarse con contaminacion o fermentacion indeseada. Para prevenirlo conviene limpieza y segregacion de lotes, con trazabilidad desde cosecha hasta bodega.",
+      "keywords": [
+        "cafe",
+        "defecto",
+        "calidad",
+        "taza",
+        "fenolico",
+        "contaminacion",
+        "fermentacion",
+        "indeseada",
+        "limpieza",
+        "segregacion",
+        "lotes"
+      ]
+    },
+    {
+      "id": 1108,
+      "category": "cosecha",
+      "questions": [
+        "Defecto terroso en cafe",
+        "Por que aparece terroso en taza de cafe",
+        "Como prevenir terroso en cafe",
+        "Que hacer si sale terroso en un lote de cafe"
+      ],
+      "answer": "En cafe, el defecto terroso suele relacionarse con secado/almacenamiento inadecuado. Para prevenirlo conviene bodega seca y ventilada, con trazabilidad desde cosecha hasta bodega.",
+      "keywords": [
+        "cafe",
+        "defecto",
+        "calidad",
+        "taza",
+        "terroso",
+        "secado",
+        "almacenamiento",
+        "inadecuado",
+        "bodega",
+        "seca",
+        "ventilada"
+      ]
+    },
+    {
+      "id": 1109,
+      "category": "cosecha",
+      "questions": [
+        "Defecto mohoso en cafe",
+        "Por que aparece mohoso en taza de cafe",
+        "Como prevenir mohoso en cafe",
+        "Que hacer si sale mohoso en un lote de cafe"
+      ],
+      "answer": "En cafe, el defecto mohoso suele relacionarse con humedad alta en almacenamiento. Para prevenirlo conviene control de humedad final y estibas, con trazabilidad desde cosecha hasta bodega.",
+      "keywords": [
+        "cafe",
+        "defecto",
+        "calidad",
+        "taza",
+        "mohoso",
+        "humedad",
+        "alta",
+        "almacenamiento",
+        "control",
+        "final",
+        "estibas"
+      ]
+    },
+    {
+      "id": 1110,
+      "category": "cosecha",
+      "questions": [
+        "Defecto reposo en cafe",
+        "Por que aparece reposo en taza de cafe",
+        "Como prevenir reposo en cafe",
+        "Que hacer si sale reposo en un lote de cafe"
+      ],
+      "answer": "En cafe, el defecto reposo suele relacionarse con almacenamiento prolongado sin control. Para prevenirlo conviene rotacion de inventario, con trazabilidad desde cosecha hasta bodega.",
+      "keywords": [
+        "cafe",
+        "defecto",
+        "calidad",
+        "taza",
+        "reposo",
+        "almacenamiento",
+        "prolongado",
+        "sin",
+        "control",
+        "rotacion",
+        "inventario"
+      ]
+    },
+    {
+      "id": 1111,
+      "category": "cosecha",
+      "questions": [
+        "Defecto quaker en cafe",
+        "Por que aparece quaker en taza de cafe",
+        "Como prevenir quaker en cafe",
+        "Que hacer si sale quaker en un lote de cafe"
+      ],
+      "answer": "En cafe, el defecto quaker suele relacionarse con fruta inmadura en cosecha. Para prevenirlo conviene seleccion de madurez, con trazabilidad desde cosecha hasta bodega.",
+      "keywords": [
+        "cafe",
+        "defecto",
+        "calidad",
+        "taza",
+        "quaker",
+        "fruta",
+        "inmadura",
+        "cosecha",
+        "seleccion",
+        "madurez"
+      ]
+    },
+    {
+      "id": 1112,
+      "category": "cosecha",
+      "questions": [
+        "Defecto pasilla brocada en cafe",
+        "Por que aparece pasilla brocada en taza de cafe",
+        "Como prevenir pasilla brocada en cafe",
+        "Que hacer si sale pasilla brocada en un lote de cafe"
+      ],
+      "answer": "En cafe, el defecto pasilla brocada suele relacionarse con incidencia de broca. Para prevenirlo conviene manejo integrado y repase, con trazabilidad desde cosecha hasta bodega.",
+      "keywords": [
+        "cafe",
+        "defecto",
+        "calidad",
+        "taza",
+        "pasilla",
+        "brocada",
+        "incidencia",
+        "broca",
+        "manejo",
+        "integrado",
+        "repase"
+      ]
+    },
+    {
+      "id": 1113,
+      "category": "cosecha",
+      "questions": [
+        "Defecto fermento excesivo en cafe",
+        "Por que aparece fermento excesivo en taza de cafe",
+        "Como prevenir fermento excesivo en cafe",
+        "Que hacer si sale fermento excesivo en un lote de cafe"
+      ],
+      "answer": "En cafe, el defecto fermento excesivo suele relacionarse con tiempo/temperatura fuera de rango. Para prevenirlo conviene protocolos por lote, con trazabilidad desde cosecha hasta bodega.",
+      "keywords": [
+        "cafe",
+        "defecto",
+        "calidad",
+        "taza",
+        "fermento",
+        "excesivo",
+        "tiempo",
+        "temperatura",
+        "fuera",
+        "rango",
+        "protocolos",
+        "por",
+        "lote"
+      ]
+    },
+    {
+      "id": 1114,
+      "category": "cosecha",
+      "questions": [
+        "Defecto astringente en cafe",
+        "Por que aparece astringente en taza de cafe",
+        "Como prevenir astringente en cafe",
+        "Que hacer si sale astringente en un lote de cafe"
+      ],
+      "answer": "En cafe, el defecto astringente suele relacionarse con materia prima o proceso inconsistente. Para prevenirlo conviene estandarizar cosecha y beneficio, con trazabilidad desde cosecha hasta bodega.",
+      "keywords": [
+        "cafe",
+        "defecto",
+        "calidad",
+        "taza",
+        "astringente",
+        "materia",
+        "prima",
+        "proceso",
+        "inconsistente",
+        "estandarizar",
+        "cosecha",
+        "beneficio"
+      ]
+    },
+    {
+      "id": 1115,
+      "category": "cosecha",
+      "questions": [
+        "Defecto amargor alto en cafe",
+        "Por que aparece amargor alto en taza de cafe",
+        "Como prevenir amargor alto en cafe",
+        "Que hacer si sale amargor alto en un lote de cafe"
+      ],
+      "answer": "En cafe, el defecto amargor alto suele relacionarse con desbalance de proceso o tueste. Para prevenirlo conviene calibrar cadena completa, con trazabilidad desde cosecha hasta bodega.",
+      "keywords": [
+        "cafe",
+        "defecto",
+        "calidad",
+        "taza",
+        "amargor",
+        "alto",
+        "desbalance",
+        "proceso",
+        "tueste",
+        "calibrar",
+        "cadena",
+        "completa"
+      ]
+    },
+    {
+      "id": 1116,
+      "category": "cosecha",
+      "questions": [
+        "Defecto nota ahumada en cafe",
+        "Por que aparece nota ahumada en taza de cafe",
+        "Como prevenir nota ahumada en cafe",
+        "Que hacer si sale nota ahumada en un lote de cafe"
+      ],
+      "answer": "En cafe, el defecto nota ahumada suele relacionarse con exposicion a humo. Para prevenirlo conviene secado en ambiente limpio, con trazabilidad desde cosecha hasta bodega.",
+      "keywords": [
+        "cafe",
+        "defecto",
+        "calidad",
+        "taza",
+        "nota",
+        "ahumada",
+        "exposicion",
+        "humo",
+        "secado",
+        "ambiente",
+        "limpio"
+      ]
+    },
+    {
+      "id": 1117,
+      "category": "cosecha",
+      "questions": [
+        "Defecto nota medicinal en cafe",
+        "Por que aparece nota medicinal en taza de cafe",
+        "Como prevenir nota medicinal en cafe",
+        "Que hacer si sale nota medicinal en un lote de cafe"
+      ],
+      "answer": "En cafe, el defecto nota medicinal suele relacionarse con contaminacion de proceso. Para prevenirlo conviene higiene y control de contacto, con trazabilidad desde cosecha hasta bodega.",
+      "keywords": [
+        "cafe",
+        "defecto",
+        "calidad",
+        "taza",
+        "nota",
+        "medicinal",
+        "contaminacion",
+        "proceso",
+        "higiene",
+        "control",
+        "contacto"
+      ]
+    },
+    {
+      "id": 1118,
+      "category": "cosecha",
+      "questions": [
+        "Defecto nota metalica en cafe",
+        "Por que aparece nota metalica en taza de cafe",
+        "Como prevenir nota metalica en cafe",
+        "Que hacer si sale nota metalica en un lote de cafe"
+      ],
+      "answer": "En cafe, el defecto nota metalica suele relacionarse con equipos en mal estado. Para prevenirlo conviene mantenimiento de infraestructura, con trazabilidad desde cosecha hasta bodega.",
+      "keywords": [
+        "cafe",
+        "defecto",
+        "calidad",
+        "taza",
+        "nota",
+        "metalica",
+        "equipos",
+        "mal",
+        "estado",
+        "mantenimiento",
+        "infraestructura"
+      ]
+    },
+    {
+      "id": 1119,
+      "category": "cosecha",
+      "questions": [
+        "Defecto nota a moho en cafe",
+        "Por que aparece nota a moho en taza de cafe",
+        "Como prevenir nota a moho en cafe",
+        "Que hacer si sale nota a moho en un lote de cafe"
+      ],
+      "answer": "En cafe, el defecto nota a moho suele relacionarse con rehumectacion del pergamino. Para prevenirlo conviene control ambiental en bodega, con trazabilidad desde cosecha hasta bodega.",
+      "keywords": [
+        "cafe",
+        "defecto",
+        "calidad",
+        "taza",
+        "nota",
+        "moho",
+        "rehumectacion",
+        "del",
+        "pergamino",
+        "control",
+        "ambiental",
+        "bodega"
+      ]
+    },
+    {
+      "id": 1120,
+      "category": "cosecha",
+      "questions": [
+        "Defecto nota animal en cafe",
+        "Por que aparece nota animal en taza de cafe",
+        "Como prevenir nota animal en cafe",
+        "Que hacer si sale nota animal en un lote de cafe"
+      ],
+      "answer": "En cafe, el defecto nota animal suele relacionarse con mala higiene de area de proceso. Para prevenirlo conviene orden y saneamiento, con trazabilidad desde cosecha hasta bodega.",
+      "keywords": [
+        "cafe",
+        "defecto",
+        "calidad",
+        "taza",
+        "nota",
+        "animal",
+        "mala",
+        "higiene",
+        "area",
+        "proceso",
+        "orden",
+        "saneamiento"
+      ]
+    },
+    {
+      "id": 1121,
+      "category": "cosecha",
+      "questions": [
+        "Defecto nota salina en cafe",
+        "Por que aparece nota salina en taza de cafe",
+        "Como prevenir nota salina en cafe",
+        "Que hacer si sale nota salina en un lote de cafe"
+      ],
+      "answer": "En cafe, el defecto nota salina suele relacionarse con agua de proceso no adecuada. Para prevenirlo conviene control de calidad de agua, con trazabilidad desde cosecha hasta bodega.",
+      "keywords": [
+        "cafe",
+        "defecto",
+        "calidad",
+        "taza",
+        "nota",
+        "salina",
+        "agua",
+        "proceso",
+        "adecuada",
+        "control"
+      ]
+    },
+    {
+      "id": 1122,
+      "category": "cosecha",
+      "questions": [
+        "Defecto nota a heno en cafe",
+        "Por que aparece nota a heno en taza de cafe",
+        "Como prevenir nota a heno en cafe",
+        "Que hacer si sale nota a heno en un lote de cafe"
+      ],
+      "answer": "En cafe, el defecto nota a heno suele relacionarse con secado irregular. Para prevenirlo conviene uniformar capa y volteo, con trazabilidad desde cosecha hasta bodega.",
+      "keywords": [
+        "cafe",
+        "defecto",
+        "calidad",
+        "taza",
+        "nota",
+        "heno",
+        "secado",
+        "irregular",
+        "uniformar",
+        "capa",
+        "volteo"
+      ]
+    },
+    {
+      "id": 1123,
+      "category": "cosecha",
+      "questions": [
+        "Defecto nota a madera en cafe",
+        "Por que aparece nota a madera en taza de cafe",
+        "Como prevenir nota a madera en cafe",
+        "Que hacer si sale nota a madera en un lote de cafe"
+      ],
+      "answer": "En cafe, el defecto nota a madera suele relacionarse con almacenamiento inadecuado. Para prevenirlo conviene aislar lotes de olores externos, con trazabilidad desde cosecha hasta bodega.",
+      "keywords": [
+        "cafe",
+        "defecto",
+        "calidad",
+        "taza",
+        "nota",
+        "madera",
+        "almacenamiento",
+        "inadecuado",
+        "aislar",
+        "lotes",
+        "olores",
+        "externos"
+      ]
+    },
+    {
+      "id": 1124,
+      "category": "cosecha",
+      "questions": [
+        "Defecto nota avinagrada en cafe",
+        "Por que aparece nota avinagrada en taza de cafe",
+        "Como prevenir nota avinagrada en cafe",
+        "Que hacer si sale nota avinagrada en un lote de cafe"
+      ],
+      "answer": "En cafe, el defecto nota avinagrada suele relacionarse con fermentacion excesiva. Para prevenirlo conviene seguimiento por horas, con trazabilidad desde cosecha hasta bodega.",
+      "keywords": [
+        "cafe",
+        "defecto",
+        "calidad",
+        "taza",
+        "nota",
+        "avinagrada",
+        "fermentacion",
+        "excesiva",
+        "seguimiento",
+        "por",
+        "horas"
+      ]
+    },
+    {
+      "id": 1125,
+      "category": "cosecha",
+      "questions": [
+        "Defecto defecto primario en cafe",
+        "Por que aparece defecto primario en taza de cafe",
+        "Como prevenir defecto primario en cafe",
+        "Que hacer si sale defecto primario en un lote de cafe"
+      ],
+      "answer": "En cafe, el defecto defecto primario suele relacionarse con fallas graves en materia prima/proceso. Para prevenirlo conviene intervenir origen del problema, con trazabilidad desde cosecha hasta bodega.",
+      "keywords": [
+        "cafe",
+        "defecto",
+        "calidad",
+        "taza",
+        "primario",
+        "fallas",
+        "graves",
+        "materia",
+        "prima",
+        "proceso",
+        "intervenir",
+        "origen",
+        "del",
+        "problema"
+      ]
+    },
+    {
+      "id": 1126,
+      "category": "diagnostico",
+      "questions": [
+        "Como diagnosticar caida de rendimiento en cafe",
+        "Causas de caida de rendimiento en cafetal",
+        "Que revisar cuando hay caida de rendimiento en cafe",
+        "Plan de accion para caida de rendimiento en finca cafetera"
+      ],
+      "answer": "Cuando aparece caida de rendimiento en cafe, normalmente se asocia a lote envejecido, nutricion ineficiente o sanidad tardia. Lo recomendable es validar datos por lote, priorizar causa principal y ejecutar acciones medibles de corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "causa",
+        "caida",
+        "rendimiento",
+        "lote",
+        "envejecido",
+        "nutricion",
+        "ineficiente",
+        "sanidad",
+        "tardia"
+      ]
+    },
+    {
+      "id": 1127,
+      "category": "diagnostico",
+      "questions": [
+        "Como diagnosticar uniformidad baja en cafe",
+        "Causas de uniformidad baja en cafetal",
+        "Que revisar cuando hay uniformidad baja en cafe",
+        "Plan de accion para uniformidad baja en finca cafetera"
+      ],
+      "answer": "Cuando aparece uniformidad baja en cafe, normalmente se asocia a fallas de establecimiento y manejo desigual. Lo recomendable es validar datos por lote, priorizar causa principal y ejecutar acciones medibles de corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "causa",
+        "uniformidad",
+        "baja",
+        "fallas",
+        "establecimiento",
+        "manejo",
+        "desigual"
+      ]
+    },
+    {
+      "id": 1128,
+      "category": "diagnostico",
+      "questions": [
+        "Como diagnosticar alta incidencia de plaga en cafe",
+        "Causas de alta incidencia de plaga en cafetal",
+        "Que revisar cuando hay alta incidencia de plaga en cafe",
+        "Plan de accion para alta incidencia de plaga en finca cafetera"
+      ],
+      "answer": "Cuando aparece alta incidencia de plaga en cafe, normalmente se asocia a monitoreo insuficiente y controles fuera de tiempo. Lo recomendable es validar datos por lote, priorizar causa principal y ejecutar acciones medibles de corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "causa",
+        "alta",
+        "incidencia",
+        "plaga",
+        "monitoreo",
+        "insuficiente",
+        "controles",
+        "fuera",
+        "tiempo"
+      ]
+    },
+    {
+      "id": 1129,
+      "category": "diagnostico",
+      "questions": [
+        "Como diagnosticar alta incidencia de enfermedad en cafe",
+        "Causas de alta incidencia de enfermedad en cafetal",
+        "Que revisar cuando hay alta incidencia de enfermedad en cafe",
+        "Plan de accion para alta incidencia de enfermedad en finca cafetera"
+      ],
+      "answer": "Cuando aparece alta incidencia de enfermedad en cafe, normalmente se asocia a ambiente predisponente y falta de prevencion. Lo recomendable es validar datos por lote, priorizar causa principal y ejecutar acciones medibles de corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "causa",
+        "alta",
+        "incidencia",
+        "enfermedad",
+        "ambiente",
+        "predisponente",
+        "falta",
+        "prevencion"
+      ]
+    },
+    {
+      "id": 1130,
+      "category": "diagnostico",
+      "questions": [
+        "Como diagnosticar costo elevado por kilo en cafe",
+        "Causas de costo elevado por kilo en cafetal",
+        "Que revisar cuando hay costo elevado por kilo en cafe",
+        "Plan de accion para costo elevado por kilo en finca cafetera"
+      ],
+      "answer": "Cuando aparece costo elevado por kilo en cafe, normalmente se asocia a reprocesos, ineficiencia y baja productividad. Lo recomendable es validar datos por lote, priorizar causa principal y ejecutar acciones medibles de corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "causa",
+        "costo",
+        "elevado",
+        "por",
+        "kilo",
+        "reprocesos",
+        "ineficiencia",
+        "baja",
+        "productividad"
+      ]
+    },
+    {
+      "id": 1131,
+      "category": "diagnostico",
+      "questions": [
+        "Como diagnosticar precio de venta bajo en cafe",
+        "Causas de precio de venta bajo en cafetal",
+        "Que revisar cuando hay precio de venta bajo en cafe",
+        "Plan de accion para precio de venta bajo en finca cafetera"
+      ],
+      "answer": "Cuando aparece precio de venta bajo en cafe, normalmente se asocia a calidad inconsistente y poca trazabilidad. Lo recomendable es validar datos por lote, priorizar causa principal y ejecutar acciones medibles de corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "causa",
+        "precio",
+        "venta",
+        "bajo",
+        "calidad",
+        "inconsistente",
+        "poca",
+        "trazabilidad"
+      ]
+    },
+    {
+      "id": 1132,
+      "category": "diagnostico",
+      "questions": [
+        "Como diagnosticar mala taza recurrente en cafe",
+        "Causas de mala taza recurrente en cafetal",
+        "Que revisar cuando hay mala taza recurrente en cafe",
+        "Plan de accion para mala taza recurrente en finca cafetera"
+      ],
+      "answer": "Cuando aparece mala taza recurrente en cafe, normalmente se asocia a variabilidad de cosecha y poscosecha. Lo recomendable es validar datos por lote, priorizar causa principal y ejecutar acciones medibles de corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "causa",
+        "mala",
+        "taza",
+        "recurrente",
+        "variabilidad",
+        "cosecha",
+        "poscosecha"
+      ]
+    },
+    {
+      "id": 1133,
+      "category": "diagnostico",
+      "questions": [
+        "Como diagnosticar brotes debiles en cafe",
+        "Causas de brotes debiles en cafetal",
+        "Que revisar cuando hay brotes debiles en cafe",
+        "Plan de accion para brotes debiles en finca cafetera"
+      ],
+      "answer": "Cuando aparece brotes debiles en cafe, normalmente se asocia a desbalance nutricional y estres hidrico. Lo recomendable es validar datos por lote, priorizar causa principal y ejecutar acciones medibles de corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "causa",
+        "brotes",
+        "debiles",
+        "desbalance",
+        "nutricional",
+        "estres",
+        "hidrico"
+      ]
+    },
+    {
+      "id": 1134,
+      "category": "diagnostico",
+      "questions": [
+        "Como diagnosticar floracion irregular en cafe",
+        "Causas de floracion irregular en cafetal",
+        "Que revisar cuando hay floracion irregular en cafe",
+        "Plan de accion para floracion irregular en finca cafetera"
+      ],
+      "answer": "Cuando aparece floracion irregular en cafe, normalmente se asocia a estres en fase previa y manejo no sincronizado. Lo recomendable es validar datos por lote, priorizar causa principal y ejecutar acciones medibles de corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "causa",
+        "floracion",
+        "irregular",
+        "estres",
+        "fase",
+        "previa",
+        "manejo",
+        "sincronizado"
+      ]
+    },
+    {
+      "id": 1135,
+      "category": "diagnostico",
+      "questions": [
+        "Como diagnosticar cuajado bajo en cafe",
+        "Causas de cuajado bajo en cafetal",
+        "Que revisar cuando hay cuajado bajo en cafe",
+        "Plan de accion para cuajado bajo en finca cafetera"
+      ],
+      "answer": "Cuando aparece cuajado bajo en cafe, normalmente se asocia a agua/nutricion inadecuada en etapa critica. Lo recomendable es validar datos por lote, priorizar causa principal y ejecutar acciones medibles de corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "causa",
+        "cuajado",
+        "bajo",
+        "agua",
+        "nutricion",
+        "inadecuada",
+        "etapa",
+        "critica"
+      ]
+    },
+    {
+      "id": 1136,
+      "category": "diagnostico",
+      "questions": [
+        "Como diagnosticar llenado deficiente en cafe",
+        "Causas de llenado deficiente en cafetal",
+        "Que revisar cuando hay llenado deficiente en cafe",
+        "Plan de accion para llenado deficiente en finca cafetera"
+      ],
+      "answer": "Cuando aparece llenado deficiente en cafe, normalmente se asocia a carga excesiva y desequilibrio de potasio/agua. Lo recomendable es validar datos por lote, priorizar causa principal y ejecutar acciones medibles de corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "causa",
+        "llenado",
+        "deficiente",
+        "carga",
+        "excesiva",
+        "desequilibrio",
+        "potasio",
+        "agua"
+      ]
+    },
+    {
+      "id": 1137,
+      "category": "diagnostico",
+      "questions": [
+        "Como diagnosticar defoliacion acelerada en cafe",
+        "Causas de defoliacion acelerada en cafetal",
+        "Que revisar cuando hay defoliacion acelerada en cafe",
+        "Plan de accion para defoliacion acelerada en finca cafetera"
+      ],
+      "answer": "Cuando aparece defoliacion acelerada en cafe, normalmente se asocia a presion sanitaria o estres acumulado. Lo recomendable es validar datos por lote, priorizar causa principal y ejecutar acciones medibles de corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "causa",
+        "defoliacion",
+        "acelerada",
+        "presion",
+        "sanitaria",
+        "estres",
+        "acumulado"
+      ]
+    },
+    {
+      "id": 1138,
+      "category": "diagnostico",
+      "questions": [
+        "Como diagnosticar mortalidad de plantas en cafe",
+        "Causas de mortalidad de plantas en cafetal",
+        "Que revisar cuando hay mortalidad de plantas en cafe",
+        "Plan de accion para mortalidad de plantas en finca cafetera"
+      ],
+      "answer": "Cuando aparece mortalidad de plantas en cafe, normalmente se asocia a problemas de raiz, drenaje o establecimiento. Lo recomendable es validar datos por lote, priorizar causa principal y ejecutar acciones medibles de corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "causa",
+        "mortalidad",
+        "plantas",
+        "problemas",
+        "raiz",
+        "drenaje",
+        "establecimiento"
+      ]
+    },
+    {
+      "id": 1139,
+      "category": "diagnostico",
+      "questions": [
+        "Como diagnosticar pasilla alta en cafe",
+        "Causas de pasilla alta en cafetal",
+        "Que revisar cuando hay pasilla alta en cafe",
+        "Plan de accion para pasilla alta en finca cafetera"
+      ],
+      "answer": "Cuando aparece pasilla alta en cafe, normalmente se asocia a cosecha no selectiva o dano de plagas. Lo recomendable es validar datos por lote, priorizar causa principal y ejecutar acciones medibles de corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "causa",
+        "pasilla",
+        "alta",
+        "cosecha",
+        "selectiva",
+        "dano",
+        "plagas"
+      ]
+    },
+    {
+      "id": 1140,
+      "category": "diagnostico",
+      "questions": [
+        "Como diagnosticar moho en bodega en cafe",
+        "Causas de moho en bodega en cafetal",
+        "Que revisar cuando hay moho en bodega en cafe",
+        "Plan de accion para moho en bodega en finca cafetera"
+      ],
+      "answer": "Cuando aparece moho en bodega en cafe, normalmente se asocia a humedad y ventilacion insuficiente. Lo recomendable es validar datos por lote, priorizar causa principal y ejecutar acciones medibles de corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "causa",
+        "moho",
+        "bodega",
+        "humedad",
+        "ventilacion",
+        "insuficiente"
+      ]
+    },
+    {
+      "id": 1141,
+      "category": "diagnostico",
+      "questions": [
+        "Como diagnosticar fermentacion fuera de control en cafe",
+        "Causas de fermentacion fuera de control en cafetal",
+        "Que revisar cuando hay fermentacion fuera de control en cafe",
+        "Plan de accion para fermentacion fuera de control en finca cafetera"
+      ],
+      "answer": "Cuando aparece fermentacion fuera de control en cafe, normalmente se asocia a falta de protocolo y seguimiento. Lo recomendable es validar datos por lote, priorizar causa principal y ejecutar acciones medibles de corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "causa",
+        "fermentacion",
+        "fuera",
+        "control",
+        "falta",
+        "protocolo",
+        "seguimiento"
+      ]
+    },
+    {
+      "id": 1142,
+      "category": "diagnostico",
+      "questions": [
+        "Como diagnosticar tiempos muertos en beneficio en cafe",
+        "Causas de tiempos muertos en beneficio en cafetal",
+        "Que revisar cuando hay tiempos muertos en beneficio en cafe",
+        "Plan de accion para tiempos muertos en beneficio en finca cafetera"
+      ],
+      "answer": "Cuando aparece tiempos muertos en beneficio en cafe, normalmente se asocia a flujo operativo mal disenhado. Lo recomendable es validar datos por lote, priorizar causa principal y ejecutar acciones medibles de corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "causa",
+        "tiempos",
+        "muertos",
+        "beneficio",
+        "flujo",
+        "operativo",
+        "mal",
+        "disenhado"
+      ]
+    },
+    {
+      "id": 1143,
+      "category": "diagnostico",
+      "questions": [
+        "Como diagnosticar fatiga del suelo en cafe",
+        "Causas de fatiga del suelo en cafetal",
+        "Que revisar cuando hay fatiga del suelo en cafe",
+        "Plan de accion para fatiga del suelo en finca cafetera"
+      ],
+      "answer": "Cuando aparece fatiga del suelo en cafe, normalmente se asocia a baja materia organica y manejo extractivo. Lo recomendable es validar datos por lote, priorizar causa principal y ejecutar acciones medibles de corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "causa",
+        "fatiga",
+        "del",
+        "suelo",
+        "baja",
+        "materia",
+        "organica",
+        "manejo",
+        "extractivo"
+      ]
+    },
+    {
+      "id": 1144,
+      "category": "diagnostico",
+      "questions": [
+        "Como diagnosticar erosion creciente en cafe",
+        "Causas de erosion creciente en cafetal",
+        "Que revisar cuando hay erosion creciente en cafe",
+        "Plan de accion para erosion creciente en finca cafetera"
+      ],
+      "answer": "Cuando aparece erosion creciente en cafe, normalmente se asocia a cobertura insuficiente y pendiente sin proteccion. Lo recomendable es validar datos por lote, priorizar causa principal y ejecutar acciones medibles de corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "causa",
+        "erosion",
+        "creciente",
+        "cobertura",
+        "insuficiente",
+        "pendiente",
+        "sin",
+        "proteccion"
+      ]
+    },
+    {
+      "id": 1145,
+      "category": "diagnostico",
+      "questions": [
+        "Como diagnosticar rotacion de personal alta en cafe",
+        "Causas de rotacion de personal alta en cafetal",
+        "Que revisar cuando hay rotacion de personal alta en cafe",
+        "Plan de accion para rotacion de personal alta en finca cafetera"
+      ],
+      "answer": "Cuando aparece rotacion de personal alta en cafe, normalmente se asocia a capacitacion e incentivos inadecuados. Lo recomendable es validar datos por lote, priorizar causa principal y ejecutar acciones medibles de corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "causa",
+        "rotacion",
+        "personal",
+        "alta",
+        "capacitacion",
+        "incentivos",
+        "inadecuados"
+      ]
+    },
+    {
+      "id": 1146,
+      "category": "general",
+      "questions": [
+        "Como optimizar mano de obra de cosecha en cafe",
+        "Impacto de mano de obra de cosecha en rentabilidad cafetera",
+        "Que medir en mano de obra de cosecha para mejorar cafe",
+        "Estrategia para reducir costo de mano de obra de cosecha en cafe"
+      ],
+      "answer": "En cafe, mano de obra de cosecha influye directamente en el costo por kilo. La palanca principal de mejora es productividad por recolector y calidad de seleccion, con seguimiento por lote y por etapa del proceso.",
+      "keywords": [
+        "cafe",
+        "costos",
+        "rentabilidad",
+        "mano",
+        "obra",
+        "cosecha",
+        "productividad",
+        "por",
+        "recolector",
+        "calidad",
+        "seleccion"
+      ]
+    },
+    {
+      "id": 1147,
+      "category": "general",
+      "questions": [
+        "Como optimizar mano de obra de beneficio en cafe",
+        "Impacto de mano de obra de beneficio en rentabilidad cafetera",
+        "Que medir en mano de obra de beneficio para mejorar cafe",
+        "Estrategia para reducir costo de mano de obra de beneficio en cafe"
+      ],
+      "answer": "En cafe, mano de obra de beneficio influye directamente en el costo por kilo. La palanca principal de mejora es flujo de proceso y reprocesos, con seguimiento por lote y por etapa del proceso.",
+      "keywords": [
+        "cafe",
+        "costos",
+        "rentabilidad",
+        "mano",
+        "obra",
+        "beneficio",
+        "flujo",
+        "proceso",
+        "reprocesos"
+      ]
+    },
+    {
+      "id": 1148,
+      "category": "general",
+      "questions": [
+        "Como optimizar fertilizantes en cafe",
+        "Impacto de fertilizantes en rentabilidad cafetera",
+        "Que medir en fertilizantes para mejorar cafe",
+        "Estrategia para reducir costo de fertilizantes en cafe"
+      ],
+      "answer": "En cafe, fertilizantes influye directamente en el costo por kilo. La palanca principal de mejora es eficiencia de aplicacion y respuesta por lote, con seguimiento por lote y por etapa del proceso.",
+      "keywords": [
+        "cafe",
+        "costos",
+        "rentabilidad",
+        "fertilizantes",
+        "eficiencia",
+        "aplicacion",
+        "respuesta",
+        "por",
+        "lote"
+      ]
+    },
+    {
+      "id": 1149,
+      "category": "general",
+      "questions": [
+        "Como optimizar enmiendas en cafe",
+        "Impacto de enmiendas en rentabilidad cafetera",
+        "Que medir en enmiendas para mejorar cafe",
+        "Estrategia para reducir costo de enmiendas en cafe"
+      ],
+      "answer": "En cafe, enmiendas influye directamente en el costo por kilo. La palanca principal de mejora es impacto en salud de suelo y retorno tecnico, con seguimiento por lote y por etapa del proceso.",
+      "keywords": [
+        "cafe",
+        "costos",
+        "rentabilidad",
+        "enmiendas",
+        "impacto",
+        "salud",
+        "suelo",
+        "retorno",
+        "tecnico"
+      ]
+    },
+    {
+      "id": 1150,
+      "category": "general",
+      "questions": [
+        "Como optimizar control sanitario en cafe",
+        "Impacto de control sanitario en rentabilidad cafetera",
+        "Que medir en control sanitario para mejorar cafe",
+        "Estrategia para reducir costo de control sanitario en cafe"
+      ],
+      "answer": "En cafe, control sanitario influye directamente en el costo por kilo. La palanca principal de mejora es momento de intervencion y foco, con seguimiento por lote y por etapa del proceso.",
+      "keywords": [
+        "cafe",
+        "costos",
+        "rentabilidad",
+        "control",
+        "sanitario",
+        "momento",
+        "intervencion",
+        "foco"
+      ]
+    },
+    {
+      "id": 1151,
+      "category": "general",
+      "questions": [
+        "Como optimizar manejo de arvenses en cafe",
+        "Impacto de manejo de arvenses en rentabilidad cafetera",
+        "Que medir en manejo de arvenses para mejorar cafe",
+        "Estrategia para reducir costo de manejo de arvenses en cafe"
+      ],
+      "answer": "En cafe, manejo de arvenses influye directamente en el costo por kilo. La palanca principal de mejora es frecuencia y metodo de control, con seguimiento por lote y por etapa del proceso.",
+      "keywords": [
+        "cafe",
+        "costos",
+        "rentabilidad",
+        "manejo",
+        "arvenses",
+        "frecuencia",
+        "metodo",
+        "control"
+      ]
+    },
+    {
+      "id": 1152,
+      "category": "general",
+      "questions": [
+        "Como optimizar poda y renovacion en cafe",
+        "Impacto de poda y renovacion en rentabilidad cafetera",
+        "Que medir en poda y renovacion para mejorar cafe",
+        "Estrategia para reducir costo de poda y renovacion en cafe"
+      ],
+      "answer": "En cafe, poda y renovacion influye directamente en el costo por kilo. La palanca principal de mejora es planificacion anual y escala de ejecucion, con seguimiento por lote y por etapa del proceso.",
+      "keywords": [
+        "cafe",
+        "costos",
+        "rentabilidad",
+        "poda",
+        "renovacion",
+        "planificacion",
+        "anual",
+        "escala",
+        "ejecucion"
+      ]
+    },
+    {
+      "id": 1153,
+      "category": "general",
+      "questions": [
+        "Como optimizar secado en cafe",
+        "Impacto de secado en rentabilidad cafetera",
+        "Que medir en secado para mejorar cafe",
+        "Estrategia para reducir costo de secado en cafe"
+      ],
+      "answer": "En cafe, secado influye directamente en el costo por kilo. La palanca principal de mejora es energia, tiempo y perdida de calidad, con seguimiento por lote y por etapa del proceso.",
+      "keywords": [
+        "cafe",
+        "costos",
+        "rentabilidad",
+        "secado",
+        "energia",
+        "tiempo",
+        "perdida",
+        "calidad"
+      ]
+    },
+    {
+      "id": 1154,
+      "category": "general",
+      "questions": [
+        "Como optimizar almacenamiento en cafe",
+        "Impacto de almacenamiento en rentabilidad cafetera",
+        "Que medir en almacenamiento para mejorar cafe",
+        "Estrategia para reducir costo de almacenamiento en cafe"
+      ],
+      "answer": "En cafe, almacenamiento influye directamente en el costo por kilo. La palanca principal de mejora es mermas por humedad y deterioro, con seguimiento por lote y por etapa del proceso.",
+      "keywords": [
+        "cafe",
+        "costos",
+        "rentabilidad",
+        "almacenamiento",
+        "mermas",
+        "por",
+        "humedad",
+        "deterioro"
+      ]
+    },
+    {
+      "id": 1155,
+      "category": "general",
+      "questions": [
+        "Como optimizar transporte interno en cafe",
+        "Impacto de transporte interno en rentabilidad cafetera",
+        "Que medir en transporte interno para mejorar cafe",
+        "Estrategia para reducir costo de transporte interno en cafe"
+      ],
+      "answer": "En cafe, transporte interno influye directamente en el costo por kilo. La palanca principal de mejora es organizacion de rutas y tiempos, con seguimiento por lote y por etapa del proceso.",
+      "keywords": [
+        "cafe",
+        "costos",
+        "rentabilidad",
+        "transporte",
+        "interno",
+        "organizacion",
+        "rutas",
+        "tiempos"
+      ]
+    },
+    {
+      "id": 1156,
+      "category": "general",
+      "questions": [
+        "Como optimizar infraestructura de beneficio en cafe",
+        "Impacto de infraestructura de beneficio en rentabilidad cafetera",
+        "Que medir en infraestructura de beneficio para mejorar cafe",
+        "Estrategia para reducir costo de infraestructura de beneficio en cafe"
+      ],
+      "answer": "En cafe, infraestructura de beneficio influye directamente en el costo por kilo. La palanca principal de mejora es mantenimiento y eficiencia operativa, con seguimiento por lote y por etapa del proceso.",
+      "keywords": [
+        "cafe",
+        "costos",
+        "rentabilidad",
+        "infraestructura",
+        "beneficio",
+        "mantenimiento",
+        "eficiencia",
+        "operativa"
+      ]
+    },
+    {
+      "id": 1157,
+      "category": "general",
+      "questions": [
+        "Como optimizar agua de proceso en cafe",
+        "Impacto de agua de proceso en rentabilidad cafetera",
+        "Que medir en agua de proceso para mejorar cafe",
+        "Estrategia para reducir costo de agua de proceso en cafe"
+      ],
+      "answer": "En cafe, agua de proceso influye directamente en el costo por kilo. La palanca principal de mejora es consumo por kilo procesado, con seguimiento por lote y por etapa del proceso.",
+      "keywords": [
+        "cafe",
+        "costos",
+        "rentabilidad",
+        "agua",
+        "proceso",
+        "consumo",
+        "por",
+        "kilo",
+        "procesado"
+      ]
+    },
+    {
+      "id": 1158,
+      "category": "general",
+      "questions": [
+        "Como optimizar insumos de limpieza en cafe",
+        "Impacto de insumos de limpieza en rentabilidad cafetera",
+        "Que medir en insumos de limpieza para mejorar cafe",
+        "Estrategia para reducir costo de insumos de limpieza en cafe"
+      ],
+      "answer": "En cafe, insumos de limpieza influye directamente en el costo por kilo. La palanca principal de mejora es impacto en inocuidad del proceso, con seguimiento por lote y por etapa del proceso.",
+      "keywords": [
+        "cafe",
+        "costos",
+        "rentabilidad",
+        "insumos",
+        "limpieza",
+        "impacto",
+        "inocuidad",
+        "del",
+        "proceso"
+      ]
+    },
+    {
+      "id": 1159,
+      "category": "general",
+      "questions": [
+        "Como optimizar costos administrativos en cafe",
+        "Impacto de costos administrativos en rentabilidad cafetera",
+        "Que medir en costos administrativos para mejorar cafe",
+        "Estrategia para reducir costo de costos administrativos en cafe"
+      ],
+      "answer": "En cafe, costos administrativos influye directamente en el costo por kilo. La palanca principal de mejora es organizacion de registros y decisiones, con seguimiento por lote y por etapa del proceso.",
+      "keywords": [
+        "cafe",
+        "costos",
+        "rentabilidad",
+        "administrativos",
+        "organizacion",
+        "registros",
+        "decisiones"
+      ]
+    },
+    {
+      "id": 1160,
+      "category": "general",
+      "questions": [
+        "Como optimizar capacitacion del equipo en cafe",
+        "Impacto de capacitacion del equipo en rentabilidad cafetera",
+        "Que medir en capacitacion del equipo para mejorar cafe",
+        "Estrategia para reducir costo de capacitacion del equipo en cafe"
+      ],
+      "answer": "En cafe, capacitacion del equipo influye directamente en el costo por kilo. La palanca principal de mejora es reduccion de errores de operacion, con seguimiento por lote y por etapa del proceso.",
+      "keywords": [
+        "cafe",
+        "costos",
+        "rentabilidad",
+        "capacitacion",
+        "del",
+        "equipo",
+        "reduccion",
+        "errores",
+        "operacion"
+      ]
+    },
+    {
+      "id": 1161,
+      "category": "general",
+      "questions": [
+        "Como optimizar seguimiento tecnico en cafe",
+        "Impacto de seguimiento tecnico en rentabilidad cafetera",
+        "Que medir en seguimiento tecnico para mejorar cafe",
+        "Estrategia para reducir costo de seguimiento tecnico en cafe"
+      ],
+      "answer": "En cafe, seguimiento tecnico influye directamente en el costo por kilo. La palanca principal de mejora es mejora continua y prevencion de perdidas, con seguimiento por lote y por etapa del proceso.",
+      "keywords": [
+        "cafe",
+        "costos",
+        "rentabilidad",
+        "seguimiento",
+        "tecnico",
+        "mejora",
+        "continua",
+        "prevencion",
+        "perdidas"
+      ]
+    },
+    {
+      "id": 1162,
+      "category": "general",
+      "questions": [
+        "Como optimizar renovacion de lotes en cafe",
+        "Impacto de renovacion de lotes en rentabilidad cafetera",
+        "Que medir en renovacion de lotes para mejorar cafe",
+        "Estrategia para reducir costo de renovacion de lotes en cafe"
+      ],
+      "answer": "En cafe, renovacion de lotes influye directamente en el costo por kilo. La palanca principal de mejora es retorno de inversion por bloque, con seguimiento por lote y por etapa del proceso.",
+      "keywords": [
+        "cafe",
+        "costos",
+        "rentabilidad",
+        "renovacion",
+        "lotes",
+        "retorno",
+        "inversion",
+        "por",
+        "bloque"
+      ]
+    },
+    {
+      "id": 1163,
+      "category": "general",
+      "questions": [
+        "Como optimizar control de calidad en cafe",
+        "Impacto de control de calidad en rentabilidad cafetera",
+        "Que medir en control de calidad para mejorar cafe",
+        "Estrategia para reducir costo de control de calidad en cafe"
+      ],
+      "answer": "En cafe, control de calidad influye directamente en el costo por kilo. La palanca principal de mejora es diferencial de precio por consistencia, con seguimiento por lote y por etapa del proceso.",
+      "keywords": [
+        "cafe",
+        "costos",
+        "rentabilidad",
+        "control",
+        "calidad",
+        "diferencial",
+        "precio",
+        "por",
+        "consistencia"
+      ]
+    },
+    {
+      "id": 1164,
+      "category": "general",
+      "questions": [
+        "Como optimizar comercializacion en cafe",
+        "Impacto de comercializacion en rentabilidad cafetera",
+        "Que medir en comercializacion para mejorar cafe",
+        "Estrategia para reducir costo de comercializacion en cafe"
+      ],
+      "answer": "En cafe, comercializacion influye directamente en el costo por kilo. La palanca principal de mejora es valor agregado por trazabilidad, con seguimiento por lote y por etapa del proceso.",
+      "keywords": [
+        "cafe",
+        "costos",
+        "rentabilidad",
+        "comercializacion",
+        "valor",
+        "agregado",
+        "por",
+        "trazabilidad"
+      ]
+    },
+    {
+      "id": 1165,
+      "category": "general",
+      "questions": [
+        "Como optimizar riesgo climatico en cafe",
+        "Impacto de riesgo climatico en rentabilidad cafetera",
+        "Que medir en riesgo climatico para mejorar cafe",
+        "Estrategia para reducir costo de riesgo climatico en cafe"
+      ],
+      "answer": "En cafe, riesgo climatico influye directamente en el costo por kilo. La palanca principal de mejora es costos evitados por preparacion, con seguimiento por lote y por etapa del proceso.",
+      "keywords": [
+        "cafe",
+        "costos",
+        "rentabilidad",
+        "riesgo",
+        "climatico",
+        "evitados",
+        "por",
+        "preparacion"
+      ]
+    },
+    {
+      "id": 1166,
+      "category": "general",
+      "questions": [
+        "Como implementar buenas practicas agricolas en cafe",
+        "Por que es importante buenas practicas agricolas en finca cafetera",
+        "Que exige buenas practicas agricolas para productores de cafe",
+        "Checklist de buenas practicas agricolas para cafetal"
+      ],
+      "answer": "En caficultura, buenas practicas agricolas sirve para ordenar manejo de campo y seguridad. Implementarlo con responsables y registros claros mejora confiabilidad tecnica y comercial.",
+      "keywords": [
+        "cafe",
+        "cumplimiento",
+        "gestion",
+        "buenas",
+        "practicas",
+        "agricolas",
+        "ordenar",
+        "manejo",
+        "campo",
+        "seguridad"
+      ]
+    },
+    {
+      "id": 1167,
+      "category": "general",
+      "questions": [
+        "Como implementar buenas practicas de manufactura en cafe",
+        "Por que es importante buenas practicas de manufactura en finca cafetera",
+        "Que exige buenas practicas de manufactura para productores de cafe",
+        "Checklist de buenas practicas de manufactura para cafetal"
+      ],
+      "answer": "En caficultura, buenas practicas de manufactura sirve para asegurar higiene en beneficio. Implementarlo con responsables y registros claros mejora confiabilidad tecnica y comercial.",
+      "keywords": [
+        "cafe",
+        "cumplimiento",
+        "gestion",
+        "buenas",
+        "practicas",
+        "manufactura",
+        "asegurar",
+        "higiene",
+        "beneficio"
+      ]
+    },
+    {
+      "id": 1168,
+      "category": "general",
+      "questions": [
+        "Como implementar inocuidad en cafe",
+        "Por que es importante inocuidad en finca cafetera",
+        "Que exige inocuidad para productores de cafe",
+        "Checklist de inocuidad para cafetal"
+      ],
+      "answer": "En caficultura, inocuidad sirve para reducir riesgos de contaminacion. Implementarlo con responsables y registros claros mejora confiabilidad tecnica y comercial.",
+      "keywords": [
+        "cafe",
+        "cumplimiento",
+        "gestion",
+        "inocuidad",
+        "reducir",
+        "riesgos",
+        "contaminacion"
+      ]
+    },
+    {
+      "id": 1169,
+      "category": "general",
+      "questions": [
+        "Como implementar trazabilidad documental en cafe",
+        "Por que es importante trazabilidad documental en finca cafetera",
+        "Que exige trazabilidad documental para productores de cafe",
+        "Checklist de trazabilidad documental para cafetal"
+      ],
+      "answer": "En caficultura, trazabilidad documental sirve para responder auditorias con evidencia. Implementarlo con responsables y registros claros mejora confiabilidad tecnica y comercial.",
+      "keywords": [
+        "cafe",
+        "cumplimiento",
+        "gestion",
+        "trazabilidad",
+        "documental",
+        "responder",
+        "auditorias",
+        "con",
+        "evidencia"
+      ]
+    },
+    {
+      "id": 1170,
+      "category": "general",
+      "questions": [
+        "Como implementar seguridad y salud en trabajo en cafe",
+        "Por que es importante seguridad y salud en trabajo en finca cafetera",
+        "Que exige seguridad y salud en trabajo para productores de cafe",
+        "Checklist de seguridad y salud en trabajo para cafetal"
+      ],
+      "answer": "En caficultura, seguridad y salud en trabajo sirve para proteger equipo y continuidad. Implementarlo con responsables y registros claros mejora confiabilidad tecnica y comercial.",
+      "keywords": [
+        "cafe",
+        "cumplimiento",
+        "gestion",
+        "seguridad",
+        "salud",
+        "trabajo",
+        "proteger",
+        "equipo",
+        "continuidad"
+      ]
+    },
+    {
+      "id": 1171,
+      "category": "general",
+      "questions": [
+        "Como implementar gestion de residuos en cafe",
+        "Por que es importante gestion de residuos en finca cafetera",
+        "Que exige gestion de residuos para productores de cafe",
+        "Checklist de gestion de residuos para cafetal"
+      ],
+      "answer": "En caficultura, gestion de residuos sirve para cumplimiento ambiental. Implementarlo con responsables y registros claros mejora confiabilidad tecnica y comercial.",
+      "keywords": [
+        "cafe",
+        "cumplimiento",
+        "gestion",
+        "residuos",
+        "ambiental"
+      ]
+    },
+    {
+      "id": 1172,
+      "category": "general",
+      "questions": [
+        "Como implementar manejo de aguas residuales en cafe",
+        "Por que es importante manejo de aguas residuales en finca cafetera",
+        "Que exige manejo de aguas residuales para productores de cafe",
+        "Checklist de manejo de aguas residuales para cafetal"
+      ],
+      "answer": "En caficultura, manejo de aguas residuales sirve para disminuir impacto en fuentes hidricas. Implementarlo con responsables y registros claros mejora confiabilidad tecnica y comercial.",
+      "keywords": [
+        "cafe",
+        "cumplimiento",
+        "gestion",
+        "manejo",
+        "aguas",
+        "residuales",
+        "disminuir",
+        "impacto",
+        "fuentes",
+        "hidricas"
+      ]
+    },
+    {
+      "id": 1173,
+      "category": "general",
+      "questions": [
+        "Como implementar proteccion de rondas hidricas en cafe",
+        "Por que es importante proteccion de rondas hidricas en finca cafetera",
+        "Que exige proteccion de rondas hidricas para productores de cafe",
+        "Checklist de proteccion de rondas hidricas para cafetal"
+      ],
+      "answer": "En caficultura, proteccion de rondas hidricas sirve para conservar recurso agua. Implementarlo con responsables y registros claros mejora confiabilidad tecnica y comercial.",
+      "keywords": [
+        "cafe",
+        "cumplimiento",
+        "gestion",
+        "proteccion",
+        "rondas",
+        "hidricas",
+        "conservar",
+        "recurso",
+        "agua"
+      ]
+    },
+    {
+      "id": 1174,
+      "category": "general",
+      "questions": [
+        "Como implementar almacenamiento seguro de insumos en cafe",
+        "Por que es importante almacenamiento seguro de insumos en finca cafetera",
+        "Que exige almacenamiento seguro de insumos para productores de cafe",
+        "Checklist de almacenamiento seguro de insumos para cafetal"
+      ],
+      "answer": "En caficultura, almacenamiento seguro de insumos sirve para prevenir incidentes. Implementarlo con responsables y registros claros mejora confiabilidad tecnica y comercial.",
+      "keywords": [
+        "cafe",
+        "cumplimiento",
+        "gestion",
+        "almacenamiento",
+        "seguro",
+        "insumos",
+        "prevenir",
+        "incidentes"
+      ]
+    },
+    {
+      "id": 1175,
+      "category": "general",
+      "questions": [
+        "Como implementar calibracion de equipos en cafe",
+        "Por que es importante calibracion de equipos en finca cafetera",
+        "Que exige calibracion de equipos para productores de cafe",
+        "Checklist de calibracion de equipos para cafetal"
+      ],
+      "answer": "En caficultura, calibracion de equipos sirve para garantizar consistencia operativa. Implementarlo con responsables y registros claros mejora confiabilidad tecnica y comercial.",
+      "keywords": [
+        "cafe",
+        "cumplimiento",
+        "gestion",
+        "calibracion",
+        "equipos",
+        "garantizar",
+        "consistencia",
+        "operativa"
+      ]
+    },
+    {
+      "id": 1176,
+      "category": "general",
+      "questions": [
+        "Como implementar control de plagas en bodega en cafe",
+        "Por que es importante control de plagas en bodega en finca cafetera",
+        "Que exige control de plagas en bodega para productores de cafe",
+        "Checklist de control de plagas en bodega para cafetal"
+      ],
+      "answer": "En caficultura, control de plagas en bodega sirve para evitar deterioro del cafe. Implementarlo con responsables y registros claros mejora confiabilidad tecnica y comercial.",
+      "keywords": [
+        "cafe",
+        "cumplimiento",
+        "gestion",
+        "control",
+        "plagas",
+        "bodega",
+        "evitar",
+        "deterioro",
+        "del"
+      ]
+    },
+    {
+      "id": 1177,
+      "category": "general",
+      "questions": [
+        "Como implementar plan de contingencia en cafe",
+        "Por que es importante plan de contingencia en finca cafetera",
+        "Que exige plan de contingencia para productores de cafe",
+        "Checklist de plan de contingencia para cafetal"
+      ],
+      "answer": "En caficultura, plan de contingencia sirve para responder ante eventos criticos. Implementarlo con responsables y registros claros mejora confiabilidad tecnica y comercial.",
+      "keywords": [
+        "cafe",
+        "cumplimiento",
+        "gestion",
+        "plan",
+        "contingencia",
+        "responder",
+        "ante",
+        "eventos",
+        "criticos"
+      ]
+    },
+    {
+      "id": 1178,
+      "category": "general",
+      "questions": [
+        "Como implementar registro de capacitaciones en cafe",
+        "Por que es importante registro de capacitaciones en finca cafetera",
+        "Que exige registro de capacitaciones para productores de cafe",
+        "Checklist de registro de capacitaciones para cafetal"
+      ],
+      "answer": "En caficultura, registro de capacitaciones sirve para evidenciar mejora de competencias. Implementarlo con responsables y registros claros mejora confiabilidad tecnica y comercial.",
+      "keywords": [
+        "cafe",
+        "cumplimiento",
+        "gestion",
+        "registro",
+        "capacitaciones",
+        "evidenciar",
+        "mejora",
+        "competencias"
+      ]
+    },
+    {
+      "id": 1179,
+      "category": "general",
+      "questions": [
+        "Como implementar inspecciones internas en cafe",
+        "Por que es importante inspecciones internas en finca cafetera",
+        "Que exige inspecciones internas para productores de cafe",
+        "Checklist de inspecciones internas para cafetal"
+      ],
+      "answer": "En caficultura, inspecciones internas sirve para detectar fallas antes de auditoria. Implementarlo con responsables y registros claros mejora confiabilidad tecnica y comercial.",
+      "keywords": [
+        "cafe",
+        "cumplimiento",
+        "gestion",
+        "inspecciones",
+        "internas",
+        "detectar",
+        "fallas",
+        "antes",
+        "auditoria"
+      ]
+    },
+    {
+      "id": 1180,
+      "category": "general",
+      "questions": [
+        "Como implementar indicadores de cumplimiento en cafe",
+        "Por que es importante indicadores de cumplimiento en finca cafetera",
+        "Que exige indicadores de cumplimiento para productores de cafe",
+        "Checklist de indicadores de cumplimiento para cafetal"
+      ],
+      "answer": "En caficultura, indicadores de cumplimiento sirve para medir avance de la finca. Implementarlo con responsables y registros claros mejora confiabilidad tecnica y comercial.",
+      "keywords": [
+        "cafe",
+        "cumplimiento",
+        "gestion",
+        "indicadores",
+        "medir",
+        "avance",
+        "finca"
+      ]
+    },
+    {
+      "id": 1181,
+      "category": "general",
+      "questions": [
+        "Que significa VPD en cafe",
+        "Para que sirve VPD en caficultura",
+        "Como aplicar VPD en una finca cafetera",
+        "Importancia de VPD para productores de cafe"
+      ],
+      "answer": "En cafe, VPD se refiere a deficit de presion de vapor entre hoja y aire. Su valor practico esta en interpretar demanda evaporativa y riesgo de estres para mejorar decisiones en campo y proceso.",
+      "keywords": [
+        "cafe",
+        "acronimo",
+        "vpd",
+        "deficit",
+        "presion",
+        "vapor",
+        "entre",
+        "hoja",
+        "aire",
+        "interpretar",
+        "demanda",
+        "evaporativa",
+        "riesgo",
+        "estres"
+      ]
+    },
+    {
+      "id": 1182,
+      "category": "general",
+      "questions": [
+        "Que significa BPA en cafe",
+        "Para que sirve BPA en caficultura",
+        "Como aplicar BPA en una finca cafetera",
+        "Importancia de BPA para productores de cafe"
+      ],
+      "answer": "En cafe, BPA se refiere a buenas practicas agricolas. Su valor practico esta en ordenar manejo tecnico y ambiental en finca para mejorar decisiones en campo y proceso.",
+      "keywords": [
+        "cafe",
+        "acronimo",
+        "bpa",
+        "buenas",
+        "practicas",
+        "agricolas",
+        "ordenar",
+        "manejo",
+        "tecnico",
+        "ambiental",
+        "finca"
+      ]
+    },
+    {
+      "id": 1183,
+      "category": "general",
+      "questions": [
+        "Que significa BPM en cafe",
+        "Para que sirve BPM en caficultura",
+        "Como aplicar BPM en una finca cafetera",
+        "Importancia de BPM para productores de cafe"
+      ],
+      "answer": "En cafe, BPM se refiere a buenas practicas de manufactura. Su valor practico esta en asegurar higiene y consistencia en beneficio para mejorar decisiones en campo y proceso.",
+      "keywords": [
+        "cafe",
+        "acronimo",
+        "bpm",
+        "buenas",
+        "practicas",
+        "manufactura",
+        "asegurar",
+        "higiene",
+        "consistencia",
+        "beneficio"
+      ]
+    },
+    {
+      "id": 1184,
+      "category": "fertilizacion",
+      "questions": [
+        "Que significa CIC en cafe",
+        "Para que sirve CIC en caficultura",
+        "Como aplicar CIC en una finca cafetera",
+        "Importancia de CIC para productores de cafe"
+      ],
+      "answer": "En cafe, CIC se refiere a capacidad de intercambio cationico del suelo. Su valor practico esta en entender reserva y retencion de nutrientes para mejorar decisiones en campo y proceso.",
+      "keywords": [
+        "cafe",
+        "acronimo",
+        "cic",
+        "capacidad",
+        "intercambio",
+        "cationico",
+        "del",
+        "suelo",
+        "entender",
+        "reserva",
+        "retencion",
+        "nutrientes"
+      ]
+    },
+    {
+      "id": 1185,
+      "category": "fertilizacion",
+      "questions": [
+        "Que significa CE en cafe",
+        "Para que sirve CE en caficultura",
+        "Como aplicar CE en una finca cafetera",
+        "Importancia de CE para productores de cafe"
+      ],
+      "answer": "En cafe, CE se refiere a conductividad electrica. Su valor practico esta en detectar riesgo por acumulacion de sales para mejorar decisiones en campo y proceso.",
+      "keywords": [
+        "cafe",
+        "acronimo",
+        "conductividad",
+        "electrica",
+        "detectar",
+        "riesgo",
+        "por",
+        "acumulacion",
+        "sales"
+      ]
+    },
+    {
+      "id": 1186,
+      "category": "fertilizacion",
+      "questions": [
+        "Que significa MO en cafe",
+        "Para que sirve MO en caficultura",
+        "Como aplicar MO en una finca cafetera",
+        "Importancia de MO para productores de cafe"
+      ],
+      "answer": "En cafe, MO se refiere a materia organica del suelo. Su valor practico esta en mejorar estructura y retencion de agua para mejorar decisiones en campo y proceso.",
+      "keywords": [
+        "cafe",
+        "acronimo",
+        "materia",
+        "organica",
+        "del",
+        "suelo",
+        "mejorar",
+        "estructura",
+        "retencion",
+        "agua"
+      ]
+    },
+    {
+      "id": 1187,
+      "category": "general",
+      "questions": [
+        "Que significa ROI en cafe",
+        "Para que sirve ROI en caficultura",
+        "Como aplicar ROI en una finca cafetera",
+        "Importancia de ROI para productores de cafe"
+      ],
+      "answer": "En cafe, ROI se refiere a retorno sobre la inversion. Su valor practico esta en priorizar inversiones de mayor impacto para mejorar decisiones en campo y proceso.",
+      "keywords": [
+        "cafe",
+        "acronimo",
+        "roi",
+        "retorno",
+        "sobre",
+        "inversion",
+        "priorizar",
+        "inversiones",
+        "mayor",
+        "impacto"
+      ]
+    },
+    {
+      "id": 1188,
+      "category": "fertilizacion",
+      "questions": [
+        "Que significa pH en cafe",
+        "Para que sirve pH en caficultura",
+        "Como aplicar pH en una finca cafetera",
+        "Importancia de pH para productores de cafe"
+      ],
+      "answer": "En cafe, pH se refiere a medida de acidez o alcalinidad. Su valor practico esta en ajustar disponibilidad de nutrientes para mejorar decisiones en campo y proceso.",
+      "keywords": [
+        "cafe",
+        "acronimo",
+        "medida",
+        "acidez",
+        "alcalinidad",
+        "ajustar",
+        "disponibilidad",
+        "nutrientes"
+      ]
+    },
+    {
+      "id": 1189,
+      "category": "cosecha",
+      "questions": [
+        "Que significa aw en cafe",
+        "Para que sirve aw en caficultura",
+        "Como aplicar aw en una finca cafetera",
+        "Importancia de aw para productores de cafe"
+      ],
+      "answer": "En cafe, aw se refiere a actividad de agua en cafe. Su valor practico esta en definir estabilidad de almacenamiento para mejorar decisiones en campo y proceso.",
+      "keywords": [
+        "cafe",
+        "acronimo",
+        "actividad",
+        "agua",
+        "definir",
+        "estabilidad",
+        "almacenamiento"
+      ]
+    },
+    {
+      "id": 1190,
+      "category": "general",
+      "questions": [
+        "Que significa SCA en cafe",
+        "Para que sirve SCA en caficultura",
+        "Como aplicar SCA en una finca cafetera",
+        "Importancia de SCA para productores de cafe"
+      ],
+      "answer": "En cafe, SCA se refiere a criterios de evaluacion sensorial de cafe. Su valor practico esta en estandarizar lenguaje de calidad para mejorar decisiones en campo y proceso.",
+      "keywords": [
+        "cafe",
+        "acronimo",
+        "sca",
+        "criterios",
+        "evaluacion",
+        "sensorial",
+        "estandarizar",
+        "lenguaje",
+        "calidad"
+      ]
+    },
+    {
+      "id": 1191,
+      "category": "plagas",
+      "questions": [
+        "Que significa MIP en cafe",
+        "Para que sirve MIP en caficultura",
+        "Como aplicar MIP en una finca cafetera",
+        "Importancia de MIP para productores de cafe"
+      ],
+      "answer": "En cafe, MIP se refiere a manejo integrado de plagas. Su valor practico esta en reducir danos con enfoque preventivo para mejorar decisiones en campo y proceso.",
+      "keywords": [
+        "cafe",
+        "acronimo",
+        "mip",
+        "manejo",
+        "integrado",
+        "plagas",
+        "reducir",
+        "danos",
+        "con",
+        "enfoque",
+        "preventivo"
+      ]
+    },
+    {
+      "id": 1192,
+      "category": "general",
+      "questions": [
+        "Que significa SST en cafe",
+        "Para que sirve SST en caficultura",
+        "Como aplicar SST en una finca cafetera",
+        "Importancia de SST para productores de cafe"
+      ],
+      "answer": "En cafe, SST se refiere a seguridad y salud en trabajo. Su valor practico esta en proteger personas y continuidad operativa para mejorar decisiones en campo y proceso.",
+      "keywords": [
+        "cafe",
+        "acronimo",
+        "sst",
+        "seguridad",
+        "salud",
+        "trabajo",
+        "proteger",
+        "personas",
+        "continuidad",
+        "operativa"
+      ]
     }
   ]
 }

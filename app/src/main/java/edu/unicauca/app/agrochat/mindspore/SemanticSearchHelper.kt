@@ -146,11 +146,26 @@ class SemanticSearchHelper(private val context: Context) {
         "catimor" to "variedad",
         "bourbon" to "variedad",
         "tabi" to "variedad",
+        "fotosintesis" to "fisiologia",
+        "transpiracion" to "fisiologia",
+        "respiracion" to "fisiologia",
+        "estomas" to "fisiologia",
+        "estoma" to "fisiologia",
+        "evapotranspiracion" to "clima",
+        "vpd" to "clima",
         "broca" to "broca",
         "roya" to "roya",
-        "catacion" to "calidad",
         "fragancia" to "calidad",
         "retrogusto" to "calidad",
+        "inocuidad" to "calidad",
+        "bpa" to "gestion",
+        "bpm" to "gestion",
+        "auditoria" to "gestion",
+        "costos" to "gestion",
+        "margen" to "gestion",
+        "rentabilidad" to "gestion",
+        "flujo" to "gestion",
+        "roi" to "gestion",
         "inoculo" to "enfermedad",
         "umbral" to "plaga"
     )
@@ -171,14 +186,17 @@ class SemanticSearchHelper(private val context: Context) {
         "siembra" to setOf("siembra", "cultivo", "semilla", "vivero", "colino", "densidad", "variedad"),
         "cosecha" to setOf("cosecha", "maduro", "cereza", "recoleccion", "repase"),
         "poda" to setOf("poda", "podar", "zoqueo", "zoca", "renovacion"),
+        "fisiologia" to setOf("fotosintesis", "transpiracion", "respiracion", "estoma", "estomas", "vigor"),
+        "clima" to setOf("clima", "evapotranspiracion", "vpd", "radiacion", "sequias", "lluvias", "humedad"),
         "calidad" to setOf(
             "calidad", "taza", "defecto", "pasilla", "quaker", "trazabilidad", "especialidad",
             "catacion", "sensorial", "aroma", "sabor", "fragancia", "acidez", "cuerpo", "dulzor",
             "retrogusto", "balance", "microlote", "prima"
         ),
+        "gestion" to setOf("costos", "margen", "rentabilidad", "roi", "flujo", "auditoria", "bpa", "bpm"),
         "poscosecha" to setOf(
             "beneficio", "despulpado", "fermentacion", "secado", "pergamino", "humedad",
-            "honey", "natural", "lavado", "anaerobia", "bodega"
+            "honey", "natural", "lavado", "anaerobia", "bodega", "actividad", "agua", "inocuidad"
         )
     )
     private val genericIntentTokens: Set<String> = run {
@@ -862,7 +880,10 @@ class SemanticSearchHelper(private val context: Context) {
             "catacion", "sensorial", "fragancia", "aroma", "acidez", "cuerpo", "dulzor",
             "honey", "natural", "lavado", "anaerobia", "bodega", "mucilago", "actividad",
             "agua", "broca", "roya", "cercospora", "antracnosis", "llaga", "castillo",
-            "caturra", "geisha", "catimor", "bourbon", "tabi",
+            "caturra", "geisha", "catimor", "bourbon", "tabi", "fotosintesis",
+            "transpiracion", "respiracion", "estoma", "estomas", "evapotranspiracion",
+            "vpd", "inocuidad", "bpa", "bpm", "auditoria", "costos", "margen",
+            "rentabilidad", "flujo", "roi",
             // Otros
             "mejor", "cuando", "como", "porque", "cantidad", "frecuencia"
         )
@@ -915,6 +936,10 @@ class SemanticSearchHelper(private val context: Context) {
             setOf("arvenses", "maleza", "cobertura"),
             setOf("maduro", "maduracion", "cereza"),
             setOf("grano", "pasilla", "quaker"),
+            setOf("fotosintesis", "transpiracion", "respiracion", "estoma"),
+            setOf("evapotranspiracion", "vpd", "clima"),
+            setOf("inocuidad", "higiene", "limpieza"),
+            setOf("costos", "margen", "rentabilidad", "roi"),
             setOf("mejor", "optimo", "recomendado", "ideal"),
             setOf("cuando", "epoca", "momento", "tiempo"),
             setOf("como", "manera", "forma", "metodo")
