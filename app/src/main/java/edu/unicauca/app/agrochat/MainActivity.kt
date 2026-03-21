@@ -367,6 +367,7 @@ class MainActivity : ComponentActivity() {
 
         feedbackStore = FeedbackEventStore(applicationContext)
         AppLogger.log("Feedback", "Storage path: ${feedbackStore.storagePath()}")
+        AppLogger.log("Feedback", "Sync manifest: ${feedbackStore.syncManifestPath()}")
 
         // Cargar preferencias
         loadPreferences()
@@ -785,7 +786,7 @@ class MainActivity : ComponentActivity() {
                 val response = humanizeTechnicalTerms(sanitizeAssistantResponse(responseMeta.response))
                 
                 val fullResponse = buildString {
-                    append("**${result.displayName}**\n")
+                    append("${result.displayName}\n")
                     append("Cultivo: ${result.crop}\n")
                     append("Confianza: ${(result.confidence * 100).toInt()}%\n\n")
                     
@@ -795,7 +796,7 @@ class MainActivity : ComponentActivity() {
                         append("Enfermedad detectada.\n\n")
                     }
                     
-                    append("**Recomendación:**\n")
+                    append("Recomendación:\n")
                     append(response)
                 }
 
@@ -1417,8 +1418,33 @@ class MainActivity : ComponentActivity() {
             if (normalized.isNotBlank()) hasContent = true
         }
 
-        val sanitized = cleanedLines.joinToString("\n").trim()
-        return if (sanitized.isNotBlank()) sanitized else original
+        val sanitized = stripUserFacingMarkdown(cleanedLines.joinToString("\n").trim())
+        return if (sanitized.isNotBlank()) sanitized else stripUserFacingMarkdown(original)
+    }
+
+    /**
+     * Remueve decoradores de Markdown para evitar que el usuario vea marcas como **texto**.
+     */
+    private fun stripUserFacingMarkdown(text: String): String {
+        if (text.isBlank()) return text
+
+        var normalized = text
+            .replace(Regex("\\*\\*(.*?)\\*\\*"), "$1")
+            .replace(Regex("__(.*?)__"), "$1")
+            .replace(Regex("`([^`]*)`"), "$1")
+            .replace(Regex("\\[([^\\]]+)]\\(([^)]+)\\)"), "$1")
+            .replace(Regex("(?m)^\\s*#{1,6}\\s*"), "")
+            .replace(Regex("(?m)^\\s*[-*]\\s+"), "• ")
+            .replace("**", "")
+            .replace("__", "")
+            .replace("`", "")
+
+        normalized = normalized
+            .replace(Regex("[ \\t]{2,}"), " ")
+            .replace(Regex("\\n{3,}"), "\n\n")
+            .trim()
+
+        return normalized
     }
 
     /**
