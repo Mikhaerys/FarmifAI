@@ -7713,6 +7713,5449 @@
         "seguimiento",
         "productor"
       ]
+    },
+    {
+      "id": 487,
+      "category": "plagas",
+      "questions": [
+        "Como manejar broca del cafe en cafe",
+        "Control de broca del cafe en cafetal",
+        "Que hacer con broca del cafe en cultivo de cafe",
+        "Plan de manejo para broca del cafe en cafe"
+      ],
+      "answer": "En cafe, broca del cafe suele causar perforaciones en fruto, pasilla y merma de rendimiento. El riesgo sube con cosecha incompleta y focos residuales. Para manejarlo conviene repase riguroso, monitoreo por lote y corte de ciclo en beneficio dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "broca",
+        "del",
+        "cosecha",
+        "incompleta",
+        "focos",
+        "residuales"
+      ]
+    },
+    {
+      "id": 488,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar broca del cafe en cafe",
+        "Sintomas de broca del cafe en cafeto",
+        "Diagnostico de broca del cafe en lote de cafe",
+        "Senales tempranas de broca del cafe en cafe"
+      ],
+      "answer": "Para diagnosticar broca del cafe en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son perforaciones en fruto, pasilla y merma de rendimiento. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "broca",
+        "del",
+        "perforaciones",
+        "fruto",
+        "pasilla",
+        "merma",
+        "rendimiento"
+      ]
+    },
+    {
+      "id": 489,
+      "category": "plagas",
+      "questions": [
+        "Control de minador de la hoja en cafetal",
+        "Que hacer con minador de la hoja en cultivo de cafe",
+        "Plan de manejo para minador de la hoja en cafe"
+      ],
+      "answer": "En cafe, minador de la hoja suele causar galerias claras en hojas y menor area fotosintetica. El riesgo sube con epocas secas con estres de planta. Para manejarlo conviene monitoreo temprano, manejo de sombra y conservacion de enemigos naturales dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "minador",
+        "hoja",
+        "epocas",
+        "secas",
+        "con",
+        "estres",
+        "planta"
+      ]
+    },
+    {
+      "id": 490,
+      "category": "diagnostico",
+      "questions": [
+        "Diagnostico de minador de la hoja en lote de cafe",
+        "Senales tempranas de minador de la hoja en cafe"
+      ],
+      "answer": "Para diagnosticar minador de la hoja en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son galerias claras en hojas y menor area fotosintetica. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "minador",
+        "hoja",
+        "galerias",
+        "claras",
+        "hojas",
+        "menor",
+        "area",
+        "fotosintetica"
+      ]
+    },
+    {
+      "id": 491,
+      "category": "plagas",
+      "questions": [
+        "Control de cochinilla de la raiz en cafetal",
+        "Que hacer con cochinilla de la raiz en cultivo de cafe",
+        "Plan de manejo para cochinilla de la raiz en cafe"
+      ],
+      "answer": "En cafe, cochinilla de la raiz suele causar decaimiento progresivo y debilitamiento radicular. El riesgo sube con suelos compactados y plantas estresadas. Para manejarlo conviene mejorar estructura de suelo, sanear focos y sostener vigor nutricional dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "cochinilla",
+        "raiz",
+        "suelos",
+        "compactados",
+        "plantas",
+        "estresadas"
+      ]
+    },
+    {
+      "id": 492,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar cochinilla de la raiz en cafe",
+        "Diagnostico de cochinilla de la raiz en lote de cafe",
+        "Senales tempranas de cochinilla de la raiz en cafe"
+      ],
+      "answer": "Para diagnosticar cochinilla de la raiz en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son decaimiento progresivo y debilitamiento radicular. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "cochinilla",
+        "raiz",
+        "decaimiento",
+        "progresivo",
+        "debilitamiento",
+        "radicular"
+      ]
+    },
+    {
+      "id": 493,
+      "category": "plagas",
+      "questions": [
+        "Control de cochinilla verde en cafetal",
+        "Que hacer con cochinilla verde en cultivo de cafe",
+        "Plan de manejo para cochinilla verde en cafe"
+      ],
+      "answer": "En cafe, cochinilla verde suele causar melaza, fumagina y brotes debilitados. El riesgo sube con sombras densas y poca ventilacion. Para manejarlo conviene regular sombra, podar para airear y reforzar control biologico dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "cochinilla",
+        "verde",
+        "sombras",
+        "densas",
+        "poca",
+        "ventilacion"
+      ]
+    },
+    {
+      "id": 494,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar cochinilla verde en cafe",
+        "Diagnostico de cochinilla verde en lote de cafe",
+        "Senales tempranas de cochinilla verde en cafe"
+      ],
+      "answer": "Para diagnosticar cochinilla verde en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son melaza, fumagina y brotes debilitados. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "cochinilla",
+        "verde",
+        "melaza",
+        "fumagina",
+        "brotes",
+        "debilitados"
+      ]
+    },
+    {
+      "id": 495,
+      "category": "plagas",
+      "questions": [
+        "Control de escamas en cafetal",
+        "Que hacer con escamas en cultivo de cafe",
+        "Plan de manejo para escamas en cafe"
+      ],
+      "answer": "En cafe, escamas suele causar costras en ramas y succion de savia. El riesgo sube con copas cerradas y baja inspeccion. Para manejarlo conviene podas de saneamiento, limpieza de focos y seguimiento semanal dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "escamas",
+        "copas",
+        "cerradas",
+        "baja",
+        "inspeccion"
+      ]
+    },
+    {
+      "id": 496,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar escamas en cafe",
+        "Diagnostico de escamas en lote de cafe",
+        "Senales tempranas de escamas en cafe"
+      ],
+      "answer": "Para diagnosticar escamas en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son costras en ramas y succion de savia. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "escamas",
+        "costras",
+        "ramas",
+        "succion",
+        "savia"
+      ]
+    },
+    {
+      "id": 497,
+      "category": "plagas",
+      "questions": [
+        "Control de trips en cafetal",
+        "Que hacer con trips en cultivo de cafe",
+        "Plan de manejo para trips en cafe"
+      ],
+      "answer": "En cafe, trips suele causar raspado de tejidos tiernos y deformaciones. El riesgo sube con brotacion tierna en periodos secos. Para manejarlo conviene monitoreo en brotes, manejo de estres hidrico y equilibrio biologico dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "trips",
+        "brotacion",
+        "tierna",
+        "periodos",
+        "secos"
+      ]
+    },
+    {
+      "id": 498,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar trips en cafe",
+        "Diagnostico de trips en lote de cafe",
+        "Senales tempranas de trips en cafe"
+      ],
+      "answer": "Para diagnosticar trips en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son raspado de tejidos tiernos y deformaciones. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "trips",
+        "raspado",
+        "tejidos",
+        "tiernos",
+        "deformaciones"
+      ]
+    },
+    {
+      "id": 499,
+      "category": "plagas",
+      "questions": [
+        "Control de acaro rojo en cafetal",
+        "Que hacer con acaro rojo en cultivo de cafe",
+        "Plan de manejo para acaro rojo en cafe"
+      ],
+      "answer": "En cafe, acaro rojo suele causar bronceado foliar y reduccion de vigor. El riesgo sube con sequias y polvo en lotes expuestos. Para manejarlo conviene cobertura de suelo, ajuste de sombra y vigilancia de focos dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "acaro",
+        "rojo",
+        "sequias",
+        "polvo",
+        "lotes",
+        "expuestos"
+      ]
+    },
+    {
+      "id": 500,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar acaro rojo en cafe",
+        "Diagnostico de acaro rojo en lote de cafe",
+        "Senales tempranas de acaro rojo en cafe"
+      ],
+      "answer": "Para diagnosticar acaro rojo en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son bronceado foliar y reduccion de vigor. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "acaro",
+        "rojo",
+        "bronceado",
+        "foliar",
+        "reduccion",
+        "vigor"
+      ]
+    },
+    {
+      "id": 501,
+      "category": "plagas",
+      "questions": [
+        "Control de nematodos agalladores en cafetal",
+        "Que hacer con nematodos agalladores en cultivo de cafe",
+        "Plan de manejo para nematodos agalladores en cafe"
+      ],
+      "answer": "En cafe, nematodos agalladores suele causar agallas en raices y crecimiento limitado. El riesgo sube con material vegetal sin control sanitario. Para manejarlo conviene usar material sano, mejorar suelo y aislar areas afectadas dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "nematodos",
+        "agalladores",
+        "material",
+        "vegetal",
+        "sin",
+        "control",
+        "sanitario"
+      ]
+    },
+    {
+      "id": 502,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar nematodos agalladores en cafe",
+        "Diagnostico de nematodos agalladores en lote de cafe",
+        "Senales tempranas de nematodos agalladores en cafe"
+      ],
+      "answer": "Para diagnosticar nematodos agalladores en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son agallas en raices y crecimiento limitado. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "nematodos",
+        "agalladores",
+        "agallas",
+        "raices",
+        "crecimiento",
+        "limitado"
+      ]
+    },
+    {
+      "id": 503,
+      "category": "plagas",
+      "questions": [
+        "Control de hormiga arriera en cafetal",
+        "Que hacer con hormiga arriera en cultivo de cafe",
+        "Plan de manejo para hormiga arriera en cafe"
+      ],
+      "answer": "En cafe, hormiga arriera suele causar defoliacion rapida en plantas jovenes. El riesgo sube con nidos activos cerca de lotes nuevos. Para manejarlo conviene deteccion temprana de hormigueros y manejo integrado del foco dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "hormiga",
+        "arriera",
+        "nidos",
+        "activos",
+        "cerca",
+        "lotes",
+        "nuevos"
+      ]
+    },
+    {
+      "id": 504,
+      "category": "diagnostico",
+      "questions": [
+        "Diagnostico de hormiga arriera en lote de cafe",
+        "Senales tempranas de hormiga arriera en cafe"
+      ],
+      "answer": "Para diagnosticar hormiga arriera en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son defoliacion rapida en plantas jovenes. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "hormiga",
+        "arriera",
+        "defoliacion",
+        "rapida",
+        "plantas",
+        "jovenes"
+      ]
+    },
+    {
+      "id": 505,
+      "category": "plagas",
+      "questions": [
+        "Control de barrenador del tallo en cafetal",
+        "Que hacer con barrenador del tallo en cultivo de cafe",
+        "Plan de manejo para barrenador del tallo en cafe"
+      ],
+      "answer": "En cafe, barrenador del tallo suele causar orificios en tallo y debilitamiento estructural. El riesgo sube con plantas con heridas y bajo vigor. Para manejarlo conviene podas higienicas, retiro de tejido afectado y seguimiento por lotes dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "barrenador",
+        "del",
+        "tallo",
+        "plantas",
+        "con",
+        "heridas",
+        "bajo",
+        "vigor"
+      ]
+    },
+    {
+      "id": 506,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar barrenador del tallo en cafe",
+        "Diagnostico de barrenador del tallo en lote de cafe",
+        "Senales tempranas de barrenador del tallo en cafe"
+      ],
+      "answer": "Para diagnosticar barrenador del tallo en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son orificios en tallo y debilitamiento estructural. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "barrenador",
+        "del",
+        "tallo",
+        "orificios",
+        "debilitamiento",
+        "estructural"
+      ]
+    },
+    {
+      "id": 507,
+      "category": "plagas",
+      "questions": [
+        "Control de orugas defoliadoras en cafetal",
+        "Que hacer con orugas defoliadoras en cultivo de cafe",
+        "Plan de manejo para orugas defoliadoras en cafe"
+      ],
+      "answer": "En cafe, orugas defoliadoras suele causar consumo de follaje y perdida de area fotosintetica. El riesgo sube con focos no detectados a tiempo. Para manejarlo conviene inspeccion del follaje, accion temprana y monitoreo continuo dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "orugas",
+        "defoliadoras",
+        "focos",
+        "detectados",
+        "tiempo"
+      ]
+    },
+    {
+      "id": 508,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar orugas defoliadoras en cafe",
+        "Diagnostico de orugas defoliadoras en lote de cafe",
+        "Senales tempranas de orugas defoliadoras en cafe"
+      ],
+      "answer": "Para diagnosticar orugas defoliadoras en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son consumo de follaje y perdida de area fotosintetica. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "orugas",
+        "defoliadoras",
+        "consumo",
+        "follaje",
+        "perdida",
+        "area",
+        "fotosintetica"
+      ]
+    },
+    {
+      "id": 509,
+      "category": "plagas",
+      "questions": [
+        "Control de chicharritas en cafetal",
+        "Que hacer con chicharritas en cultivo de cafe",
+        "Plan de manejo para chicharritas en cafe"
+      ],
+      "answer": "En cafe, chicharritas suele causar succion de savia y debilitamiento general. El riesgo sube con malezas hospederas sin manejo. Para manejarlo conviene manejo de arvenses y vigilancia en bordes del lote dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "chicharritas",
+        "malezas",
+        "hospederas",
+        "sin"
+      ]
+    },
+    {
+      "id": 510,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar chicharritas en cafe",
+        "Diagnostico de chicharritas en lote de cafe",
+        "Senales tempranas de chicharritas en cafe"
+      ],
+      "answer": "Para diagnosticar chicharritas en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son succion de savia y debilitamiento general. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "chicharritas",
+        "succion",
+        "savia",
+        "debilitamiento",
+        "general"
+      ]
+    },
+    {
+      "id": 511,
+      "category": "plagas",
+      "questions": [
+        "Como manejar mosca blanca en cafe",
+        "Control de mosca blanca en cafetal",
+        "Que hacer con mosca blanca en cultivo de cafe",
+        "Plan de manejo para mosca blanca en cafe"
+      ],
+      "answer": "En cafe, mosca blanca suele causar debilitamiento foliar y presencia de melaza. El riesgo sube con ambientes calidos con alta poblacion. Para manejarlo conviene monitoreo, manejo de cobertura y fortalecimiento del balance biologico dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "mosca",
+        "blanca",
+        "ambientes",
+        "calidos",
+        "con",
+        "alta",
+        "poblacion"
+      ]
+    },
+    {
+      "id": 512,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar mosca blanca en cafe",
+        "Sintomas de mosca blanca en cafeto",
+        "Diagnostico de mosca blanca en lote de cafe",
+        "Senales tempranas de mosca blanca en cafe"
+      ],
+      "answer": "Para diagnosticar mosca blanca en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son debilitamiento foliar y presencia de melaza. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "mosca",
+        "blanca",
+        "debilitamiento",
+        "foliar",
+        "presencia",
+        "melaza"
+      ]
+    },
+    {
+      "id": 513,
+      "category": "plagas",
+      "questions": [
+        "Como manejar pulgones en cafe",
+        "Control de pulgones en cafetal",
+        "Que hacer con pulgones en cultivo de cafe",
+        "Plan de manejo para pulgones en cafe"
+      ],
+      "answer": "En cafe, pulgones suele causar enrollamiento de brotes y presencia de melaza. El riesgo sube con brotes tiernos en exceso. Para manejarlo conviene regular nitrogeno, manejar hormigas y controlar focos tempranos dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "pulgones",
+        "brotes",
+        "tiernos",
+        "exceso"
+      ]
+    },
+    {
+      "id": 514,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar pulgones en cafe",
+        "Sintomas de pulgones en cafeto",
+        "Diagnostico de pulgones en lote de cafe",
+        "Senales tempranas de pulgones en cafe"
+      ],
+      "answer": "Para diagnosticar pulgones en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son enrollamiento de brotes y presencia de melaza. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "pulgones",
+        "enrollamiento",
+        "brotes",
+        "presencia",
+        "melaza"
+      ]
+    },
+    {
+      "id": 515,
+      "category": "plagas",
+      "questions": [
+        "Como manejar babosas y caracoles en cafe",
+        "Control de babosas y caracoles en cafetal",
+        "Que hacer con babosas y caracoles en cultivo de cafe",
+        "Plan de manejo para babosas y caracoles en cafe"
+      ],
+      "answer": "En cafe, babosas y caracoles suele causar dano en tejido tierno de plantas jovenes. El riesgo sube con humedad alta y residuos acumulados. Para manejarlo conviene orden del lote, barreras fisicas y vigilancia nocturna en focos dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "babosas",
+        "caracoles",
+        "humedad",
+        "alta",
+        "residuos",
+        "acumulados"
+      ]
+    },
+    {
+      "id": 516,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar babosas y caracoles en cafe",
+        "Sintomas de babosas y caracoles en cafeto",
+        "Diagnostico de babosas y caracoles en lote de cafe",
+        "Senales tempranas de babosas y caracoles en cafe"
+      ],
+      "answer": "Para diagnosticar babosas y caracoles en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son dano en tejido tierno de plantas jovenes. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "babosas",
+        "caracoles",
+        "dano",
+        "tejido",
+        "tierno",
+        "plantas",
+        "jovenes"
+      ]
+    },
+    {
+      "id": 517,
+      "category": "plagas",
+      "questions": [
+        "Como manejar grillos cortadores en cafe",
+        "Control de grillos cortadores en cafetal",
+        "Que hacer con grillos cortadores en cultivo de cafe",
+        "Plan de manejo para grillos cortadores en cafe"
+      ],
+      "answer": "En cafe, grillos cortadores suele causar cortes en plántulas recien establecidas. El riesgo sube con lotes nuevos con cobertura desordenada. Para manejarlo conviene proteccion inicial de plantas y monitoreo en establecimiento dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "grillos",
+        "cortadores",
+        "lotes",
+        "nuevos",
+        "con",
+        "cobertura",
+        "desordenada"
+      ]
+    },
+    {
+      "id": 518,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar grillos cortadores en cafe",
+        "Sintomas de grillos cortadores en cafeto",
+        "Diagnostico de grillos cortadores en lote de cafe",
+        "Senales tempranas de grillos cortadores en cafe"
+      ],
+      "answer": "Para diagnosticar grillos cortadores en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son cortes en plántulas recien establecidas. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "grillos",
+        "cortadores",
+        "cortes",
+        "plantulas",
+        "recien",
+        "establecidas"
+      ]
+    },
+    {
+      "id": 519,
+      "category": "plagas",
+      "questions": [
+        "Como manejar comejen en cafe",
+        "Control de comejen en cafetal",
+        "Que hacer con comejen en cultivo de cafe",
+        "Plan de manejo para comejen en cafe"
+      ],
+      "answer": "En cafe, comejen suele causar debilitamiento en madera y raices. El riesgo sube con residuos leñosos sin manejo. Para manejarlo conviene higiene de lotes, retiro de material comprometido y seguimiento dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "comejen",
+        "residuos",
+        "lenosos",
+        "sin"
+      ]
+    },
+    {
+      "id": 520,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar comejen en cafe",
+        "Sintomas de comejen en cafeto",
+        "Diagnostico de comejen en lote de cafe",
+        "Senales tempranas de comejen en cafe"
+      ],
+      "answer": "Para diagnosticar comejen en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son debilitamiento en madera y raices. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "comejen",
+        "debilitamiento",
+        "madera",
+        "raices"
+      ]
+    },
+    {
+      "id": 521,
+      "category": "plagas",
+      "questions": [
+        "Como manejar chinches en cafe",
+        "Control de chinches en cafetal",
+        "Que hacer con chinches en cultivo de cafe",
+        "Plan de manejo para chinches en cafe"
+      ],
+      "answer": "En cafe, chinches suele causar deformaciones en tejido y abortos de fruto. El riesgo sube con falta de monitoreo en etapas criticas. Para manejarlo conviene muestreo periodico y manejo integrado por umbrales dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "chinches",
+        "falta",
+        "etapas",
+        "criticas"
+      ]
+    },
+    {
+      "id": 522,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar chinches en cafe",
+        "Sintomas de chinches en cafeto",
+        "Diagnostico de chinches en lote de cafe",
+        "Senales tempranas de chinches en cafe"
+      ],
+      "answer": "Para diagnosticar chinches en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son deformaciones en tejido y abortos de fruto. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "chinches",
+        "deformaciones",
+        "tejido",
+        "abortos",
+        "fruto"
+      ]
+    },
+    {
+      "id": 523,
+      "category": "plagas",
+      "questions": [
+        "Control de picudo de ramas en cafetal",
+        "Que hacer con picudo de ramas en cultivo de cafe",
+        "Plan de manejo para picudo de ramas en cafe"
+      ],
+      "answer": "En cafe, picudo de ramas suele causar dano en brotes y ramas productivas. El riesgo sube con residuos de poda en el lote. Para manejarlo conviene manejo sanitario de residuos y seguimiento de focos dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "picudo",
+        "ramas",
+        "residuos",
+        "poda",
+        "lote"
+      ]
+    },
+    {
+      "id": 524,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar picudo de ramas en cafe",
+        "Diagnostico de picudo de ramas en lote de cafe",
+        "Senales tempranas de picudo de ramas en cafe"
+      ],
+      "answer": "Para diagnosticar picudo de ramas en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son dano en brotes y ramas productivas. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "picudo",
+        "ramas",
+        "dano",
+        "brotes",
+        "productivas"
+      ]
+    },
+    {
+      "id": 525,
+      "category": "plagas",
+      "questions": [
+        "Como manejar saltahojas en cafe",
+        "Control de saltahojas en cafetal",
+        "Que hacer con saltahojas en cultivo de cafe",
+        "Plan de manejo para saltahojas en cafe"
+      ],
+      "answer": "En cafe, saltahojas suele causar succion en hojas y perdida de vigor. El riesgo sube con desequilibrio de cobertura y hospederos alternos. Para manejarlo conviene manejo de arvenses y monitoreo en bordes dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "saltahojas",
+        "desequilibrio",
+        "cobertura",
+        "hospederos",
+        "alternos"
+      ]
+    },
+    {
+      "id": 526,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar saltahojas en cafe",
+        "Sintomas de saltahojas en cafeto",
+        "Diagnostico de saltahojas en lote de cafe",
+        "Senales tempranas de saltahojas en cafe"
+      ],
+      "answer": "Para diagnosticar saltahojas en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son succion en hojas y perdida de vigor. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "saltahojas",
+        "succion",
+        "hojas",
+        "perdida",
+        "vigor"
+      ]
+    },
+    {
+      "id": 527,
+      "category": "plagas",
+      "questions": [
+        "Como manejar gorgojos de almacenamiento en cafe",
+        "Control de gorgojos de almacenamiento en cafetal",
+        "Que hacer con gorgojos de almacenamiento en cultivo de cafe",
+        "Plan de manejo para gorgojos de almacenamiento en cafe"
+      ],
+      "answer": "En cafe, gorgojos de almacenamiento suele causar dano de grano en bodega. El riesgo sube con almacenamiento prolongado sin control. Para manejarlo conviene higiene de bodega, rotacion de inventario y control de condiciones dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "gorgojos",
+        "almacenamiento",
+        "prolongado",
+        "sin",
+        "control"
+      ]
+    },
+    {
+      "id": 528,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar gorgojos de almacenamiento en cafe",
+        "Sintomas de gorgojos de almacenamiento en cafeto",
+        "Diagnostico de gorgojos de almacenamiento en lote de cafe",
+        "Senales tempranas de gorgojos de almacenamiento en cafe"
+      ],
+      "answer": "Para diagnosticar gorgojos de almacenamiento en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son dano de grano en bodega. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "gorgojos",
+        "almacenamiento",
+        "dano",
+        "grano",
+        "bodega"
+      ]
+    },
+    {
+      "id": 529,
+      "category": "plagas",
+      "questions": [
+        "Como manejar roedores en beneficio en cafe",
+        "Control de roedores en beneficio en cafetal",
+        "Que hacer con roedores en beneficio en cultivo de cafe",
+        "Plan de manejo para roedores en beneficio en cafe"
+      ],
+      "answer": "En cafe, roedores en beneficio suele causar contaminacion y dano de lotes almacenados. El riesgo sube con bodegas sin barreras ni orden sanitario. Para manejarlo conviene buenas practicas de almacenamiento y control preventivo dentro de un esquema de monitoreo por lote.",
+      "keywords": [
+        "cafe",
+        "plaga",
+        "manejo",
+        "monitoreo",
+        "roedores",
+        "beneficio",
+        "bodegas",
+        "sin",
+        "barreras",
+        "orden",
+        "sanitario"
+      ]
+    },
+    {
+      "id": 530,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar roedores en beneficio en cafe",
+        "Sintomas de roedores en beneficio en cafeto",
+        "Diagnostico de roedores en beneficio en lote de cafe",
+        "Senales tempranas de roedores en beneficio en cafe"
+      ],
+      "answer": "Para diagnosticar roedores en beneficio en cafe, revisa distribucion del dano, estado del lote y etapa fenologica. Las senales mas comunes son contaminacion y dano de lotes almacenados. Si confirmas focos, aplica manejo dirigido y registra evolucion semanal.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "plaga",
+        "foco",
+        "roedores",
+        "beneficio",
+        "contaminacion",
+        "dano",
+        "lotes",
+        "almacenados"
+      ]
+    },
+    {
+      "id": 531,
+      "category": "enfermedad",
+      "questions": [
+        "Como manejar roya del cafe en cafe",
+        "Tratamiento de roya del cafe en cafetal",
+        "Control integrado de roya del cafe en cafe",
+        "Que hacer con roya del cafe en cultivo de cafe"
+      ],
+      "answer": "En cafe, roya del cafe puede mostrar manchas amarillas y polvo anaranjado en hojas. Se favorece con alta humedad con tejido susceptible. El manejo recomendado es variedad adaptada, nutricion balanceada y control oportuno por focos y seguimiento tecnico por lote.",
+      "keywords": [
+        "cafe",
+        "enfermedad",
+        "manejo",
+        "sanidad",
+        "roya",
+        "del",
+        "alta",
+        "humedad",
+        "con",
+        "tejido",
+        "susceptible"
+      ]
+    },
+    {
+      "id": 532,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar roya del cafe en cafeto",
+        "Sintomas de roya del cafe en cafe",
+        "Diagnostico de roya del cafe en lote cafetero",
+        "Senales de roya del cafe en cafe"
+      ],
+      "answer": "Para diagnosticar roya del cafe, revisa patron del dano, historial de clima y manejo reciente del lote. Una senal tipica es manchas amarillas y polvo anaranjado en hojas. Confirma focos y prioriza acciones preventivas en el bloque.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "enfermedad",
+        "roya",
+        "del",
+        "manchas",
+        "amarillas",
+        "polvo",
+        "anaranjado",
+        "hojas"
+      ]
+    },
+    {
+      "id": 533,
+      "category": "enfermedad",
+      "questions": [
+        "Como manejar cercospora en cafe",
+        "Tratamiento de cercospora en cafetal",
+        "Control integrado de cercospora en cafe",
+        "Que hacer con cercospora en cultivo de cafe"
+      ],
+      "answer": "En cafe, cercospora puede mostrar manchas en hojas y frutos, con deterioro de calidad. Se favorece con estres nutricional y radiacion fuerte. El manejo recomendado es corregir nutricion, reducir estres y vigilar periodos criticos y seguimiento tecnico por lote.",
+      "keywords": [
+        "cafe",
+        "enfermedad",
+        "manejo",
+        "sanidad",
+        "cercospora",
+        "estres",
+        "nutricional",
+        "radiacion",
+        "fuerte"
+      ]
+    },
+    {
+      "id": 534,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar cercospora en cafeto",
+        "Sintomas de cercospora en cafe",
+        "Diagnostico de cercospora en lote cafetero",
+        "Senales de cercospora en cafe"
+      ],
+      "answer": "Para diagnosticar cercospora, revisa patron del dano, historial de clima y manejo reciente del lote. Una senal tipica es manchas en hojas y frutos, con deterioro de calidad. Confirma focos y prioriza acciones preventivas en el bloque.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "enfermedad",
+        "cercospora",
+        "manchas",
+        "hojas",
+        "frutos",
+        "con",
+        "deterioro",
+        "calidad"
+      ]
+    },
+    {
+      "id": 535,
+      "category": "enfermedad",
+      "questions": [
+        "Como manejar ojo de gallo en cafe",
+        "Tratamiento de ojo de gallo en cafetal",
+        "Control integrado de ojo de gallo en cafe",
+        "Que hacer con ojo de gallo en cultivo de cafe"
+      ],
+      "answer": "En cafe, ojo de gallo puede mostrar lesiones circulares y defoliacion. Se favorece con sombras densas y humedad persistente. El manejo recomendado es regular sombra, airear copa y retirar focos severos y seguimiento tecnico por lote.",
+      "keywords": [
+        "cafe",
+        "enfermedad",
+        "manejo",
+        "sanidad",
+        "ojo",
+        "gallo",
+        "sombras",
+        "densas",
+        "humedad",
+        "persistente"
+      ]
+    },
+    {
+      "id": 536,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar ojo de gallo en cafeto",
+        "Sintomas de ojo de gallo en cafe",
+        "Diagnostico de ojo de gallo en lote cafetero",
+        "Senales de ojo de gallo en cafe"
+      ],
+      "answer": "Para diagnosticar ojo de gallo, revisa patron del dano, historial de clima y manejo reciente del lote. Una senal tipica es lesiones circulares y defoliacion. Confirma focos y prioriza acciones preventivas en el bloque.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "enfermedad",
+        "ojo",
+        "gallo",
+        "lesiones",
+        "circulares",
+        "defoliacion"
+      ]
+    },
+    {
+      "id": 537,
+      "category": "enfermedad",
+      "questions": [
+        "Como manejar antracnosis en cafe",
+        "Tratamiento de antracnosis en cafetal",
+        "Control integrado de antracnosis en cafe",
+        "Que hacer con antracnosis en cultivo de cafe"
+      ],
+      "answer": "En cafe, antracnosis puede mostrar lesiones oscuras en brotes y frutos. Se favorece con lluvias frecuentes con tejido estresado. El manejo recomendado es higiene de poda, monitoreo y manejo preventivo y seguimiento tecnico por lote.",
+      "keywords": [
+        "cafe",
+        "enfermedad",
+        "manejo",
+        "sanidad",
+        "antracnosis",
+        "lluvias",
+        "frecuentes",
+        "con",
+        "tejido",
+        "estresado"
+      ]
+    },
+    {
+      "id": 538,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar antracnosis en cafeto",
+        "Sintomas de antracnosis en cafe",
+        "Diagnostico de antracnosis en lote cafetero",
+        "Senales de antracnosis en cafe"
+      ],
+      "answer": "Para diagnosticar antracnosis, revisa patron del dano, historial de clima y manejo reciente del lote. Una senal tipica es lesiones oscuras en brotes y frutos. Confirma focos y prioriza acciones preventivas en el bloque.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "enfermedad",
+        "antracnosis",
+        "lesiones",
+        "oscuras",
+        "brotes",
+        "frutos"
+      ]
+    },
+    {
+      "id": 539,
+      "category": "enfermedad",
+      "questions": [
+        "Como manejar mal rosado en cafe",
+        "Tratamiento de mal rosado en cafetal",
+        "Control integrado de mal rosado en cafe",
+        "Que hacer con mal rosado en cultivo de cafe"
+      ],
+      "answer": "En cafe, mal rosado puede mostrar costra rosada en ramas y secamiento. Se favorece con ambientes humedos con copas cerradas. El manejo recomendado es podas sanitarias y mejora de ventilacion y seguimiento tecnico por lote.",
+      "keywords": [
+        "cafe",
+        "enfermedad",
+        "manejo",
+        "sanidad",
+        "mal",
+        "rosado",
+        "ambientes",
+        "humedos",
+        "con",
+        "copas",
+        "cerradas"
+      ]
+    },
+    {
+      "id": 540,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar mal rosado en cafeto",
+        "Sintomas de mal rosado en cafe",
+        "Diagnostico de mal rosado en lote cafetero",
+        "Senales de mal rosado en cafe"
+      ],
+      "answer": "Para diagnosticar mal rosado, revisa patron del dano, historial de clima y manejo reciente del lote. Una senal tipica es costra rosada en ramas y secamiento. Confirma focos y prioriza acciones preventivas en el bloque.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "enfermedad",
+        "mal",
+        "rosado",
+        "costra",
+        "rosada",
+        "ramas",
+        "secamiento"
+      ]
+    },
+    {
+      "id": 541,
+      "category": "enfermedad",
+      "questions": [
+        "Como manejar llaga negra en cafe",
+        "Tratamiento de llaga negra en cafetal",
+        "Control integrado de llaga negra en cafe",
+        "Que hacer con llaga negra en cultivo de cafe"
+      ],
+      "answer": "En cafe, llaga negra puede mostrar decaimiento y perdida de raices funcionales. Se favorece con suelos con mal drenaje. El manejo recomendado es recuperar drenaje y sanear focos en campo y seguimiento tecnico por lote.",
+      "keywords": [
+        "cafe",
+        "enfermedad",
+        "manejo",
+        "sanidad",
+        "llaga",
+        "negra",
+        "suelos",
+        "con",
+        "mal",
+        "drenaje"
+      ]
+    },
+    {
+      "id": 542,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar llaga negra en cafeto",
+        "Sintomas de llaga negra en cafe",
+        "Diagnostico de llaga negra en lote cafetero",
+        "Senales de llaga negra en cafe"
+      ],
+      "answer": "Para diagnosticar llaga negra, revisa patron del dano, historial de clima y manejo reciente del lote. Una senal tipica es decaimiento y perdida de raices funcionales. Confirma focos y prioriza acciones preventivas en el bloque.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "enfermedad",
+        "llaga",
+        "negra",
+        "decaimiento",
+        "perdida",
+        "raices",
+        "funcionales"
+      ]
+    },
+    {
+      "id": 543,
+      "category": "enfermedad",
+      "questions": [
+        "Como manejar llaga estrellada en cafe",
+        "Tratamiento de llaga estrellada en cafetal",
+        "Control integrado de llaga estrellada en cafe",
+        "Que hacer con llaga estrellada en cultivo de cafe"
+      ],
+      "answer": "En cafe, llaga estrellada puede mostrar marchitez y muerte regresiva en focos. Se favorece con compactacion y exceso de humedad. El manejo recomendado es manejar suelo, aislar focos y renovar cuando aplique y seguimiento tecnico por lote.",
+      "keywords": [
+        "cafe",
+        "enfermedad",
+        "manejo",
+        "sanidad",
+        "llaga",
+        "estrellada",
+        "compactacion",
+        "exceso",
+        "humedad"
+      ]
+    },
+    {
+      "id": 544,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar llaga estrellada en cafeto",
+        "Sintomas de llaga estrellada en cafe",
+        "Diagnostico de llaga estrellada en lote cafetero",
+        "Senales de llaga estrellada en cafe"
+      ],
+      "answer": "Para diagnosticar llaga estrellada, revisa patron del dano, historial de clima y manejo reciente del lote. Una senal tipica es marchitez y muerte regresiva en focos. Confirma focos y prioriza acciones preventivas en el bloque.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "enfermedad",
+        "llaga",
+        "estrellada",
+        "marchitez",
+        "muerte",
+        "regresiva",
+        "focos"
+      ]
+    },
+    {
+      "id": 545,
+      "category": "enfermedad",
+      "questions": [
+        "Como manejar muerte descendente en cafe",
+        "Tratamiento de muerte descendente en cafetal",
+        "Control integrado de muerte descendente en cafe",
+        "Que hacer con muerte descendente en cultivo de cafe"
+      ],
+      "answer": "En cafe, muerte descendente puede mostrar secamiento de puntas hacia ramas productivas. Se favorece con estrés acumulado y heridas sin manejo. El manejo recomendado es poda limpia, desinfeccion y recuperacion del vigor y seguimiento tecnico por lote.",
+      "keywords": [
+        "cafe",
+        "enfermedad",
+        "manejo",
+        "sanidad",
+        "muerte",
+        "descendente",
+        "estres",
+        "acumulado",
+        "heridas",
+        "sin"
+      ]
+    },
+    {
+      "id": 546,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar muerte descendente en cafeto",
+        "Sintomas de muerte descendente en cafe",
+        "Diagnostico de muerte descendente en lote cafetero",
+        "Senales de muerte descendente en cafe"
+      ],
+      "answer": "Para diagnosticar muerte descendente, revisa patron del dano, historial de clima y manejo reciente del lote. Una senal tipica es secamiento de puntas hacia ramas productivas. Confirma focos y prioriza acciones preventivas en el bloque.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "enfermedad",
+        "muerte",
+        "descendente",
+        "secamiento",
+        "puntas",
+        "hacia",
+        "ramas",
+        "productivas"
+      ]
+    },
+    {
+      "id": 547,
+      "category": "enfermedad",
+      "questions": [
+        "Como manejar pudricion de raiz en cafe",
+        "Tratamiento de pudricion de raiz en cafetal",
+        "Control integrado de pudricion de raiz en cafe",
+        "Que hacer con pudricion de raiz en cultivo de cafe"
+      ],
+      "answer": "En cafe, pudricion de raiz puede mostrar amarillamiento, marchitez y pobre anclaje. Se favorece con encharcamiento y baja aireacion del suelo. El manejo recomendado es mejorar estructura del suelo y drenaje y seguimiento tecnico por lote.",
+      "keywords": [
+        "cafe",
+        "enfermedad",
+        "manejo",
+        "sanidad",
+        "pudricion",
+        "raiz",
+        "encharcamiento",
+        "baja",
+        "aireacion",
+        "del",
+        "suelo"
+      ]
+    },
+    {
+      "id": 548,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar pudricion de raiz en cafeto",
+        "Sintomas de pudricion de raiz en cafe",
+        "Diagnostico de pudricion de raiz en lote cafetero",
+        "Senales de pudricion de raiz en cafe"
+      ],
+      "answer": "Para diagnosticar pudricion de raiz, revisa patron del dano, historial de clima y manejo reciente del lote. Una senal tipica es amarillamiento, marchitez y pobre anclaje. Confirma focos y prioriza acciones preventivas en el bloque.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "enfermedad",
+        "pudricion",
+        "raiz",
+        "amarillamiento",
+        "marchitez",
+        "pobre",
+        "anclaje"
+      ]
+    },
+    {
+      "id": 549,
+      "category": "enfermedad",
+      "questions": [
+        "Como manejar mancha aureolada en cafe",
+        "Tratamiento de mancha aureolada en cafetal",
+        "Control integrado de mancha aureolada en cafe",
+        "Que hacer con mancha aureolada en cultivo de cafe"
+      ],
+      "answer": "En cafe, mancha aureolada puede mostrar lesiones con halo clorotico. Se favorece con heridas de labor y humedad alta. El manejo recomendado es higiene en labores y control preventivo y seguimiento tecnico por lote.",
+      "keywords": [
+        "cafe",
+        "enfermedad",
+        "manejo",
+        "sanidad",
+        "mancha",
+        "aureolada",
+        "heridas",
+        "labor",
+        "humedad",
+        "alta"
+      ]
+    },
+    {
+      "id": 550,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar mancha aureolada en cafeto",
+        "Sintomas de mancha aureolada en cafe",
+        "Diagnostico de mancha aureolada en lote cafetero",
+        "Senales de mancha aureolada en cafe"
+      ],
+      "answer": "Para diagnosticar mancha aureolada, revisa patron del dano, historial de clima y manejo reciente del lote. Una senal tipica es lesiones con halo clorotico. Confirma focos y prioriza acciones preventivas en el bloque.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "enfermedad",
+        "mancha",
+        "aureolada",
+        "lesiones",
+        "con",
+        "halo",
+        "clorotico"
+      ]
+    },
+    {
+      "id": 551,
+      "category": "enfermedad",
+      "questions": [
+        "Como manejar necrosis de ramas en cafe",
+        "Tratamiento de necrosis de ramas en cafetal",
+        "Control integrado de necrosis de ramas en cafe",
+        "Que hacer con necrosis de ramas en cultivo de cafe"
+      ],
+      "answer": "En cafe, necrosis de ramas puede mostrar secamiento localizado de ramas productivas. Se favorece con copas densas y manejo tardio. El manejo recomendado es poda sanitaria y apertura de copa y seguimiento tecnico por lote.",
+      "keywords": [
+        "cafe",
+        "enfermedad",
+        "manejo",
+        "sanidad",
+        "necrosis",
+        "ramas",
+        "copas",
+        "densas",
+        "tardio"
+      ]
+    },
+    {
+      "id": 552,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar necrosis de ramas en cafeto",
+        "Sintomas de necrosis de ramas en cafe",
+        "Diagnostico de necrosis de ramas en lote cafetero",
+        "Senales de necrosis de ramas en cafe"
+      ],
+      "answer": "Para diagnosticar necrosis de ramas, revisa patron del dano, historial de clima y manejo reciente del lote. Una senal tipica es secamiento localizado de ramas productivas. Confirma focos y prioriza acciones preventivas en el bloque.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "enfermedad",
+        "necrosis",
+        "ramas",
+        "secamiento",
+        "localizado",
+        "productivas"
+      ]
+    },
+    {
+      "id": 553,
+      "category": "enfermedad",
+      "questions": [
+        "Como manejar hongo de almacigo en cafe",
+        "Tratamiento de hongo de almacigo en cafetal",
+        "Control integrado de hongo de almacigo en cafe",
+        "Que hacer con hongo de almacigo en cultivo de cafe"
+      ],
+      "answer": "En cafe, hongo de almacigo puede mostrar damping off y muerte de plantulas. Se favorece con sustrato contaminado y exceso de humedad. El manejo recomendado es desinfeccion, buen drenaje y manejo higienico de vivero y seguimiento tecnico por lote.",
+      "keywords": [
+        "cafe",
+        "enfermedad",
+        "manejo",
+        "sanidad",
+        "hongo",
+        "almacigo",
+        "sustrato",
+        "contaminado",
+        "exceso",
+        "humedad"
+      ]
+    },
+    {
+      "id": 554,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar hongo de almacigo en cafeto",
+        "Sintomas de hongo de almacigo en cafe",
+        "Diagnostico de hongo de almacigo en lote cafetero",
+        "Senales de hongo de almacigo en cafe"
+      ],
+      "answer": "Para diagnosticar hongo de almacigo, revisa patron del dano, historial de clima y manejo reciente del lote. Una senal tipica es damping off y muerte de plantulas. Confirma focos y prioriza acciones preventivas en el bloque.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "enfermedad",
+        "hongo",
+        "almacigo",
+        "damping",
+        "off",
+        "muerte",
+        "plantulas"
+      ]
+    },
+    {
+      "id": 555,
+      "category": "enfermedad",
+      "questions": [
+        "Como manejar moho de pergamino en cafe",
+        "Tratamiento de moho de pergamino en cafetal",
+        "Control integrado de moho de pergamino en cafe",
+        "Que hacer con moho de pergamino en cultivo de cafe"
+      ],
+      "answer": "En cafe, moho de pergamino puede mostrar olor a humedad y deterioro fisico del grano. Se favorece con secado insuficiente o bodega humeda. El manejo recomendado es secado uniforme y almacenamiento seguro y seguimiento tecnico por lote.",
+      "keywords": [
+        "cafe",
+        "enfermedad",
+        "manejo",
+        "sanidad",
+        "moho",
+        "pergamino",
+        "secado",
+        "insuficiente",
+        "bodega",
+        "humeda"
+      ]
+    },
+    {
+      "id": 556,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar moho de pergamino en cafeto",
+        "Sintomas de moho de pergamino en cafe",
+        "Diagnostico de moho de pergamino en lote cafetero",
+        "Senales de moho de pergamino en cafe"
+      ],
+      "answer": "Para diagnosticar moho de pergamino, revisa patron del dano, historial de clima y manejo reciente del lote. Una senal tipica es olor a humedad y deterioro fisico del grano. Confirma focos y prioriza acciones preventivas en el bloque.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "enfermedad",
+        "moho",
+        "pergamino",
+        "olor",
+        "humedad",
+        "deterioro",
+        "fisico",
+        "del",
+        "grano"
+      ]
+    },
+    {
+      "id": 557,
+      "category": "enfermedad",
+      "questions": [
+        "Como manejar fermentacion no deseada en cafe",
+        "Tratamiento de fermentacion no deseada en cafetal",
+        "Control integrado de fermentacion no deseada en cafe",
+        "Que hacer con fermentacion no deseada en cultivo de cafe"
+      ],
+      "answer": "En cafe, fermentacion no deseada puede mostrar olores avinagrados e inconsistencia en taza. Se favorece con tiempos excesivos y mala higiene en beneficio. El manejo recomendado es controlar tiempo, limpieza y trazabilidad del proceso y seguimiento tecnico por lote.",
+      "keywords": [
+        "cafe",
+        "enfermedad",
+        "manejo",
+        "sanidad",
+        "fermentacion",
+        "deseada",
+        "tiempos",
+        "excesivos",
+        "mala",
+        "higiene",
+        "beneficio"
+      ]
+    },
+    {
+      "id": 558,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar fermentacion no deseada en cafeto",
+        "Sintomas de fermentacion no deseada en cafe",
+        "Diagnostico de fermentacion no deseada en lote cafetero",
+        "Senales de fermentacion no deseada en cafe"
+      ],
+      "answer": "Para diagnosticar fermentacion no deseada, revisa patron del dano, historial de clima y manejo reciente del lote. Una senal tipica es olores avinagrados e inconsistencia en taza. Confirma focos y prioriza acciones preventivas en el bloque.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "enfermedad",
+        "fermentacion",
+        "deseada",
+        "olores",
+        "avinagrados",
+        "inconsistencia",
+        "taza"
+      ]
+    },
+    {
+      "id": 559,
+      "category": "enfermedad",
+      "questions": [
+        "Como manejar contaminacion cruzada en beneficio en cafe",
+        "Tratamiento de contaminacion cruzada en beneficio en cafetal",
+        "Control integrado de contaminacion cruzada en beneficio en cafe",
+        "Que hacer con contaminacion cruzada en beneficio en cultivo de cafe"
+      ],
+      "answer": "En cafe, contaminacion cruzada en beneficio puede mostrar defectos repetitivos en lotes de taza. Se favorece con mezcla de lotes y equipos sin limpieza. El manejo recomendado es flujo limpio por lotes y protocolos de higiene y seguimiento tecnico por lote.",
+      "keywords": [
+        "cafe",
+        "enfermedad",
+        "manejo",
+        "sanidad",
+        "contaminacion",
+        "cruzada",
+        "beneficio",
+        "mezcla",
+        "lotes",
+        "equipos",
+        "sin",
+        "limpieza"
+      ]
+    },
+    {
+      "id": 560,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar contaminacion cruzada en beneficio en cafeto",
+        "Sintomas de contaminacion cruzada en beneficio en cafe",
+        "Diagnostico de contaminacion cruzada en beneficio en lote cafetero",
+        "Senales de contaminacion cruzada en beneficio en cafe"
+      ],
+      "answer": "Para diagnosticar contaminacion cruzada en beneficio, revisa patron del dano, historial de clima y manejo reciente del lote. Una senal tipica es defectos repetitivos en lotes de taza. Confirma focos y prioriza acciones preventivas en el bloque.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "enfermedad",
+        "contaminacion",
+        "cruzada",
+        "beneficio",
+        "defectos",
+        "repetitivos",
+        "lotes",
+        "taza"
+      ]
+    },
+    {
+      "id": 561,
+      "category": "enfermedad",
+      "questions": [
+        "Como manejar mildew en bodega en cafe",
+        "Tratamiento de mildew en bodega en cafetal",
+        "Control integrado de mildew en bodega en cafe",
+        "Que hacer con mildew en bodega en cultivo de cafe"
+      ],
+      "answer": "En cafe, mildew en bodega puede mostrar olor a moho y perdida de frescura. Se favorece con humedad relativa alta en almacenamiento. El manejo recomendado es ventilacion, control de humedad y estibas y seguimiento tecnico por lote.",
+      "keywords": [
+        "cafe",
+        "enfermedad",
+        "manejo",
+        "sanidad",
+        "mildew",
+        "bodega",
+        "humedad",
+        "relativa",
+        "alta",
+        "almacenamiento"
+      ]
+    },
+    {
+      "id": 562,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar mildew en bodega en cafeto",
+        "Sintomas de mildew en bodega en cafe",
+        "Diagnostico de mildew en bodega en lote cafetero",
+        "Senales de mildew en bodega en cafe"
+      ],
+      "answer": "Para diagnosticar mildew en bodega, revisa patron del dano, historial de clima y manejo reciente del lote. Una senal tipica es olor a moho y perdida de frescura. Confirma focos y prioriza acciones preventivas en el bloque.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "enfermedad",
+        "mildew",
+        "bodega",
+        "olor",
+        "moho",
+        "perdida",
+        "frescura"
+      ]
+    },
+    {
+      "id": 563,
+      "category": "enfermedad",
+      "questions": [
+        "Como manejar marchitez vascular en cafe",
+        "Tratamiento de marchitez vascular en cafetal",
+        "Control integrado de marchitez vascular en cafe",
+        "Que hacer con marchitez vascular en cultivo de cafe"
+      ],
+      "answer": "En cafe, marchitez vascular puede mostrar decaimiento y baja transpiracion. Se favorece con estres acumulado y suelo degradado. El manejo recomendado es diagnostico de raiz, manejo de suelo y renovacion de focos y seguimiento tecnico por lote.",
+      "keywords": [
+        "cafe",
+        "enfermedad",
+        "manejo",
+        "sanidad",
+        "marchitez",
+        "vascular",
+        "estres",
+        "acumulado",
+        "suelo",
+        "degradado"
+      ]
+    },
+    {
+      "id": 564,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar marchitez vascular en cafeto",
+        "Sintomas de marchitez vascular en cafe",
+        "Diagnostico de marchitez vascular en lote cafetero",
+        "Senales de marchitez vascular en cafe"
+      ],
+      "answer": "Para diagnosticar marchitez vascular, revisa patron del dano, historial de clima y manejo reciente del lote. Una senal tipica es decaimiento y baja transpiracion. Confirma focos y prioriza acciones preventivas en el bloque.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "enfermedad",
+        "marchitez",
+        "vascular",
+        "decaimiento",
+        "baja",
+        "transpiracion"
+      ]
+    },
+    {
+      "id": 565,
+      "category": "enfermedad",
+      "questions": [
+        "Como manejar necrosis foliar por estres en cafe",
+        "Tratamiento de necrosis foliar por estres en cafetal",
+        "Control integrado de necrosis foliar por estres en cafe",
+        "Que hacer con necrosis foliar por estres en cultivo de cafe"
+      ],
+      "answer": "En cafe, necrosis foliar por estres puede mostrar bordes secos y lesion en hojas expuestas. Se favorece con radiacion alta y desbalance hidrico. El manejo recomendado es ajustar sombra, agua y nutricion de soporte y seguimiento tecnico por lote.",
+      "keywords": [
+        "cafe",
+        "enfermedad",
+        "manejo",
+        "sanidad",
+        "necrosis",
+        "foliar",
+        "por",
+        "estres",
+        "radiacion",
+        "alta",
+        "desbalance",
+        "hidrico"
+      ]
+    },
+    {
+      "id": 566,
+      "category": "diagnostico",
+      "questions": [
+        "Como identificar necrosis foliar por estres en cafeto",
+        "Sintomas de necrosis foliar por estres en cafe",
+        "Diagnostico de necrosis foliar por estres en lote cafetero",
+        "Senales de necrosis foliar por estres en cafe"
+      ],
+      "answer": "Para diagnosticar necrosis foliar por estres, revisa patron del dano, historial de clima y manejo reciente del lote. Una senal tipica es bordes secos y lesion en hojas expuestas. Confirma focos y prioriza acciones preventivas en el bloque.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "enfermedad",
+        "necrosis",
+        "foliar",
+        "por",
+        "estres",
+        "bordes",
+        "secos",
+        "lesion",
+        "hojas",
+        "expuestas"
+      ]
+    },
+    {
+      "id": 567,
+      "category": "fertilizacion",
+      "questions": [
+        "Falta de N en cafeto",
+        "Sintomas por baja de nitrogeno en cafe"
+      ],
+      "answer": "En cafe, la deficiencia de nitrogeno (N) suele verse como hojas viejas palidas y bajo crecimiento. Para corregirla conviene fraccionar nitrogeno y reforzar materia organica y validar respuesta del lote con seguimiento tecnico.",
+      "keywords": [
+        "cafe",
+        "fertilizacion",
+        "nutricion",
+        "deficiencia",
+        "nitrogeno"
+      ]
+    },
+    {
+      "id": 568,
+      "category": "diagnostico",
+      "questions": [
+        "Como diferenciar deficiencia de nitrogeno en cafe",
+        "Diagnostico de carencia de nitrogeno en cafetal",
+        "Como reconocer baja de N en cafe",
+        "Patrones de falta de nitrogeno en cafe"
+      ],
+      "answer": "Para diagnosticar falta de nitrogeno en cafe, revisa distribucion del sintoma en el lote, etapa fenologica y analisis de suelo/hoja. Si predomina hojas viejas palidas y bajo crecimiento, conviene ajustar nutricion de forma dirigida.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "nutricion",
+        "nitrogeno",
+        "hojas",
+        "viejas",
+        "palidas",
+        "bajo",
+        "crecimiento"
+      ]
+    },
+    {
+      "id": 569,
+      "category": "fertilizacion",
+      "questions": [
+        "Falta de P en cafeto",
+        "Sintomas por baja de fosforo en cafe"
+      ],
+      "answer": "En cafe, la deficiencia de fosforo (P) suele verse como desarrollo radicular debil y baja floracion. Para corregirla conviene ajustar pH y reponer fosforo segun analisis y validar respuesta del lote con seguimiento tecnico.",
+      "keywords": [
+        "cafe",
+        "fertilizacion",
+        "nutricion",
+        "deficiencia",
+        "fosforo"
+      ]
+    },
+    {
+      "id": 570,
+      "category": "diagnostico",
+      "questions": [
+        "Como diferenciar deficiencia de fosforo en cafe",
+        "Diagnostico de carencia de fosforo en cafetal",
+        "Como reconocer baja de P en cafe",
+        "Patrones de falta de fosforo en cafe"
+      ],
+      "answer": "Para diagnosticar falta de fosforo en cafe, revisa distribucion del sintoma en el lote, etapa fenologica y analisis de suelo/hoja. Si predomina desarrollo radicular debil y baja floracion, conviene ajustar nutricion de forma dirigida.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "nutricion",
+        "fosforo",
+        "desarrollo",
+        "radicular",
+        "debil",
+        "baja",
+        "floracion"
+      ]
+    },
+    {
+      "id": 571,
+      "category": "fertilizacion",
+      "questions": [
+        "Falta de K en cafeto",
+        "Sintomas por baja de potasio en cafe"
+      ],
+      "answer": "En cafe, la deficiencia de potasio (K) suele verse como bordes necróticos y menor llenado. Para corregirla conviene incrementar potasio de forma balanceada y validar respuesta del lote con seguimiento tecnico.",
+      "keywords": [
+        "cafe",
+        "fertilizacion",
+        "nutricion",
+        "deficiencia",
+        "potasio"
+      ]
+    },
+    {
+      "id": 572,
+      "category": "diagnostico",
+      "questions": [
+        "Como diferenciar deficiencia de potasio en cafe",
+        "Diagnostico de carencia de potasio en cafetal",
+        "Como reconocer baja de K en cafe",
+        "Patrones de falta de potasio en cafe"
+      ],
+      "answer": "Para diagnosticar falta de potasio en cafe, revisa distribucion del sintoma en el lote, etapa fenologica y analisis de suelo/hoja. Si predomina bordes necróticos y menor llenado, conviene ajustar nutricion de forma dirigida.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "nutricion",
+        "potasio",
+        "bordes",
+        "necroticos",
+        "menor",
+        "llenado"
+      ]
+    },
+    {
+      "id": 573,
+      "category": "fertilizacion",
+      "questions": [
+        "Falta de Ca en cafeto",
+        "Sintomas por baja de calcio en cafe"
+      ],
+      "answer": "En cafe, la deficiencia de calcio (Ca) suele verse como tejidos nuevos debiles. Para corregirla conviene usar enmiendas calcicas y mejorar suelo y validar respuesta del lote con seguimiento tecnico.",
+      "keywords": [
+        "cafe",
+        "fertilizacion",
+        "nutricion",
+        "deficiencia",
+        "calcio"
+      ]
+    },
+    {
+      "id": 574,
+      "category": "diagnostico",
+      "questions": [
+        "Como diferenciar deficiencia de calcio en cafe",
+        "Diagnostico de carencia de calcio en cafetal",
+        "Como reconocer baja de Ca en cafe",
+        "Patrones de falta de calcio en cafe"
+      ],
+      "answer": "Para diagnosticar falta de calcio en cafe, revisa distribucion del sintoma en el lote, etapa fenologica y analisis de suelo/hoja. Si predomina tejidos nuevos debiles, conviene ajustar nutricion de forma dirigida.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "nutricion",
+        "calcio",
+        "tejidos",
+        "nuevos",
+        "debiles"
+      ]
+    },
+    {
+      "id": 575,
+      "category": "fertilizacion",
+      "questions": [
+        "Falta de Mg en cafeto",
+        "Sintomas por baja de magnesio en cafe"
+      ],
+      "answer": "En cafe, la deficiencia de magnesio (Mg) suele verse como clorosis internerval en hojas maduras. Para corregirla conviene corregir balance cationico con Mg y validar respuesta del lote con seguimiento tecnico.",
+      "keywords": [
+        "cafe",
+        "fertilizacion",
+        "nutricion",
+        "deficiencia",
+        "magnesio"
+      ]
+    },
+    {
+      "id": 576,
+      "category": "diagnostico",
+      "questions": [
+        "Como diferenciar deficiencia de magnesio en cafe",
+        "Diagnostico de carencia de magnesio en cafetal",
+        "Como reconocer baja de Mg en cafe",
+        "Patrones de falta de magnesio en cafe"
+      ],
+      "answer": "Para diagnosticar falta de magnesio en cafe, revisa distribucion del sintoma en el lote, etapa fenologica y analisis de suelo/hoja. Si predomina clorosis internerval en hojas maduras, conviene ajustar nutricion de forma dirigida.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "nutricion",
+        "magnesio",
+        "clorosis",
+        "internerval",
+        "hojas",
+        "maduras"
+      ]
+    },
+    {
+      "id": 577,
+      "category": "fertilizacion",
+      "questions": [
+        "Falta de S en cafeto",
+        "Sintomas por baja de azufre en cafe"
+      ],
+      "answer": "En cafe, la deficiencia de azufre (S) suele verse como amarillamiento en hojas jovenes. Para corregirla conviene integrar fuentes con azufre y validar respuesta del lote con seguimiento tecnico.",
+      "keywords": [
+        "cafe",
+        "fertilizacion",
+        "nutricion",
+        "deficiencia",
+        "azufre"
+      ]
+    },
+    {
+      "id": 578,
+      "category": "diagnostico",
+      "questions": [
+        "Como diferenciar deficiencia de azufre en cafe",
+        "Diagnostico de carencia de azufre en cafetal",
+        "Como reconocer baja de S en cafe",
+        "Patrones de falta de azufre en cafe"
+      ],
+      "answer": "Para diagnosticar falta de azufre en cafe, revisa distribucion del sintoma en el lote, etapa fenologica y analisis de suelo/hoja. Si predomina amarillamiento en hojas jovenes, conviene ajustar nutricion de forma dirigida.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "nutricion",
+        "azufre",
+        "amarillamiento",
+        "hojas",
+        "jovenes"
+      ]
+    },
+    {
+      "id": 579,
+      "category": "fertilizacion",
+      "questions": [
+        "Falta de B en cafeto",
+        "Sintomas por baja de boro en cafe"
+      ],
+      "answer": "En cafe, la deficiencia de boro (B) suele verse como brotes deformes y bajo cuajado. Para corregirla conviene corregir con dosis bajas y precisas y validar respuesta del lote con seguimiento tecnico.",
+      "keywords": [
+        "cafe",
+        "fertilizacion",
+        "nutricion",
+        "deficiencia",
+        "boro"
+      ]
+    },
+    {
+      "id": 580,
+      "category": "diagnostico",
+      "questions": [
+        "Como diferenciar deficiencia de boro en cafe",
+        "Diagnostico de carencia de boro en cafetal",
+        "Como reconocer baja de B en cafe",
+        "Patrones de falta de boro en cafe"
+      ],
+      "answer": "Para diagnosticar falta de boro en cafe, revisa distribucion del sintoma en el lote, etapa fenologica y analisis de suelo/hoja. Si predomina brotes deformes y bajo cuajado, conviene ajustar nutricion de forma dirigida.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "nutricion",
+        "boro",
+        "brotes",
+        "deformes",
+        "bajo",
+        "cuajado"
+      ]
+    },
+    {
+      "id": 581,
+      "category": "fertilizacion",
+      "questions": [
+        "Falta de Zn en cafeto",
+        "Sintomas por baja de zinc en cafe"
+      ],
+      "answer": "En cafe, la deficiencia de zinc (Zn) suele verse como hojas pequenas y entrenudos cortos. Para corregirla conviene suplementar Zn segun analisis foliar y validar respuesta del lote con seguimiento tecnico.",
+      "keywords": [
+        "cafe",
+        "fertilizacion",
+        "nutricion",
+        "deficiencia",
+        "zinc"
+      ]
+    },
+    {
+      "id": 582,
+      "category": "diagnostico",
+      "questions": [
+        "Como diferenciar deficiencia de zinc en cafe",
+        "Diagnostico de carencia de zinc en cafetal",
+        "Como reconocer baja de Zn en cafe",
+        "Patrones de falta de zinc en cafe"
+      ],
+      "answer": "Para diagnosticar falta de zinc en cafe, revisa distribucion del sintoma en el lote, etapa fenologica y analisis de suelo/hoja. Si predomina hojas pequenas y entrenudos cortos, conviene ajustar nutricion de forma dirigida.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "nutricion",
+        "zinc",
+        "hojas",
+        "pequenas",
+        "entrenudos",
+        "cortos"
+      ]
+    },
+    {
+      "id": 583,
+      "category": "fertilizacion",
+      "questions": [
+        "Falta de Fe en cafeto",
+        "Sintomas por baja de hierro en cafe"
+      ],
+      "answer": "En cafe, la deficiencia de hierro (Fe) suele verse como clorosis en hojas nuevas. Para corregirla conviene recuperar salud radicular y ajustar pH y validar respuesta del lote con seguimiento tecnico.",
+      "keywords": [
+        "cafe",
+        "fertilizacion",
+        "nutricion",
+        "deficiencia",
+        "hierro"
+      ]
+    },
+    {
+      "id": 584,
+      "category": "diagnostico",
+      "questions": [
+        "Como diferenciar deficiencia de hierro en cafe",
+        "Diagnostico de carencia de hierro en cafetal",
+        "Como reconocer baja de Fe en cafe",
+        "Patrones de falta de hierro en cafe"
+      ],
+      "answer": "Para diagnosticar falta de hierro en cafe, revisa distribucion del sintoma en el lote, etapa fenologica y analisis de suelo/hoja. Si predomina clorosis en hojas nuevas, conviene ajustar nutricion de forma dirigida.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "nutricion",
+        "hierro",
+        "clorosis",
+        "hojas",
+        "nuevas"
+      ]
+    },
+    {
+      "id": 585,
+      "category": "fertilizacion",
+      "questions": [
+        "Falta de Mn en cafeto",
+        "Sintomas por baja de manganeso en cafe"
+      ],
+      "answer": "En cafe, la deficiencia de manganeso (Mn) suele verse como moteado clorotico. Para corregirla conviene balancear nutricion y acidez y validar respuesta del lote con seguimiento tecnico.",
+      "keywords": [
+        "cafe",
+        "fertilizacion",
+        "nutricion",
+        "deficiencia",
+        "manganeso"
+      ]
+    },
+    {
+      "id": 586,
+      "category": "diagnostico",
+      "questions": [
+        "Como diferenciar deficiencia de manganeso en cafe",
+        "Diagnostico de carencia de manganeso en cafetal",
+        "Como reconocer baja de Mn en cafe",
+        "Patrones de falta de manganeso en cafe"
+      ],
+      "answer": "Para diagnosticar falta de manganeso en cafe, revisa distribucion del sintoma en el lote, etapa fenologica y analisis de suelo/hoja. Si predomina moteado clorotico, conviene ajustar nutricion de forma dirigida.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "nutricion",
+        "manganeso",
+        "moteado",
+        "clorotico"
+      ]
+    },
+    {
+      "id": 587,
+      "category": "fertilizacion",
+      "questions": [
+        "Falta de Cu en cafeto",
+        "Sintomas por baja de cobre en cafe"
+      ],
+      "answer": "En cafe, la deficiencia de cobre (Cu) suele verse como brotacion debil. Para corregirla conviene aplicar micronutriente con criterio tecnico y validar respuesta del lote con seguimiento tecnico.",
+      "keywords": [
+        "cafe",
+        "fertilizacion",
+        "nutricion",
+        "deficiencia",
+        "cobre"
+      ]
+    },
+    {
+      "id": 588,
+      "category": "diagnostico",
+      "questions": [
+        "Como diferenciar deficiencia de cobre en cafe",
+        "Diagnostico de carencia de cobre en cafetal",
+        "Como reconocer baja de Cu en cafe",
+        "Patrones de falta de cobre en cafe"
+      ],
+      "answer": "Para diagnosticar falta de cobre en cafe, revisa distribucion del sintoma en el lote, etapa fenologica y analisis de suelo/hoja. Si predomina brotacion debil, conviene ajustar nutricion de forma dirigida.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "nutricion",
+        "cobre",
+        "brotacion",
+        "debil"
+      ]
+    },
+    {
+      "id": 589,
+      "category": "fertilizacion",
+      "questions": [
+        "Falta de Mo en cafeto",
+        "Sintomas por baja de molibdeno en cafe"
+      ],
+      "answer": "En cafe, la deficiencia de molibdeno (Mo) suele verse como ineficiencia en uso de nitrogeno. Para corregirla conviene ajustar micronutricion de precision y validar respuesta del lote con seguimiento tecnico.",
+      "keywords": [
+        "cafe",
+        "fertilizacion",
+        "nutricion",
+        "deficiencia",
+        "molibdeno"
+      ]
+    },
+    {
+      "id": 590,
+      "category": "diagnostico",
+      "questions": [
+        "Como diferenciar deficiencia de molibdeno en cafe",
+        "Diagnostico de carencia de molibdeno en cafetal",
+        "Como reconocer baja de Mo en cafe",
+        "Patrones de falta de molibdeno en cafe"
+      ],
+      "answer": "Para diagnosticar falta de molibdeno en cafe, revisa distribucion del sintoma en el lote, etapa fenologica y analisis de suelo/hoja. Si predomina ineficiencia en uso de nitrogeno, conviene ajustar nutricion de forma dirigida.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "nutricion",
+        "molibdeno",
+        "ineficiencia",
+        "uso",
+        "nitrogeno"
+      ]
+    },
+    {
+      "id": 591,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo hojas amarillas en tercio inferior, que puede ser",
+        "Que significa hojas amarillas en tercio inferior en cafeto",
+        "Como actuar si hay hojas amarillas en tercio inferior en cafe",
+        "Diagnostico para hojas amarillas en tercio inferior en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece hojas amarillas en tercio inferior, suele estar asociado a deficiencia nutricional o raiz estresada. Lo recomendable es revisar drenaje, analisis de suelo y plan de fertilizacion y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "hojas",
+        "amarillas",
+        "tercio",
+        "inferior",
+        "deficiencia",
+        "nutricional",
+        "raiz",
+        "estresada"
+      ]
+    },
+    {
+      "id": 592,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo manchas circulares en hojas, que puede ser",
+        "Que significa manchas circulares en hojas en cafeto",
+        "Como actuar si hay manchas circulares en hojas en cafe",
+        "Diagnostico para manchas circulares en hojas en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece manchas circulares en hojas, suele estar asociado a enfermedad foliar. Lo recomendable es identificar patron, mejorar aireacion y actuar por focos y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "manchas",
+        "circulares",
+        "hojas",
+        "enfermedad",
+        "foliar"
+      ]
+    },
+    {
+      "id": 593,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo frutos con perforaciones, que puede ser",
+        "Que significa frutos con perforaciones en cafeto",
+        "Como actuar si hay frutos con perforaciones en cafe",
+        "Diagnostico para frutos con perforaciones en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece frutos con perforaciones, suele estar asociado a plaga perforadora. Lo recomendable es muestrear incidencia y ejecutar manejo integrado y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "frutos",
+        "con",
+        "perforaciones",
+        "plaga",
+        "perforadora"
+      ]
+    },
+    {
+      "id": 594,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo caida prematura de frutos, que puede ser",
+        "Que significa caida prematura de frutos en cafeto",
+        "Como actuar si hay caida prematura de frutos en cafe",
+        "Diagnostico para caida prematura de frutos en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece caida prematura de frutos, suele estar asociado a estres hidrico, nutricional o sanitario. Lo recomendable es evaluar carga, agua y sanidad del lote y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "caida",
+        "prematura",
+        "frutos",
+        "estres",
+        "hidrico",
+        "nutricional",
+        "sanitario"
+      ]
+    },
+    {
+      "id": 595,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo brotes deformes, que puede ser",
+        "Que significa brotes deformes en cafeto",
+        "Como actuar si hay brotes deformes en cafe",
+        "Diagnostico para brotes deformes en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece brotes deformes, suele estar asociado a deficiencia de micronutrientes o dano de plaga. Lo recomendable es verificar brotes nuevos y ajustar plan de correccion y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "brotes",
+        "deformes",
+        "deficiencia",
+        "micronutrientes",
+        "dano",
+        "plaga"
+      ]
+    },
+    {
+      "id": 596,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo marchitez en horas de calor, que puede ser",
+        "Que significa marchitez en horas de calor en cafeto",
+        "Como actuar si hay marchitez en horas de calor en cafe",
+        "Diagnostico para marchitez en horas de calor en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece marchitez en horas de calor, suele estar asociado a problema radicular o deficit de agua. Lo recomendable es chequear humedad de suelo y estado de raices y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "marchitez",
+        "horas",
+        "calor",
+        "problema",
+        "radicular",
+        "deficit",
+        "agua"
+      ]
+    },
+    {
+      "id": 597,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo bajo llenado de grano, que puede ser",
+        "Que significa bajo llenado de grano en cafeto",
+        "Como actuar si hay bajo llenado de grano en cafe",
+        "Diagnostico para bajo llenado de grano en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece bajo llenado de grano, suele estar asociado a desbalance de potasio o estres en llenado. Lo recomendable es alinear nutricion y manejo de agua en etapa critica y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "bajo",
+        "llenado",
+        "grano",
+        "desbalance",
+        "potasio",
+        "estres"
+      ]
+    },
+    {
+      "id": 598,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo defoliacion acelerada, que puede ser",
+        "Que significa defoliacion acelerada en cafeto",
+        "Como actuar si hay defoliacion acelerada en cafe",
+        "Diagnostico para defoliacion acelerada en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece defoliacion acelerada, suele estar asociado a presion de enfermedad o plaga. Lo recomendable es inspeccionar hojas caidas y focos activos y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "defoliacion",
+        "acelerada",
+        "presion",
+        "enfermedad",
+        "plaga"
+      ]
+    },
+    {
+      "id": 599,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo muerte de plantas en focos, que puede ser",
+        "Que significa muerte de plantas en focos en cafeto",
+        "Como actuar si hay muerte de plantas en focos en cafe",
+        "Diagnostico para muerte de plantas en focos en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece muerte de plantas en focos, suele estar asociado a problema de suelo o patogeno radicular. Lo recomendable es aislar foco, revisar drenaje y renovar puntos criticos y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "muerte",
+        "plantas",
+        "focos",
+        "problema",
+        "suelo",
+        "patogeno",
+        "radicular"
+      ]
+    },
+    {
+      "id": 600,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo sabor avinagrado en taza, que puede ser",
+        "Que significa sabor avinagrado en taza en cafeto",
+        "Como actuar si hay sabor avinagrado en taza en cafe",
+        "Diagnostico para sabor avinagrado en taza en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece sabor avinagrado en taza, suele estar asociado a fermentacion fuera de control. Lo recomendable es estandarizar tiempos y limpieza de proceso y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "sabor",
+        "avinagrado",
+        "taza",
+        "fermentacion",
+        "fuera",
+        "control"
+      ]
+    },
+    {
+      "id": 601,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo olor a humedad en pergamino, que puede ser",
+        "Que significa olor a humedad en pergamino en cafeto",
+        "Como actuar si hay olor a humedad en pergamino en cafe",
+        "Diagnostico para olor a humedad en pergamino en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece olor a humedad en pergamino, suele estar asociado a secado o almacenamiento deficiente. Lo recomendable es corregir humedad final y condiciones de bodega y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "olor",
+        "humedad",
+        "pergamino",
+        "secado",
+        "almacenamiento",
+        "deficiente"
+      ]
+    },
+    {
+      "id": 602,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo grano con moho, que puede ser",
+        "Que significa grano con moho en cafeto",
+        "Como actuar si hay grano con moho en cafe",
+        "Diagnostico para grano con moho en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece grano con moho, suele estar asociado a rehumectacion o mala ventilacion. Lo recomendable es secar nuevamente solo si es viable y corregir bodega y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "grano",
+        "con",
+        "moho",
+        "rehumectacion",
+        "mala",
+        "ventilacion"
+      ]
+    },
+    {
+      "id": 603,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo lote muy disparejo, que puede ser",
+        "Que significa lote muy disparejo en cafeto",
+        "Como actuar si hay lote muy disparejo en cafe",
+        "Diagnostico para lote muy disparejo en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece lote muy disparejo, suele estar asociado a fallas de establecimiento y manejo desigual. Lo recomendable es sectorizar y manejar sublotes y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "lote",
+        "muy",
+        "disparejo",
+        "fallas",
+        "establecimiento",
+        "manejo",
+        "desigual"
+      ]
+    },
+    {
+      "id": 604,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo arboles con poco vigor, que puede ser",
+        "Que significa arboles con poco vigor en cafeto",
+        "Como actuar si hay arboles con poco vigor en cafe",
+        "Diagnostico para arboles con poco vigor en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece arboles con poco vigor, suele estar asociado a nutricion insuficiente o suelo limitado. Lo recomendable es priorizar recuperacion de suelo y fertilizacion dirigida y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "arboles",
+        "con",
+        "poco",
+        "vigor",
+        "nutricion",
+        "insuficiente",
+        "suelo",
+        "limitado"
+      ]
+    },
+    {
+      "id": 605,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo flores que no cuajan, que puede ser",
+        "Que significa flores que no cuajan en cafeto",
+        "Como actuar si hay flores que no cuajan en cafe",
+        "Diagnostico para flores que no cuajan en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece flores que no cuajan, suele estar asociado a estres en floracion. Lo recomendable es revisar agua, boro y sanidad en fase floral y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "flores",
+        "que",
+        "cuajan",
+        "estres",
+        "floracion"
+      ]
+    },
+    {
+      "id": 606,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo puntas de ramas secas, que puede ser",
+        "Que significa puntas de ramas secas en cafeto",
+        "Como actuar si hay puntas de ramas secas en cafe",
+        "Diagnostico para puntas de ramas secas en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece puntas de ramas secas, suele estar asociado a muerte descendente o estres severo. Lo recomendable es hacer poda sanitaria y recuperar vigor y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "puntas",
+        "ramas",
+        "secas",
+        "muerte",
+        "descendente",
+        "estres",
+        "severo"
+      ]
+    },
+    {
+      "id": 607,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo amarillamiento en hojas nuevas, que puede ser",
+        "Que significa amarillamiento en hojas nuevas en cafeto",
+        "Como actuar si hay amarillamiento en hojas nuevas en cafe",
+        "Diagnostico para amarillamiento en hojas nuevas en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece amarillamiento en hojas nuevas, suele estar asociado a deficiencia de micronutrientes. Lo recomendable es apoyarse en analisis foliar y ajuste puntual y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "amarillamiento",
+        "hojas",
+        "nuevas",
+        "deficiencia",
+        "micronutrientes"
+      ]
+    },
+    {
+      "id": 608,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo encharcamiento frecuente, que puede ser",
+        "Que significa encharcamiento frecuente en cafeto",
+        "Como actuar si hay encharcamiento frecuente en cafe",
+        "Diagnostico para encharcamiento frecuente en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece encharcamiento frecuente, suele estar asociado a drenaje insuficiente. Lo recomendable es abrir drenajes funcionales y proteger estructura del suelo y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "encharcamiento",
+        "frecuente",
+        "drenaje",
+        "insuficiente"
+      ]
+    },
+    {
+      "id": 609,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo erosion en ladera, que puede ser",
+        "Que significa erosion en ladera en cafeto",
+        "Como actuar si hay erosion en ladera en cafe",
+        "Diagnostico para erosion en ladera en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece erosion en ladera, suele estar asociado a suelo sin cobertura ni barreras. Lo recomendable es implementar curvas a nivel, cobertura y barreras vivas y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "erosion",
+        "ladera",
+        "suelo",
+        "sin",
+        "cobertura",
+        "barreras"
+      ]
+    },
+    {
+      "id": 610,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo incremento rapido de broca, que puede ser",
+        "Que significa incremento rapido de broca en cafeto",
+        "Como actuar si hay incremento rapido de broca en cafe",
+        "Diagnostico para incremento rapido de broca en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece incremento rapido de broca, suele estar asociado a fruta residual y repase insuficiente. Lo recomendable es cosecha sanitaria y control de focos y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "incremento",
+        "rapido",
+        "broca",
+        "fruta",
+        "residual",
+        "repase",
+        "insuficiente"
+      ]
+    },
+    {
+      "id": 611,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo alto porcentaje de pasilla, que puede ser",
+        "Que significa alto porcentaje de pasilla en cafeto",
+        "Como actuar si hay alto porcentaje de pasilla en cafe",
+        "Diagnostico para alto porcentaje de pasilla en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece alto porcentaje de pasilla, suele estar asociado a problemas de sanidad o cosecha. Lo recomendable es mejorar manejo de broca y seleccion de madurez y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "alto",
+        "porcentaje",
+        "pasilla",
+        "problemas",
+        "sanidad",
+        "cosecha"
+      ]
+    },
+    {
+      "id": 612,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo baja productividad sostenida, que puede ser",
+        "Que significa baja productividad sostenida en cafeto",
+        "Como actuar si hay baja productividad sostenida en cafe",
+        "Diagnostico para baja productividad sostenida en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece baja productividad sostenida, suele estar asociado a lotes envejecidos o limitantes de manejo. Lo recomendable es evaluar renovacion escalonada y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "baja",
+        "productividad",
+        "sostenida",
+        "lotes",
+        "envejecidos",
+        "limitantes",
+        "manejo"
+      ]
+    },
+    {
+      "id": 613,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo frutos inmaduros en cosecha, que puede ser",
+        "Que significa frutos inmaduros en cosecha en cafeto",
+        "Como actuar si hay frutos inmaduros en cosecha en cafe",
+        "Diagnostico para frutos inmaduros en cosecha en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece frutos inmaduros en cosecha, suele estar asociado a mala seleccion de recoleccion. Lo recomendable es capacitar recolectores y programar pases y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "frutos",
+        "inmaduros",
+        "cosecha",
+        "mala",
+        "seleccion",
+        "recoleccion"
+      ]
+    },
+    {
+      "id": 614,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo secado muy lento, que puede ser",
+        "Que significa secado muy lento en cafeto",
+        "Como actuar si hay secado muy lento en cafe",
+        "Diagnostico para secado muy lento en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece secado muy lento, suele estar asociado a capa gruesa o baja ventilacion. Lo recomendable es ajustar espesor de capa y frecuencia de volteo y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "secado",
+        "muy",
+        "lento",
+        "capa",
+        "gruesa",
+        "baja",
+        "ventilacion"
+      ]
+    },
+    {
+      "id": 615,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo secado demasiado rapido, que puede ser",
+        "Que significa secado demasiado rapido en cafeto",
+        "Como actuar si hay secado demasiado rapido en cafe",
+        "Diagnostico para secado demasiado rapido en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece secado demasiado rapido, suele estar asociado a temperatura alta sin control. Lo recomendable es moderar carga termica para proteger calidad y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "secado",
+        "demasiado",
+        "rapido",
+        "temperatura",
+        "alta",
+        "sin",
+        "control"
+      ]
+    },
+    {
+      "id": 616,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo brote tierno con dano de raspado, que puede ser",
+        "Que significa brote tierno con dano de raspado en cafeto",
+        "Como actuar si hay brote tierno con dano de raspado en cafe",
+        "Diagnostico para brote tierno con dano de raspado en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece brote tierno con dano de raspado, suele estar asociado a trips u otros chupadores. Lo recomendable es monitorear y actuar temprano por foco y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "brote",
+        "tierno",
+        "con",
+        "dano",
+        "raspado",
+        "trips",
+        "otros",
+        "chupadores"
+      ]
+    },
+    {
+      "id": 617,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo planta con anclaje debil, que puede ser",
+        "Que significa planta con anclaje debil en cafeto",
+        "Como actuar si hay planta con anclaje debil en cafe",
+        "Diagnostico para planta con anclaje debil en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece planta con anclaje debil, suele estar asociado a raiz comprometida. Lo recomendable es revisar sanidad radicular y estructura de suelo y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "planta",
+        "con",
+        "anclaje",
+        "debil",
+        "raiz",
+        "comprometida"
+      ]
+    },
+    {
+      "id": 618,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo follaje opaco y sin brillo, que puede ser",
+        "Que significa follaje opaco y sin brillo en cafeto",
+        "Como actuar si hay follaje opaco y sin brillo en cafe",
+        "Diagnostico para follaje opaco y sin brillo en cafetal"
+      ],
+      "answer": "Cuando en cafe aparece follaje opaco y sin brillo, suele estar asociado a estres nutricional o hidrico. Lo recomendable es ajustar riego de apoyo y nutricion y registrar resultados para ajustar la decision tecnica.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "sintoma",
+        "follaje",
+        "opaco",
+        "sin",
+        "brillo",
+        "estres",
+        "nutricional",
+        "hidrico"
+      ]
+    },
+    {
+      "id": 619,
+      "category": "cosecha",
+      "questions": [
+        "Como manejar proceso lavado en cafe",
+        "Buenas practicas de proceso lavado para cafetal",
+        "Que cuidar en proceso lavado de cafe",
+        "Mejoras para proceso lavado en cafe"
+      ],
+      "answer": "En cafe, proceso lavado requiere control de fermentacion, limpieza y secado uniforme. Esto aporta consistencia de taza y menor riesgo de defectos si se ejecuta con protocolos claros por lote.",
+      "keywords": [
+        "cafe",
+        "cosecha",
+        "poscosecha",
+        "calidad",
+        "proceso",
+        "lavado",
+        "control",
+        "fermentacion",
+        "limpieza",
+        "secado",
+        "uniforme"
+      ]
+    },
+    {
+      "id": 620,
+      "category": "general",
+      "questions": [
+        "Por que es clave proceso lavado en calidad de cafe",
+        "Impacto de proceso lavado en taza de cafe",
+        "Como mejora el precio el buen proceso lavado",
+        "Relación entre proceso lavado y valor comercial del cafe"
+      ],
+      "answer": "Proceso lavado impacta directamente la calidad y consistencia del cafe. Cuando se controla bien (control de fermentacion, limpieza y secado uniforme), aumenta la probabilidad de consistencia de taza y menor riesgo de defectos.",
+      "keywords": [
+        "cafe",
+        "calidad",
+        "taza",
+        "precio",
+        "proceso",
+        "lavado",
+        "consistencia",
+        "menor",
+        "riesgo",
+        "defectos"
+      ]
+    },
+    {
+      "id": 621,
+      "category": "cosecha",
+      "questions": [
+        "Como manejar proceso honey en cafe",
+        "Buenas practicas de proceso honey para cafetal",
+        "Que cuidar en proceso honey de cafe",
+        "Mejoras para proceso honey en cafe"
+      ],
+      "answer": "En cafe, proceso honey requiere manejo preciso de mucilago y secado lento. Esto aporta dulzor y perfil diferenciado si se ejecuta con protocolos claros por lote.",
+      "keywords": [
+        "cafe",
+        "cosecha",
+        "poscosecha",
+        "calidad",
+        "proceso",
+        "honey",
+        "manejo",
+        "preciso",
+        "mucilago",
+        "secado",
+        "lento"
+      ]
+    },
+    {
+      "id": 622,
+      "category": "general",
+      "questions": [
+        "Por que es clave proceso honey en calidad de cafe",
+        "Impacto de proceso honey en taza de cafe",
+        "Como mejora el precio el buen proceso honey",
+        "Relación entre proceso honey y valor comercial del cafe"
+      ],
+      "answer": "Proceso honey impacta directamente la calidad y consistencia del cafe. Cuando se controla bien (manejo preciso de mucilago y secado lento), aumenta la probabilidad de dulzor y perfil diferenciado.",
+      "keywords": [
+        "cafe",
+        "calidad",
+        "taza",
+        "precio",
+        "proceso",
+        "honey",
+        "dulzor",
+        "perfil",
+        "diferenciado"
+      ]
+    },
+    {
+      "id": 623,
+      "category": "cosecha",
+      "questions": [
+        "Como manejar proceso natural en cafe",
+        "Buenas practicas de proceso natural para cafetal",
+        "Que cuidar en proceso natural de cafe",
+        "Mejoras para proceso natural en cafe"
+      ],
+      "answer": "En cafe, proceso natural requiere cosecha muy limpia y control estricto de secado. Esto aporta perfil frutal con mayor riesgo si no hay control si se ejecuta con protocolos claros por lote.",
+      "keywords": [
+        "cafe",
+        "cosecha",
+        "poscosecha",
+        "calidad",
+        "proceso",
+        "natural",
+        "muy",
+        "limpia",
+        "control",
+        "estricto",
+        "secado"
+      ]
+    },
+    {
+      "id": 624,
+      "category": "general",
+      "questions": [
+        "Por que es clave proceso natural en calidad de cafe",
+        "Impacto de proceso natural en taza de cafe",
+        "Como mejora el precio el buen proceso natural",
+        "Relación entre proceso natural y valor comercial del cafe"
+      ],
+      "answer": "Proceso natural impacta directamente la calidad y consistencia del cafe. Cuando se controla bien (cosecha muy limpia y control estricto de secado), aumenta la probabilidad de perfil frutal con mayor riesgo si no hay control.",
+      "keywords": [
+        "cafe",
+        "calidad",
+        "taza",
+        "precio",
+        "proceso",
+        "natural",
+        "perfil",
+        "frutal",
+        "con",
+        "mayor",
+        "riesgo",
+        "hay",
+        "control"
+      ]
+    },
+    {
+      "id": 625,
+      "category": "cosecha",
+      "questions": [
+        "Como manejar fermentacion anaerobia en cafe",
+        "Buenas practicas de fermentacion anaerobia para cafetal",
+        "Que cuidar en fermentacion anaerobia de cafe",
+        "Mejoras para fermentacion anaerobia en cafe"
+      ],
+      "answer": "En cafe, fermentacion anaerobia requiere tiempo, temperatura e inocuidad del proceso. Esto aporta complejidad sensorial con alto control tecnico si se ejecuta con protocolos claros por lote.",
+      "keywords": [
+        "cafe",
+        "cosecha",
+        "poscosecha",
+        "calidad",
+        "fermentacion",
+        "anaerobia",
+        "tiempo",
+        "temperatura",
+        "inocuidad",
+        "del",
+        "proceso"
+      ]
+    },
+    {
+      "id": 626,
+      "category": "general",
+      "questions": [
+        "Por que es clave fermentacion anaerobia en calidad de cafe",
+        "Impacto de fermentacion anaerobia en taza de cafe",
+        "Como mejora el precio el buen fermentacion anaerobia",
+        "Relación entre fermentacion anaerobia y valor comercial del cafe"
+      ],
+      "answer": "Fermentacion anaerobia impacta directamente la calidad y consistencia del cafe. Cuando se controla bien (tiempo, temperatura e inocuidad del proceso), aumenta la probabilidad de complejidad sensorial con alto control tecnico.",
+      "keywords": [
+        "cafe",
+        "calidad",
+        "taza",
+        "precio",
+        "fermentacion",
+        "anaerobia",
+        "complejidad",
+        "sensorial",
+        "con",
+        "alto",
+        "control",
+        "tecnico"
+      ]
+    },
+    {
+      "id": 627,
+      "category": "cosecha",
+      "questions": [
+        "Como manejar despulpado en cafe",
+        "Buenas practicas de despulpado para cafetal",
+        "Que cuidar en despulpado de cafe",
+        "Mejoras para despulpado en cafe"
+      ],
+      "answer": "En cafe, despulpado requiere calibracion de maquina y limpieza constante. Esto aporta menos danos mecanicos y mejor calidad fisica si se ejecuta con protocolos claros por lote.",
+      "keywords": [
+        "cafe",
+        "cosecha",
+        "poscosecha",
+        "calidad",
+        "despulpado",
+        "calibracion",
+        "maquina",
+        "limpieza",
+        "constante"
+      ]
+    },
+    {
+      "id": 628,
+      "category": "general",
+      "questions": [
+        "Por que es clave despulpado en calidad de cafe",
+        "Impacto de despulpado en taza de cafe",
+        "Como mejora el precio el buen despulpado",
+        "Relación entre despulpado y valor comercial del cafe"
+      ],
+      "answer": "Despulpado impacta directamente la calidad y consistencia del cafe. Cuando se controla bien (calibracion de maquina y limpieza constante), aumenta la probabilidad de menos danos mecanicos y mejor calidad fisica.",
+      "keywords": [
+        "cafe",
+        "calidad",
+        "taza",
+        "precio",
+        "despulpado",
+        "menos",
+        "danos",
+        "mecanicos",
+        "mejor",
+        "fisica"
+      ]
+    },
+    {
+      "id": 629,
+      "category": "cosecha",
+      "questions": [
+        "Como manejar lavado de cafe en cafe",
+        "Buenas practicas de lavado de cafe para cafetal",
+        "Que cuidar en lavado de cafe de cafe",
+        "Mejoras para lavado de cafe en cafe"
+      ],
+      "answer": "En cafe, lavado de cafe requiere uso racional de agua y manejo higienico. Esto aporta estabilidad de proceso y menor contaminacion si se ejecuta con protocolos claros por lote.",
+      "keywords": [
+        "cafe",
+        "cosecha",
+        "poscosecha",
+        "calidad",
+        "lavado",
+        "uso",
+        "racional",
+        "agua",
+        "manejo",
+        "higienico"
+      ]
+    },
+    {
+      "id": 630,
+      "category": "general",
+      "questions": [
+        "Por que es clave lavado de cafe en calidad de cafe",
+        "Impacto de lavado de cafe en taza de cafe",
+        "Como mejora el precio el buen lavado de cafe",
+        "Relación entre lavado de cafe y valor comercial del cafe"
+      ],
+      "answer": "Lavado de cafe impacta directamente la calidad y consistencia del cafe. Cuando se controla bien (uso racional de agua y manejo higienico), aumenta la probabilidad de estabilidad de proceso y menor contaminacion.",
+      "keywords": [
+        "cafe",
+        "calidad",
+        "taza",
+        "precio",
+        "lavado",
+        "estabilidad",
+        "proceso",
+        "menor",
+        "contaminacion"
+      ]
+    },
+    {
+      "id": 631,
+      "category": "cosecha",
+      "questions": [
+        "Como manejar clasificacion de cereza en cafe",
+        "Buenas practicas de clasificacion de cereza para cafetal",
+        "Que cuidar en clasificacion de cereza de cafe",
+        "Mejoras para clasificacion de cereza en cafe"
+      ],
+      "answer": "En cafe, clasificacion de cereza requiere separar verdes, maduros y sobremaduros. Esto aporta mejor rendimiento y taza si se ejecuta con protocolos claros por lote.",
+      "keywords": [
+        "cafe",
+        "cosecha",
+        "poscosecha",
+        "calidad",
+        "clasificacion",
+        "cereza",
+        "separar",
+        "verdes",
+        "maduros",
+        "sobremaduros"
+      ]
+    },
+    {
+      "id": 632,
+      "category": "general",
+      "questions": [
+        "Por que es clave clasificacion de cereza en calidad de cafe",
+        "Impacto de clasificacion de cereza en taza de cafe",
+        "Como mejora el precio el buen clasificacion de cereza",
+        "Relación entre clasificacion de cereza y valor comercial del cafe"
+      ],
+      "answer": "Clasificacion de cereza impacta directamente la calidad y consistencia del cafe. Cuando se controla bien (separar verdes, maduros y sobremaduros), aumenta la probabilidad de mejor rendimiento y taza.",
+      "keywords": [
+        "cafe",
+        "calidad",
+        "taza",
+        "precio",
+        "clasificacion",
+        "cereza",
+        "mejor",
+        "rendimiento"
+      ]
+    },
+    {
+      "id": 633,
+      "category": "cosecha",
+      "questions": [
+        "Como manejar clasificacion de pergamino en cafe",
+        "Buenas practicas de clasificacion de pergamino para cafetal",
+        "Que cuidar en clasificacion de pergamino de cafe",
+        "Mejoras para clasificacion de pergamino en cafe"
+      ],
+      "answer": "En cafe, clasificacion de pergamino requiere homogeneizar lote por humedad y calidad. Esto aporta mejor consistencia comercial si se ejecuta con protocolos claros por lote.",
+      "keywords": [
+        "cafe",
+        "cosecha",
+        "poscosecha",
+        "calidad",
+        "clasificacion",
+        "pergamino",
+        "homogeneizar",
+        "lote",
+        "por",
+        "humedad"
+      ]
+    },
+    {
+      "id": 634,
+      "category": "general",
+      "questions": [
+        "Por que es clave clasificacion de pergamino en calidad de cafe",
+        "Impacto de clasificacion de pergamino en taza de cafe",
+        "Como mejora el precio el buen clasificacion de pergamino",
+        "Relación entre clasificacion de pergamino y valor comercial del cafe"
+      ],
+      "answer": "Clasificacion de pergamino impacta directamente la calidad y consistencia del cafe. Cuando se controla bien (homogeneizar lote por humedad y calidad), aumenta la probabilidad de mejor consistencia comercial.",
+      "keywords": [
+        "cafe",
+        "calidad",
+        "taza",
+        "precio",
+        "clasificacion",
+        "pergamino",
+        "mejor",
+        "consistencia",
+        "comercial"
+      ]
+    },
+    {
+      "id": 635,
+      "category": "cosecha",
+      "questions": [
+        "Como manejar secado en marquesina en cafe",
+        "Buenas practicas de secado en marquesina para cafetal",
+        "Que cuidar en secado en marquesina de cafe",
+        "Mejoras para secado en marquesina en cafe"
+      ],
+      "answer": "En cafe, secado en marquesina requiere capas controladas y volteo frecuente. Esto aporta humedad final mas uniforme si se ejecuta con protocolos claros por lote.",
+      "keywords": [
+        "cafe",
+        "cosecha",
+        "poscosecha",
+        "calidad",
+        "secado",
+        "marquesina",
+        "capas",
+        "controladas",
+        "volteo",
+        "frecuente"
+      ]
+    },
+    {
+      "id": 636,
+      "category": "general",
+      "questions": [
+        "Por que es clave secado en marquesina en calidad de cafe",
+        "Impacto de secado en marquesina en taza de cafe",
+        "Como mejora el precio el buen secado en marquesina",
+        "Relación entre secado en marquesina y valor comercial del cafe"
+      ],
+      "answer": "Secado en marquesina impacta directamente la calidad y consistencia del cafe. Cuando se controla bien (capas controladas y volteo frecuente), aumenta la probabilidad de humedad final mas uniforme.",
+      "keywords": [
+        "cafe",
+        "calidad",
+        "taza",
+        "precio",
+        "secado",
+        "marquesina",
+        "humedad",
+        "final",
+        "mas",
+        "uniforme"
+      ]
+    },
+    {
+      "id": 637,
+      "category": "cosecha",
+      "questions": [
+        "Como manejar secado mecanico en cafe",
+        "Buenas practicas de secado mecanico para cafetal",
+        "Que cuidar en secado mecanico de cafe",
+        "Mejoras para secado mecanico en cafe"
+      ],
+      "answer": "En cafe, secado mecanico requiere temperatura moderada y control de flujo. Esto aporta reduccion de tiempos sin deteriorar calidad si se ejecuta con protocolos claros por lote.",
+      "keywords": [
+        "cafe",
+        "cosecha",
+        "poscosecha",
+        "calidad",
+        "secado",
+        "mecanico",
+        "temperatura",
+        "moderada",
+        "control",
+        "flujo"
+      ]
+    },
+    {
+      "id": 638,
+      "category": "general",
+      "questions": [
+        "Por que es clave secado mecanico en calidad de cafe",
+        "Impacto de secado mecanico en taza de cafe",
+        "Como mejora el precio el buen secado mecanico",
+        "Relación entre secado mecanico y valor comercial del cafe"
+      ],
+      "answer": "Secado mecanico impacta directamente la calidad y consistencia del cafe. Cuando se controla bien (temperatura moderada y control de flujo), aumenta la probabilidad de reduccion de tiempos sin deteriorar calidad.",
+      "keywords": [
+        "cafe",
+        "calidad",
+        "taza",
+        "precio",
+        "secado",
+        "mecanico",
+        "reduccion",
+        "tiempos",
+        "sin",
+        "deteriorar"
+      ]
+    },
+    {
+      "id": 639,
+      "category": "cosecha",
+      "questions": [
+        "Como manejar almacenamiento en bodega en cafe",
+        "Buenas practicas de almacenamiento en bodega para cafetal",
+        "Que cuidar en almacenamiento en bodega de cafe",
+        "Mejoras para almacenamiento en bodega en cafe"
+      ],
+      "answer": "En cafe, almacenamiento en bodega requiere ambiente seco, limpio y ventilado. Esto aporta proteccion de calidad y vida util si se ejecuta con protocolos claros por lote.",
+      "keywords": [
+        "cafe",
+        "cosecha",
+        "poscosecha",
+        "calidad",
+        "almacenamiento",
+        "bodega",
+        "ambiente",
+        "seco",
+        "limpio",
+        "ventilado"
+      ]
+    },
+    {
+      "id": 640,
+      "category": "general",
+      "questions": [
+        "Por que es clave almacenamiento en bodega en calidad de cafe",
+        "Impacto de almacenamiento en bodega en taza de cafe",
+        "Como mejora el precio el buen almacenamiento en bodega",
+        "Relación entre almacenamiento en bodega y valor comercial del cafe"
+      ],
+      "answer": "Almacenamiento en bodega impacta directamente la calidad y consistencia del cafe. Cuando se controla bien (ambiente seco, limpio y ventilado), aumenta la probabilidad de proteccion de calidad y vida util.",
+      "keywords": [
+        "cafe",
+        "calidad",
+        "taza",
+        "precio",
+        "almacenamiento",
+        "bodega",
+        "proteccion",
+        "vida",
+        "util"
+      ]
+    },
+    {
+      "id": 641,
+      "category": "cosecha",
+      "questions": [
+        "Como manejar trazabilidad de lotes en cafe",
+        "Buenas practicas de trazabilidad de lotes para cafetal",
+        "Que cuidar en trazabilidad de lotes de cafe",
+        "Mejoras para trazabilidad de lotes en cafe"
+      ],
+      "answer": "En cafe, trazabilidad de lotes requiere registro desde cosecha hasta venta. Esto aporta mejor negociacion comercial si se ejecuta con protocolos claros por lote.",
+      "keywords": [
+        "cafe",
+        "cosecha",
+        "poscosecha",
+        "calidad",
+        "trazabilidad",
+        "lotes",
+        "registro",
+        "desde",
+        "hasta",
+        "venta"
+      ]
+    },
+    {
+      "id": 642,
+      "category": "general",
+      "questions": [
+        "Por que es clave trazabilidad de lotes en calidad de cafe",
+        "Impacto de trazabilidad de lotes en taza de cafe",
+        "Como mejora el precio el buen trazabilidad de lotes",
+        "Relación entre trazabilidad de lotes y valor comercial del cafe"
+      ],
+      "answer": "Trazabilidad de lotes impacta directamente la calidad y consistencia del cafe. Cuando se controla bien (registro desde cosecha hasta venta), aumenta la probabilidad de mejor negociacion comercial.",
+      "keywords": [
+        "cafe",
+        "calidad",
+        "taza",
+        "precio",
+        "trazabilidad",
+        "lotes",
+        "mejor",
+        "negociacion",
+        "comercial"
+      ]
+    },
+    {
+      "id": 643,
+      "category": "cosecha",
+      "questions": [
+        "Como manejar catacion interna en cafe",
+        "Buenas practicas de catacion interna para cafetal",
+        "Que cuidar en catacion interna de cafe",
+        "Mejoras para catacion interna en cafe"
+      ],
+      "answer": "En cafe, catacion interna requiere evaluar aroma, sabor y defectos de manera periodica. Esto aporta decisiones de mejora por lote si se ejecuta con protocolos claros por lote.",
+      "keywords": [
+        "cafe",
+        "cosecha",
+        "poscosecha",
+        "calidad",
+        "catacion",
+        "interna",
+        "evaluar",
+        "aroma",
+        "sabor",
+        "defectos",
+        "manera",
+        "periodica"
+      ]
+    },
+    {
+      "id": 644,
+      "category": "general",
+      "questions": [
+        "Por que es clave catacion interna en calidad de cafe",
+        "Impacto de catacion interna en taza de cafe",
+        "Como mejora el precio el buen catacion interna",
+        "Relación entre catacion interna y valor comercial del cafe"
+      ],
+      "answer": "Catacion interna impacta directamente la calidad y consistencia del cafe. Cuando se controla bien (evaluar aroma, sabor y defectos de manera periodica), aumenta la probabilidad de decisiones de mejora por lote.",
+      "keywords": [
+        "cafe",
+        "calidad",
+        "taza",
+        "precio",
+        "catacion",
+        "interna",
+        "decisiones",
+        "mejora",
+        "por",
+        "lote"
+      ]
+    },
+    {
+      "id": 645,
+      "category": "cosecha",
+      "questions": [
+        "Como manejar control de humedad final en cafe",
+        "Buenas practicas de control de humedad final para cafetal",
+        "Que cuidar en control de humedad final de cafe",
+        "Mejoras para control de humedad final en cafe"
+      ],
+      "answer": "En cafe, control de humedad final requiere medicion objetiva antes de almacenar. Esto aporta evitar mohos y sobresecado si se ejecuta con protocolos claros por lote.",
+      "keywords": [
+        "cafe",
+        "cosecha",
+        "poscosecha",
+        "calidad",
+        "control",
+        "humedad",
+        "final",
+        "medicion",
+        "objetiva",
+        "antes",
+        "almacenar"
+      ]
+    },
+    {
+      "id": 646,
+      "category": "general",
+      "questions": [
+        "Por que es clave control de humedad final en calidad de cafe",
+        "Impacto de control de humedad final en taza de cafe",
+        "Como mejora el precio el buen control de humedad final",
+        "Relación entre control de humedad final y valor comercial del cafe"
+      ],
+      "answer": "Control de humedad final impacta directamente la calidad y consistencia del cafe. Cuando se controla bien (medicion objetiva antes de almacenar), aumenta la probabilidad de evitar mohos y sobresecado.",
+      "keywords": [
+        "cafe",
+        "calidad",
+        "taza",
+        "precio",
+        "control",
+        "humedad",
+        "final",
+        "evitar",
+        "mohos",
+        "sobresecado"
+      ]
+    },
+    {
+      "id": 647,
+      "category": "cosecha",
+      "questions": [
+        "Como manejar control de actividad de agua en cafe",
+        "Buenas practicas de control de actividad de agua para cafetal",
+        "Que cuidar en control de actividad de agua de cafe",
+        "Mejoras para control de actividad de agua en cafe"
+      ],
+      "answer": "En cafe, control de actividad de agua requiere validar estabilidad de almacenamiento. Esto aporta reducir deterioro del perfil si se ejecuta con protocolos claros por lote.",
+      "keywords": [
+        "cafe",
+        "cosecha",
+        "poscosecha",
+        "calidad",
+        "control",
+        "actividad",
+        "agua",
+        "validar",
+        "estabilidad",
+        "almacenamiento"
+      ]
+    },
+    {
+      "id": 648,
+      "category": "general",
+      "questions": [
+        "Por que es clave control de actividad de agua en calidad de cafe",
+        "Impacto de control de actividad de agua en taza de cafe",
+        "Como mejora el precio el buen control de actividad de agua",
+        "Relación entre control de actividad de agua y valor comercial del cafe"
+      ],
+      "answer": "Control de actividad de agua impacta directamente la calidad y consistencia del cafe. Cuando se controla bien (validar estabilidad de almacenamiento), aumenta la probabilidad de reducir deterioro del perfil.",
+      "keywords": [
+        "cafe",
+        "calidad",
+        "taza",
+        "precio",
+        "control",
+        "actividad",
+        "agua",
+        "reducir",
+        "deterioro",
+        "del",
+        "perfil"
+      ]
+    },
+    {
+      "id": 649,
+      "category": "cosecha",
+      "questions": [
+        "Como manejar separacion por altitud y lote en cafe",
+        "Buenas practicas de separacion por altitud y lote para cafetal",
+        "Que cuidar en separacion por altitud y lote de cafe",
+        "Mejoras para separacion por altitud y lote en cafe"
+      ],
+      "answer": "En cafe, separacion por altitud y lote requiere procesar lotes sin mezclar origen. Esto aporta mejor diferenciacion de calidad si se ejecuta con protocolos claros por lote.",
+      "keywords": [
+        "cafe",
+        "cosecha",
+        "poscosecha",
+        "calidad",
+        "separacion",
+        "por",
+        "altitud",
+        "lote",
+        "procesar",
+        "lotes",
+        "sin",
+        "mezclar",
+        "origen"
+      ]
+    },
+    {
+      "id": 650,
+      "category": "general",
+      "questions": [
+        "Por que es clave separacion por altitud y lote en calidad de cafe",
+        "Impacto de separacion por altitud y lote en taza de cafe",
+        "Como mejora el precio el buen separacion por altitud y lote",
+        "Relación entre separacion por altitud y lote y valor comercial del cafe"
+      ],
+      "answer": "Separacion por altitud y lote impacta directamente la calidad y consistencia del cafe. Cuando se controla bien (procesar lotes sin mezclar origen), aumenta la probabilidad de mejor diferenciacion de calidad.",
+      "keywords": [
+        "cafe",
+        "calidad",
+        "taza",
+        "precio",
+        "separacion",
+        "por",
+        "altitud",
+        "lote",
+        "mejor",
+        "diferenciacion"
+      ]
+    },
+    {
+      "id": 651,
+      "category": "cosecha",
+      "questions": [
+        "Como manejar limpieza de equipos de beneficio en cafe",
+        "Buenas practicas de limpieza de equipos de beneficio para cafetal",
+        "Que cuidar en limpieza de equipos de beneficio de cafe",
+        "Mejoras para limpieza de equipos de beneficio en cafe"
+      ],
+      "answer": "En cafe, limpieza de equipos de beneficio requiere rutinas diarias de higiene. Esto aporta menos contaminacion cruzada si se ejecuta con protocolos claros por lote.",
+      "keywords": [
+        "cafe",
+        "cosecha",
+        "poscosecha",
+        "calidad",
+        "limpieza",
+        "equipos",
+        "beneficio",
+        "rutinas",
+        "diarias",
+        "higiene"
+      ]
+    },
+    {
+      "id": 652,
+      "category": "general",
+      "questions": [
+        "Por que es clave limpieza de equipos de beneficio en calidad de cafe",
+        "Impacto de limpieza de equipos de beneficio en taza de cafe",
+        "Como mejora el precio el buen limpieza de equipos de beneficio",
+        "Relación entre limpieza de equipos de beneficio y valor comercial del cafe"
+      ],
+      "answer": "Limpieza de equipos de beneficio impacta directamente la calidad y consistencia del cafe. Cuando se controla bien (rutinas diarias de higiene), aumenta la probabilidad de menos contaminacion cruzada.",
+      "keywords": [
+        "cafe",
+        "calidad",
+        "taza",
+        "precio",
+        "limpieza",
+        "equipos",
+        "beneficio",
+        "menos",
+        "contaminacion",
+        "cruzada"
+      ]
+    },
+    {
+      "id": 653,
+      "category": "cosecha",
+      "questions": [
+        "Como manejar manejo de subproductos en cafe",
+        "Buenas practicas de manejo de subproductos para cafetal",
+        "Que cuidar en manejo de subproductos de cafe",
+        "Mejoras para manejo de subproductos en cafe"
+      ],
+      "answer": "En cafe, manejo de subproductos requiere aprovechamiento tecnico de pulpa y mucilago. Esto aporta menor impacto ambiental y mejor circularidad si se ejecuta con protocolos claros por lote.",
+      "keywords": [
+        "cafe",
+        "cosecha",
+        "poscosecha",
+        "calidad",
+        "manejo",
+        "subproductos",
+        "aprovechamiento",
+        "tecnico",
+        "pulpa",
+        "mucilago"
+      ]
+    },
+    {
+      "id": 654,
+      "category": "general",
+      "questions": [
+        "Por que es clave manejo de subproductos en calidad de cafe",
+        "Impacto de manejo de subproductos en taza de cafe",
+        "Como mejora el precio el buen manejo de subproductos",
+        "Relación entre manejo de subproductos y valor comercial del cafe"
+      ],
+      "answer": "Manejo de subproductos impacta directamente la calidad y consistencia del cafe. Cuando se controla bien (aprovechamiento tecnico de pulpa y mucilago), aumenta la probabilidad de menor impacto ambiental y mejor circularidad.",
+      "keywords": [
+        "cafe",
+        "calidad",
+        "taza",
+        "precio",
+        "manejo",
+        "subproductos",
+        "menor",
+        "impacto",
+        "ambiental",
+        "mejor",
+        "circularidad"
+      ]
+    },
+    {
+      "id": 655,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar analisis de suelo por lotes en cafe",
+        "Recomendaciones de analisis de suelo por lotes para cafetal",
+        "Importancia de analisis de suelo por lotes en cultivo de cafe",
+        "Plan practico de analisis de suelo por lotes en finca cafetera"
+      ],
+      "answer": "En caficultura, analisis de suelo por lotes ayuda a tomar decisiones de fertilizacion con evidencia. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "analisis",
+        "por",
+        "lotes",
+        "tomar",
+        "decisiones",
+        "fertilizacion",
+        "con",
+        "evidencia"
+      ]
+    },
+    {
+      "id": 656,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar analisis foliar en cafe",
+        "Recomendaciones de analisis foliar para cafetal",
+        "Importancia de analisis foliar en cultivo de cafe",
+        "Plan practico de analisis foliar en finca cafetera"
+      ],
+      "answer": "En caficultura, analisis foliar ayuda a ajustar correcciones nutricionales en momentos oportunos. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "analisis",
+        "foliar",
+        "ajustar",
+        "correcciones",
+        "nutricionales",
+        "momentos",
+        "oportunos"
+      ]
+    },
+    {
+      "id": 657,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar estructura del suelo en cafe",
+        "Recomendaciones de estructura del suelo para cafetal",
+        "Importancia de estructura del suelo en cultivo de cafe",
+        "Plan practico de estructura del suelo en finca cafetera"
+      ],
+      "answer": "En caficultura, estructura del suelo ayuda a favorecer raices activas y mejor infiltracion. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "estructura",
+        "del",
+        "favorecer",
+        "raices",
+        "activas",
+        "mejor",
+        "infiltracion"
+      ]
+    },
+    {
+      "id": 658,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar materia organica en cafe",
+        "Recomendaciones de materia organica para cafetal",
+        "Importancia de materia organica en cultivo de cafe",
+        "Plan practico de materia organica en finca cafetera"
+      ],
+      "answer": "En caficultura, materia organica ayuda a retener humedad y sostener vida microbiana. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "materia",
+        "organica",
+        "retener",
+        "humedad",
+        "sostener",
+        "vida",
+        "microbiana"
+      ]
+    },
+    {
+      "id": 659,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar cobertura del suelo en cafe",
+        "Recomendaciones de cobertura del suelo para cafetal",
+        "Importancia de cobertura del suelo en cultivo de cafe",
+        "Plan practico de cobertura del suelo en finca cafetera"
+      ],
+      "answer": "En caficultura, cobertura del suelo ayuda a reducir erosion y amortiguar temperatura. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "cobertura",
+        "del",
+        "reducir",
+        "erosion",
+        "amortiguar",
+        "temperatura"
+      ]
+    },
+    {
+      "id": 660,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar curvas a nivel en cafe",
+        "Recomendaciones de curvas a nivel para cafetal",
+        "Importancia de curvas a nivel en cultivo de cafe",
+        "Plan practico de curvas a nivel en finca cafetera"
+      ],
+      "answer": "En caficultura, curvas a nivel ayuda a frenar escorrentia en laderas. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "curvas",
+        "nivel",
+        "frenar",
+        "escorrentia",
+        "laderas"
+      ]
+    },
+    {
+      "id": 661,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar drenajes funcionales en cafe",
+        "Recomendaciones de drenajes funcionales para cafetal",
+        "Importancia de drenajes funcionales en cultivo de cafe",
+        "Plan practico de drenajes funcionales en finca cafetera"
+      ],
+      "answer": "En caficultura, drenajes funcionales ayuda a evitar anoxia radicular en epocas de lluvia. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "drenajes",
+        "funcionales",
+        "evitar",
+        "anoxia",
+        "radicular",
+        "epocas",
+        "lluvia"
+      ]
+    },
+    {
+      "id": 662,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar riego suplementario en cafe",
+        "Recomendaciones de riego suplementario para cafetal",
+        "Importancia de riego suplementario en cultivo de cafe",
+        "Plan practico de riego suplementario en finca cafetera"
+      ],
+      "answer": "En caficultura, riego suplementario ayuda a proteger floracion y llenado en deficit hidrico. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "riego",
+        "suplementario",
+        "proteger",
+        "floracion",
+        "llenado",
+        "deficit",
+        "hidrico"
+      ]
+    },
+    {
+      "id": 663,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar cosecha de agua en cafe",
+        "Recomendaciones de cosecha de agua para cafetal",
+        "Importancia de cosecha de agua en cultivo de cafe",
+        "Plan practico de cosecha de agua en finca cafetera"
+      ],
+      "answer": "En caficultura, cosecha de agua ayuda a aumentar resiliencia frente a sequias. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "cosecha",
+        "aumentar",
+        "resiliencia",
+        "frente",
+        "sequias"
+      ]
+    },
+    {
+      "id": 664,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar manejo de compactacion en cafe",
+        "Recomendaciones de manejo de compactacion para cafetal",
+        "Importancia de manejo de compactacion en cultivo de cafe",
+        "Plan practico de manejo de compactacion en finca cafetera"
+      ],
+      "answer": "En caficultura, manejo de compactacion ayuda a mejorar crecimiento radicular. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "compactacion",
+        "mejorar",
+        "crecimiento",
+        "radicular"
+      ]
+    },
+    {
+      "id": 665,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar mulch organico en cafe",
+        "Recomendaciones de mulch organico para cafetal",
+        "Importancia de mulch organico en cultivo de cafe",
+        "Plan practico de mulch organico en finca cafetera"
+      ],
+      "answer": "En caficultura, mulch organico ayuda a conservar humedad y reducir malezas. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "mulch",
+        "organico",
+        "conservar",
+        "humedad",
+        "reducir",
+        "malezas"
+      ]
+    },
+    {
+      "id": 666,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar enmiendas de acidez en cafe",
+        "Recomendaciones de enmiendas de acidez para cafetal",
+        "Importancia de enmiendas de acidez en cultivo de cafe",
+        "Plan practico de enmiendas de acidez en finca cafetera"
+      ],
+      "answer": "En caficultura, enmiendas de acidez ayuda a equilibrar disponibilidad de nutrientes. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "enmiendas",
+        "acidez",
+        "equilibrar",
+        "disponibilidad",
+        "nutrientes"
+      ]
+    },
+    {
+      "id": 667,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar balance calcio magnesio potasio en cafe",
+        "Recomendaciones de balance calcio magnesio potasio para cafetal",
+        "Importancia de balance calcio magnesio potasio en cultivo de cafe",
+        "Plan practico de balance calcio magnesio potasio en finca cafetera"
+      ],
+      "answer": "En caficultura, balance calcio magnesio potasio ayuda a evitar antagonismos nutricionales. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "balance",
+        "calcio",
+        "magnesio",
+        "potasio",
+        "evitar",
+        "antagonismos",
+        "nutricionales"
+      ]
+    },
+    {
+      "id": 668,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar muestreo representativo en cafe",
+        "Recomendaciones de muestreo representativo para cafetal",
+        "Importancia de muestreo representativo en cultivo de cafe",
+        "Plan practico de muestreo representativo en finca cafetera"
+      ],
+      "answer": "En caficultura, muestreo representativo ayuda a evitar errores de recomendacion. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "muestreo",
+        "representativo",
+        "evitar",
+        "errores",
+        "recomendacion"
+      ]
+    },
+    {
+      "id": 669,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar zonificacion de suelos en cafe",
+        "Recomendaciones de zonificacion de suelos para cafetal",
+        "Importancia de zonificacion de suelos en cultivo de cafe",
+        "Plan practico de zonificacion de suelos en finca cafetera"
+      ],
+      "answer": "En caficultura, zonificacion de suelos ayuda a manejo diferenciado por ambiente. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "zonificacion",
+        "suelos",
+        "diferenciado",
+        "por",
+        "ambiente"
+      ]
+    },
+    {
+      "id": 670,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar proteccion de nacimientos en cafe",
+        "Recomendaciones de proteccion de nacimientos para cafetal",
+        "Importancia de proteccion de nacimientos en cultivo de cafe",
+        "Plan practico de proteccion de nacimientos en finca cafetera"
+      ],
+      "answer": "En caficultura, proteccion de nacimientos ayuda a sostener servicio hidrico de la finca. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "proteccion",
+        "nacimientos",
+        "sostener",
+        "servicio",
+        "hidrico",
+        "finca"
+      ]
+    },
+    {
+      "id": 671,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar franjas de amortiguacion en cafe",
+        "Recomendaciones de franjas de amortiguacion para cafetal",
+        "Importancia de franjas de amortiguacion en cultivo de cafe",
+        "Plan practico de franjas de amortiguacion en finca cafetera"
+      ],
+      "answer": "En caficultura, franjas de amortiguacion ayuda a disminuir riesgo de contaminacion. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "franjas",
+        "amortiguacion",
+        "disminuir",
+        "riesgo",
+        "contaminacion"
+      ]
+    },
+    {
+      "id": 672,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar coberturas nobles en cafe",
+        "Recomendaciones de coberturas nobles para cafetal",
+        "Importancia de coberturas nobles en cultivo de cafe",
+        "Plan practico de coberturas nobles en finca cafetera"
+      ],
+      "answer": "En caficultura, coberturas nobles ayuda a controlar arvenses sin suelo desnudo. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "coberturas",
+        "nobles",
+        "controlar",
+        "arvenses",
+        "sin",
+        "desnudo"
+      ]
+    },
+    {
+      "id": 673,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar manejo de escorrentia en cafe",
+        "Recomendaciones de manejo de escorrentia para cafetal",
+        "Importancia de manejo de escorrentia en cultivo de cafe",
+        "Plan practico de manejo de escorrentia en finca cafetera"
+      ],
+      "answer": "En caficultura, manejo de escorrentia ayuda a reducir perdida de fertilidad. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "escorrentia",
+        "reducir",
+        "perdida",
+        "fertilidad"
+      ]
+    },
+    {
+      "id": 674,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar bioinsumos de suelo en cafe",
+        "Recomendaciones de bioinsumos de suelo para cafetal",
+        "Importancia de bioinsumos de suelo en cultivo de cafe",
+        "Plan practico de bioinsumos de suelo en finca cafetera"
+      ],
+      "answer": "En caficultura, bioinsumos de suelo ayuda a complementar estrategia nutricional. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "bioinsumos",
+        "complementar",
+        "estrategia",
+        "nutricional"
+      ]
+    },
+    {
+      "id": 675,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar uso racional de agua en beneficio en cafe",
+        "Recomendaciones de uso racional de agua en beneficio para cafetal",
+        "Importancia de uso racional de agua en beneficio en cultivo de cafe",
+        "Plan practico de uso racional de agua en beneficio en finca cafetera"
+      ],
+      "answer": "En caficultura, uso racional de agua en beneficio ayuda a mejorar eficiencia hidrica. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "uso",
+        "racional",
+        "beneficio",
+        "mejorar",
+        "eficiencia",
+        "hidrica"
+      ]
+    },
+    {
+      "id": 676,
+      "category": "cultivo",
+      "questions": [
+        "Como aplicar medicion de humedad de suelo en cafe",
+        "Recomendaciones de medicion de humedad de suelo para cafetal",
+        "Importancia de medicion de humedad de suelo en cultivo de cafe",
+        "Plan practico de medicion de humedad de suelo en finca cafetera"
+      ],
+      "answer": "En caficultura, medicion de humedad de suelo ayuda a tomar decisiones de riego con criterio. Implementarlo por lotes con seguimiento tecnico mejora estabilidad productiva.",
+      "keywords": [
+        "cafe",
+        "suelo",
+        "agua",
+        "cultivo",
+        "manejo",
+        "medicion",
+        "humedad",
+        "tomar",
+        "decisiones",
+        "riego",
+        "con",
+        "criterio"
+      ]
+    },
+    {
+      "id": 677,
+      "category": "cultivo",
+      "questions": [
+        "Como manejar poda de formacion en cafe",
+        "Objetivo de poda de formacion en cafeto",
+        "Cuando aplicar poda de formacion en cafetal",
+        "Errores frecuentes en poda de formacion de cafe"
+      ],
+      "answer": "En cafe, poda de formacion se usa para definir arquitectura productiva desde etapas tempranas. Conviene ejecutarla por lote, con criterios de edad, vigor y estado sanitario.",
+      "keywords": [
+        "cafe",
+        "poda",
+        "renovacion",
+        "manejo",
+        "formacion",
+        "definir",
+        "arquitectura",
+        "productiva",
+        "desde",
+        "etapas",
+        "tempranas"
+      ]
+    },
+    {
+      "id": 678,
+      "category": "cultivo",
+      "questions": [
+        "Como manejar poda de mantenimiento en cafe",
+        "Objetivo de poda de mantenimiento en cafeto",
+        "Cuando aplicar poda de mantenimiento en cafetal",
+        "Errores frecuentes en poda de mantenimiento de cafe"
+      ],
+      "answer": "En cafe, poda de mantenimiento se usa para equilibrar carga y vigor del arbol. Conviene ejecutarla por lote, con criterios de edad, vigor y estado sanitario.",
+      "keywords": [
+        "cafe",
+        "poda",
+        "renovacion",
+        "manejo",
+        "mantenimiento",
+        "equilibrar",
+        "carga",
+        "vigor",
+        "del",
+        "arbol"
+      ]
+    },
+    {
+      "id": 679,
+      "category": "cultivo",
+      "questions": [
+        "Como manejar poda sanitaria en cafe",
+        "Objetivo de poda sanitaria en cafeto",
+        "Cuando aplicar poda sanitaria en cafetal",
+        "Errores frecuentes en poda sanitaria de cafe"
+      ],
+      "answer": "En cafe, poda sanitaria se usa para retirar tejido enfermo y bajar inoculo. Conviene ejecutarla por lote, con criterios de edad, vigor y estado sanitario.",
+      "keywords": [
+        "cafe",
+        "poda",
+        "renovacion",
+        "manejo",
+        "sanitaria",
+        "retirar",
+        "tejido",
+        "enfermo",
+        "bajar",
+        "inoculo"
+      ]
+    },
+    {
+      "id": 680,
+      "category": "cultivo",
+      "questions": [
+        "Como manejar deschuponado en cafe",
+        "Objetivo de deschuponado en cafeto",
+        "Cuando aplicar deschuponado en cafetal",
+        "Errores frecuentes en deschuponado de cafe"
+      ],
+      "answer": "En cafe, deschuponado se usa para evitar competencia de brotes improductivos. Conviene ejecutarla por lote, con criterios de edad, vigor y estado sanitario.",
+      "keywords": [
+        "cafe",
+        "poda",
+        "renovacion",
+        "manejo",
+        "deschuponado",
+        "evitar",
+        "competencia",
+        "brotes",
+        "improductivos"
+      ]
+    },
+    {
+      "id": 681,
+      "category": "cultivo",
+      "questions": [
+        "Como manejar renovacion por zoca en cafe",
+        "Objetivo de renovacion por zoca en cafeto",
+        "Cuando aplicar renovacion por zoca en cafetal",
+        "Errores frecuentes en renovacion por zoca de cafe"
+      ],
+      "answer": "En cafe, renovacion por zoca se usa para rejuvenecer lotes envejecidos. Conviene ejecutarla por lote, con criterios de edad, vigor y estado sanitario.",
+      "keywords": [
+        "cafe",
+        "poda",
+        "renovacion",
+        "manejo",
+        "por",
+        "zoca",
+        "rejuvenecer",
+        "lotes",
+        "envejecidos"
+      ]
+    },
+    {
+      "id": 682,
+      "category": "cultivo",
+      "questions": [
+        "Como manejar renovacion por siembra en cafe",
+        "Objetivo de renovacion por siembra en cafeto",
+        "Cuando aplicar renovacion por siembra en cafetal",
+        "Errores frecuentes en renovacion por siembra de cafe"
+      ],
+      "answer": "En cafe, renovacion por siembra se usa para actualizar material vegetal del lote. Conviene ejecutarla por lote, con criterios de edad, vigor y estado sanitario.",
+      "keywords": [
+        "cafe",
+        "poda",
+        "renovacion",
+        "manejo",
+        "por",
+        "siembra",
+        "actualizar",
+        "material",
+        "vegetal",
+        "del",
+        "lote"
+      ]
+    },
+    {
+      "id": 683,
+      "category": "cultivo",
+      "questions": [
+        "Como manejar renovacion escalonada en cafe",
+        "Objetivo de renovacion escalonada en cafeto",
+        "Cuando aplicar renovacion escalonada en cafetal",
+        "Errores frecuentes en renovacion escalonada de cafe"
+      ],
+      "answer": "En cafe, renovacion escalonada se usa para evitar caida brusca del flujo de caja. Conviene ejecutarla por lote, con criterios de edad, vigor y estado sanitario.",
+      "keywords": [
+        "cafe",
+        "poda",
+        "renovacion",
+        "manejo",
+        "escalonada",
+        "evitar",
+        "caida",
+        "brusca",
+        "del",
+        "flujo",
+        "caja"
+      ]
+    },
+    {
+      "id": 684,
+      "category": "cultivo",
+      "questions": [
+        "Como manejar seleccion de ejes productivos en cafe",
+        "Objetivo de seleccion de ejes productivos en cafeto",
+        "Cuando aplicar seleccion de ejes productivos en cafetal",
+        "Errores frecuentes en seleccion de ejes productivos de cafe"
+      ],
+      "answer": "En cafe, seleccion de ejes productivos se usa para mejorar aireacion y cosecha. Conviene ejecutarla por lote, con criterios de edad, vigor y estado sanitario.",
+      "keywords": [
+        "cafe",
+        "poda",
+        "renovacion",
+        "manejo",
+        "seleccion",
+        "ejes",
+        "productivos",
+        "mejorar",
+        "aireacion",
+        "cosecha"
+      ]
+    },
+    {
+      "id": 685,
+      "category": "cultivo",
+      "questions": [
+        "Como manejar poda postcosecha en cafe",
+        "Objetivo de poda postcosecha en cafeto",
+        "Cuando aplicar poda postcosecha en cafetal",
+        "Errores frecuentes en poda postcosecha de cafe"
+      ],
+      "answer": "En cafe, poda postcosecha se usa para recuperar planta para siguiente ciclo. Conviene ejecutarla por lote, con criterios de edad, vigor y estado sanitario.",
+      "keywords": [
+        "cafe",
+        "poda",
+        "renovacion",
+        "manejo",
+        "postcosecha",
+        "recuperar",
+        "planta",
+        "para",
+        "siguiente",
+        "ciclo"
+      ]
+    },
+    {
+      "id": 686,
+      "category": "cultivo",
+      "questions": [
+        "Como manejar manejo de residuos de poda en cafe",
+        "Objetivo de manejo de residuos de poda en cafeto",
+        "Cuando aplicar manejo de residuos de poda en cafetal",
+        "Errores frecuentes en manejo de residuos de poda de cafe"
+      ],
+      "answer": "En cafe, manejo de residuos de poda se usa para reducir focos sanitarios. Conviene ejecutarla por lote, con criterios de edad, vigor y estado sanitario.",
+      "keywords": [
+        "cafe",
+        "poda",
+        "renovacion",
+        "manejo",
+        "residuos",
+        "reducir",
+        "focos",
+        "sanitarios"
+      ]
+    },
+    {
+      "id": 687,
+      "category": "cultivo",
+      "questions": [
+        "Como manejar desinfeccion de herramientas en cafe",
+        "Objetivo de desinfeccion de herramientas en cafeto",
+        "Cuando aplicar desinfeccion de herramientas en cafetal",
+        "Errores frecuentes en desinfeccion de herramientas de cafe"
+      ],
+      "answer": "En cafe, desinfeccion de herramientas se usa para disminuir diseminacion de problemas. Conviene ejecutarla por lote, con criterios de edad, vigor y estado sanitario.",
+      "keywords": [
+        "cafe",
+        "poda",
+        "renovacion",
+        "manejo",
+        "desinfeccion",
+        "herramientas",
+        "disminuir",
+        "diseminacion",
+        "problemas"
+      ]
+    },
+    {
+      "id": 688,
+      "category": "cultivo",
+      "questions": [
+        "Como manejar apertura de copa en cafe",
+        "Objetivo de apertura de copa en cafeto",
+        "Cuando aplicar apertura de copa en cafetal",
+        "Errores frecuentes en apertura de copa de cafe"
+      ],
+      "answer": "En cafe, apertura de copa se usa para mejorar luz y ventilacion. Conviene ejecutarla por lote, con criterios de edad, vigor y estado sanitario.",
+      "keywords": [
+        "cafe",
+        "poda",
+        "renovacion",
+        "manejo",
+        "apertura",
+        "copa",
+        "mejorar",
+        "luz",
+        "ventilacion"
+      ]
+    },
+    {
+      "id": 689,
+      "category": "cultivo",
+      "questions": [
+        "Como manejar equilibrio entre vegetativo y productivo en cafe",
+        "Objetivo de equilibrio entre vegetativo y productivo en cafeto",
+        "Cuando aplicar equilibrio entre vegetativo y productivo en cafetal",
+        "Errores frecuentes en equilibrio entre vegetativo y productivo de cafe"
+      ],
+      "answer": "En cafe, equilibrio entre vegetativo y productivo se usa para sostener estabilidad anual. Conviene ejecutarla por lote, con criterios de edad, vigor y estado sanitario.",
+      "keywords": [
+        "cafe",
+        "poda",
+        "renovacion",
+        "manejo",
+        "equilibrio",
+        "entre",
+        "vegetativo",
+        "productivo",
+        "sostener",
+        "estabilidad",
+        "anual"
+      ]
+    },
+    {
+      "id": 690,
+      "category": "cultivo",
+      "questions": [
+        "Como manejar calendario de poda por lote en cafe",
+        "Objetivo de calendario de poda por lote en cafeto",
+        "Cuando aplicar calendario de poda por lote en cafetal",
+        "Errores frecuentes en calendario de poda por lote de cafe"
+      ],
+      "answer": "En cafe, calendario de poda por lote se usa para ordenar labores segun fenologia. Conviene ejecutarla por lote, con criterios de edad, vigor y estado sanitario.",
+      "keywords": [
+        "cafe",
+        "poda",
+        "renovacion",
+        "manejo",
+        "calendario",
+        "por",
+        "lote",
+        "ordenar",
+        "labores",
+        "segun",
+        "fenologia"
+      ]
+    },
+    {
+      "id": 691,
+      "category": "cultivo",
+      "questions": [
+        "Como manejar podas en lotes sombreados en cafe",
+        "Objetivo de podas en lotes sombreados en cafeto",
+        "Cuando aplicar podas en lotes sombreados en cafetal",
+        "Errores frecuentes en podas en lotes sombreados de cafe"
+      ],
+      "answer": "En cafe, podas en lotes sombreados se usa para reducir humedad excesiva en copa. Conviene ejecutarla por lote, con criterios de edad, vigor y estado sanitario.",
+      "keywords": [
+        "cafe",
+        "poda",
+        "renovacion",
+        "manejo",
+        "podas",
+        "lotes",
+        "sombreados",
+        "reducir",
+        "humedad",
+        "excesiva",
+        "copa"
+      ]
+    },
+    {
+      "id": 692,
+      "category": "cultivo",
+      "questions": [
+        "Como manejar podas en lotes a sol en cafe",
+        "Objetivo de podas en lotes a sol en cafeto",
+        "Cuando aplicar podas en lotes a sol en cafetal",
+        "Errores frecuentes en podas en lotes a sol de cafe"
+      ],
+      "answer": "En cafe, podas en lotes a sol se usa para regular estres y conservar estructura. Conviene ejecutarla por lote, con criterios de edad, vigor y estado sanitario.",
+      "keywords": [
+        "cafe",
+        "poda",
+        "renovacion",
+        "manejo",
+        "podas",
+        "lotes",
+        "sol",
+        "regular",
+        "estres",
+        "conservar",
+        "estructura"
+      ]
+    },
+    {
+      "id": 693,
+      "category": "siembra",
+      "questions": [
+        "Como manejar seleccion de semilla en cafe",
+        "Recomendacion para seleccion de semilla en vivero de cafe",
+        "Buenas practicas de seleccion de semilla para colinos",
+        "Errores comunes de seleccion de semilla en establecimiento de cafe"
+      ],
+      "answer": "Para cafe, seleccion de semilla es clave para arrancar con material de buena calidad. Un buen manejo en vivero y establecimiento reduce problemas en los primeros anos del lote.",
+      "keywords": [
+        "cafe",
+        "siembra",
+        "vivero",
+        "colinos",
+        "seleccion",
+        "semilla",
+        "arrancar",
+        "con",
+        "material",
+        "buena",
+        "calidad"
+      ]
+    },
+    {
+      "id": 694,
+      "category": "siembra",
+      "questions": [
+        "Como manejar manejo de semillero en cafe",
+        "Recomendacion para manejo de semillero en vivero de cafe",
+        "Buenas practicas de manejo de semillero para colinos",
+        "Errores comunes de manejo de semillero en establecimiento de cafe"
+      ],
+      "answer": "Para cafe, manejo de semillero es clave para obtener chapolas uniformes. Un buen manejo en vivero y establecimiento reduce problemas en los primeros anos del lote.",
+      "keywords": [
+        "cafe",
+        "siembra",
+        "vivero",
+        "colinos",
+        "manejo",
+        "semillero",
+        "obtener",
+        "chapolas",
+        "uniformes"
+      ]
+    },
+    {
+      "id": 695,
+      "category": "siembra",
+      "questions": [
+        "Como manejar trasplante a bolsa en cafe",
+        "Recomendacion para trasplante a bolsa en vivero de cafe",
+        "Buenas practicas de trasplante a bolsa para colinos",
+        "Errores comunes de trasplante a bolsa en establecimiento de cafe"
+      ],
+      "answer": "Para cafe, trasplante a bolsa es clave para evitar estres temprano de plantula. Un buen manejo en vivero y establecimiento reduce problemas en los primeros anos del lote.",
+      "keywords": [
+        "cafe",
+        "siembra",
+        "vivero",
+        "colinos",
+        "trasplante",
+        "bolsa",
+        "evitar",
+        "estres",
+        "temprano",
+        "plantula"
+      ]
+    },
+    {
+      "id": 696,
+      "category": "siembra",
+      "questions": [
+        "Como manejar calidad del sustrato en cafe",
+        "Recomendacion para calidad del sustrato en vivero de cafe",
+        "Buenas practicas de calidad del sustrato para colinos",
+        "Errores comunes de calidad del sustrato en establecimiento de cafe"
+      ],
+      "answer": "Para cafe, calidad del sustrato es clave para favorecer raiz sana y drenaje. Un buen manejo en vivero y establecimiento reduce problemas en los primeros anos del lote.",
+      "keywords": [
+        "cafe",
+        "siembra",
+        "vivero",
+        "colinos",
+        "calidad",
+        "del",
+        "sustrato",
+        "favorecer",
+        "raiz",
+        "sana",
+        "drenaje"
+      ]
+    },
+    {
+      "id": 697,
+      "category": "siembra",
+      "questions": [
+        "Como manejar riego en vivero en cafe",
+        "Recomendacion para riego en vivero en vivero de cafe",
+        "Buenas practicas de riego en vivero para colinos",
+        "Errores comunes de riego en vivero en establecimiento de cafe"
+      ],
+      "answer": "Para cafe, riego en vivero es clave para evitar exceso o deficit hidrico. Un buen manejo en vivero y establecimiento reduce problemas en los primeros anos del lote.",
+      "keywords": [
+        "cafe",
+        "siembra",
+        "vivero",
+        "colinos",
+        "riego",
+        "evitar",
+        "exceso",
+        "deficit",
+        "hidrico"
+      ]
+    },
+    {
+      "id": 698,
+      "category": "siembra",
+      "questions": [
+        "Como manejar sombra en vivero en cafe",
+        "Recomendacion para sombra en vivero en vivero de cafe",
+        "Buenas practicas de sombra en vivero para colinos",
+        "Errores comunes de sombra en vivero en establecimiento de cafe"
+      ],
+      "answer": "Para cafe, sombra en vivero es clave para proteger plantulas sin ahilar. Un buen manejo en vivero y establecimiento reduce problemas en los primeros anos del lote.",
+      "keywords": [
+        "cafe",
+        "siembra",
+        "vivero",
+        "colinos",
+        "sombra",
+        "proteger",
+        "plantulas",
+        "sin",
+        "ahilar"
+      ]
+    },
+    {
+      "id": 699,
+      "category": "siembra",
+      "questions": [
+        "Como manejar fertilizacion en vivero en cafe",
+        "Recomendacion para fertilizacion en vivero en vivero de cafe",
+        "Buenas practicas de fertilizacion en vivero para colinos",
+        "Errores comunes de fertilizacion en vivero en establecimiento de cafe"
+      ],
+      "answer": "Para cafe, fertilizacion en vivero es clave para promover vigor equilibrado. Un buen manejo en vivero y establecimiento reduce problemas en los primeros anos del lote.",
+      "keywords": [
+        "cafe",
+        "siembra",
+        "vivero",
+        "colinos",
+        "fertilizacion",
+        "promover",
+        "vigor",
+        "equilibrado"
+      ]
+    },
+    {
+      "id": 700,
+      "category": "siembra",
+      "questions": [
+        "Como manejar control sanitario en almacigo en cafe",
+        "Recomendacion para control sanitario en almacigo en vivero de cafe",
+        "Buenas practicas de control sanitario en almacigo para colinos",
+        "Errores comunes de control sanitario en almacigo en establecimiento de cafe"
+      ],
+      "answer": "Para cafe, control sanitario en almacigo es clave para evitar diseminacion de problemas. Un buen manejo en vivero y establecimiento reduce problemas en los primeros anos del lote.",
+      "keywords": [
+        "cafe",
+        "siembra",
+        "vivero",
+        "colinos",
+        "control",
+        "sanitario",
+        "almacigo",
+        "evitar",
+        "diseminacion",
+        "problemas"
+      ]
+    },
+    {
+      "id": 701,
+      "category": "siembra",
+      "questions": [
+        "Como manejar seleccion negativa de plantulas en cafe",
+        "Recomendacion para seleccion negativa de plantulas en vivero de cafe",
+        "Buenas practicas de seleccion negativa de plantulas para colinos",
+        "Errores comunes de seleccion negativa de plantulas en establecimiento de cafe"
+      ],
+      "answer": "Para cafe, seleccion negativa de plantulas es clave para descartar material debil. Un buen manejo en vivero y establecimiento reduce problemas en los primeros anos del lote.",
+      "keywords": [
+        "cafe",
+        "siembra",
+        "vivero",
+        "colinos",
+        "seleccion",
+        "negativa",
+        "plantulas",
+        "descartar",
+        "material",
+        "debil"
+      ]
+    },
+    {
+      "id": 702,
+      "category": "siembra",
+      "questions": [
+        "Como manejar endurecimiento de colinos en cafe",
+        "Recomendacion para endurecimiento de colinos en vivero de cafe",
+        "Buenas practicas de endurecimiento de colinos para colinos",
+        "Errores comunes de endurecimiento de colinos en establecimiento de cafe"
+      ],
+      "answer": "Para cafe, endurecimiento de colinos es clave para mejor adaptacion al campo. Un buen manejo en vivero y establecimiento reduce problemas en los primeros anos del lote.",
+      "keywords": [
+        "cafe",
+        "siembra",
+        "vivero",
+        "colinos",
+        "endurecimiento",
+        "mejor",
+        "adaptacion",
+        "campo"
+      ]
+    },
+    {
+      "id": 703,
+      "category": "siembra",
+      "questions": [
+        "Como manejar logistica de transporte de colinos en cafe",
+        "Recomendacion para logistica de transporte de colinos en vivero de cafe",
+        "Buenas practicas de logistica de transporte de colinos para colinos",
+        "Errores comunes de logistica de transporte de colinos en establecimiento de cafe"
+      ],
+      "answer": "Para cafe, logistica de transporte de colinos es clave para reducir dano mecanico. Un buen manejo en vivero y establecimiento reduce problemas en los primeros anos del lote.",
+      "keywords": [
+        "cafe",
+        "siembra",
+        "vivero",
+        "colinos",
+        "logistica",
+        "transporte",
+        "reducir",
+        "dano",
+        "mecanico"
+      ]
+    },
+    {
+      "id": 704,
+      "category": "siembra",
+      "questions": [
+        "Como manejar siembra en epoca de lluvias en cafe",
+        "Recomendacion para siembra en epoca de lluvias en vivero de cafe",
+        "Buenas practicas de siembra en epoca de lluvias para colinos",
+        "Errores comunes de siembra en epoca de lluvias en establecimiento de cafe"
+      ],
+      "answer": "Para cafe, siembra en epoca de lluvias es clave para mejorar prendimiento. Un buen manejo en vivero y establecimiento reduce problemas en los primeros anos del lote.",
+      "keywords": [
+        "cafe",
+        "siembra",
+        "vivero",
+        "colinos",
+        "epoca",
+        "lluvias",
+        "mejorar",
+        "prendimiento"
+      ]
+    },
+    {
+      "id": 705,
+      "category": "siembra",
+      "questions": [
+        "Como manejar reposicion de fallas en cafe",
+        "Recomendacion para reposicion de fallas en vivero de cafe",
+        "Buenas practicas de reposicion de fallas para colinos",
+        "Errores comunes de reposicion de fallas en establecimiento de cafe"
+      ],
+      "answer": "Para cafe, reposicion de fallas es clave para conservar uniformidad del lote. Un buen manejo en vivero y establecimiento reduce problemas en los primeros anos del lote.",
+      "keywords": [
+        "cafe",
+        "siembra",
+        "vivero",
+        "colinos",
+        "reposicion",
+        "fallas",
+        "conservar",
+        "uniformidad",
+        "del",
+        "lote"
+      ]
+    },
+    {
+      "id": 706,
+      "category": "siembra",
+      "questions": [
+        "Como manejar proteccion inicial del colino en cafe",
+        "Recomendacion para proteccion inicial del colino en vivero de cafe",
+        "Buenas practicas de proteccion inicial del colino para colinos",
+        "Errores comunes de proteccion inicial del colino en establecimiento de cafe"
+      ],
+      "answer": "Para cafe, proteccion inicial del colino es clave para disminuir mortalidad temprana. Un buen manejo en vivero y establecimiento reduce problemas en los primeros anos del lote.",
+      "keywords": [
+        "cafe",
+        "siembra",
+        "vivero",
+        "colinos",
+        "proteccion",
+        "inicial",
+        "del",
+        "colino",
+        "disminuir",
+        "mortalidad",
+        "temprana"
+      ]
+    },
+    {
+      "id": 707,
+      "category": "siembra",
+      "questions": [
+        "Como manejar registro de lote de vivero en cafe",
+        "Recomendacion para registro de lote de vivero en vivero de cafe",
+        "Buenas practicas de registro de lote de vivero para colinos",
+        "Errores comunes de registro de lote de vivero en establecimiento de cafe"
+      ],
+      "answer": "Para cafe, registro de lote de vivero es clave para trazar origen y calidad de material. Un buen manejo en vivero y establecimiento reduce problemas en los primeros anos del lote.",
+      "keywords": [
+        "cafe",
+        "siembra",
+        "vivero",
+        "colinos",
+        "registro",
+        "lote",
+        "trazar",
+        "origen",
+        "calidad",
+        "material"
+      ]
+    },
+    {
+      "id": 708,
+      "category": "general",
+      "questions": [
+        "Como mejorar adaptacion al cambio climatico en cafe",
+        "Estrategia para adaptacion al cambio climatico en finca cafetera",
+        "Recomendaciones de adaptacion al cambio climatico para productores de cafe",
+        "Plan practico de adaptacion al cambio climatico en caficultura"
+      ],
+      "answer": "Para fortalecer adaptacion al cambio climatico en cafe, conviene combinar sombra regulada, suelo vivo y gestion de agua. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "adaptacion",
+        "cambio",
+        "climatico",
+        "combinar",
+        "sombra",
+        "regulada",
+        "suelo",
+        "vivo",
+        "agua"
+      ]
+    },
+    {
+      "id": 709,
+      "category": "general",
+      "questions": [
+        "Como mejorar plan de riesgo climatico en cafe",
+        "Estrategia para plan de riesgo climatico en finca cafetera",
+        "Recomendaciones de plan de riesgo climatico para productores de cafe",
+        "Plan practico de plan de riesgo climatico en caficultura"
+      ],
+      "answer": "Para fortalecer plan de riesgo climatico en cafe, conviene definir acciones antes de sequia o lluvias extremas. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "plan",
+        "riesgo",
+        "climatico",
+        "definir",
+        "acciones",
+        "antes",
+        "sequia",
+        "lluvias",
+        "extremas"
+      ]
+    },
+    {
+      "id": 710,
+      "category": "general",
+      "questions": [
+        "Como mejorar resiliencia del cafetal en cafe",
+        "Estrategia para resiliencia del cafetal en finca cafetera",
+        "Recomendaciones de resiliencia del cafetal para productores de cafe",
+        "Plan practico de resiliencia del cafetal en caficultura"
+      ],
+      "answer": "Para fortalecer resiliencia del cafetal en cafe, conviene integrar practicas de suelo, agua y sanidad. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "resiliencia",
+        "del",
+        "cafetal",
+        "integrar",
+        "practicas",
+        "suelo",
+        "agua",
+        "sanidad"
+      ]
+    },
+    {
+      "id": 711,
+      "category": "general",
+      "questions": [
+        "Como mejorar gestion de mano de obra en cosecha en cafe",
+        "Estrategia para gestion de mano de obra en cosecha en finca cafetera",
+        "Recomendaciones de gestion de mano de obra en cosecha para productores de cafe",
+        "Plan practico de gestion de mano de obra en cosecha en caficultura"
+      ],
+      "answer": "Para fortalecer gestion de mano de obra en cosecha en cafe, conviene mejorar eficiencia sin sacrificar calidad. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "mano",
+        "obra",
+        "cosecha",
+        "mejorar",
+        "eficiencia",
+        "sin",
+        "sacrificar",
+        "calidad"
+      ]
+    },
+    {
+      "id": 712,
+      "category": "general",
+      "questions": [
+        "Como mejorar registro de costos por lote en cafe",
+        "Estrategia para registro de costos por lote en finca cafetera",
+        "Recomendaciones de registro de costos por lote para productores de cafe",
+        "Plan practico de registro de costos por lote en caficultura"
+      ],
+      "answer": "Para fortalecer registro de costos por lote en cafe, conviene identificar fugas y mejorar rentabilidad. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "registro",
+        "costos",
+        "por",
+        "lote",
+        "identificar",
+        "fugas",
+        "mejorar",
+        "rentabilidad"
+      ]
+    },
+    {
+      "id": 713,
+      "category": "general",
+      "questions": [
+        "Como mejorar costo por kilo de cafe en cafe",
+        "Estrategia para costo por kilo de cafe en finca cafetera",
+        "Recomendaciones de costo por kilo de cafe para productores de cafe",
+        "Plan practico de costo por kilo de cafe en caficultura"
+      ],
+      "answer": "Para fortalecer costo por kilo de cafe en cafe, conviene tomar decisiones economicas basadas en datos. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "costo",
+        "por",
+        "kilo",
+        "tomar",
+        "decisiones",
+        "economicas",
+        "basadas",
+        "datos"
+      ]
+    },
+    {
+      "id": 714,
+      "category": "general",
+      "questions": [
+        "Como mejorar trazabilidad para venta en cafe",
+        "Estrategia para trazabilidad para venta en finca cafetera",
+        "Recomendaciones de trazabilidad para venta para productores de cafe",
+        "Plan practico de trazabilidad para venta en caficultura"
+      ],
+      "answer": "Para fortalecer trazabilidad para venta en cafe, conviene abrir mercados con mejor precio. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "trazabilidad",
+        "para",
+        "venta",
+        "abrir",
+        "mercados",
+        "con",
+        "mejor",
+        "precio"
+      ]
+    },
+    {
+      "id": 715,
+      "category": "general",
+      "questions": [
+        "Como mejorar preparacion para certificaciones en cafe",
+        "Estrategia para preparacion para certificaciones en finca cafetera",
+        "Recomendaciones de preparacion para certificaciones para productores de cafe",
+        "Plan practico de preparacion para certificaciones en caficultura"
+      ],
+      "answer": "Para fortalecer preparacion para certificaciones en cafe, conviene ordenar evidencia tecnica y ambiental. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "preparacion",
+        "para",
+        "certificaciones",
+        "ordenar",
+        "evidencia",
+        "tecnica",
+        "ambiental"
+      ]
+    },
+    {
+      "id": 716,
+      "category": "general",
+      "questions": [
+        "Como mejorar economia circular en finca en cafe",
+        "Estrategia para economia circular en finca en finca cafetera",
+        "Recomendaciones de economia circular en finca para productores de cafe",
+        "Plan practico de economia circular en finca en caficultura"
+      ],
+      "answer": "Para fortalecer economia circular en finca en cafe, conviene aprovechar subproductos y reducir desperdicio. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "economia",
+        "circular",
+        "finca",
+        "aprovechar",
+        "subproductos",
+        "reducir",
+        "desperdicio"
+      ]
+    },
+    {
+      "id": 717,
+      "category": "general",
+      "questions": [
+        "Como mejorar plan anual de labores en cafe",
+        "Estrategia para plan anual de labores en finca cafetera",
+        "Recomendaciones de plan anual de labores para productores de cafe",
+        "Plan practico de plan anual de labores en caficultura"
+      ],
+      "answer": "Para fortalecer plan anual de labores en cafe, conviene coordinar poda, nutricion, sanidad y cosecha. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "plan",
+        "anual",
+        "labores",
+        "coordinar",
+        "poda",
+        "nutricion",
+        "sanidad",
+        "cosecha"
+      ]
+    },
+    {
+      "id": 718,
+      "category": "general",
+      "questions": [
+        "Como mejorar extension tecnica con productores en cafe",
+        "Estrategia para extension tecnica con productores en finca cafetera",
+        "Recomendaciones de extension tecnica con productores para productores de cafe",
+        "Plan practico de extension tecnica con productores en caficultura"
+      ],
+      "answer": "Para fortalecer extension tecnica con productores en cafe, conviene traducir recomendacion en acciones simples. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "extension",
+        "tecnica",
+        "con",
+        "productores",
+        "traducir",
+        "recomendacion",
+        "acciones",
+        "simples"
+      ]
+    },
+    {
+      "id": 719,
+      "category": "general",
+      "questions": [
+        "Como mejorar adopcion de recomendaciones en cafe",
+        "Estrategia para adopcion de recomendaciones en finca cafetera",
+        "Recomendaciones de adopcion de recomendaciones para productores de cafe",
+        "Plan practico de adopcion de recomendaciones en caficultura"
+      ],
+      "answer": "Para fortalecer adopcion de recomendaciones en cafe, conviene hacer seguimiento corto y medible. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "adopcion",
+        "recomendaciones",
+        "hacer",
+        "seguimiento",
+        "corto",
+        "medible"
+      ]
+    },
+    {
+      "id": 720,
+      "category": "general",
+      "questions": [
+        "Como mejorar evaluacion de renovacion en cafe",
+        "Estrategia para evaluacion de renovacion en finca cafetera",
+        "Recomendaciones de evaluacion de renovacion para productores de cafe",
+        "Plan practico de evaluacion de renovacion en caficultura"
+      ],
+      "answer": "Para fortalecer evaluacion de renovacion en cafe, conviene comparar costo de sostener vs renovar lotes. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "evaluacion",
+        "renovacion",
+        "comparar",
+        "costo",
+        "sostener",
+        "renovar",
+        "lotes"
+      ]
+    },
+    {
+      "id": 721,
+      "category": "general",
+      "questions": [
+        "Como mejorar negociacion comercial de lotes en cafe",
+        "Estrategia para negociacion comercial de lotes en finca cafetera",
+        "Recomendaciones de negociacion comercial de lotes para productores de cafe",
+        "Plan practico de negociacion comercial de lotes en caficultura"
+      ],
+      "answer": "Para fortalecer negociacion comercial de lotes en cafe, conviene apoyarse en datos de calidad y trazabilidad. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "negociacion",
+        "comercial",
+        "lotes",
+        "apoyarse",
+        "datos",
+        "calidad",
+        "trazabilidad"
+      ]
+    },
+    {
+      "id": 722,
+      "category": "general",
+      "questions": [
+        "Como mejorar diferenciacion por calidad en cafe",
+        "Estrategia para diferenciacion por calidad en finca cafetera",
+        "Recomendaciones de diferenciacion por calidad para productores de cafe",
+        "Plan practico de diferenciacion por calidad en caficultura"
+      ],
+      "answer": "Para fortalecer diferenciacion por calidad en cafe, conviene separar lotes y repetir protocolos exitosos. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "diferenciacion",
+        "por",
+        "calidad",
+        "separar",
+        "lotes",
+        "repetir",
+        "protocolos",
+        "exitosos"
+      ]
+    },
+    {
+      "id": 723,
+      "category": "general",
+      "questions": [
+        "Como mejorar control de desperdicios de proceso en cafe",
+        "Estrategia para control de desperdicios de proceso en finca cafetera",
+        "Recomendaciones de control de desperdicios de proceso para productores de cafe",
+        "Plan practico de control de desperdicios de proceso en caficultura"
+      ],
+      "answer": "Para fortalecer control de desperdicios de proceso en cafe, conviene subir eficiencia del beneficio. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "control",
+        "desperdicios",
+        "proceso",
+        "subir",
+        "eficiencia",
+        "del",
+        "beneficio"
+      ]
+    },
+    {
+      "id": 724,
+      "category": "general",
+      "questions": [
+        "Como mejorar seguridad laboral en finca en cafe",
+        "Estrategia para seguridad laboral en finca en finca cafetera",
+        "Recomendaciones de seguridad laboral en finca para productores de cafe",
+        "Plan practico de seguridad laboral en finca en caficultura"
+      ],
+      "answer": "Para fortalecer seguridad laboral en finca en cafe, conviene proteger personas y continuidad operativa. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "seguridad",
+        "laboral",
+        "finca",
+        "proteger",
+        "personas",
+        "continuidad",
+        "operativa"
+      ]
+    },
+    {
+      "id": 725,
+      "category": "general",
+      "questions": [
+        "Como mejorar plan de capacitacion de cuadrillas en cafe",
+        "Estrategia para plan de capacitacion de cuadrillas en finca cafetera",
+        "Recomendaciones de plan de capacitacion de cuadrillas para productores de cafe",
+        "Plan practico de plan de capacitacion de cuadrillas en caficultura"
+      ],
+      "answer": "Para fortalecer plan de capacitacion de cuadrillas en cafe, conviene estandarizar criterios de calidad. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "plan",
+        "capacitacion",
+        "cuadrillas",
+        "estandarizar",
+        "criterios",
+        "calidad"
+      ]
+    },
+    {
+      "id": 726,
+      "category": "general",
+      "questions": [
+        "Como mejorar gestion de inventario en bodega en cafe",
+        "Estrategia para gestion de inventario en bodega en finca cafetera",
+        "Recomendaciones de gestion de inventario en bodega para productores de cafe",
+        "Plan practico de gestion de inventario en bodega en caficultura"
+      ],
+      "answer": "Para fortalecer gestion de inventario en bodega en cafe, conviene evitar perdida de valor por almacenamiento. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "inventario",
+        "bodega",
+        "evitar",
+        "perdida",
+        "valor",
+        "por",
+        "almacenamiento"
+      ]
+    },
+    {
+      "id": 727,
+      "category": "general",
+      "questions": [
+        "Como mejorar control de indicadores tecnicos en cafe",
+        "Estrategia para control de indicadores tecnicos en finca cafetera",
+        "Recomendaciones de control de indicadores tecnicos para productores de cafe",
+        "Plan practico de control de indicadores tecnicos en caficultura"
+      ],
+      "answer": "Para fortalecer control de indicadores tecnicos en cafe, conviene medir productividad, sanidad y calidad. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "control",
+        "indicadores",
+        "tecnicos",
+        "medir",
+        "productividad",
+        "sanidad",
+        "calidad"
+      ]
+    },
+    {
+      "id": 728,
+      "category": "general",
+      "questions": [
+        "Como mejorar estrategia de mercado para cafe especial en cafe",
+        "Estrategia para estrategia de mercado para cafe especial en finca cafetera",
+        "Recomendaciones de estrategia de mercado para cafe especial para productores de cafe",
+        "Plan practico de estrategia de mercado para cafe especial en caficultura"
+      ],
+      "answer": "Para fortalecer estrategia de mercado para cafe especial en cafe, conviene alinear proceso y trazabilidad con demanda. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "mercado",
+        "para",
+        "especial",
+        "alinear",
+        "proceso",
+        "trazabilidad",
+        "con",
+        "demanda"
+      ]
+    },
+    {
+      "id": 729,
+      "category": "general",
+      "questions": [
+        "Como mejorar priorizacion de inversiones en cafe",
+        "Estrategia para priorizacion de inversiones en finca cafetera",
+        "Recomendaciones de priorizacion de inversiones para productores de cafe",
+        "Plan practico de priorizacion de inversiones en caficultura"
+      ],
+      "answer": "Para fortalecer priorizacion de inversiones en cafe, conviene enfocar recursos en cuellos de botella. Aplicarlo por lotes con registros claros mejora decisiones y resultados.",
+      "keywords": [
+        "cafe",
+        "gestion",
+        "estrategia",
+        "priorizacion",
+        "inversiones",
+        "enfocar",
+        "recursos",
+        "cuellos",
+        "botella"
+      ]
     }
   ]
 }

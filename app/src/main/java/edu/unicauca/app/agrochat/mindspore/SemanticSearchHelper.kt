@@ -112,9 +112,22 @@ class SemanticSearchHelper(private val context: Context) {
         "despulpado" to "poscosecha",
         "fermentado" to "poscosecha",
         "fermentacion" to "poscosecha",
+        "anaerobia" to "poscosecha",
+        "anaerobica" to "poscosecha",
+        "honey" to "poscosecha",
+        "natural" to "poscosecha",
+        "lavado" to "poscosecha",
         "secado" to "poscosecha",
+        "catacion" to "calidad",
+        "taza" to "calidad",
+        "sensorial" to "calidad",
+        "defecto" to "calidad",
+        "quaker" to "calidad",
+        "pasilla" to "calidad",
         "pergamino" to "poscosecha",
         "humedad" to "poscosecha",
+        "brix" to "calidad",
+        "trazabilidad" to "calidad",
         "poda" to "poda",
         "podas" to "poda",
         "podar" to "poda",
@@ -123,6 +136,12 @@ class SemanticSearchHelper(private val context: Context) {
         "renovar" to "renovacion",
         "renovacion" to "renovacion",
         "variedades" to "variedad",
+        "geisha" to "variedad",
+        "caturra" to "variedad",
+        "castillo" to "variedad",
+        "catimor" to "variedad",
+        "bourbon" to "variedad",
+        "tabi" to "variedad",
         "broca" to "broca",
         "roya" to "roya"
     )
@@ -143,8 +162,14 @@ class SemanticSearchHelper(private val context: Context) {
         "siembra" to setOf("siembra", "cultivo", "semilla", "vivero", "colino", "densidad", "variedad"),
         "cosecha" to setOf("cosecha", "maduro", "cereza", "recoleccion", "repase"),
         "poda" to setOf("poda", "podar", "zoqueo", "zoca", "renovacion"),
-        "calidad" to setOf("calidad", "taza", "defecto", "pasilla", "quaker", "trazabilidad", "especialidad"),
-        "poscosecha" to setOf("beneficio", "despulpado", "fermentacion", "secado", "pergamino", "humedad")
+        "calidad" to setOf(
+            "calidad", "taza", "defecto", "pasilla", "quaker", "trazabilidad", "especialidad",
+            "catacion", "sensorial", "aroma", "sabor", "fragancia", "acidez", "cuerpo", "dulzor"
+        ),
+        "poscosecha" to setOf(
+            "beneficio", "despulpado", "fermentacion", "secado", "pergamino", "humedad",
+            "honey", "natural", "lavado", "anaerobia", "bodega"
+        )
     )
     private val genericIntentTokens: Set<String> = run {
         val tokens = mutableSetOf<String>()
@@ -824,6 +849,10 @@ class SemanticSearchHelper(private val context: Context) {
             "poda", "podas", "renovacion", "zoqueo", "zoca", "beneficio", "despulpado",
             "fermentacion", "secado", "pergamino", "humedad", "cereza", "maduro",
             "trazabilidad", "pasilla", "quaker", "taza", "especialidad",
+            "catacion", "sensorial", "fragancia", "aroma", "acidez", "cuerpo", "dulzor",
+            "honey", "natural", "lavado", "anaerobia", "bodega", "mucilago", "actividad",
+            "agua", "broca", "roya", "cercospora", "antracnosis", "llaga", "castillo",
+            "caturra", "geisha", "catimor", "bourbon", "tabi",
             // Otros
             "mejor", "cuando", "como", "porque", "cantidad", "frecuencia"
         )
