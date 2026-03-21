@@ -64,6 +64,7 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
+import edu.unicauca.app.agrochat.feedback.FeedbackEventStore
 import edu.unicauca.app.agrochat.llm.GroqService
 import edu.unicauca.app.agrochat.llm.LlamaService
 import edu.unicauca.app.agrochat.mindspore.SemanticSearchHelper
@@ -86,6 +87,7 @@ import androidx.compose.ui.res.stringResource
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import java.util.UUID
 
 // Sistema de logs en memoria para debugging
 object AppLogger {
@@ -123,12 +125,39 @@ object AgroColors {
 }
 
 data class ChatMessage(
+    val id: String = UUID.randomUUID().toString(),
     val text: String,
     val isUser: Boolean,
     val timestamp: Long = System.currentTimeMillis(),
     val imageBitmap: Bitmap? = null,  // Para mensajes con imagen
     val diseaseResult: DiseaseResult? = null,  // Para resultados de diagnóstico
-    val canContinue: Boolean = false  // Para mostrar botón "Continuar" en respuestas LLM
+    val canContinue: Boolean = false,  // Para mostrar botón "Continuar" en respuestas LLM
+    val feedbackEligible: Boolean = false,
+    val responseGuidanceType: ResponseGuidanceType? = null
+)
+
+enum class ResponseGuidanceType(val label: String) {
+    CASE_BASED("Respuesta basada en tu caso"),
+    GENERAL_GUIDANCE("Orientacion general")
+}
+
+data class MessageFeedbackState(
+    val helpful: Boolean? = null,
+    val clear: Boolean? = null,
+    val wouldApplyToday: Boolean? = null,
+    val updatedAt: Long = 0L
+)
+
+data class FeedbackMessageContext(
+    val userQuery: String,
+    val assistantResponse: String,
+    val responseLabel: String,
+    val usedLlm: Boolean,
+    val kbSupported: Boolean,
+    val kbSupportScore: Float,
+    val kbCoverage: Float,
+    val kbUnknownRatio: Float,
+    val turnIndex: Int
 )
 
 enum class AppMode { VOICE, CHAT, CAMERA }
@@ -212,6 +241,11 @@ class MainActivity : ComponentActivity() {
     private var isModelReady by mutableStateOf(false)
     private var isProcessing by mutableStateOf(false)
     private var chatMessages = mutableStateListOf<ChatMessage>()
+    private val messageFeedbackStates = mutableStateMapOf<String, MessageFeedbackState>()
+    private val feedbackContextByMessage = mutableMapOf<String, FeedbackMessageContext>()
+    private var feedbackTurnCounter = 0
+    private val feedbackSessionId: String = UUID.randomUUID().toString()
+    private lateinit var feedbackStore: FeedbackEventStore
     private var lastResponse by mutableStateOf("")
     private var currentMode by mutableStateOf(AppMode.VOICE)
     private var semanticSearchHelper: SemanticSearchHelper? = null
@@ -330,6 +364,9 @@ class MainActivity : ComponentActivity() {
             this, Manifest.permission.CAMERA
         ) == PackageManager.PERMISSION_GRANTED
 
+        feedbackStore = FeedbackEventStore(applicationContext)
+        AppLogger.log("Feedback", "Storage path: ${feedbackStore.storagePath()}")
+
         // Cargar preferencias
         loadPreferences()
         
@@ -386,9 +423,13 @@ class MainActivity : ComponentActivity() {
                         isDiagnosing = isDiagnosing,
                         capturedBitmap = capturedBitmap,
                         lastDiagnosis = lastDiagnosis,
+                        feedbackStates = messageFeedbackStates,
                         onSendMessage = { sendMessage(it) },
                         onMicClick = { handleMicClick() },
                         onModeChange = { handleModeChange(it) },
+                        onHelpfulFeedback = { messageId, helpful -> onHelpfulFeedback(messageId, helpful) },
+                        onClarityFeedback = { messageId, clear -> onClarityFeedback(messageId, clear) },
+                        onApplyTodayFeedback = { messageId, wouldApply -> onApplyTodayFeedback(messageId, wouldApply) },
                         onSettingsClick = { showSettingsDialog = true },
                         onDismissSettings = { showSettingsDialog = false },
                         onSaveApiKey = { key -> saveGroqApiKey(key) },
@@ -756,14 +797,31 @@ class MainActivity : ComponentActivity() {
                     append("**Recomendación:**\n")
                     append(response)
                 }
-                
-                chatMessages.add(ChatMessage(fullResponse, isUser = false))
+
+                val guidanceType = if (responseMeta.kbSupported) {
+                    ResponseGuidanceType.CASE_BASED
+                } else {
+                    ResponseGuidanceType.GENERAL_GUIDANCE
+                }
+                val assistantMessage = ChatMessage(
+                    text = fullResponse,
+                    isUser = false,
+                    feedbackEligible = true,
+                    responseGuidanceType = guidanceType
+                )
+                chatMessages.add(assistantMessage)
                 lastResponse = fullResponse
+
+                registerAssistantResponseForFeedback(
+                    message = assistantMessage,
+                    userQuery = query,
+                    responseMeta = responseMeta
+                )
                 voiceHelper?.speak(response)
                 
             } catch (e: Exception) {
                 Log.e("MainActivity", "Error buscando tratamiento", e)
-                chatMessages.add(ChatMessage("No pude encontrar información del tratamiento.", isUser = false))
+                chatMessages.add(ChatMessage(text = "No pude encontrar información del tratamiento.", isUser = false))
             } finally {
                 isProcessing = false
                 uiStatus = "Listo"
@@ -1397,7 +1455,7 @@ class MainActivity : ComponentActivity() {
 
     private fun sendMessage(userMessage: String) {
         if (userMessage.isBlank() || !isModelReady || isProcessing) return
-        chatMessages.add(ChatMessage(userMessage, isUser = true))
+        chatMessages.add(ChatMessage(text = userMessage, isUser = true))
         AppLogger.log("MainActivity", "Mensaje: '$userMessage'")
         
         val isContinuationIntent = isContinuationMessage(userMessage)
@@ -1456,30 +1514,205 @@ class MainActivity : ComponentActivity() {
                 // Determinar si puede continuar basándose en autoconsciencia
                 val canContinue = !ONLINE_ONLY_VISIT_MODE && responseMeta.usedLlm && isLlamaEnabled && isLlamaLoaded && responseMeta.kbSupported &&
                                   (!qualityReport.isComplete || qualityReport.qualityScore < 0.7f)
-                
-                chatMessages.add(ChatMessage(improvedResponse, isUser = false, canContinue = canContinue))
-                lastResponse = improvedResponse
+
+                val responseWithFollowUp = appendMissingContextFollowUpIfNeeded(
+                    response = improvedResponse,
+                    userQuery = if (isContinuationIntent) effectiveQuery else userMessage,
+                    responseMeta = responseMeta
+                )
+                val responseGuidanceType = if (responseMeta.kbSupported) {
+                    ResponseGuidanceType.CASE_BASED
+                } else {
+                    ResponseGuidanceType.GENERAL_GUIDANCE
+                }
+                val assistantMessage = ChatMessage(
+                    text = responseWithFollowUp,
+                    isUser = false,
+                    canContinue = canContinue,
+                    feedbackEligible = true,
+                    responseGuidanceType = responseGuidanceType
+                )
+                chatMessages.add(assistantMessage)
+                lastResponse = responseWithFollowUp
+
+                registerAssistantResponseForFeedback(
+                    message = assistantMessage,
+                    userQuery = if (isContinuationIntent) effectiveQuery else userMessage,
+                    responseMeta = responseMeta
+                )
                 
                 // Log resumen de calidad
                 AppLogger.log("MainActivity", "📊 Calidad: ${String.format("%.0f", qualityReport.qualityScore * 100)}% | " +
                     "Completa: ${qualityReport.isComplete} | Coherente: ${qualityReport.isCoherent} | " +
                     "Puede continuar: $canContinue")
                 
-                AppLogger.log("MainActivity", "Respuesta: ${improvedResponse.take(50)}...")
+                AppLogger.log("MainActivity", "Respuesta: ${responseWithFollowUp.take(50)}...")
                 
                 // Actualizar status final
                 uiStatus = if (isOnlineMode) "Online ✓" else "Sin conexión online"
                 
-                voiceHelper?.speak(improvedResponse)
+                voiceHelper?.speak(responseWithFollowUp)
             } catch (e: Exception) {
                 Log.e("MainActivity", "Error en sendMessage", e)
                 val err = "Hubo un error. Intenta de nuevo."
-                chatMessages.add(ChatMessage(err, isUser = false))
+                chatMessages.add(ChatMessage(text = err, isUser = false))
                 lastResponse = err
                 uiStatus = "Error"
             } finally {
                 isProcessing = false
             }
+        }
+    }
+
+    private fun registerAssistantResponseForFeedback(
+        message: ChatMessage,
+        userQuery: String,
+        responseMeta: ResponseMeta
+    ) {
+        feedbackTurnCounter += 1
+        val responseLabel = message.responseGuidanceType?.label ?: "Sin clasificar"
+        val context = FeedbackMessageContext(
+            userQuery = userQuery,
+            assistantResponse = message.text,
+            responseLabel = responseLabel,
+            usedLlm = responseMeta.usedLlm,
+            kbSupported = responseMeta.kbSupported,
+            kbSupportScore = responseMeta.kbSupportScore,
+            kbCoverage = responseMeta.kbCoverage,
+            kbUnknownRatio = responseMeta.kbUnknownRatio,
+            turnIndex = feedbackTurnCounter
+        )
+        feedbackContextByMessage[message.id] = context
+        messageFeedbackStates[message.id] = MessageFeedbackState(updatedAt = System.currentTimeMillis())
+
+        lifecycleScope.launch {
+            runCatching {
+                feedbackStore.recordAssistantResponse(
+                    sessionId = feedbackSessionId,
+                    messageId = message.id,
+                    turnIndex = context.turnIndex,
+                    userQuery = context.userQuery,
+                    assistantResponse = context.assistantResponse,
+                    responseLabel = context.responseLabel,
+                    usedLlm = context.usedLlm,
+                    kbSupported = context.kbSupported,
+                    kbSupportScore = context.kbSupportScore,
+                    kbCoverage = context.kbCoverage,
+                    kbUnknownRatio = context.kbUnknownRatio
+                )
+            }.onFailure { error ->
+                AppLogger.log("Feedback", "No se pudo guardar assistant_response: ${error.message}")
+            }
+        }
+    }
+
+    private fun onHelpfulFeedback(messageId: String, helpful: Boolean) {
+        val current = messageFeedbackStates[messageId] ?: MessageFeedbackState()
+        val updated = current.copy(helpful = helpful, updatedAt = System.currentTimeMillis())
+        messageFeedbackStates[messageId] = updated
+        persistFeedbackUpdate(messageId, updated)
+    }
+
+    private fun onClarityFeedback(messageId: String, clear: Boolean) {
+        val current = messageFeedbackStates[messageId] ?: MessageFeedbackState()
+        val updated = current.copy(clear = clear, updatedAt = System.currentTimeMillis())
+        messageFeedbackStates[messageId] = updated
+        persistFeedbackUpdate(messageId, updated)
+    }
+
+    private fun onApplyTodayFeedback(messageId: String, wouldApplyToday: Boolean) {
+        val current = messageFeedbackStates[messageId] ?: MessageFeedbackState()
+        val updated = current.copy(wouldApplyToday = wouldApplyToday, updatedAt = System.currentTimeMillis())
+        messageFeedbackStates[messageId] = updated
+        persistFeedbackUpdate(messageId, updated)
+    }
+
+    private fun persistFeedbackUpdate(messageId: String, state: MessageFeedbackState) {
+        val context = feedbackContextByMessage[messageId] ?: return
+        lifecycleScope.launch {
+            runCatching {
+                feedbackStore.recordFeedbackUpdate(
+                    sessionId = feedbackSessionId,
+                    messageId = messageId,
+                    responseLabel = context.responseLabel,
+                    userQuery = context.userQuery,
+                    assistantResponse = context.assistantResponse,
+                    helpful = state.helpful,
+                    clear = state.clear,
+                    wouldApplyToday = state.wouldApplyToday
+                )
+            }.onFailure { error ->
+                AppLogger.log("Feedback", "No se pudo guardar feedback_update: ${error.message}")
+            }
+        }
+    }
+
+    private fun appendMissingContextFollowUpIfNeeded(
+        response: String,
+        userQuery: String,
+        responseMeta: ResponseMeta
+    ): String {
+        if (!isLikelyAgriculturalQuery(userQuery)) return response
+        if (responseMeta.kbSupported) return response
+
+        val lacksContextEvidence = responseMeta.enforcedKbAbstention ||
+            responseMeta.kbSupportScore < 0.45f ||
+            responseMeta.kbCoverage < 0.30f
+        if (!lacksContextEvidence) return response
+
+        val followUpQuestion = buildContextFollowUpQuestion(userQuery) ?: return response
+        if (response.contains(followUpQuestion, ignoreCase = true)) return response
+        return "${response.trim()}\n\n$followUpQuestion"
+    }
+
+    private fun buildContextFollowUpQuestion(userQuery: String): String? {
+        val normalized = userQuery.lowercase()
+            .replace("á", "a")
+            .replace("é", "e")
+            .replace("í", "i")
+            .replace("ó", "o")
+            .replace("ú", "u")
+            .replace("ñ", "n")
+
+        val cropWords = setOf(
+            "cultivo", "tomate", "maiz", "papa", "frijol", "cafe", "cebolla", "yuca",
+            "platano", "banano", "arroz", "aguacate", "lechuga", "zanahoria"
+        )
+        val stageWords = setOf(
+            "siembra", "germinacion", "trasplante", "crecimiento", "floracion",
+            "fructificacion", "cosecha", "etapa"
+        )
+        val symptomWords = setOf(
+            "sintoma", "mancha", "amarill", "marchitez", "seca", "pudricion",
+            "plaga", "hongo", "insecto", "gusano", "roya", "tizon"
+        )
+
+        val hasCrop = cropWords.any { normalized.contains(it) }
+        val hasStage = stageWords.any { normalized.contains(it) }
+        val hasSymptom = symptomWords.any { normalized.contains(it) }
+
+        val missing = mutableListOf<String>()
+        if (!hasCrop) missing.add("cultivo")
+        if (!hasStage) missing.add("etapa")
+        if (!hasSymptom) missing.add("sintoma")
+
+        val picked = missing.take(2)
+        if (picked.isEmpty()) return null
+
+        return when {
+            picked.contains("cultivo") && picked.contains("etapa") ->
+                "Para afinarla mejor: ¿que cultivo tienes y en que etapa va (siembra, crecimiento, floracion o cosecha)?"
+            picked.contains("cultivo") && picked.contains("sintoma") ->
+                "Para afinarla mejor: ¿que cultivo tienes y que sintoma principal observas?"
+            picked.contains("etapa") && picked.contains("sintoma") ->
+                "Para afinarla mejor: ¿en que etapa esta el cultivo y que sintoma principal ves?"
+            picked.contains("cultivo") ->
+                "Para afinarla mejor: ¿que cultivo estas trabajando?"
+            picked.contains("etapa") ->
+                "Para afinarla mejor: ¿en que etapa va el cultivo?"
+            picked.contains("sintoma") ->
+                "Para afinarla mejor: ¿que sintoma principal observas?"
+            else -> null
         }
     }
 
@@ -1600,7 +1833,7 @@ class MainActivity : ComponentActivity() {
                             // Verificar si esta continuación está completa
                             val isComplete = isResponseComplete(cleanResponse)
                             // Agregar como continuación
-                            chatMessages.add(ChatMessage("$cleanResponse", isUser = false, canContinue = !isComplete))
+                            chatMessages.add(ChatMessage(text = "$cleanResponse", isUser = false, canContinue = !isComplete))
                             lastResponse = cleanResponse
                             voiceHelper?.speak(cleanResponse)
                         }
@@ -2261,9 +2494,13 @@ fun AgroChatApp(
     isDiagnosing: Boolean,
     capturedBitmap: Bitmap?,
     lastDiagnosis: DiseaseResult?,
+    feedbackStates: Map<String, MessageFeedbackState>,
     onSendMessage: (String) -> Unit,
     onMicClick: () -> Unit,
     onModeChange: (AppMode) -> Unit,
+    onHelpfulFeedback: (String, Boolean) -> Unit,
+    onClarityFeedback: (String, Boolean) -> Unit,
+    onApplyTodayFeedback: (String, Boolean) -> Unit,
     onSettingsClick: () -> Unit,
     onDismissSettings: () -> Unit,
     onSaveApiKey: (String) -> Unit,
@@ -2314,8 +2551,12 @@ fun AgroChatApp(
                     isListening = isListening,
                     isOnlineMode = isOnlineMode,
                     isDiagnosticReady = isDiagnosticReady,
+                    feedbackStates = feedbackStates,
                     onSendMessage = onSendMessage,
                     onMicClick = onMicClick,
+                    onHelpfulFeedback = onHelpfulFeedback,
+                    onClarityFeedback = onClarityFeedback,
+                    onApplyTodayFeedback = onApplyTodayFeedback,
                     onSettingsClick = onSettingsClick,
                     onShowLogs = onShowLogs,
                     onSwitchToVoice = { onModeChange(AppMode.VOICE) },
@@ -2565,8 +2806,12 @@ fun ChatModeScreen(
     isListening: Boolean,
     isOnlineMode: Boolean,
     isDiagnosticReady: Boolean,
+    feedbackStates: Map<String, MessageFeedbackState>,
     onSendMessage: (String) -> Unit,
     onMicClick: () -> Unit,
+    onHelpfulFeedback: (String, Boolean) -> Unit,
+    onClarityFeedback: (String, Boolean) -> Unit,
+    onApplyTodayFeedback: (String, Boolean) -> Unit,
     onSettingsClick: () -> Unit,
     onShowLogs: () -> Unit,
     onSwitchToVoice: () -> Unit,
@@ -2619,8 +2864,14 @@ fun ChatModeScreen(
 
         LazyColumn(state = listState, modifier = Modifier.weight(1f).fillMaxWidth().padding(horizontal = 12.dp), verticalArrangement = Arrangement.spacedBy(8.dp), contentPadding = PaddingValues(vertical = 16.dp)) {
             if (messages.isEmpty()) item { EmptyStateChat() }
-            items(messages) { message ->
-                ModernMessageBubble(message = message)
+            items(messages, key = { it.id }) { message ->
+                ModernMessageBubble(
+                    message = message,
+                    feedbackState = feedbackStates[message.id],
+                    onHelpfulFeedback = onHelpfulFeedback,
+                    onClarityFeedback = onClarityFeedback,
+                    onApplyTodayFeedback = onApplyTodayFeedback
+                )
             }
             if (isProcessing) item { ModernTypingIndicator() }
             if (isListening) item { ModernListeningIndicator() }
@@ -2690,7 +2941,13 @@ fun SmallMicButton(isListening: Boolean, enabled: Boolean, onClick: () -> Unit) 
 }
 
 @Composable
-fun ModernMessageBubble(message: ChatMessage) {
+fun ModernMessageBubble(
+    message: ChatMessage,
+    feedbackState: MessageFeedbackState? = null,
+    onHelpfulFeedback: (String, Boolean) -> Unit = { _, _ -> },
+    onClarityFeedback: (String, Boolean) -> Unit = { _, _ -> },
+    onApplyTodayFeedback: (String, Boolean) -> Unit = { _, _ -> }
+) {
     Column(
         modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = if (message.isUser) Alignment.End else Alignment.Start
@@ -2703,7 +2960,104 @@ fun ModernMessageBubble(message: ChatMessage) {
         ) {
             Column(Modifier.padding(14.dp)) {
                 Text(message.text, style = MaterialTheme.typography.bodyLarge, color = AgroColors.TextPrimary, lineHeight = 22.sp)
+
+                if (!message.isUser && message.responseGuidanceType != null) {
+                    Spacer(Modifier.height(10.dp))
+                    Surface(
+                        shape = RoundedCornerShape(12.dp),
+                        color = AgroColors.SurfaceLight
+                    ) {
+                        Text(
+                            text = message.responseGuidanceType.label,
+                            style = MaterialTheme.typography.labelSmall,
+                            color = AgroColors.TextSecondary,
+                            modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp)
+                        )
+                    }
+                }
+
+                if (!message.isUser && message.feedbackEligible) {
+                    Spacer(Modifier.height(10.dp))
+                    Text(
+                        text = "¿Te sirvio esta respuesta?",
+                        style = MaterialTheme.typography.labelMedium,
+                        color = AgroColors.TextSecondary
+                    )
+                    Spacer(Modifier.height(6.dp))
+                    Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                        FilterChip(
+                            selected = feedbackState?.helpful == true,
+                            onClick = { onHelpfulFeedback(message.id, true) },
+                            label = { Text("Me sirvio") },
+                            colors = FilterChipDefaults.filterChipColors(
+                                selectedContainerColor = AgroColors.Accent,
+                                selectedLabelColor = Color.White
+                            )
+                        )
+                        FilterChip(
+                            selected = feedbackState?.helpful == false,
+                            onClick = { onHelpfulFeedback(message.id, false) },
+                            label = { Text("No me sirvio") },
+                            colors = FilterChipDefaults.filterChipColors(
+                                selectedContainerColor = Color(0xFFE57373),
+                                selectedLabelColor = Color.White
+                            )
+                        )
+                    }
+
+                    Spacer(Modifier.height(8.dp))
+                    FeedbackBinaryQuestion(
+                        question = "¿Fue clara?",
+                        selectedValue = feedbackState?.clear,
+                        onSelect = { onClarityFeedback(message.id, it) }
+                    )
+                    Spacer(Modifier.height(6.dp))
+                    FeedbackBinaryQuestion(
+                        question = "¿La aplicarias hoy?",
+                        selectedValue = feedbackState?.wouldApplyToday,
+                        onSelect = { onApplyTodayFeedback(message.id, it) }
+                    )
+                }
             }
+        }
+    }
+}
+
+@Composable
+private fun FeedbackBinaryQuestion(
+    question: String,
+    selectedValue: Boolean?,
+    onSelect: (Boolean) -> Unit
+) {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        Text(
+            text = question,
+            style = MaterialTheme.typography.labelSmall,
+            color = AgroColors.TextSecondary
+        )
+        Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+            FilterChip(
+                selected = selectedValue == true,
+                onClick = { onSelect(true) },
+                label = { Text("Si") },
+                colors = FilterChipDefaults.filterChipColors(
+                    selectedContainerColor = AgroColors.Accent,
+                    selectedLabelColor = Color.White
+                )
+            )
+            FilterChip(
+                selected = selectedValue == false,
+                onClick = { onSelect(false) },
+                label = { Text("No") },
+                colors = FilterChipDefaults.filterChipColors(
+                    selectedContainerColor = Color(0xFFE57373),
+                    selectedLabelColor = Color.White
+                )
+            )
         }
     }
 }
