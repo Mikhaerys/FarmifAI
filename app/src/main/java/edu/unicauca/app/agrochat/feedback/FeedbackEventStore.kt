@@ -30,6 +30,7 @@ class FeedbackEventStore(context: Context) {
         private const val TAG = "FeedbackEventStore"
         private const val CATBOX_UPLOAD_URL = "https://catbox.moe/user/api.php"
         private const val MIN_UPLOAD_INTERVAL_MS = 15_000L
+        private const val MAX_PENDING_LIVE_EVENTS = 2000
     }
 
     private val appContext = context.applicationContext
@@ -41,9 +42,11 @@ class FeedbackEventStore(context: Context) {
     private val localFormatter = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US)
     private val isoFormatter = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ", Locale.US)
     private val syncManifestFile = File(rootDir, "feedback_sync_manifest.json")
+    private val pendingLiveEventsFile = File(rootDir, "feedback_live_pending.jsonl")
 
     fun storagePath(): String = rootDir.absolutePath
     fun syncManifestPath(): String = syncManifestFile.absolutePath
+    fun pendingLivePath(): String = pendingLiveEventsFile.absolutePath
 
     suspend fun recordAssistantResponse(
         sessionId: String,
@@ -121,9 +124,17 @@ class FeedbackEventStore(context: Context) {
             outFile.appendText(event.toString() + "\n")
         }
         try {
-            postEventToLiveEndpoint(event)
+            enqueueLiveEvent(event)
+            flushPendingLiveEvents(nowMs)
         } catch (error: Exception) {
             Log.w(TAG, "No se pudo enviar evento a endpoint live: ${error.message}")
+            updateLiveSyncStatus(
+                nowMs = nowMs,
+                success = false,
+                responseCode = null,
+                errorMessage = error.message ?: "unknown_error",
+                pendingCount = countPendingLiveEvents()
+            )
         }
         try {
             uploadDailySnapshotIfNeeded(outFile, nowMs, event.optString("event_type", "unknown"))
@@ -158,9 +169,113 @@ class FeedbackEventStore(context: Context) {
         Log.i(TAG, "Feedback sincronizado: $remoteUrl")
     }
 
-    private fun postEventToLiveEndpoint(event: JSONObject) {
-        if (liveEndpoint.isBlank()) return
-        if (!isInternetAvailable()) return
+    private data class LivePostResult(
+        val success: Boolean,
+        val responseCode: Int?,
+        val errorMessage: String?
+    )
+
+    private fun enqueueLiveEvent(event: JSONObject) {
+        synchronized(fileLock) {
+            pendingLiveEventsFile.parentFile?.mkdirs()
+            pendingLiveEventsFile.appendText(event.toString() + "\n")
+
+            // Evita crecimiento infinito si hay mala conectividad prolongada.
+            val lines = pendingLiveEventsFile.readLines()
+            if (lines.size > MAX_PENDING_LIVE_EVENTS) {
+                val trimmed = lines.takeLast(MAX_PENDING_LIVE_EVENTS)
+                pendingLiveEventsFile.writeText(trimmed.joinToString("\n", postfix = "\n"))
+            }
+        }
+    }
+
+    private fun flushPendingLiveEvents(nowMs: Long) {
+        if (liveEndpoint.isBlank()) {
+            updateLiveSyncStatus(
+                nowMs = nowMs,
+                success = false,
+                responseCode = null,
+                errorMessage = "live_endpoint_empty",
+                pendingCount = countPendingLiveEvents()
+            )
+            return
+        }
+        if (!isInternetAvailable()) {
+            updateLiveSyncStatus(
+                nowMs = nowMs,
+                success = false,
+                responseCode = null,
+                errorMessage = "no_internet",
+                pendingCount = countPendingLiveEvents()
+            )
+            return
+        }
+
+        val pendingLines = synchronized(fileLock) {
+            if (!pendingLiveEventsFile.exists()) emptyList() else pendingLiveEventsFile.readLines()
+        }
+        if (pendingLines.isEmpty()) return
+
+        val remaining = mutableListOf<String>()
+        var lastResult: LivePostResult? = null
+
+        for ((index, line) in pendingLines.withIndex()) {
+            val trimmed = line.trim()
+            if (trimmed.isBlank()) continue
+
+            val event = runCatching { JSONObject(trimmed) }.getOrNull()
+            if (event == null) {
+                // Línea dañada: se descarta para no bloquear la cola.
+                continue
+            }
+
+            val result = postEventToLiveEndpoint(event)
+            lastResult = result
+            if (!result.success) {
+                remaining.add(trimmed)
+                for (j in index + 1 until pendingLines.size) {
+                    val tail = pendingLines[j].trim()
+                    if (tail.isNotBlank()) remaining.add(tail)
+                }
+                break
+            }
+        }
+
+        synchronized(fileLock) {
+            if (remaining.isEmpty()) {
+                pendingLiveEventsFile.delete()
+            } else {
+                pendingLiveEventsFile.writeText(remaining.joinToString("\n", postfix = "\n"))
+            }
+        }
+
+        val pendingCount = remaining.size
+        if (lastResult != null) {
+            updateLiveSyncStatus(
+                nowMs = nowMs,
+                success = lastResult.success,
+                responseCode = lastResult.responseCode,
+                errorMessage = lastResult.errorMessage,
+                pendingCount = pendingCount
+            )
+        } else {
+            updateLiveSyncStatus(
+                nowMs = nowMs,
+                success = true,
+                responseCode = 200,
+                errorMessage = null,
+                pendingCount = pendingCount
+            )
+        }
+    }
+
+    private fun postEventToLiveEndpoint(event: JSONObject): LivePostResult {
+        if (liveEndpoint.isBlank()) {
+            return LivePostResult(success = false, responseCode = null, errorMessage = "live_endpoint_empty")
+        }
+        if (!isInternetAvailable()) {
+            return LivePostResult(success = false, responseCode = null, errorMessage = "no_internet")
+        }
 
         val connection = (URL(liveEndpoint).openConnection() as HttpURLConnection).apply {
             requestMethod = "POST"
@@ -174,7 +289,7 @@ class FeedbackEventStore(context: Context) {
             setRequestProperty("User-Agent", "FarmifAI-FeedbackSync/1.0")
         }
 
-        try {
+        return try {
             connection.outputStream.bufferedWriter().use { writer ->
                 writer.write(event.toString())
                 writer.flush()
@@ -183,7 +298,21 @@ class FeedbackEventStore(context: Context) {
             if (code !in 200..299) {
                 val errorBody = connection.errorStream?.bufferedReader()?.use { it.readText() } ?: ""
                 Log.w(TAG, "Live endpoint rechazó evento code=$code body='${errorBody.take(180)}'")
+                LivePostResult(
+                    success = false,
+                    responseCode = code,
+                    errorMessage = errorBody.take(180).ifBlank { "http_$code" }
+                )
+            } else {
+                Log.i(TAG, "Live endpoint OK code=$code")
+                LivePostResult(success = true, responseCode = code, errorMessage = null)
             }
+        } catch (error: Exception) {
+            LivePostResult(
+                success = false,
+                responseCode = null,
+                errorMessage = error.message ?: "network_error"
+            )
         } finally {
             connection.disconnect()
         }
@@ -253,8 +382,8 @@ class FeedbackEventStore(context: Context) {
             appContext.getSystemService(Context.CONNECTIVITY_SERVICE) as? ConnectivityManager ?: return false
         val network = connectivityManager.activeNetwork ?: return false
         val capabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
-        return capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) &&
-            capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED)
+        // En visitas de campo puede haber validación inestable; basta con capacidad de Internet.
+        return capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
     }
 
     private fun sha256(file: File): String {
@@ -276,6 +405,11 @@ class FeedbackEventStore(context: Context) {
     private fun getFileSyncState(fileName: String): JSONObject? = synchronized(syncLock) {
         val manifest = loadSyncManifestLocked()
         manifest.optJSONObject("files")?.optJSONObject(fileName)
+    }
+
+    private fun countPendingLiveEvents(): Int = synchronized(fileLock) {
+        if (!pendingLiveEventsFile.exists()) return@synchronized 0
+        pendingLiveEventsFile.useLines { lines -> lines.count { it.isNotBlank() } }
     }
 
     private fun updateSyncState(
@@ -304,6 +438,45 @@ class FeedbackEventStore(context: Context) {
 
         files.put(fileName, state)
         manifest.put("updated_at_ms", nowMs)
+            .put("updated_at_local", localFormatter.format(Date(nowMs)))
+            .put("updated_at_iso", isoFormatter.format(Date(nowMs)))
+            .put("timezone_id", TimeZone.getDefault().id)
+
+        syncManifestFile.parentFile?.mkdirs()
+        syncManifestFile.writeText(manifest.toString(2))
+    }
+
+    private fun updateLiveSyncStatus(
+        nowMs: Long,
+        success: Boolean,
+        responseCode: Int?,
+        errorMessage: String?,
+        pendingCount: Int
+    ) = synchronized(syncLock) {
+        val manifest = loadSyncManifestLocked()
+        val live = manifest.optJSONObject("live_endpoint_status") ?: JSONObject()
+        val deliveredCount = live.optLong("delivered_count", 0L)
+        val failedCount = live.optLong("failed_count", 0L)
+
+        live.put("endpoint", liveEndpoint)
+            .put("last_attempt_at_ms", nowMs)
+            .put("last_attempt_at_local", localFormatter.format(Date(nowMs)))
+            .put("last_attempt_at_iso", isoFormatter.format(Date(nowMs)))
+            .put("last_response_code", responseCode)
+            .put("last_error", errorMessage)
+            .put("pending_events", pendingCount)
+
+        if (success) {
+            live.put("last_success_at_ms", nowMs)
+                .put("last_success_at_local", localFormatter.format(Date(nowMs)))
+                .put("last_success_at_iso", isoFormatter.format(Date(nowMs)))
+                .put("delivered_count", deliveredCount + 1L)
+        } else {
+            live.put("failed_count", failedCount + 1L)
+        }
+
+        manifest.put("live_endpoint_status", live)
+            .put("updated_at_ms", nowMs)
             .put("updated_at_local", localFormatter.format(Date(nowMs)))
             .put("updated_at_iso", isoFormatter.format(Date(nowMs)))
             .put("timezone_id", TimeZone.getDefault().id)

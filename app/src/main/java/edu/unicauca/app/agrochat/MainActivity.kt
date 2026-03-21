@@ -368,6 +368,7 @@ class MainActivity : ComponentActivity() {
         feedbackStore = FeedbackEventStore(applicationContext)
         AppLogger.log("Feedback", "Storage path: ${feedbackStore.storagePath()}")
         AppLogger.log("Feedback", "Sync manifest: ${feedbackStore.syncManifestPath()}")
+        AppLogger.log("Feedback", "Pending live queue: ${feedbackStore.pendingLivePath()}")
         AppLogger.log("Feedback", "Live endpoint: ${BuildConfig.FEEDBACK_LIVE_ENDPOINT}")
 
         // Cargar preferencias
@@ -1644,6 +1645,7 @@ class MainActivity : ComponentActivity() {
 
     private fun onHelpfulFeedback(messageId: String, helpful: Boolean) {
         val current = messageFeedbackStates[messageId] ?: MessageFeedbackState()
+        if (current.helpful != null) return
         val updated = current.copy(helpful = helpful, updatedAt = System.currentTimeMillis())
         messageFeedbackStates[messageId] = updated
         persistFeedbackUpdate(messageId, updated)
@@ -1651,6 +1653,7 @@ class MainActivity : ComponentActivity() {
 
     private fun onClarityFeedback(messageId: String, clear: Boolean) {
         val current = messageFeedbackStates[messageId] ?: MessageFeedbackState()
+        if (current.clear != null) return
         val updated = current.copy(clear = clear, updatedAt = System.currentTimeMillis())
         messageFeedbackStates[messageId] = updated
         persistFeedbackUpdate(messageId, updated)
@@ -1658,6 +1661,7 @@ class MainActivity : ComponentActivity() {
 
     private fun onApplyTodayFeedback(messageId: String, wouldApplyToday: Boolean) {
         val current = messageFeedbackStates[messageId] ?: MessageFeedbackState()
+        if (current.wouldApplyToday != null) return
         val updated = current.copy(wouldApplyToday = wouldApplyToday, updatedAt = System.currentTimeMillis())
         messageFeedbackStates[messageId] = updated
         persistFeedbackUpdate(messageId, updated)
@@ -3046,6 +3050,7 @@ fun ModernMessageBubble(
                             FilterChip(
                                 selected = feedbackState?.helpful == true,
                                 onClick = { onHelpfulFeedback(message.id, true) },
+                                enabled = feedbackState?.helpful == null,
                                 label = { Text("Me sirvio") },
                                 colors = FilterChipDefaults.filterChipColors(
                                     selectedContainerColor = AgroColors.Accent,
@@ -3055,6 +3060,7 @@ fun ModernMessageBubble(
                             FilterChip(
                                 selected = feedbackState?.helpful == false,
                                 onClick = { onHelpfulFeedback(message.id, false) },
+                                enabled = feedbackState?.helpful == null,
                                 label = { Text("No me sirvio") },
                                 colors = FilterChipDefaults.filterChipColors(
                                     selectedContainerColor = Color(0xFFE57373),
@@ -3067,12 +3073,14 @@ fun ModernMessageBubble(
                         FeedbackBinaryQuestion(
                             question = "¿Fue clara?",
                             selectedValue = feedbackState?.clear,
+                            enabled = feedbackState?.clear == null,
                             onSelect = { onClarityFeedback(message.id, it) }
                         )
                         Spacer(Modifier.height(6.dp))
                         FeedbackBinaryQuestion(
                             question = "¿La aplicarias hoy?",
                             selectedValue = feedbackState?.wouldApplyToday,
+                            enabled = feedbackState?.wouldApplyToday == null,
                             onSelect = { onApplyTodayFeedback(message.id, it) }
                         )
                     }
@@ -3102,6 +3110,7 @@ fun ModernMessageBubble(
 private fun FeedbackBinaryQuestion(
     question: String,
     selectedValue: Boolean?,
+    enabled: Boolean = true,
     onSelect: (Boolean) -> Unit
 ) {
     Row(
@@ -3118,6 +3127,7 @@ private fun FeedbackBinaryQuestion(
             FilterChip(
                 selected = selectedValue == true,
                 onClick = { onSelect(true) },
+                enabled = enabled,
                 label = { Text("Si") },
                 colors = FilterChipDefaults.filterChipColors(
                     selectedContainerColor = AgroColors.Accent,
@@ -3127,6 +3137,7 @@ private fun FeedbackBinaryQuestion(
             FilterChip(
                 selected = selectedValue == false,
                 onClick = { onSelect(false) },
+                enabled = enabled,
                 label = { Text("No") },
                 colors = FilterChipDefaults.filterChipColors(
                     selectedContainerColor = Color(0xFFE57373),
