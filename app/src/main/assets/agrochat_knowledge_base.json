@@ -36098,6 +36098,2687 @@
         "deterioro",
         "poscosecha"
       ]
+    },
+    {
+      "id": 1677,
+      "category": "cosecha",
+      "questions": [
+        "Como hacer fermentacion carbonica en cafe",
+        "Que cuidar en fermentacion carbonica para cafe",
+        "Riesgos de fermentacion carbonica en poscosecha de cafe",
+        "Control de calidad en fermentacion carbonica de cafe"
+      ],
+      "answer": "En cafe, fermentacion carbonica se basa en atmosfera controlada rica en CO2. Para que sea estable y repetible, conviene diferenciar perfil sensorial con control estricto y llevar trazabilidad por lote.",
+      "keywords": [
+        "cafe",
+        "fermentacion",
+        "avanzada",
+        "carbonica",
+        "atmosfera",
+        "controlada",
+        "rica",
+        "co2",
+        "diferenciar",
+        "perfil",
+        "sensorial",
+        "con",
+        "control",
+        "estricto"
+      ]
+    },
+    {
+      "id": 1678,
+      "category": "cosecha",
+      "questions": [
+        "Como hacer fermentacion lactica en cafe",
+        "Que cuidar en fermentacion lactica para cafe",
+        "Riesgos de fermentacion lactica en poscosecha de cafe",
+        "Control de calidad en fermentacion lactica de cafe"
+      ],
+      "answer": "En cafe, fermentacion lactica se basa en microbiota orientada a acidez limpia. Para que sea estable y repetible, conviene cuidar inocuidad y tiempos y llevar trazabilidad por lote.",
+      "keywords": [
+        "cafe",
+        "fermentacion",
+        "avanzada",
+        "lactica",
+        "microbiota",
+        "orientada",
+        "acidez",
+        "limpia",
+        "cuidar",
+        "inocuidad",
+        "tiempos"
+      ]
+    },
+    {
+      "id": 1679,
+      "category": "cosecha",
+      "questions": [
+        "Como hacer fermentacion acetica controlada en cafe",
+        "Que cuidar en fermentacion acetica controlada para cafe",
+        "Riesgos de fermentacion acetica controlada en poscosecha de cafe",
+        "Control de calidad en fermentacion acetica controlada de cafe"
+      ],
+      "answer": "En cafe, fermentacion acetica controlada se basa en evitar notas avinagradas dominantes. Para que sea estable y repetible, conviene vigilar pH y temperatura y llevar trazabilidad por lote.",
+      "keywords": [
+        "cafe",
+        "fermentacion",
+        "avanzada",
+        "acetica",
+        "controlada",
+        "evitar",
+        "notas",
+        "avinagradas",
+        "dominantes",
+        "vigilar",
+        "temperatura"
+      ]
+    },
+    {
+      "id": 1680,
+      "category": "cosecha",
+      "questions": [
+        "Como hacer fermentacion anaerobica en tanque en cafe",
+        "Que cuidar en fermentacion anaerobica en tanque para cafe",
+        "Riesgos de fermentacion anaerobica en tanque en poscosecha de cafe",
+        "Control de calidad en fermentacion anaerobica en tanque de cafe"
+      ],
+      "answer": "En cafe, fermentacion anaerobica en tanque se basa en bajo oxigeno y seguimiento continuo. Para que sea estable y repetible, conviene trazabilidad minuto a minuto y llevar trazabilidad por lote.",
+      "keywords": [
+        "cafe",
+        "fermentacion",
+        "avanzada",
+        "anaerobica",
+        "tanque",
+        "bajo",
+        "oxigeno",
+        "seguimiento",
+        "continuo",
+        "trazabilidad",
+        "minuto"
+      ]
+    },
+    {
+      "id": 1681,
+      "category": "cosecha",
+      "questions": [
+        "Como hacer fermentacion en cereza entera en cafe",
+        "Que cuidar en fermentacion en cereza entera para cafe",
+        "Riesgos de fermentacion en cereza entera en poscosecha de cafe",
+        "Control de calidad en fermentacion en cereza entera de cafe"
+      ],
+      "answer": "En cafe, fermentacion en cereza entera se basa en proceso con fruta completa. Para que sea estable y repetible, conviene control de temperatura y sanidad y llevar trazabilidad por lote.",
+      "keywords": [
+        "cafe",
+        "fermentacion",
+        "avanzada",
+        "cereza",
+        "entera",
+        "proceso",
+        "con",
+        "fruta",
+        "completa",
+        "control",
+        "temperatura",
+        "sanidad"
+      ]
+    },
+    {
+      "id": 1682,
+      "category": "cosecha",
+      "questions": [
+        "Como hacer fermentacion en pergamino en cafe",
+        "Que cuidar en fermentacion en pergamino para cafe",
+        "Riesgos de fermentacion en pergamino en poscosecha de cafe",
+        "Control de calidad en fermentacion en pergamino de cafe"
+      ],
+      "answer": "En cafe, fermentacion en pergamino se basa en procesamiento tras despulpado. Para que sea estable y repetible, conviene evitar desviaciones por lote y llevar trazabilidad por lote.",
+      "keywords": [
+        "cafe",
+        "fermentacion",
+        "avanzada",
+        "pergamino",
+        "procesamiento",
+        "tras",
+        "despulpado",
+        "evitar",
+        "desviaciones",
+        "por",
+        "lote"
+      ]
+    },
+    {
+      "id": 1683,
+      "category": "cosecha",
+      "questions": [
+        "Como hacer fermentacion con levaduras seleccionadas en cafe",
+        "Que cuidar en fermentacion con levaduras seleccionadas para cafe",
+        "Riesgos de fermentacion con levaduras seleccionadas en poscosecha de cafe",
+        "Control de calidad en fermentacion con levaduras seleccionadas de cafe"
+      ],
+      "answer": "En cafe, fermentacion con levaduras seleccionadas se basa en inoculacion dirigida de microbiota. Para que sea estable y repetible, conviene estandarizar dosificacion y limpieza y llevar trazabilidad por lote.",
+      "keywords": [
+        "cafe",
+        "fermentacion",
+        "avanzada",
+        "con",
+        "levaduras",
+        "seleccionadas",
+        "inoculacion",
+        "dirigida",
+        "microbiota",
+        "estandarizar",
+        "dosificacion",
+        "limpieza"
+      ]
+    },
+    {
+      "id": 1684,
+      "category": "cosecha",
+      "questions": [
+        "Como hacer fermentacion espontanea en cafe",
+        "Que cuidar en fermentacion espontanea para cafe",
+        "Riesgos de fermentacion espontanea en poscosecha de cafe",
+        "Control de calidad en fermentacion espontanea de cafe"
+      ],
+      "answer": "En cafe, fermentacion espontanea se basa en microbiota nativa del entorno. Para que sea estable y repetible, conviene aumentar monitoreo para evitar defectos y llevar trazabilidad por lote.",
+      "keywords": [
+        "cafe",
+        "fermentacion",
+        "avanzada",
+        "espontanea",
+        "microbiota",
+        "nativa",
+        "del",
+        "entorno",
+        "aumentar",
+        "monitoreo",
+        "para",
+        "evitar",
+        "defectos"
+      ]
+    },
+    {
+      "id": 1685,
+      "category": "cosecha",
+      "questions": [
+        "Como hacer fermentacion por lotes pequenos en cafe",
+        "Que cuidar en fermentacion por lotes pequenos para cafe",
+        "Riesgos de fermentacion por lotes pequenos en poscosecha de cafe",
+        "Control de calidad en fermentacion por lotes pequenos de cafe"
+      ],
+      "answer": "En cafe, fermentacion por lotes pequenos se basa en control detallado de microproceso. Para que sea estable y repetible, conviene evaluacion sensorial posterior y llevar trazabilidad por lote.",
+      "keywords": [
+        "cafe",
+        "fermentacion",
+        "avanzada",
+        "por",
+        "lotes",
+        "pequenos",
+        "control",
+        "detallado",
+        "microproceso",
+        "evaluacion",
+        "sensorial",
+        "posterior"
+      ]
+    },
+    {
+      "id": 1686,
+      "category": "cosecha",
+      "questions": [
+        "Como hacer fermentacion escalonada en cafe",
+        "Que cuidar en fermentacion escalonada para cafe",
+        "Riesgos de fermentacion escalonada en poscosecha de cafe",
+        "Control de calidad en fermentacion escalonada de cafe"
+      ],
+      "answer": "En cafe, fermentacion escalonada se basa en etapas con objetivos diferentes. Para que sea estable y repetible, conviene registro de cada fase y llevar trazabilidad por lote.",
+      "keywords": [
+        "cafe",
+        "fermentacion",
+        "avanzada",
+        "escalonada",
+        "etapas",
+        "con",
+        "objetivos",
+        "diferentes",
+        "registro",
+        "cada",
+        "fase"
+      ]
+    },
+    {
+      "id": 1687,
+      "category": "cosecha",
+      "questions": [
+        "Como hacer fermentacion en frio en cafe",
+        "Que cuidar en fermentacion en frio para cafe",
+        "Riesgos de fermentacion en frio en poscosecha de cafe",
+        "Control de calidad en fermentacion en frio de cafe"
+      ],
+      "answer": "En cafe, fermentacion en frio se basa en temperaturas moderadas para mayor control. Para que sea estable y repetible, conviene ajustar tiempos de proceso y llevar trazabilidad por lote.",
+      "keywords": [
+        "cafe",
+        "fermentacion",
+        "avanzada",
+        "frio",
+        "temperaturas",
+        "moderadas",
+        "para",
+        "mayor",
+        "control",
+        "ajustar",
+        "tiempos",
+        "proceso"
+      ]
+    },
+    {
+      "id": 1688,
+      "category": "cosecha",
+      "questions": [
+        "Como hacer fermentacion termica en cafe",
+        "Que cuidar en fermentacion termica para cafe",
+        "Riesgos de fermentacion termica en poscosecha de cafe",
+        "Control de calidad en fermentacion termica de cafe"
+      ],
+      "answer": "En cafe, fermentacion termica se basa en manejo con ventana de temperatura definida. Para que sea estable y repetible, conviene evitar sobrecalentamiento y llevar trazabilidad por lote.",
+      "keywords": [
+        "cafe",
+        "fermentacion",
+        "avanzada",
+        "termica",
+        "manejo",
+        "con",
+        "ventana",
+        "temperatura",
+        "definida",
+        "evitar",
+        "sobrecalentamiento"
+      ]
+    },
+    {
+      "id": 1689,
+      "category": "cosecha",
+      "questions": [
+        "Como hacer fermentacion con recirculacion en cafe",
+        "Que cuidar en fermentacion con recirculacion para cafe",
+        "Riesgos de fermentacion con recirculacion en poscosecha de cafe",
+        "Control de calidad en fermentacion con recirculacion de cafe"
+      ],
+      "answer": "En cafe, fermentacion con recirculacion se basa en uniformidad de medio fermentativo. Para que sea estable y repetible, conviene evitar contaminaciones y llevar trazabilidad por lote.",
+      "keywords": [
+        "cafe",
+        "fermentacion",
+        "avanzada",
+        "con",
+        "recirculacion",
+        "uniformidad",
+        "medio",
+        "fermentativo",
+        "evitar",
+        "contaminaciones"
+      ]
+    },
+    {
+      "id": 1690,
+      "category": "cosecha",
+      "questions": [
+        "Como hacer fermentacion con control de brix en cafe",
+        "Que cuidar en fermentacion con control de brix para cafe",
+        "Riesgos de fermentacion con control de brix en poscosecha de cafe",
+        "Control de calidad en fermentacion con control de brix de cafe"
+      ],
+      "answer": "En cafe, fermentacion con control de brix se basa en seguimiento de azucares disponibles. Para que sea estable y repetible, conviene tomar decisiones segun curva y llevar trazabilidad por lote.",
+      "keywords": [
+        "cafe",
+        "fermentacion",
+        "avanzada",
+        "con",
+        "control",
+        "brix",
+        "seguimiento",
+        "azucares",
+        "disponibles",
+        "tomar",
+        "decisiones",
+        "segun",
+        "curva"
+      ]
+    },
+    {
+      "id": 1691,
+      "category": "cosecha",
+      "questions": [
+        "Como hacer fermentacion con control de pH en cafe",
+        "Que cuidar en fermentacion con control de pH para cafe",
+        "Riesgos de fermentacion con control de pH en poscosecha de cafe",
+        "Control de calidad en fermentacion con control de pH de cafe"
+      ],
+      "answer": "En cafe, fermentacion con control de pH se basa en seguimiento acido-base del proceso. Para que sea estable y repetible, conviene detectar desviaciones tempranas y llevar trazabilidad por lote.",
+      "keywords": [
+        "cafe",
+        "fermentacion",
+        "avanzada",
+        "con",
+        "control",
+        "seguimiento",
+        "acido",
+        "base",
+        "del",
+        "proceso",
+        "detectar",
+        "desviaciones",
+        "tempranas"
+      ]
+    },
+    {
+      "id": 1692,
+      "category": "cosecha",
+      "questions": [
+        "Como hacer fermentacion con control de aw en cafe",
+        "Que cuidar en fermentacion con control de aw para cafe",
+        "Riesgos de fermentacion con control de aw en poscosecha de cafe",
+        "Control de calidad en fermentacion con control de aw de cafe"
+      ],
+      "answer": "En cafe, fermentacion con control de aw se basa en estabilidad microbiologica progresiva. Para que sea estable y repetible, conviene proteger inocuidad y llevar trazabilidad por lote.",
+      "keywords": [
+        "cafe",
+        "fermentacion",
+        "avanzada",
+        "con",
+        "control",
+        "estabilidad",
+        "microbiologica",
+        "progresiva",
+        "proteger",
+        "inocuidad"
+      ]
+    },
+    {
+      "id": 1693,
+      "category": "cosecha",
+      "questions": [
+        "Como hacer fermentacion en bolsas en cafe",
+        "Que cuidar en fermentacion en bolsas para cafe",
+        "Riesgos de fermentacion en bolsas en poscosecha de cafe",
+        "Control de calidad en fermentacion en bolsas de cafe"
+      ],
+      "answer": "En cafe, fermentacion en bolsas se basa en microambiente controlado. Para que sea estable y repetible, conviene limpieza y manejo cuidadoso y llevar trazabilidad por lote.",
+      "keywords": [
+        "cafe",
+        "fermentacion",
+        "avanzada",
+        "bolsas",
+        "microambiente",
+        "controlado",
+        "limpieza",
+        "manejo",
+        "cuidadoso"
+      ]
+    },
+    {
+      "id": 1694,
+      "category": "cosecha",
+      "questions": [
+        "Como hacer fermentacion en barrica en cafe",
+        "Que cuidar en fermentacion en barrica para cafe",
+        "Riesgos de fermentacion en barrica en poscosecha de cafe",
+        "Control de calidad en fermentacion en barrica de cafe"
+      ],
+      "answer": "En cafe, fermentacion en barrica se basa en aporte de complejidad si se controla bien. Para que sea estable y repetible, conviene evitar contaminacion cruzada y llevar trazabilidad por lote.",
+      "keywords": [
+        "cafe",
+        "fermentacion",
+        "avanzada",
+        "barrica",
+        "aporte",
+        "complejidad",
+        "controla",
+        "bien",
+        "evitar",
+        "contaminacion",
+        "cruzada"
+      ]
+    },
+    {
+      "id": 1695,
+      "category": "cosecha",
+      "questions": [
+        "Como hacer co-fermentacion controlada en cafe",
+        "Que cuidar en co-fermentacion controlada para cafe",
+        "Riesgos de co-fermentacion controlada en poscosecha de cafe",
+        "Control de calidad en co-fermentacion controlada de cafe"
+      ],
+      "answer": "En cafe, co-fermentacion controlada se basa en proceso con coadyuvantes permitidos. Para que sea estable y repetible, conviene documentar origen y metodologia y llevar trazabilidad por lote.",
+      "keywords": [
+        "cafe",
+        "fermentacion",
+        "avanzada",
+        "controlada",
+        "proceso",
+        "con",
+        "coadyuvantes",
+        "permitidos",
+        "documentar",
+        "origen",
+        "metodologia"
+      ]
+    },
+    {
+      "id": 1696,
+      "category": "cosecha",
+      "questions": [
+        "Como hacer fermentacion de experimentacion en cafe",
+        "Que cuidar en fermentacion de experimentacion para cafe",
+        "Riesgos de fermentacion de experimentacion en poscosecha de cafe",
+        "Control de calidad en fermentacion de experimentacion de cafe"
+      ],
+      "answer": "En cafe, fermentacion de experimentacion se basa en ensayo de procesos en pequeno volumen. Para que sea estable y repetible, conviene comparar con lote testigo y llevar trazabilidad por lote.",
+      "keywords": [
+        "cafe",
+        "fermentacion",
+        "avanzada",
+        "experimentacion",
+        "ensayo",
+        "procesos",
+        "pequeno",
+        "volumen",
+        "comparar",
+        "con",
+        "lote",
+        "testigo"
+      ]
+    },
+    {
+      "id": 1697,
+      "category": "cosecha",
+      "questions": [
+        "Como medir brix en mosto en cafe",
+        "Para que sirve brix en mosto en beneficio de cafe",
+        "Como usar brix en mosto para mejorar calidad de cafe",
+        "Errores comunes al interpretar brix en mosto en cafe"
+      ],
+      "answer": "En cafe, brix en mosto permite entender dinamica de azucares fermentables. Con ese dato puedes ajustar punto de corte de fermentacion, siempre comparando resultados por lote.",
+      "keywords": [
+        "cafe",
+        "metrica",
+        "proceso",
+        "brix",
+        "mosto",
+        "dinamica",
+        "azucares",
+        "fermentables",
+        "ajustar",
+        "punto",
+        "corte",
+        "fermentacion"
+      ]
+    },
+    {
+      "id": 1698,
+      "category": "cosecha",
+      "questions": [
+        "Como medir pH de fermentacion en cafe",
+        "Para que sirve pH de fermentacion en beneficio de cafe",
+        "Como usar pH de fermentacion para mejorar calidad de cafe",
+        "Errores comunes al interpretar pH de fermentacion en cafe"
+      ],
+      "answer": "En cafe, pH de fermentacion permite entender evolucion acida del proceso. Con ese dato puedes detectar desviaciones y riesgo de defecto, siempre comparando resultados por lote.",
+      "keywords": [
+        "cafe",
+        "metrica",
+        "proceso",
+        "fermentacion",
+        "evolucion",
+        "acida",
+        "del",
+        "detectar",
+        "desviaciones",
+        "riesgo",
+        "defecto"
+      ]
+    },
+    {
+      "id": 1699,
+      "category": "cosecha",
+      "questions": [
+        "Como medir temperatura de masa en cafe",
+        "Para que sirve temperatura de masa en beneficio de cafe",
+        "Como usar temperatura de masa para mejorar calidad de cafe",
+        "Errores comunes al interpretar temperatura de masa en cafe"
+      ],
+      "answer": "En cafe, temperatura de masa permite entender velocidad microbiologica. Con ese dato puedes evitar picos no deseados, siempre comparando resultados por lote.",
+      "keywords": [
+        "cafe",
+        "metrica",
+        "proceso",
+        "temperatura",
+        "masa",
+        "velocidad",
+        "microbiologica",
+        "evitar",
+        "picos",
+        "deseados"
+      ]
+    },
+    {
+      "id": 1700,
+      "category": "cosecha",
+      "questions": [
+        "Como medir tiempo efectivo de fermentacion en cafe",
+        "Para que sirve tiempo efectivo de fermentacion en beneficio de cafe",
+        "Como usar tiempo efectivo de fermentacion para mejorar calidad de cafe",
+        "Errores comunes al interpretar tiempo efectivo de fermentacion en cafe"
+      ],
+      "answer": "En cafe, tiempo efectivo de fermentacion permite entender desarrollo de compuestos sensoriales. Con ese dato puedes estandarizar protocolo, siempre comparando resultados por lote.",
+      "keywords": [
+        "cafe",
+        "metrica",
+        "proceso",
+        "tiempo",
+        "efectivo",
+        "fermentacion",
+        "desarrollo",
+        "compuestos",
+        "sensoriales",
+        "estandarizar",
+        "protocolo"
+      ]
+    },
+    {
+      "id": 1701,
+      "category": "cosecha",
+      "questions": [
+        "Como medir actividad de agua aw en cafe",
+        "Para que sirve actividad de agua aw en beneficio de cafe",
+        "Como usar actividad de agua aw para mejorar calidad de cafe",
+        "Errores comunes al interpretar actividad de agua aw en cafe"
+      ],
+      "answer": "En cafe, actividad de agua aw permite entender estabilidad microbiologica. Con ese dato puedes proteger calidad en almacenamiento, siempre comparando resultados por lote.",
+      "keywords": [
+        "cafe",
+        "metrica",
+        "proceso",
+        "actividad",
+        "agua",
+        "estabilidad",
+        "microbiologica",
+        "proteger",
+        "calidad",
+        "almacenamiento"
+      ]
+    },
+    {
+      "id": 1702,
+      "category": "cosecha",
+      "questions": [
+        "Como medir humedad final del pergamino en cafe",
+        "Para que sirve humedad final del pergamino en beneficio de cafe",
+        "Como usar humedad final del pergamino para mejorar calidad de cafe",
+        "Errores comunes al interpretar humedad final del pergamino en cafe"
+      ],
+      "answer": "En cafe, humedad final del pergamino permite entender seguridad de bodega. Con ese dato puedes evitar moho y deterioro, siempre comparando resultados por lote.",
+      "keywords": [
+        "cafe",
+        "metrica",
+        "proceso",
+        "humedad",
+        "final",
+        "del",
+        "pergamino",
+        "seguridad",
+        "bodega",
+        "evitar",
+        "moho",
+        "deterioro"
+      ]
+    },
+    {
+      "id": 1703,
+      "category": "cosecha",
+      "questions": [
+        "Como medir uniformidad de secado en cafe",
+        "Para que sirve uniformidad de secado en beneficio de cafe",
+        "Como usar uniformidad de secado para mejorar calidad de cafe",
+        "Errores comunes al interpretar uniformidad de secado en cafe"
+      ],
+      "answer": "En cafe, uniformidad de secado permite entender consistencia entre granos. Con ese dato puedes mejorar estabilidad de taza, siempre comparando resultados por lote.",
+      "keywords": [
+        "cafe",
+        "metrica",
+        "proceso",
+        "uniformidad",
+        "secado",
+        "consistencia",
+        "entre",
+        "granos",
+        "mejorar",
+        "estabilidad",
+        "taza"
+      ]
+    },
+    {
+      "id": 1704,
+      "category": "cosecha",
+      "questions": [
+        "Como medir curva de secado en cafe",
+        "Para que sirve curva de secado en beneficio de cafe",
+        "Como usar curva de secado para mejorar calidad de cafe",
+        "Errores comunes al interpretar curva de secado en cafe"
+      ],
+      "answer": "En cafe, curva de secado permite entender transicion de humedad en el tiempo. Con ese dato puedes controlar calidad fisica y sensorial, siempre comparando resultados por lote.",
+      "keywords": [
+        "cafe",
+        "metrica",
+        "proceso",
+        "curva",
+        "secado",
+        "transicion",
+        "humedad",
+        "tiempo",
+        "controlar",
+        "calidad",
+        "fisica",
+        "sensorial"
+      ]
+    },
+    {
+      "id": 1705,
+      "category": "cosecha",
+      "questions": [
+        "Como medir ratio de rendimiento en cafe",
+        "Para que sirve ratio de rendimiento en beneficio de cafe",
+        "Como usar ratio de rendimiento para mejorar calidad de cafe",
+        "Errores comunes al interpretar ratio de rendimiento en cafe"
+      ],
+      "answer": "En cafe, ratio de rendimiento permite entender eficiencia entre cereza y pergamino. Con ese dato puedes evaluar impacto operativo, siempre comparando resultados por lote.",
+      "keywords": [
+        "cafe",
+        "metrica",
+        "proceso",
+        "ratio",
+        "rendimiento",
+        "eficiencia",
+        "entre",
+        "cereza",
+        "pergamino",
+        "evaluar",
+        "impacto",
+        "operativo"
+      ]
+    },
+    {
+      "id": 1706,
+      "category": "cosecha",
+      "questions": [
+        "Como medir defectos fisicos por lote en cafe",
+        "Para que sirve defectos fisicos por lote en beneficio de cafe",
+        "Como usar defectos fisicos por lote para mejorar calidad de cafe",
+        "Errores comunes al interpretar defectos fisicos por lote en cafe"
+      ],
+      "answer": "En cafe, defectos fisicos por lote permite entender calidad comercial del grano. Con ese dato puedes priorizar acciones de mejora, siempre comparando resultados por lote.",
+      "keywords": [
+        "cafe",
+        "metrica",
+        "proceso",
+        "defectos",
+        "fisicos",
+        "por",
+        "lote",
+        "calidad",
+        "comercial",
+        "del",
+        "grano",
+        "priorizar",
+        "acciones",
+        "mejora"
+      ]
+    },
+    {
+      "id": 1707,
+      "category": "cosecha",
+      "questions": [
+        "Como medir score de catacion interno en cafe",
+        "Para que sirve score de catacion interno en beneficio de cafe",
+        "Como usar score de catacion interno para mejorar calidad de cafe",
+        "Errores comunes al interpretar score de catacion interno en cafe"
+      ],
+      "answer": "En cafe, score de catacion interno permite entender resultado sensorial de referencia. Con ese dato puedes comparar procesos, siempre comparando resultados por lote.",
+      "keywords": [
+        "cafe",
+        "metrica",
+        "proceso",
+        "score",
+        "catacion",
+        "interno",
+        "resultado",
+        "sensorial",
+        "referencia",
+        "comparar",
+        "procesos"
+      ]
+    },
+    {
+      "id": 1708,
+      "category": "cosecha",
+      "questions": [
+        "Como medir variabilidad interlote en cafe",
+        "Para que sirve variabilidad interlote en beneficio de cafe",
+        "Como usar variabilidad interlote para mejorar calidad de cafe",
+        "Errores comunes al interpretar variabilidad interlote en cafe"
+      ],
+      "answer": "En cafe, variabilidad interlote permite entender consistencia del sistema productivo. Con ese dato puedes estandarizar decisiones, siempre comparando resultados por lote.",
+      "keywords": [
+        "cafe",
+        "metrica",
+        "proceso",
+        "variabilidad",
+        "interlote",
+        "consistencia",
+        "del",
+        "sistema",
+        "productivo",
+        "estandarizar",
+        "decisiones"
+      ]
+    },
+    {
+      "id": 1709,
+      "category": "cosecha",
+      "questions": [
+        "Como medir tiempo en bodega en cafe",
+        "Para que sirve tiempo en bodega en beneficio de cafe",
+        "Como usar tiempo en bodega para mejorar calidad de cafe",
+        "Errores comunes al interpretar tiempo en bodega en cafe"
+      ],
+      "answer": "En cafe, tiempo en bodega permite entender frescura y estabilidad. Con ese dato puedes rotar inventario, siempre comparando resultados por lote.",
+      "keywords": [
+        "cafe",
+        "metrica",
+        "proceso",
+        "tiempo",
+        "bodega",
+        "frescura",
+        "estabilidad",
+        "rotar",
+        "inventario"
+      ]
+    },
+    {
+      "id": 1710,
+      "category": "cosecha",
+      "questions": [
+        "Como medir consumo de agua por kg en cafe",
+        "Para que sirve consumo de agua por kg en beneficio de cafe",
+        "Como usar consumo de agua por kg para mejorar calidad de cafe",
+        "Errores comunes al interpretar consumo de agua por kg en cafe"
+      ],
+      "answer": "En cafe, consumo de agua por kg permite entender eficiencia hidrica en beneficio. Con ese dato puedes optimizar uso del recurso, siempre comparando resultados por lote.",
+      "keywords": [
+        "cafe",
+        "metrica",
+        "proceso",
+        "consumo",
+        "agua",
+        "por",
+        "eficiencia",
+        "hidrica",
+        "beneficio",
+        "optimizar",
+        "uso",
+        "del",
+        "recurso"
+      ]
+    },
+    {
+      "id": 1711,
+      "category": "cosecha",
+      "questions": [
+        "Como medir consumo de energia en secado en cafe",
+        "Para que sirve consumo de energia en secado en beneficio de cafe",
+        "Como usar consumo de energia en secado para mejorar calidad de cafe",
+        "Errores comunes al interpretar consumo de energia en secado en cafe"
+      ],
+      "answer": "En cafe, consumo de energia en secado permite entender costo de proceso. Con ese dato puedes mejorar eficiencia termica, siempre comparando resultados por lote.",
+      "keywords": [
+        "cafe",
+        "metrica",
+        "proceso",
+        "consumo",
+        "energia",
+        "secado",
+        "costo",
+        "mejorar",
+        "eficiencia",
+        "termica"
+      ]
+    },
+    {
+      "id": 1712,
+      "category": "general",
+      "questions": [
+        "Como hacer calibracion de catadores en cafe",
+        "Importancia de calibracion de catadores para calidad de cafe",
+        "Que mejora calibracion de catadores en la evaluacion de cafe",
+        "Como aplicar calibracion de catadores con productores de cafe"
+      ],
+      "answer": "En cafe, calibracion de catadores sirve para alinear criterios sensoriales del equipo. Bien implementado, permite reducir sesgo entre evaluaciones y mejora decisiones de lote.",
+      "keywords": [
+        "cafe",
+        "catacion",
+        "calidad",
+        "calibracion",
+        "catadores",
+        "alinear",
+        "criterios",
+        "sensoriales",
+        "del",
+        "equipo",
+        "reducir",
+        "sesgo",
+        "entre",
+        "evaluaciones"
+      ]
+    },
+    {
+      "id": 1713,
+      "category": "general",
+      "questions": [
+        "Como hacer rueda de sabores en cafe",
+        "Importancia de rueda de sabores para calidad de cafe",
+        "Que mejora rueda de sabores en la evaluacion de cafe",
+        "Como aplicar rueda de sabores con productores de cafe"
+      ],
+      "answer": "En cafe, rueda de sabores sirve para lenguaje comun para describir taza. Bien implementado, permite mejorar comunicacion tecnica y mejora decisiones de lote.",
+      "keywords": [
+        "cafe",
+        "catacion",
+        "calidad",
+        "rueda",
+        "sabores",
+        "lenguaje",
+        "comun",
+        "para",
+        "describir",
+        "taza",
+        "mejorar",
+        "comunicacion",
+        "tecnica"
+      ]
+    },
+    {
+      "id": 1714,
+      "category": "general",
+      "questions": [
+        "Como hacer formato de cupping en cafe",
+        "Importancia de formato de cupping para calidad de cafe",
+        "Que mejora formato de cupping en la evaluacion de cafe",
+        "Como aplicar formato de cupping con productores de cafe"
+      ],
+      "answer": "En cafe, formato de cupping sirve para registro estandar de atributos. Bien implementado, permite comparar lotes de forma objetiva y mejora decisiones de lote.",
+      "keywords": [
+        "cafe",
+        "catacion",
+        "calidad",
+        "formato",
+        "cupping",
+        "registro",
+        "estandar",
+        "atributos",
+        "comparar",
+        "lotes",
+        "forma",
+        "objetiva"
+      ]
+    },
+    {
+      "id": 1715,
+      "category": "general",
+      "questions": [
+        "Como hacer muestra de control en cafe",
+        "Importancia de muestra de control para calidad de cafe",
+        "Que mejora muestra de control en la evaluacion de cafe",
+        "Como aplicar muestra de control con productores de cafe"
+      ],
+      "answer": "En cafe, muestra de control sirve para referencia para consistencia. Bien implementado, permite detectar deriva de evaluacion y mejora decisiones de lote.",
+      "keywords": [
+        "cafe",
+        "catacion",
+        "calidad",
+        "muestra",
+        "control",
+        "referencia",
+        "para",
+        "consistencia",
+        "detectar",
+        "deriva",
+        "evaluacion"
+      ]
+    },
+    {
+      "id": 1716,
+      "category": "general",
+      "questions": [
+        "Como hacer triangulacion sensorial en cafe",
+        "Importancia de triangulacion sensorial para calidad de cafe",
+        "Que mejora triangulacion sensorial en la evaluacion de cafe",
+        "Como aplicar triangulacion sensorial con productores de cafe"
+      ],
+      "answer": "En cafe, triangulacion sensorial sirve para validar diferencias entre lotes. Bien implementado, permite evitar conclusiones apresuradas y mejora decisiones de lote.",
+      "keywords": [
+        "cafe",
+        "catacion",
+        "calidad",
+        "triangulacion",
+        "sensorial",
+        "validar",
+        "diferencias",
+        "entre",
+        "lotes",
+        "evitar",
+        "conclusiones",
+        "apresuradas"
+      ]
+    },
+    {
+      "id": 1717,
+      "category": "general",
+      "questions": [
+        "Como hacer control de temperatura de taza en cafe",
+        "Importancia de control de temperatura de taza para calidad de cafe",
+        "Que mejora control de temperatura de taza en la evaluacion de cafe",
+        "Como aplicar control de temperatura de taza con productores de cafe"
+      ],
+      "answer": "En cafe, control de temperatura de taza sirve para consistencia de lectura sensorial. Bien implementado, permite evitar variaciones metodologicas y mejora decisiones de lote.",
+      "keywords": [
+        "cafe",
+        "catacion",
+        "calidad",
+        "control",
+        "temperatura",
+        "taza",
+        "consistencia",
+        "lectura",
+        "sensorial",
+        "evitar",
+        "variaciones",
+        "metodologicas"
+      ]
+    },
+    {
+      "id": 1718,
+      "category": "general",
+      "questions": [
+        "Como hacer control de molienda en cafe",
+        "Importancia de control de molienda para calidad de cafe",
+        "Que mejora control de molienda en la evaluacion de cafe",
+        "Como aplicar control de molienda con productores de cafe"
+      ],
+      "answer": "En cafe, control de molienda sirve para uniformidad de extraccion. Bien implementado, permite comparaciones mas justas y mejora decisiones de lote.",
+      "keywords": [
+        "cafe",
+        "catacion",
+        "calidad",
+        "control",
+        "molienda",
+        "uniformidad",
+        "extraccion",
+        "comparaciones",
+        "mas",
+        "justas"
+      ]
+    },
+    {
+      "id": 1719,
+      "category": "general",
+      "questions": [
+        "Como hacer control de agua en catacion en cafe",
+        "Importancia de control de agua en catacion para calidad de cafe",
+        "Que mejora control de agua en catacion en la evaluacion de cafe",
+        "Como aplicar control de agua en catacion con productores de cafe"
+      ],
+      "answer": "En cafe, control de agua en catacion sirve para repetibilidad del resultado. Bien implementado, permite reducir ruido del metodo y mejora decisiones de lote.",
+      "keywords": [
+        "cafe",
+        "catacion",
+        "calidad",
+        "control",
+        "agua",
+        "repetibilidad",
+        "del",
+        "resultado",
+        "reducir",
+        "ruido",
+        "metodo"
+      ]
+    },
+    {
+      "id": 1720,
+      "category": "general",
+      "questions": [
+        "Como hacer analisis de defectos en cafe",
+        "Importancia de analisis de defectos para calidad de cafe",
+        "Que mejora analisis de defectos en la evaluacion de cafe",
+        "Como aplicar analisis de defectos con productores de cafe"
+      ],
+      "answer": "En cafe, analisis de defectos sirve para identificar causas de baja calidad. Bien implementado, permite priorizar correcciones y mejora decisiones de lote.",
+      "keywords": [
+        "cafe",
+        "catacion",
+        "calidad",
+        "analisis",
+        "defectos",
+        "identificar",
+        "causas",
+        "baja",
+        "priorizar",
+        "correcciones"
+      ]
+    },
+    {
+      "id": 1721,
+      "category": "general",
+      "questions": [
+        "Como hacer analisis de atributos positivos en cafe",
+        "Importancia de analisis de atributos positivos para calidad de cafe",
+        "Que mejora analisis de atributos positivos en la evaluacion de cafe",
+        "Como aplicar analisis de atributos positivos con productores de cafe"
+      ],
+      "answer": "En cafe, analisis de atributos positivos sirve para reconocer fortalezas de lote. Bien implementado, permite replicar buenas practicas y mejora decisiones de lote.",
+      "keywords": [
+        "cafe",
+        "catacion",
+        "calidad",
+        "analisis",
+        "atributos",
+        "positivos",
+        "reconocer",
+        "fortalezas",
+        "lote",
+        "replicar",
+        "buenas",
+        "practicas"
+      ]
+    },
+    {
+      "id": 1722,
+      "category": "general",
+      "questions": [
+        "Como hacer tracking de puntajes en cafe",
+        "Importancia de tracking de puntajes para calidad de cafe",
+        "Que mejora tracking de puntajes en la evaluacion de cafe",
+        "Como aplicar tracking de puntajes con productores de cafe"
+      ],
+      "answer": "En cafe, tracking de puntajes sirve para historial de evolucion. Bien implementado, permite tomar decisiones de mejora continua y mejora decisiones de lote.",
+      "keywords": [
+        "cafe",
+        "catacion",
+        "calidad",
+        "tracking",
+        "puntajes",
+        "historial",
+        "evolucion",
+        "tomar",
+        "decisiones",
+        "mejora",
+        "continua"
+      ]
+    },
+    {
+      "id": 1723,
+      "category": "general",
+      "questions": [
+        "Como hacer perfil por origen de lote en cafe",
+        "Importancia de perfil por origen de lote para calidad de cafe",
+        "Que mejora perfil por origen de lote en la evaluacion de cafe",
+        "Como aplicar perfil por origen de lote con productores de cafe"
+      ],
+      "answer": "En cafe, perfil por origen de lote sirve para diferenciacion comercial. Bien implementado, permite segmentar estrategia de venta y mejora decisiones de lote.",
+      "keywords": [
+        "cafe",
+        "catacion",
+        "calidad",
+        "perfil",
+        "por",
+        "origen",
+        "lote",
+        "diferenciacion",
+        "comercial",
+        "segmentar",
+        "estrategia",
+        "venta"
+      ]
+    },
+    {
+      "id": 1724,
+      "category": "general",
+      "questions": [
+        "Como hacer consistencia semanal en cafe",
+        "Importancia de consistencia semanal para calidad de cafe",
+        "Que mejora consistencia semanal en la evaluacion de cafe",
+        "Como aplicar consistencia semanal con productores de cafe"
+      ],
+      "answer": "En cafe, consistencia semanal sirve para estabilidad operativa. Bien implementado, permite anticipar desviaciones y mejora decisiones de lote.",
+      "keywords": [
+        "cafe",
+        "catacion",
+        "calidad",
+        "consistencia",
+        "semanal",
+        "estabilidad",
+        "operativa",
+        "anticipar",
+        "desviaciones"
+      ]
+    },
+    {
+      "id": 1725,
+      "category": "general",
+      "questions": [
+        "Como hacer cata comparativa de procesos en cafe",
+        "Importancia de cata comparativa de procesos para calidad de cafe",
+        "Que mejora cata comparativa de procesos en la evaluacion de cafe",
+        "Como aplicar cata comparativa de procesos con productores de cafe"
+      ],
+      "answer": "En cafe, cata comparativa de procesos sirve para evidencia para decidir protocolo. Bien implementado, permite seleccionar metodo mas robusto y mejora decisiones de lote.",
+      "keywords": [
+        "cafe",
+        "catacion",
+        "calidad",
+        "cata",
+        "comparativa",
+        "procesos",
+        "evidencia",
+        "para",
+        "decidir",
+        "protocolo",
+        "seleccionar",
+        "metodo",
+        "mas",
+        "robusto"
+      ]
+    },
+    {
+      "id": 1726,
+      "category": "general",
+      "questions": [
+        "Como hacer retroalimentacion campo-beneficio en cafe",
+        "Importancia de retroalimentacion campo-beneficio para calidad de cafe",
+        "Que mejora retroalimentacion campo-beneficio en la evaluacion de cafe",
+        "Como aplicar retroalimentacion campo-beneficio con productores de cafe"
+      ],
+      "answer": "En cafe, retroalimentacion campo-beneficio sirve para cerrar ciclo tecnico. Bien implementado, permite conectar manejo agronomico con taza y mejora decisiones de lote.",
+      "keywords": [
+        "cafe",
+        "catacion",
+        "calidad",
+        "retroalimentacion",
+        "campo",
+        "beneficio",
+        "cerrar",
+        "ciclo",
+        "tecnico",
+        "conectar",
+        "manejo",
+        "agronomico",
+        "con",
+        "taza"
+      ]
+    },
+    {
+      "id": 1727,
+      "category": "general",
+      "questions": [
+        "Que es curva de tueste en cafe",
+        "Como manejar curva de tueste para cafe de calidad",
+        "Errores en curva de tueste al tostar cafe",
+        "Para que sirve curva de tueste en torrefaccion de cafe"
+      ],
+      "answer": "En cafe, curva de tueste se relaciona con trayectoria termica del grano. Su manejo adecuado ayuda a adaptarla al perfil del lote segun el perfil del lote.",
+      "keywords": [
+        "cafe",
+        "torrefaccion",
+        "curva",
+        "tueste",
+        "trayectoria",
+        "termica",
+        "del",
+        "grano",
+        "adaptarla",
+        "perfil",
+        "lote"
+      ]
+    },
+    {
+      "id": 1728,
+      "category": "general",
+      "questions": [
+        "Que es punto de primer crack en cafe",
+        "Como manejar punto de primer crack para cafe de calidad",
+        "Errores en punto de primer crack al tostar cafe",
+        "Para que sirve punto de primer crack en torrefaccion de cafe"
+      ],
+      "answer": "En cafe, punto de primer crack se relaciona con hito fisico del tueste. Su manejo adecuado ayuda a controlar desarrollo posterior segun el perfil del lote.",
+      "keywords": [
+        "cafe",
+        "torrefaccion",
+        "punto",
+        "primer",
+        "crack",
+        "hito",
+        "fisico",
+        "del",
+        "tueste",
+        "controlar",
+        "desarrollo",
+        "posterior"
+      ]
+    },
+    {
+      "id": 1729,
+      "category": "general",
+      "questions": [
+        "Que es tiempo de desarrollo en cafe",
+        "Como manejar tiempo de desarrollo para cafe de calidad",
+        "Errores en tiempo de desarrollo al tostar cafe",
+        "Para que sirve tiempo de desarrollo en torrefaccion de cafe"
+      ],
+      "answer": "En cafe, tiempo de desarrollo se relaciona con fase final que define expresion sensorial. Su manejo adecuado ayuda a evitar sub o sobre desarrollo segun el perfil del lote.",
+      "keywords": [
+        "cafe",
+        "torrefaccion",
+        "tiempo",
+        "desarrollo",
+        "fase",
+        "final",
+        "que",
+        "define",
+        "expresion",
+        "sensorial",
+        "evitar",
+        "sub",
+        "sobre"
+      ]
+    },
+    {
+      "id": 1730,
+      "category": "general",
+      "questions": [
+        "Que es carga termica inicial en cafe",
+        "Como manejar carga termica inicial para cafe de calidad",
+        "Errores en carga termica inicial al tostar cafe",
+        "Para que sirve carga termica inicial en torrefaccion de cafe"
+      ],
+      "answer": "En cafe, carga termica inicial se relaciona con energia al inicio del tueste. Su manejo adecuado ayuda a proteger integridad del grano segun el perfil del lote.",
+      "keywords": [
+        "cafe",
+        "torrefaccion",
+        "carga",
+        "termica",
+        "inicial",
+        "energia",
+        "inicio",
+        "del",
+        "tueste",
+        "proteger",
+        "integridad",
+        "grano"
+      ]
+    },
+    {
+      "id": 1731,
+      "category": "general",
+      "questions": [
+        "Que es tasa de aumento de temperatura en cafe",
+        "Como manejar tasa de aumento de temperatura para cafe de calidad",
+        "Errores en tasa de aumento de temperatura al tostar cafe",
+        "Para que sirve tasa de aumento de temperatura en torrefaccion de cafe"
+      ],
+      "answer": "En cafe, tasa de aumento de temperatura se relaciona con ritmo de avance del tueste. Su manejo adecuado ayuda a mantener curva estable segun el perfil del lote.",
+      "keywords": [
+        "cafe",
+        "torrefaccion",
+        "tasa",
+        "aumento",
+        "temperatura",
+        "ritmo",
+        "avance",
+        "del",
+        "tueste",
+        "mantener",
+        "curva",
+        "estable"
+      ]
+    },
+    {
+      "id": 1732,
+      "category": "general",
+      "questions": [
+        "Que es tiempo total de tueste en cafe",
+        "Como manejar tiempo total de tueste para cafe de calidad",
+        "Errores en tiempo total de tueste al tostar cafe",
+        "Para que sirve tiempo total de tueste en torrefaccion de cafe"
+      ],
+      "answer": "En cafe, tiempo total de tueste se relaciona con duracion completa del proceso. Su manejo adecuado ayuda a alinear con objetivo de taza segun el perfil del lote.",
+      "keywords": [
+        "cafe",
+        "torrefaccion",
+        "tiempo",
+        "total",
+        "tueste",
+        "duracion",
+        "completa",
+        "del",
+        "proceso",
+        "alinear",
+        "con",
+        "objetivo",
+        "taza"
+      ]
+    },
+    {
+      "id": 1733,
+      "category": "general",
+      "questions": [
+        "Que es enfriado rapido en cafe",
+        "Como manejar enfriado rapido para cafe de calidad",
+        "Errores en enfriado rapido al tostar cafe",
+        "Para que sirve enfriado rapido en torrefaccion de cafe"
+      ],
+      "answer": "En cafe, enfriado rapido se relaciona con detencion de reacciones. Su manejo adecuado ayuda a fijar perfil logrado segun el perfil del lote.",
+      "keywords": [
+        "cafe",
+        "torrefaccion",
+        "enfriado",
+        "rapido",
+        "detencion",
+        "reacciones",
+        "fijar",
+        "perfil",
+        "logrado"
+      ]
+    },
+    {
+      "id": 1734,
+      "category": "general",
+      "questions": [
+        "Que es reposo post-tueste en cafe",
+        "Como manejar reposo post-tueste para cafe de calidad",
+        "Errores en reposo post-tueste al tostar cafe",
+        "Para que sirve reposo post-tueste en torrefaccion de cafe"
+      ],
+      "answer": "En cafe, reposo post-tueste se relaciona con desgasificacion controlada. Su manejo adecuado ayuda a mejorar estabilidad en preparacion segun el perfil del lote.",
+      "keywords": [
+        "cafe",
+        "torrefaccion",
+        "reposo",
+        "post",
+        "tueste",
+        "desgasificacion",
+        "controlada",
+        "mejorar",
+        "estabilidad",
+        "preparacion"
+      ]
+    },
+    {
+      "id": 1735,
+      "category": "general",
+      "questions": [
+        "Que es molienda para filtrado en cafe",
+        "Como manejar molienda para filtrado para cafe de calidad",
+        "Errores en molienda para filtrado al tostar cafe",
+        "Para que sirve molienda para filtrado en torrefaccion de cafe"
+      ],
+      "answer": "En cafe, molienda para filtrado se relaciona con granulometria para extraccion limpia. Su manejo adecuado ayuda a ajustar segun metodo segun el perfil del lote.",
+      "keywords": [
+        "cafe",
+        "torrefaccion",
+        "molienda",
+        "para",
+        "filtrado",
+        "granulometria",
+        "extraccion",
+        "limpia",
+        "ajustar",
+        "segun",
+        "metodo"
+      ]
+    },
+    {
+      "id": 1736,
+      "category": "general",
+      "questions": [
+        "Que es molienda para espresso en cafe",
+        "Como manejar molienda para espresso para cafe de calidad",
+        "Errores en molienda para espresso al tostar cafe",
+        "Para que sirve molienda para espresso en torrefaccion de cafe"
+      ],
+      "answer": "En cafe, molienda para espresso se relaciona con granulometria fina para extraccion concentrada. Su manejo adecuado ayuda a calibrar por flujo y sabor segun el perfil del lote.",
+      "keywords": [
+        "cafe",
+        "torrefaccion",
+        "molienda",
+        "para",
+        "espresso",
+        "granulometria",
+        "fina",
+        "extraccion",
+        "concentrada",
+        "calibrar",
+        "por",
+        "flujo",
+        "sabor"
+      ]
+    },
+    {
+      "id": 1737,
+      "category": "general",
+      "questions": [
+        "Que es uniformidad de molienda en cafe",
+        "Como manejar uniformidad de molienda para cafe de calidad",
+        "Errores en uniformidad de molienda al tostar cafe",
+        "Para que sirve uniformidad de molienda en torrefaccion de cafe"
+      ],
+      "answer": "En cafe, uniformidad de molienda se relaciona con consistencia de extraccion. Su manejo adecuado ayuda a reducir variabilidad de taza segun el perfil del lote.",
+      "keywords": [
+        "cafe",
+        "torrefaccion",
+        "uniformidad",
+        "molienda",
+        "consistencia",
+        "extraccion",
+        "reducir",
+        "variabilidad",
+        "taza"
+      ]
+    },
+    {
+      "id": 1738,
+      "category": "general",
+      "questions": [
+        "Que es perfil claro en cafe",
+        "Como manejar perfil claro para cafe de calidad",
+        "Errores en perfil claro al tostar cafe",
+        "Para que sirve perfil claro en torrefaccion de cafe"
+      ],
+      "answer": "En cafe, perfil claro se relaciona con resaltar acidez y notas aromaticas. Su manejo adecuado ayuda a evitar subdesarrollo segun el perfil del lote.",
+      "keywords": [
+        "cafe",
+        "torrefaccion",
+        "perfil",
+        "claro",
+        "resaltar",
+        "acidez",
+        "notas",
+        "aromaticas",
+        "evitar",
+        "subdesarrollo"
+      ]
+    },
+    {
+      "id": 1739,
+      "category": "general",
+      "questions": [
+        "Que es perfil medio en cafe",
+        "Como manejar perfil medio para cafe de calidad",
+        "Errores en perfil medio al tostar cafe",
+        "Para que sirve perfil medio en torrefaccion de cafe"
+      ],
+      "answer": "En cafe, perfil medio se relaciona con balance entre acidez, dulzor y cuerpo. Su manejo adecuado ayuda a buscar versatilidad segun el perfil del lote.",
+      "keywords": [
+        "cafe",
+        "torrefaccion",
+        "perfil",
+        "medio",
+        "balance",
+        "entre",
+        "acidez",
+        "dulzor",
+        "cuerpo",
+        "buscar",
+        "versatilidad"
+      ]
+    },
+    {
+      "id": 1740,
+      "category": "general",
+      "questions": [
+        "Que es perfil oscuro en cafe",
+        "Como manejar perfil oscuro para cafe de calidad",
+        "Errores en perfil oscuro al tostar cafe",
+        "Para que sirve perfil oscuro en torrefaccion de cafe"
+      ],
+      "answer": "En cafe, perfil oscuro se relaciona con mayor desarrollo termico. Su manejo adecuado ayuda a evitar notas quemadas segun el perfil del lote.",
+      "keywords": [
+        "cafe",
+        "torrefaccion",
+        "perfil",
+        "oscuro",
+        "mayor",
+        "desarrollo",
+        "termico",
+        "evitar",
+        "notas",
+        "quemadas"
+      ]
+    },
+    {
+      "id": 1741,
+      "category": "general",
+      "questions": [
+        "Que es control de color de tueste en cafe",
+        "Como manejar control de color de tueste para cafe de calidad",
+        "Errores en control de color de tueste al tostar cafe",
+        "Para que sirve control de color de tueste en torrefaccion de cafe"
+      ],
+      "answer": "En cafe, control de color de tueste se relaciona con referencia visual de desarrollo. Su manejo adecuado ayuda a estandarizar produccion segun el perfil del lote.",
+      "keywords": [
+        "cafe",
+        "torrefaccion",
+        "control",
+        "color",
+        "tueste",
+        "referencia",
+        "visual",
+        "desarrollo",
+        "estandarizar",
+        "produccion"
+      ]
+    },
+    {
+      "id": 1742,
+      "category": "general",
+      "questions": [
+        "Como controlar ratio cafe-agua en cafe",
+        "Que significa ratio cafe-agua al preparar cafe",
+        "Como mejorar ratio cafe-agua en barismo de cafe",
+        "Errores comunes con ratio cafe-agua en preparacion de cafe"
+      ],
+      "answer": "En preparacion de cafe, ratio cafe-agua define balance de concentracion y sabor. Dominarlo permite ajustar segun objetivo de taza y mayor consistencia en taza.",
+      "keywords": [
+        "cafe",
+        "barismo",
+        "preparacion",
+        "ratio",
+        "agua",
+        "balance",
+        "concentracion",
+        "sabor",
+        "ajustar",
+        "segun",
+        "objetivo",
+        "taza"
+      ]
+    },
+    {
+      "id": 1743,
+      "category": "general",
+      "questions": [
+        "Como controlar tiempo de extraccion en cafe",
+        "Que significa tiempo de extraccion al preparar cafe",
+        "Como mejorar tiempo de extraccion en barismo de cafe",
+        "Errores comunes con tiempo de extraccion en preparacion de cafe"
+      ],
+      "answer": "En preparacion de cafe, tiempo de extraccion define cantidad de compuestos extraidos. Dominarlo permite evitar subextraccion o sobreextraccion y mayor consistencia en taza.",
+      "keywords": [
+        "cafe",
+        "barismo",
+        "preparacion",
+        "tiempo",
+        "extraccion",
+        "cantidad",
+        "compuestos",
+        "extraidos",
+        "evitar",
+        "subextraccion",
+        "sobreextraccion"
+      ]
+    },
+    {
+      "id": 1744,
+      "category": "general",
+      "questions": [
+        "Como controlar temperatura de agua en cafe",
+        "Que significa temperatura de agua al preparar cafe",
+        "Como mejorar temperatura de agua en barismo de cafe",
+        "Errores comunes con temperatura de agua en preparacion de cafe"
+      ],
+      "answer": "En preparacion de cafe, temperatura de agua define solubilidad de compuestos. Dominarlo permite controlar expresion sensorial y mayor consistencia en taza.",
+      "keywords": [
+        "cafe",
+        "barismo",
+        "preparacion",
+        "temperatura",
+        "agua",
+        "solubilidad",
+        "compuestos",
+        "controlar",
+        "expresion",
+        "sensorial"
+      ]
+    },
+    {
+      "id": 1745,
+      "category": "general",
+      "questions": [
+        "Como controlar calidad de agua en cafe",
+        "Que significa calidad de agua al preparar cafe",
+        "Como mejorar calidad de agua en barismo de cafe",
+        "Errores comunes con calidad de agua en preparacion de cafe"
+      ],
+      "answer": "En preparacion de cafe, calidad de agua define composicion mineral del preparado. Dominarlo permite mejorar claridad de taza y mayor consistencia en taza.",
+      "keywords": [
+        "cafe",
+        "barismo",
+        "preparacion",
+        "calidad",
+        "agua",
+        "composicion",
+        "mineral",
+        "del",
+        "preparado",
+        "mejorar",
+        "claridad",
+        "taza"
+      ]
+    },
+    {
+      "id": 1746,
+      "category": "general",
+      "questions": [
+        "Como controlar agitación en cafe",
+        "Que significa agitación al preparar cafe",
+        "Como mejorar agitación en barismo de cafe",
+        "Errores comunes con agitación en preparacion de cafe"
+      ],
+      "answer": "En preparacion de cafe, agitación define uniformidad de contacto agua-cafe. Dominarlo permite estabilizar extraccion y mayor consistencia en taza.",
+      "keywords": [
+        "cafe",
+        "barismo",
+        "preparacion",
+        "agitacion",
+        "uniformidad",
+        "contacto",
+        "agua",
+        "estabilizar",
+        "extraccion"
+      ]
+    },
+    {
+      "id": 1747,
+      "category": "general",
+      "questions": [
+        "Como controlar tamano de molienda en cafe",
+        "Que significa tamano de molienda al preparar cafe",
+        "Como mejorar tamano de molienda en barismo de cafe",
+        "Errores comunes con tamano de molienda en preparacion de cafe"
+      ],
+      "answer": "En preparacion de cafe, tamano de molienda define velocidad de extraccion. Dominarlo permite afinar metodo y mayor consistencia en taza.",
+      "keywords": [
+        "cafe",
+        "barismo",
+        "preparacion",
+        "tamano",
+        "molienda",
+        "velocidad",
+        "extraccion",
+        "afinar",
+        "metodo"
+      ]
+    },
+    {
+      "id": 1748,
+      "category": "general",
+      "questions": [
+        "Como controlar preinfusion en cafe",
+        "Que significa preinfusion al preparar cafe",
+        "Como mejorar preinfusion en barismo de cafe",
+        "Errores comunes con preinfusion en preparacion de cafe"
+      ],
+      "answer": "En preparacion de cafe, preinfusion define humectacion inicial del lecho. Dominarlo permite mejorar consistencia y mayor consistencia en taza.",
+      "keywords": [
+        "cafe",
+        "barismo",
+        "preparacion",
+        "preinfusion",
+        "humectacion",
+        "inicial",
+        "del",
+        "lecho",
+        "mejorar",
+        "consistencia"
+      ]
+    },
+    {
+      "id": 1749,
+      "category": "general",
+      "questions": [
+        "Como controlar rendimiento de extraccion en cafe",
+        "Que significa rendimiento de extraccion al preparar cafe",
+        "Como mejorar rendimiento de extraccion en barismo de cafe",
+        "Errores comunes con rendimiento de extraccion en preparacion de cafe"
+      ],
+      "answer": "En preparacion de cafe, rendimiento de extraccion define porcentaje de solubles extraidos. Dominarlo permite diagnosticar preparacion y mayor consistencia en taza.",
+      "keywords": [
+        "cafe",
+        "barismo",
+        "preparacion",
+        "rendimiento",
+        "extraccion",
+        "porcentaje",
+        "solubles",
+        "extraidos",
+        "diagnosticar"
+      ]
+    },
+    {
+      "id": 1750,
+      "category": "general",
+      "questions": [
+        "Como controlar TDS en cafe",
+        "Que significa TDS al preparar cafe",
+        "Como mejorar TDS en barismo de cafe",
+        "Errores comunes con TDS en preparacion de cafe"
+      ],
+      "answer": "En preparacion de cafe, TDS define concentracion de solubles en bebida. Dominarlo permite calibrar receta y mayor consistencia en taza.",
+      "keywords": [
+        "cafe",
+        "barismo",
+        "preparacion",
+        "tds",
+        "concentracion",
+        "solubles",
+        "bebida",
+        "calibrar",
+        "receta"
+      ]
+    },
+    {
+      "id": 1751,
+      "category": "general",
+      "questions": [
+        "Como controlar flujo en espresso en cafe",
+        "Que significa flujo en espresso al preparar cafe",
+        "Como mejorar flujo en espresso en barismo de cafe",
+        "Errores comunes con flujo en espresso en preparacion de cafe"
+      ],
+      "answer": "En preparacion de cafe, flujo en espresso define dinamica de extraccion bajo presion. Dominarlo permite lograr taza balanceada y mayor consistencia en taza.",
+      "keywords": [
+        "cafe",
+        "barismo",
+        "preparacion",
+        "flujo",
+        "espresso",
+        "dinamica",
+        "extraccion",
+        "bajo",
+        "presion",
+        "lograr",
+        "taza",
+        "balanceada"
+      ]
+    },
+    {
+      "id": 1752,
+      "category": "general",
+      "questions": [
+        "Como controlar distribucion en portafiltro en cafe",
+        "Que significa distribucion en portafiltro al preparar cafe",
+        "Como mejorar distribucion en portafiltro en barismo de cafe",
+        "Errores comunes con distribucion en portafiltro en preparacion de cafe"
+      ],
+      "answer": "En preparacion de cafe, distribucion en portafiltro define homogeneidad del puck. Dominarlo permite reducir canalizacion y mayor consistencia en taza.",
+      "keywords": [
+        "cafe",
+        "barismo",
+        "preparacion",
+        "distribucion",
+        "portafiltro",
+        "homogeneidad",
+        "del",
+        "puck",
+        "reducir",
+        "canalizacion"
+      ]
+    },
+    {
+      "id": 1753,
+      "category": "general",
+      "questions": [
+        "Como controlar tampeo en cafe",
+        "Que significa tampeo al preparar cafe",
+        "Como mejorar tampeo en barismo de cafe",
+        "Errores comunes con tampeo en preparacion de cafe"
+      ],
+      "answer": "En preparacion de cafe, tampeo define compactacion del cafe molido. Dominarlo permite estabilizar flujo y mayor consistencia en taza.",
+      "keywords": [
+        "cafe",
+        "barismo",
+        "preparacion",
+        "tampeo",
+        "compactacion",
+        "del",
+        "molido",
+        "estabilizar",
+        "flujo"
+      ]
+    },
+    {
+      "id": 1754,
+      "category": "general",
+      "questions": [
+        "Como controlar canalizacion en cafe",
+        "Que significa canalizacion al preparar cafe",
+        "Como mejorar canalizacion en barismo de cafe",
+        "Errores comunes con canalizacion en preparacion de cafe"
+      ],
+      "answer": "En preparacion de cafe, canalizacion define paso preferencial de agua. Dominarlo permite corregir tecnica y molienda y mayor consistencia en taza.",
+      "keywords": [
+        "cafe",
+        "barismo",
+        "preparacion",
+        "canalizacion",
+        "paso",
+        "preferencial",
+        "agua",
+        "corregir",
+        "tecnica",
+        "molienda"
+      ]
+    },
+    {
+      "id": 1755,
+      "category": "general",
+      "questions": [
+        "Como controlar receta base de filtrado en cafe",
+        "Que significa receta base de filtrado al preparar cafe",
+        "Como mejorar receta base de filtrado en barismo de cafe",
+        "Errores comunes con receta base de filtrado en preparacion de cafe"
+      ],
+      "answer": "En preparacion de cafe, receta base de filtrado define parametros iniciales de preparacion. Dominarlo permite ajustar al perfil del lote y mayor consistencia en taza.",
+      "keywords": [
+        "cafe",
+        "barismo",
+        "preparacion",
+        "receta",
+        "base",
+        "filtrado",
+        "parametros",
+        "iniciales",
+        "ajustar",
+        "perfil",
+        "del",
+        "lote"
+      ]
+    },
+    {
+      "id": 1756,
+      "category": "general",
+      "questions": [
+        "Como controlar receta base de espresso en cafe",
+        "Que significa receta base de espresso al preparar cafe",
+        "Como mejorar receta base de espresso en barismo de cafe",
+        "Errores comunes con receta base de espresso en preparacion de cafe"
+      ],
+      "answer": "En preparacion de cafe, receta base de espresso define parametros de referencia en maquina. Dominarlo permite calibrar servicio y mayor consistencia en taza.",
+      "keywords": [
+        "cafe",
+        "barismo",
+        "preparacion",
+        "receta",
+        "base",
+        "espresso",
+        "parametros",
+        "referencia",
+        "maquina",
+        "calibrar",
+        "servicio"
+      ]
+    },
+    {
+      "id": 1757,
+      "category": "cultivo",
+      "questions": [
+        "Que es agrobiodiversidad en cafe",
+        "Como aplicar agrobiodiversidad en finca cafetera",
+        "Beneficios de agrobiodiversidad para caficultura",
+        "Que medir para mejorar agrobiodiversidad en cafe"
+      ],
+      "answer": "En caficultura, agrobiodiversidad se refiere a diversidad funcional en sistema cafetero. Su implementacion aporta resiliencia ecologica y productiva y fortalece el sistema productivo.",
+      "keywords": [
+        "cafe",
+        "biodiversidad",
+        "agroecologia",
+        "agrobiodiversidad",
+        "diversidad",
+        "funcional",
+        "sistema",
+        "cafetero",
+        "resiliencia",
+        "ecologica",
+        "productiva"
+      ]
+    },
+    {
+      "id": 1758,
+      "category": "cultivo",
+      "questions": [
+        "Que es corredores biologicos en cafe",
+        "Como aplicar corredores biologicos en finca cafetera",
+        "Beneficios de corredores biologicos para caficultura",
+        "Que medir para mejorar corredores biologicos en cafe"
+      ],
+      "answer": "En caficultura, corredores biologicos se refiere a conectividad para fauna util. Su implementacion aporta servicios ecosistemicos en finca y fortalece el sistema productivo.",
+      "keywords": [
+        "cafe",
+        "biodiversidad",
+        "agroecologia",
+        "corredores",
+        "biologicos",
+        "conectividad",
+        "para",
+        "fauna",
+        "util",
+        "servicios",
+        "ecosistemicos",
+        "finca"
+      ]
+    },
+    {
+      "id": 1759,
+      "category": "cultivo",
+      "questions": [
+        "Que es enemigos naturales en cafe",
+        "Como aplicar enemigos naturales en finca cafetera",
+        "Beneficios de enemigos naturales para caficultura",
+        "Que medir para mejorar enemigos naturales en cafe"
+      ],
+      "answer": "En caficultura, enemigos naturales se refiere a control biologico de plagas. Su implementacion aporta reduccion de presion sanitaria y fortalece el sistema productivo.",
+      "keywords": [
+        "cafe",
+        "biodiversidad",
+        "agroecologia",
+        "enemigos",
+        "naturales",
+        "control",
+        "biologico",
+        "plagas",
+        "reduccion",
+        "presion",
+        "sanitaria"
+      ]
+    },
+    {
+      "id": 1760,
+      "category": "cultivo",
+      "questions": [
+        "Que es polinizadores en cafe",
+        "Como aplicar polinizadores en finca cafetera",
+        "Beneficios de polinizadores para caficultura",
+        "Que medir para mejorar polinizadores en cafe"
+      ],
+      "answer": "En caficultura, polinizadores se refiere a apoyo a procesos reproductivos. Su implementacion aporta estabilidad del agroecosistema y fortalece el sistema productivo.",
+      "keywords": [
+        "cafe",
+        "biodiversidad",
+        "agroecologia",
+        "polinizadores",
+        "apoyo",
+        "procesos",
+        "reproductivos",
+        "estabilidad",
+        "del",
+        "agroecosistema"
+      ]
+    },
+    {
+      "id": 1761,
+      "category": "cultivo",
+      "questions": [
+        "Que es diversidad de sombra en cafe",
+        "Como aplicar diversidad de sombra en finca cafetera",
+        "Beneficios de diversidad de sombra para caficultura",
+        "Que medir para mejorar diversidad de sombra en cafe"
+      ],
+      "answer": "En caficultura, diversidad de sombra se refiere a modulacion de microclima. Su implementacion aporta adaptacion al cambio climatico y fortalece el sistema productivo.",
+      "keywords": [
+        "cafe",
+        "biodiversidad",
+        "agroecologia",
+        "diversidad",
+        "sombra",
+        "modulacion",
+        "microclima",
+        "adaptacion",
+        "cambio",
+        "climatico"
+      ]
+    },
+    {
+      "id": 1762,
+      "category": "cultivo",
+      "questions": [
+        "Que es cobertura viva diversa en cafe",
+        "Como aplicar cobertura viva diversa en finca cafetera",
+        "Beneficios de cobertura viva diversa para caficultura",
+        "Que medir para mejorar cobertura viva diversa en cafe"
+      ],
+      "answer": "En caficultura, cobertura viva diversa se refiere a proteccion de suelo y habitat. Su implementacion aporta menor erosion y mejor infiltracion y fortalece el sistema productivo.",
+      "keywords": [
+        "cafe",
+        "biodiversidad",
+        "agroecologia",
+        "cobertura",
+        "viva",
+        "diversa",
+        "proteccion",
+        "suelo",
+        "habitat",
+        "menor",
+        "erosion",
+        "mejor",
+        "infiltracion"
+      ]
+    },
+    {
+      "id": 1763,
+      "category": "cultivo",
+      "questions": [
+        "Que es setos vivos en cafe",
+        "Como aplicar setos vivos en finca cafetera",
+        "Beneficios de setos vivos para caficultura",
+        "Que medir para mejorar setos vivos en cafe"
+      ],
+      "answer": "En caficultura, setos vivos se refiere a barreras ecologicas y funcionales. Su implementacion aporta proteccion de lotes y biodiversidad y fortalece el sistema productivo.",
+      "keywords": [
+        "cafe",
+        "biodiversidad",
+        "agroecologia",
+        "setos",
+        "vivos",
+        "barreras",
+        "ecologicas",
+        "funcionales",
+        "proteccion",
+        "lotes"
+      ]
+    },
+    {
+      "id": 1764,
+      "category": "cultivo",
+      "questions": [
+        "Que es areas de conservacion en cafe",
+        "Como aplicar areas de conservacion en finca cafetera",
+        "Beneficios de areas de conservacion para caficultura",
+        "Que medir para mejorar areas de conservacion en cafe"
+      ],
+      "answer": "En caficultura, areas de conservacion se refiere a refugio de especies utiles. Su implementacion aporta equilibrio del sistema y fortalece el sistema productivo.",
+      "keywords": [
+        "cafe",
+        "biodiversidad",
+        "agroecologia",
+        "areas",
+        "conservacion",
+        "refugio",
+        "especies",
+        "utiles",
+        "equilibrio",
+        "del",
+        "sistema"
+      ]
+    },
+    {
+      "id": 1765,
+      "category": "cultivo",
+      "questions": [
+        "Que es manejo de borde en cafe",
+        "Como aplicar manejo de borde en finca cafetera",
+        "Beneficios de manejo de borde para caficultura",
+        "Que medir para mejorar manejo de borde en cafe"
+      ],
+      "answer": "En caficultura, manejo de borde se refiere a transicion entre lote y entorno. Su implementacion aporta reduccion de riesgos y fortalece el sistema productivo.",
+      "keywords": [
+        "cafe",
+        "biodiversidad",
+        "agroecologia",
+        "manejo",
+        "borde",
+        "transicion",
+        "entre",
+        "lote",
+        "entorno",
+        "reduccion",
+        "riesgos"
+      ]
+    },
+    {
+      "id": 1766,
+      "category": "cultivo",
+      "questions": [
+        "Que es reciclaje de biomasa en cafe",
+        "Como aplicar reciclaje de biomasa en finca cafetera",
+        "Beneficios de reciclaje de biomasa para caficultura",
+        "Que medir para mejorar reciclaje de biomasa en cafe"
+      ],
+      "answer": "En caficultura, reciclaje de biomasa se refiere a retorno de carbono al suelo. Su implementacion aporta mejor salud edafica y fortalece el sistema productivo.",
+      "keywords": [
+        "cafe",
+        "biodiversidad",
+        "agroecologia",
+        "reciclaje",
+        "biomasa",
+        "retorno",
+        "carbono",
+        "suelo",
+        "mejor",
+        "salud",
+        "edafica"
+      ]
+    },
+    {
+      "id": 1767,
+      "category": "cultivo",
+      "questions": [
+        "Que es servicios ecosistemicos en cafe",
+        "Como aplicar servicios ecosistemicos en finca cafetera",
+        "Beneficios de servicios ecosistemicos para caficultura",
+        "Que medir para mejorar servicios ecosistemicos en cafe"
+      ],
+      "answer": "En caficultura, servicios ecosistemicos se refiere a beneficios de procesos naturales. Su implementacion aporta menor dependencia de insumos y fortalece el sistema productivo.",
+      "keywords": [
+        "cafe",
+        "biodiversidad",
+        "agroecologia",
+        "servicios",
+        "ecosistemicos",
+        "beneficios",
+        "procesos",
+        "naturales",
+        "menor",
+        "dependencia",
+        "insumos"
+      ]
+    },
+    {
+      "id": 1768,
+      "category": "cultivo",
+      "questions": [
+        "Que es diversificacion productiva en cafe",
+        "Como aplicar diversificacion productiva en finca cafetera",
+        "Beneficios de diversificacion productiva para caficultura",
+        "Que medir para mejorar diversificacion productiva en cafe"
+      ],
+      "answer": "En caficultura, diversificacion productiva se refiere a fuentes multiples de ingreso. Su implementacion aporta menor vulnerabilidad economica y fortalece el sistema productivo.",
+      "keywords": [
+        "cafe",
+        "biodiversidad",
+        "agroecologia",
+        "diversificacion",
+        "productiva",
+        "fuentes",
+        "multiples",
+        "ingreso",
+        "menor",
+        "vulnerabilidad",
+        "economica"
+      ]
+    },
+    {
+      "id": 1769,
+      "category": "cultivo",
+      "questions": [
+        "Que es restauracion de suelos en cafe",
+        "Como aplicar restauracion de suelos en finca cafetera",
+        "Beneficios de restauracion de suelos para caficultura",
+        "Que medir para mejorar restauracion de suelos en cafe"
+      ],
+      "answer": "En caficultura, restauracion de suelos se refiere a recuperacion de funcion productiva. Su implementacion aporta sostenibilidad del cafetal y fortalece el sistema productivo.",
+      "keywords": [
+        "cafe",
+        "biodiversidad",
+        "agroecologia",
+        "restauracion",
+        "suelos",
+        "recuperacion",
+        "funcion",
+        "productiva",
+        "sostenibilidad",
+        "del",
+        "cafetal"
+      ]
+    },
+    {
+      "id": 1770,
+      "category": "cultivo",
+      "questions": [
+        "Que es paisaje cafetero resiliente en cafe",
+        "Como aplicar paisaje cafetero resiliente en finca cafetera",
+        "Beneficios de paisaje cafetero resiliente para caficultura",
+        "Que medir para mejorar paisaje cafetero resiliente en cafe"
+      ],
+      "answer": "En caficultura, paisaje cafetero resiliente se refiere a integracion de produccion y conservacion. Su implementacion aporta estabilidad a largo plazo y fortalece el sistema productivo.",
+      "keywords": [
+        "cafe",
+        "biodiversidad",
+        "agroecologia",
+        "paisaje",
+        "cafetero",
+        "resiliente",
+        "integracion",
+        "produccion",
+        "conservacion",
+        "estabilidad",
+        "largo",
+        "plazo"
+      ]
+    },
+    {
+      "id": 1771,
+      "category": "cultivo",
+      "questions": [
+        "Que es indicadores de biodiversidad en cafe",
+        "Como aplicar indicadores de biodiversidad en finca cafetera",
+        "Beneficios de indicadores de biodiversidad para caficultura",
+        "Que medir para mejorar indicadores de biodiversidad en cafe"
+      ],
+      "answer": "En caficultura, indicadores de biodiversidad se refiere a medicion de estado ecologico. Su implementacion aporta toma de decisiones informada y fortalece el sistema productivo.",
+      "keywords": [
+        "cafe",
+        "biodiversidad",
+        "agroecologia",
+        "indicadores",
+        "medicion",
+        "estado",
+        "ecologico",
+        "toma",
+        "decisiones",
+        "informada"
+      ]
+    },
+    {
+      "id": 1772,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo produccion alta pero margen bajo, como lo diagnostico",
+        "Causas de produccion alta pero margen bajo en finca cafetera",
+        "Plan tecnico para corregir produccion alta pero margen bajo en cafe",
+        "Que indicadores revisar si hay produccion alta pero margen bajo en cafe"
+      ],
+      "answer": "Cuando en cafe aparece produccion alta pero margen bajo, suele deberse a costos ocultos, ineficiencia de proceso o venta sin diferenciacion. La mejor ruta es definir causa prioritaria por lote, ejecutar una accion concreta y medir resultado en corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "gestion",
+        "produccion",
+        "alta",
+        "pero",
+        "margen",
+        "bajo",
+        "costos",
+        "ocultos",
+        "ineficiencia",
+        "proceso",
+        "venta",
+        "sin",
+        "diferenciacion"
+      ]
+    },
+    {
+      "id": 1773,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo calidad alta pero volumen bajo, como lo diagnostico",
+        "Causas de calidad alta pero volumen bajo en finca cafetera",
+        "Plan tecnico para corregir calidad alta pero volumen bajo en cafe",
+        "Que indicadores revisar si hay calidad alta pero volumen bajo en cafe"
+      ],
+      "answer": "Cuando en cafe aparece calidad alta pero volumen bajo, suele deberse a limitantes de manejo agronomico y renovacion. La mejor ruta es definir causa prioritaria por lote, ejecutar una accion concreta y medir resultado en corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "gestion",
+        "calidad",
+        "alta",
+        "pero",
+        "volumen",
+        "bajo",
+        "limitantes",
+        "manejo",
+        "agronomico",
+        "renovacion"
+      ]
+    },
+    {
+      "id": 1774,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo volumen alto pero taza baja, como lo diagnostico",
+        "Causas de volumen alto pero taza baja en finca cafetera",
+        "Plan tecnico para corregir volumen alto pero taza baja en cafe",
+        "Que indicadores revisar si hay volumen alto pero taza baja en cafe"
+      ],
+      "answer": "Cuando en cafe aparece volumen alto pero taza baja, suele deberse a falta de control en cosecha y beneficio. La mejor ruta es definir causa prioritaria por lote, ejecutar una accion concreta y medir resultado en corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "gestion",
+        "volumen",
+        "alto",
+        "pero",
+        "taza",
+        "baja",
+        "falta",
+        "control",
+        "cosecha",
+        "beneficio"
+      ]
+    },
+    {
+      "id": 1775,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo buen manejo de campo pero defectos en bodega, como lo diagnostico",
+        "Causas de buen manejo de campo pero defectos en bodega en finca cafetera",
+        "Plan tecnico para corregir buen manejo de campo pero defectos en bodega en cafe",
+        "Que indicadores revisar si hay buen manejo de campo pero defectos en bodega en cafe"
+      ],
+      "answer": "Cuando en cafe aparece buen manejo de campo pero defectos en bodega, suele deberse a brecha de control poscosecha. La mejor ruta es definir causa prioritaria por lote, ejecutar una accion concreta y medir resultado en corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "gestion",
+        "buen",
+        "manejo",
+        "campo",
+        "pero",
+        "defectos",
+        "bodega",
+        "brecha",
+        "control",
+        "poscosecha"
+      ]
+    },
+    {
+      "id": 1776,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo buen cupping interno pero rechazo comercial, como lo diagnostico",
+        "Causas de buen cupping interno pero rechazo comercial en finca cafetera",
+        "Plan tecnico para corregir buen cupping interno pero rechazo comercial en cafe",
+        "Que indicadores revisar si hay buen cupping interno pero rechazo comercial en cafe"
+      ],
+      "answer": "Cuando en cafe aparece buen cupping interno pero rechazo comercial, suele deberse a falta de estandarizacion de entrega. La mejor ruta es definir causa prioritaria por lote, ejecutar una accion concreta y medir resultado en corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "gestion",
+        "buen",
+        "cupping",
+        "interno",
+        "pero",
+        "rechazo",
+        "comercial",
+        "falta",
+        "estandarizacion",
+        "entrega"
+      ]
+    },
+    {
+      "id": 1777,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo incidencia sanitaria repetitiva, como lo diagnostico",
+        "Causas de incidencia sanitaria repetitiva en finca cafetera",
+        "Plan tecnico para corregir incidencia sanitaria repetitiva en cafe",
+        "Que indicadores revisar si hay incidencia sanitaria repetitiva en cafe"
+      ],
+      "answer": "Cuando en cafe aparece incidencia sanitaria repetitiva, suele deberse a manejo reactivo y no preventivo. La mejor ruta es definir causa prioritaria por lote, ejecutar una accion concreta y medir resultado en corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "gestion",
+        "incidencia",
+        "sanitaria",
+        "repetitiva",
+        "manejo",
+        "reactivo",
+        "preventivo"
+      ]
+    },
+    {
+      "id": 1778,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo mucha variacion entre lotes vecinos, como lo diagnostico",
+        "Causas de mucha variacion entre lotes vecinos en finca cafetera",
+        "Plan tecnico para corregir mucha variacion entre lotes vecinos en cafe",
+        "Que indicadores revisar si hay mucha variacion entre lotes vecinos en cafe"
+      ],
+      "answer": "Cuando en cafe aparece mucha variacion entre lotes vecinos, suele deberse a falta de sectorizacion tecnica. La mejor ruta es definir causa prioritaria por lote, ejecutar una accion concreta y medir resultado en corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "gestion",
+        "mucha",
+        "variacion",
+        "entre",
+        "lotes",
+        "vecinos",
+        "falta",
+        "sectorizacion",
+        "tecnica"
+      ]
+    },
+    {
+      "id": 1779,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo finca con buen potencial sin mejora real, como lo diagnostico",
+        "Causas de finca con buen potencial sin mejora real en finca cafetera",
+        "Plan tecnico para corregir finca con buen potencial sin mejora real en cafe",
+        "Que indicadores revisar si hay finca con buen potencial sin mejora real en cafe"
+      ],
+      "answer": "Cuando en cafe aparece finca con buen potencial sin mejora real, suele deberse a ausencia de seguimiento de indicadores. La mejor ruta es definir causa prioritaria por lote, ejecutar una accion concreta y medir resultado en corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "gestion",
+        "finca",
+        "con",
+        "buen",
+        "potencial",
+        "sin",
+        "mejora",
+        "real",
+        "ausencia",
+        "seguimiento",
+        "indicadores"
+      ]
+    },
+    {
+      "id": 1780,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo inversion alta sin retorno, como lo diagnostico",
+        "Causas de inversion alta sin retorno en finca cafetera",
+        "Plan tecnico para corregir inversion alta sin retorno en cafe",
+        "Que indicadores revisar si hay inversion alta sin retorno en cafe"
+      ],
+      "answer": "Cuando en cafe aparece inversion alta sin retorno, suele deberse a priorizacion incorrecta de recursos. La mejor ruta es definir causa prioritaria por lote, ejecutar una accion concreta y medir resultado en corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "gestion",
+        "inversion",
+        "alta",
+        "sin",
+        "retorno",
+        "priorizacion",
+        "incorrecta",
+        "recursos"
+      ]
+    },
+    {
+      "id": 1781,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo adopcion baja de recomendaciones, como lo diagnostico",
+        "Causas de adopcion baja de recomendaciones en finca cafetera",
+        "Plan tecnico para corregir adopcion baja de recomendaciones en cafe",
+        "Que indicadores revisar si hay adopcion baja de recomendaciones en cafe"
+      ],
+      "answer": "Cuando en cafe aparece adopcion baja de recomendaciones, suele deberse a falta de acciones simples y medibles. La mejor ruta es definir causa prioritaria por lote, ejecutar una accion concreta y medir resultado en corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "gestion",
+        "adopcion",
+        "baja",
+        "recomendaciones",
+        "falta",
+        "acciones",
+        "simples",
+        "medibles"
+      ]
+    },
+    {
+      "id": 1782,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo problemas recurrentes en temporada de lluvia, como lo diagnostico",
+        "Causas de problemas recurrentes en temporada de lluvia en finca cafetera",
+        "Plan tecnico para corregir problemas recurrentes en temporada de lluvia en cafe",
+        "Que indicadores revisar si hay problemas recurrentes en temporada de lluvia en cafe"
+      ],
+      "answer": "Cuando en cafe aparece problemas recurrentes en temporada de lluvia, suele deberse a drenaje, ventilacion y protocolos insuficientes. La mejor ruta es definir causa prioritaria por lote, ejecutar una accion concreta y medir resultado en corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "gestion",
+        "problemas",
+        "recurrentes",
+        "temporada",
+        "lluvia",
+        "drenaje",
+        "ventilacion",
+        "protocolos",
+        "insuficientes"
+      ]
+    },
+    {
+      "id": 1783,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo problemas recurrentes en temporada seca, como lo diagnostico",
+        "Causas de problemas recurrentes en temporada seca en finca cafetera",
+        "Plan tecnico para corregir problemas recurrentes en temporada seca en cafe",
+        "Que indicadores revisar si hay problemas recurrentes en temporada seca en cafe"
+      ],
+      "answer": "Cuando en cafe aparece problemas recurrentes en temporada seca, suele deberse a manejo hidrico y cobertura insuficientes. La mejor ruta es definir causa prioritaria por lote, ejecutar una accion concreta y medir resultado en corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "gestion",
+        "problemas",
+        "recurrentes",
+        "temporada",
+        "seca",
+        "manejo",
+        "hidrico",
+        "cobertura",
+        "insuficientes"
+      ]
+    },
+    {
+      "id": 1784,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo equipo tecnico desalineado, como lo diagnostico",
+        "Causas de equipo tecnico desalineado en finca cafetera",
+        "Plan tecnico para corregir equipo tecnico desalineado en cafe",
+        "Que indicadores revisar si hay equipo tecnico desalineado en cafe"
+      ],
+      "answer": "Cuando en cafe aparece equipo tecnico desalineado, suele deberse a criterios distintos y poca calibracion. La mejor ruta es definir causa prioritaria por lote, ejecutar una accion concreta y medir resultado en corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "gestion",
+        "equipo",
+        "tecnico",
+        "desalineado",
+        "criterios",
+        "distintos",
+        "poca",
+        "calibracion"
+      ]
+    },
+    {
+      "id": 1785,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo cosecha desordenada, como lo diagnostico",
+        "Causas de cosecha desordenada en finca cafetera",
+        "Plan tecnico para corregir cosecha desordenada en cafe",
+        "Que indicadores revisar si hay cosecha desordenada en cafe"
+      ],
+      "answer": "Cuando en cafe aparece cosecha desordenada, suele deberse a falta de plan operativo y roles claros. La mejor ruta es definir causa prioritaria por lote, ejecutar una accion concreta y medir resultado en corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "gestion",
+        "cosecha",
+        "desordenada",
+        "falta",
+        "plan",
+        "operativo",
+        "roles",
+        "claros"
+      ]
+    },
+    {
+      "id": 1786,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo beneficio inconsistente, como lo diagnostico",
+        "Causas de beneficio inconsistente en finca cafetera",
+        "Plan tecnico para corregir beneficio inconsistente en cafe",
+        "Que indicadores revisar si hay beneficio inconsistente en cafe"
+      ],
+      "answer": "Cuando en cafe aparece beneficio inconsistente, suele deberse a protocolos no estandarizados. La mejor ruta es definir causa prioritaria por lote, ejecutar una accion concreta y medir resultado en corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "gestion",
+        "beneficio",
+        "inconsistente",
+        "protocolos",
+        "estandarizados"
+      ]
+    },
+    {
+      "id": 1787,
+      "category": "diagnostico",
+      "questions": [
+        "En cafe tengo feedback positivo sin mejora productiva, como lo diagnostico",
+        "Causas de feedback positivo sin mejora productiva en finca cafetera",
+        "Plan tecnico para corregir feedback positivo sin mejora productiva en cafe",
+        "Que indicadores revisar si hay feedback positivo sin mejora productiva en cafe"
+      ],
+      "answer": "Cuando en cafe aparece feedback positivo sin mejora productiva, suele deberse a acciones no aterrizadas en campo. La mejor ruta es definir causa prioritaria por lote, ejecutar una accion concreta y medir resultado en corto plazo.",
+      "keywords": [
+        "cafe",
+        "diagnostico",
+        "gestion",
+        "feedback",
+        "positivo",
+        "sin",
+        "mejora",
+        "productiva",
+        "acciones",
+        "aterrizadas",
+        "campo"
+      ]
     }
   ]
 }
