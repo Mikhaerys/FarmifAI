@@ -1,32 +1,19 @@
-# FarmifAI (AgroChat Mobile)
-
-![Android](https://img.shields.io/badge/Android-API%2024%2B-3DDC84)
-![Mode](https://img.shields.io/badge/Mode-Offline--first-2E7D32)
-![LLM](https://img.shields.io/badge/LLM-Qwen%203.5%20GGUF-455A64)
-![KB](https://img.shields.io/badge/KB-293%20records-1565C0)
-
-> Offline-first Android assistant for agriculture that uses a local LLM and local RAG to answer field questions in Spanish.
-
-![System Architecture](docs/images/fig_system_architecture.png)
-
----
-
 ## English
 
 ## Demo
 
-- Video demo: pending public upload.
+- Demo video: [pending]
 - Latest downloadable APK (debug): [FarmifAI-debug-v1.0-20260324_201415.apk](https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/download/apk-kb-records-20260324/FarmifAI-debug-v1.0-20260324_201415.apk)
-- Releases page (all published APK assets): [https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/latest](https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/latest)
-- Note: paths under `app/build/outputs/apk/` are local build artifacts and are not tracked in git.
-- Versioned field-validation archive (scanned forms): [docs_backup/Encuestas_agricultores.pdf](docs_backup/Encuestas_agricultores.pdf)
-- Versioned app usage captures:
+- Releases page (all published APKs): [https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/latest](https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/latest)
+- Note: paths under `app/build/outputs/apk/` are local build artifacts and are not versioned in git.
+- Versioned field-validation file (scanned forms): [docs_backup/Encuestas_agricultores.pdf](docs_backup/Encuestas_agricultores.pdf)
+- Versioned app screenshots:
   - [docs_backup/capturasapp/interfaz_conversacional.jpeg](docs_backup/capturasapp/interfaz_conversacional.jpeg)
   - [docs_backup/capturasapp/diagnosticovisual.png](docs_backup/capturasapp/diagnosticovisual.png)
   - [docs_backup/capturasapp/diagnosticovis.jpeg](docs_backup/capturasapp/diagnosticovis.jpeg)
   - [docs_backup/capturasapp/recomendaciones.jpeg](docs_backup/capturasapp/recomendaciones.jpeg)
 - Technical report: [docs/FarmifAI_Informe_Avances_ajustado.docx](docs/FarmifAI_Informe_Avances_ajustado.docx)
-- Technical visuals:
+- Visual resources:
   - [docs/images/fig_system_architecture.png](docs/images/fig_system_architecture.png)
   - [docs/images/fig_rag_pipeline.png](docs/images/fig_rag_pipeline.png)
   - [docs/images/fig_vision_inference.png](docs/images/fig_vision_inference.png)
@@ -35,65 +22,75 @@
 
 ## Quick Evaluation Path (under 5 minutes)
 
-1. Build a debug APK:
+1. Build the debug APK:
    ```bash
    ./gradlew :app:assembleDebug
    ```
-2. Install on a connected Android device:
+2. Install it on a connected Android device:
    ```bash
    adb install -r app/build/outputs/apk/debug/*.apk
    ```
-3. Ensure a local GGUF model is provisioned (recommended: `Qwen3.5-0.8B-Q4_K_M.gguf`).
-4. Enable airplane mode and open the app.
-5. Try these prompts in Spanish:
-   - `que es una arvense`
-   - `que son las buenas practicas agricolas`
-   - `como reducir la roya en cafe`
+3. Confirm that a local GGUF model exists (recommended: `Qwen3.5-0.8B-Q4_K_M.gguf`).
+4. Turn on airplane mode and open the app.
+5. Test these queries:
+   - `what is a weed`
+   - `what are good agricultural practices`
+   - `how to reduce coffee rust`
 
 ## Problem
 
-Smallholder farmers often need practical recommendations in areas with unstable connectivity. Cloud-only assistants can fail exactly when decisions are needed in the field.
+The production chain of many crops in Colombia and around the world faces a critical gap
+in local information for making timely agronomic decisions. The altitudinal and
+microclimatic variability of territories makes it difficult for regional information to faithfully
+represent the conditions of each crop, while limited rural connectivity
+restricts continuous access to conventional digital tools. As a
+result, crop management is often carried out without
+sufficient support from data and crop-specific knowledge,
+affecting the ability to prevent plant health risks, respond to climate events,
+and optimize management practices.
 
-For agricultural support, reliability, low latency, and local data availability are critical. An offline-first design is therefore a functional requirement, not just an optimization.
+Rural producers need technical recommendations in areas with intermittent connectivity. A cloud-dependent assistant may fail precisely at the moment it is needed in the field.
+
+In this context, operating without a network and with local resources is not optional: it is a condition for real usefulness.
 
 ## Solution
 
-FarmifAI is an Android app that combines local retrieval (RAG), local generation (GGUF + llama.cpp), voice interaction, and on-device plant disease classification. The current branch is organized to keep core inference and guidance available on-device.
+FarmifAI is an Android app that integrates local retrieval (RAG), local generation (GGUF + llama.cpp), voice interaction, and on-device visual classification. The current branch is focused on maintaining the main assistance flow with local components.
 
 ## Key Features
 
-- Spanish agricultural Q&A with local context.
-- Local RAG over curated JSONL knowledge records.
-- Local LLM generation using Qwen GGUF variants.
+- Agricultural queries in Spanish with local context.
+- Local RAG over curated JSONL records.
+- Local generation with GGUF variants of Qwen.
 - Explicit response routing (`KB_DIRECT`, `LLM_WITH_KB`, `LLM_GENERAL`, `ABSTAIN`).
-- On-device vision diagnosis for 21 crop-disease classes.
-- Voice interaction with offline STT support (Vosk when provisioned) and Android TTS.
+- Local visual diagnosis for 21 crop/disease classes.
+- Voice support with offline STT (Vosk when provisioned) and Android TTS.
 
 ## System Architecture
 
 ![Architecture](docs/images/fig_system_architecture.png)
 
-- UI layer: chat, voice, and camera flows.
-- Domain/orchestration layer: query processing, response routing, fallback behavior.
-- Data layer: local KB records, embeddings, mappings, and labels.
-- Inference layer: local semantic retrieval + local GGUF generation + local vision model.
+- UI layer: chat, voice, and camera.
+- Orchestration layer: query processing, routing, and fallback.
+- Data layer: local KB, embeddings, mappings, and labels.
+- Inference layer: local semantic retrieval + local LLM + local vision.
 
 ## AI / Model Details
 
 ### Base Model
 
-- Preferred local model filename: `Qwen3.5-0.8B-Q4_K_M.gguf`.
-- Additional local filename preferences include Q5/Q4_0/Q3 variants and one Qwen2.5 fallback filename.
+- Preferred local model name: `Qwen3.5-0.8B-Q4_K_M.gguf`.
+- Additional preferences: Q5/Q4_0/Q3 variants and a fallback Qwen2.5 name.
 
 ### Quantization / Format
 
-- LLM format: GGUF quantized variants.
-- Retrieval embeddings: `kb_embeddings.npy`, shape `(2842, 384)`, dtype `float32`.
+- LLM format: quantized GGUF variants.
+- Embeddings: `kb_embeddings.npy`, shape `(2842, 384)`, type `float32`.
 
-### On-device Runtime
+### On-Device Runtime
 
-- LLM runtime: `llama.cpp` through Android JNI.
-- Vision runtime: MindSpore Lite via JNI bridge.
+- LLM: `llama.cpp` via Android JNI.
+- Vision: MindSpore Lite via JNI bridge.
 
 ### Knowledge Source
 
@@ -102,67 +99,67 @@ FarmifAI is an Android app that combines local retrieval (RAG), local generation
 
 ### Intended Use
 
-- Field-oriented agricultural guidance in Spanish.
-- Practical first-pass assistance for crop management, pests, and diseases.
+- Spanish-language agricultural assistance for field use.
+- Technical support for crop, pest, and disease management.
 
-### Out-of-scope Use
+### Out of Scope
 
-- Not a replacement for certified agronomist judgment in high-risk decisions.
-- Not a legal, medical, or regulatory authority.
+- Does not replace the judgment of a certified agronomist in high-risk decisions.
+- It is not a legal, medical, or regulatory authority.
 
 ### Known Limitations
 
-- A local GGUF model must be provisioned for full local generation.
-- Latency depends on device class and quantization choice.
-- Evaluation artifacts currently prioritize reproducible repository evidence.
+- A local GGUF model must be provisioned for full generation.
+- Latency depends on the device and the selected quantization.
+- Evaluation artifacts prioritize reproducible evidence versioned in the repository.
 
-### Evaluation Results (Repository-verifiable)
+### Evaluation Results (verifiable in repository)
 
 | Metric | Value | Evidence |
 |---|---|---|
 | KB files | 12 JSONL | `app/src/main/assets/kb_nueva/extract` |
 | KB records | 293 total | JSONL line count |
-| Embedding matrix | `(2842, 384)` | `app/src/main/assets/kb_embeddings.npy` |
-| Embedding dtype | `float32` | `app/src/main/assets/kb_embeddings.npy` |
-| Routing tests | Present | `app/src/test/java/edu/unicauca/app/agrochat/routing/ResponseRoutingPolicyTest.kt` |
+| Embeddings matrix | `(2842, 384)` | `app/src/main/assets/kb_embeddings.npy` |
+| Embeddings type | `float32` | `app/src/main/assets/kb_embeddings.npy` |
+| Routing tests | Available | `app/src/test/java/edu/unicauca/app/agrochat/routing/ResponseRoutingPolicyTest.kt` |
 | Unit test files | 2 | `app/src/test` |
 
-### Historical Versioned Evaluation Evidence (docs_backup)
+### Versioned Historical Evaluation Evidence (docs_backup)
 
-- Vision model metrics documented in [docs_backup/FarmifAI_Paper_EN.tex](docs_backup/FarmifAI_Paper_EN.tex): Top-1 `92.3%`, Top-3 `98.1%`, inference `200-400ms` on mid-range Snapdragon 6xx.
-- Component latency/memory table documented in [docs_backup/FarmifAI_Paper_EN.tex](docs_backup/FarmifAI_Paper_EN.tex).
-- Cloud deployment workflow diagram documented in [docs_backup/fig_deployment_workflow.pdf](docs_backup/fig_deployment_workflow.pdf).
-- ModelArts/OBS usage references documented in [docs_backup/PRESENTATION_30S_SCRIPTS_EN_ES.txt](docs_backup/PRESENTATION_30S_SCRIPTS_EN_ES.txt).
+- Visual model metrics documented in [docs_backup/FarmifAI_Paper_ES.tex](docs_backup/FarmifAI_Paper_ES.tex): Top-1 `92.3%`, Top-3 `98.1%`, inference `200-400ms` on mid-range Snapdragon 6xx devices.
+- Component latency/memory table documented in [docs_backup/FarmifAI_Paper_ES.tex](docs_backup/FarmifAI_Paper_ES.tex).
+- Deployment workflow documented in [docs_backup/fig_deployment_workflow.pdf](docs_backup/fig_deployment_workflow.pdf).
+- References to ModelArts/OBS usage documented in [docs_backup/PRESENTATION_30S_SCRIPTS_EN_ES.txt](docs_backup/PRESENTATION_30S_SCRIPTS_EN_ES.txt).
 
 ## Offline-first Design
 
-- Core guidance path is designed around local KB + local inference components.
-- Current `AndroidManifest.xml` declares only microphone and camera permissions.
-- No internet permission is declared in the current app manifest.
+- The main assistance flow is oriented toward local KB + local inference.
+- The current `AndroidManifest.xml` declares only microphone and camera permissions.
+- No internet permission is declared in the app’s current manifest.
 
-## Privacy, Security and Permissions
+## Privacy, Security, and Permissions
 
-- Data processing for core flow is local to device runtime.
-- Permissions currently declared:
+- Main-flow processing happens on-device.
+- Currently declared permissions:
   - `android.permission.RECORD_AUDIO` for voice input.
   - `android.permission.CAMERA` for visual diagnosis.
-- Permission scope is limited to enabled app features.
+- Permission scope is limited to active functionalities.
 
 ## Installation
 
 ### Quick Validation
 
 1. Build and install the debug APK.
-2. Provision local model file.
-3. Run the quick evaluation path above.
+2. Provision the local model file.
+3. Run the quick evaluation path from this guide.
 
 ### For Developers
 
-- Android Studio (stable recent version).
+- Android Studio (recent stable version).
 - JDK 11.
 - Android SDK and NDK configured.
 
-## Build From Source
+## Build from Source
 
 ```bash
 ./gradlew :app:assembleDebug
@@ -174,50 +171,36 @@ FarmifAI is an Android app that combines local retrieval (RAG), local generation
 
 ```text
 AgroChat_Project/
-  app/           # Android app, local assets, inference code
-  docs/          # Technical report and documentation assets
-  docs/images/   # Extracted architecture/pipeline visuals
+  app/           # Android app, local assets, and inference code
+  docs/          # Technical report and documentation attachments
+  docs/images/   # Architecture and pipeline visuals
   nlp_dev/       # NLP processing and experimentation tools
   tools/         # Vision training/export tools
-  scripts/       # Build, install, and deployment scripts
+  scripts/       # Build, installation, and deployment scripts
   pc_rag_clone/  # Experimental clone and llama.cpp vendor
   README.md
 ```
 
-## Limitations
-
-- Public debug APK is available in GitHub Releases; a stable release APK asset and public demo video are still pending.
-- License and citation metadata are not yet standardized at repository root.
-- Device-level latency benchmark matrix by RAM tier (4/6/8 GB) is not yet published as a standalone dataset.
-
-## Future Work
-
-- Publish a short public demo video and reproducible benchmark sheet.
-- Add a stable release APK asset and packaged installation artifacts for reproducible evaluation.
-- Add repository-level citation and security metadata files.
-- Publish an anonymized aggregate report from field survey forms.
-
 ## License
 
-License file at repository root is pending definition.
+The license file at the repository root is still pending definition.
 
 ## Citation
 
-Citation metadata file (`CITATION.cff`) is pending.
+The citation metadata file (`CITATION.cff`) is still pending.
 
-## Acknowledgements
+## Acknowledgments
 
-- `llama.cpp` for local GGUF inference runtime.
+- `llama.cpp` for the local inference runtime for GGUF.
 - MindSpore Lite for on-device model execution.
 - Vosk for local speech recognition support.
-
 ---
 
-## Espanol
+## Español
 
 ## Demo
 
-- Video demo: pendiente de publicacion.
+- Video demo: [pendiente]
 - Ultima APK descargable (debug): [FarmifAI-debug-v1.0-20260324_201415.apk](https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/download/apk-kb-records-20260324/FarmifAI-debug-v1.0-20260324_201415.apk)
 - Pagina de releases (todos los APK publicados): [https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/latest](https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/latest)
 - Nota: las rutas bajo `app/build/outputs/apk/` son artefactos locales de compilacion y no se versionan en git.
@@ -253,6 +236,16 @@ Citation metadata file (`CITATION.cff`) is pending.
    - `como reducir la roya en cafe`
 
 ## Problema
+
+La cadena productiva de muchos cultivos en Colombia y el mundo enfrentan una brecha crítica
+de información local para la toma de decisiones agronómicas oportunas. La variabilidad
+altitudinal y microclimática de los terrritorios dificultan que la información regional represente
+fielmente las condiciones de cada cultivo, mientras que la limitada conectividad rural
+restringe el acceso continuo a herramientas digitales convencionales. Como
+consecuencia, el manejo de los cultivos suelen realizarse sin soporte
+suficiente en datos y conocimiento fiel del cultivo, afectando la capacidad de prevenir
+riesgos sanitarios, responder a eventos climáticos y optimizar prácticas de manejo.
+
 
 Los productores rurales necesitan recomendaciones tecnicas en zonas con conectividad intermitente. Un asistente dependiente de nube puede fallar justo en el momento de uso en campo.
 
@@ -305,7 +298,7 @@ FarmifAI es una app Android que integra recuperacion local (RAG), generacion loc
 ### Uso Previsto
 
 - Asistencia agricola en espanol para uso en campo.
-- Apoyo tecnico inicial para manejo de cultivos, plagas y enfermedades.
+- Apoyo tecnico  para manejo de cultivos, plagas y enfermedades.
 
 ### Fuera De Alcance
 
@@ -386,18 +379,7 @@ AgroChat_Project/
   README.md
 ```
 
-## Limitaciones
 
-- Ya existe APK debug publico en GitHub Releases; siguen pendientes un asset APK release estable y un video demo publico.
-- Licencia y metadatos de citacion aun no estandarizados en la raiz del repo.
-- Falta publicar una matriz completa de benchmarks por perfil de RAM (4/6/8 GB).
-
-## Trabajo Futuro
-
-- Publicar video demo corto y hoja de benchmarks reproducibles.
-- Publicar un asset APK release estable y artefactos de instalacion para evaluacion reproducible.
-- Agregar archivos de metadatos de citacion y seguridad a nivel raiz.
-- Publicar un reporte agregado y anonimizado derivado de las encuestas de campo.
 
 ## Licencia
 
