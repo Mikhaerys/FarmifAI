@@ -36,14 +36,9 @@
     <string name="language_label">Idioma / Language</string>
     <string name="spanish">Español</string>
     <string name="english">English</string>
-    <string name="local_llm">Local LLM (Llama)</string>
-    <string name="online_llm">Online LLM (Groq)</string>
-    <string name="api_key">Groq API Key</string>
-    <string name="api_key_hint">gsk_...</string>
-    <string name="api_key_help">Get your free key at: console.groq.com</string>
+    <string name="local_llm">Local LLM (Qwen/GGUF)</string>
     <string name="llm_offline_help">Smart offline responses with generative AI</string>
     <string name="llm_copy_help">Copy a .gguf model to the app folder to enable</string>
-    <string name="online_help">For smoother responses when online.</string>
     <string name="language_change_hint">App will restart when changing language</string>
     
     <!-- Logs -->
@@ -54,12 +49,9 @@
     <string name="no_logs">No logs yet</string>
     
     <!-- Status -->
-    <string name="online">Online</string>
-    <string name="offline">Offline</string>
     <string name="local">Local</string>
-    <string name="llama_ready">Llama ready</string>
+    <string name="llama_ready">Qwen ready</string>
     <string name="loading_ai">Loading AI...</string>
-    <string name="downloading_llm">Downloading LLM</string>
     <string name="model_not_available">Model not available</string>
     
     <!-- Welcome message -->
@@ -77,5 +69,4 @@
     <!-- Errors -->
     <string name="error_retry">An error occurred. Please try again.</string>
     <string name="no_local_llm">No local LLM</string>
-    <string name="download_failed">Could not download LLM</string>
 </resources>

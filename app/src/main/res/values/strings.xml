@@ -36,14 +36,9 @@
     <string name="language_label">Idioma / Language</string>
     <string name="spanish">Español</string>
     <string name="english">English</string>
-    <string name="local_llm">LLM Local (Llama)</string>
-    <string name="online_llm">LLM Online (Groq)</string>
-    <string name="api_key">API Key de Groq</string>
-    <string name="api_key_hint">gsk_...</string>
-    <string name="api_key_help">Obtén tu key gratis en: console.groq.com</string>
+    <string name="local_llm">LLM Local (Qwen/GGUF)</string>
     <string name="llm_offline_help">Respuestas inteligentes offline con IA generativa</string>
     <string name="llm_copy_help">Copia un modelo .gguf a la carpeta de la app para habilitar</string>
-    <string name="online_help">Para respuestas más fluidas cuando hay internet.</string>
     <string name="language_change_hint">La app se reiniciará al cambiar idioma</string>
     
     <!-- Logs -->
@@ -54,12 +49,9 @@
     <string name="no_logs">No hay logs aún</string>
     
     <!-- Status -->
-    <string name="online">Online</string>
-    <string name="offline">Offline</string>
     <string name="local">Local</string>
-    <string name="llama_ready">Llama listo</string>
+    <string name="llama_ready">Qwen listo</string>
     <string name="loading_ai">Cargando IA...</string>
-    <string name="downloading_llm">Descargando LLM</string>
     <string name="model_not_available">Modelo no disponible</string>
     
     <!-- Welcome message -->
@@ -77,5 +69,4 @@
     <!-- Errors -->
     <string name="error_retry">Hubo un error. Intenta de nuevo.</string>
     <string name="no_local_llm">Sin LLM local</string>
-    <string name="download_failed">No se pudo descargar LLM</string>
 </resources>

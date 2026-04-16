@@ -10,22 +10,6 @@ plugins {
 
 // Generar timestamp para nombre único de APK
 val buildTimestamp: String = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
-val groqApiKeyFromBuild: String = (
-    project.findProperty("GROQ_API_KEY") as String?
-        ?: System.getenv("GROQ_API_KEY")
-        ?: ""
-).trim()
-val feedbackLiveEndpointFromBuild: String = (
-    project.findProperty("FEEDBACK_LIVE_ENDPOINT") as String?
-        ?: System.getenv("FEEDBACK_LIVE_ENDPOINT")
-        ?: "https://webhook.site/149a0be7-8315-4391-9639-37e10bc35f85"
-).trim()
-val escapedGroqApiKeyFromBuild = groqApiKeyFromBuild
-    .replace("\\", "\\\\")
-    .replace("\"", "\\\"")
-val escapedFeedbackLiveEndpointFromBuild = feedbackLiveEndpointFromBuild
-    .replace("\\", "\\\\")
-    .replace("\"", "\\\"")
 
 android {
     namespace = "edu.unicauca.app.agrochat"
@@ -37,10 +21,6 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
-        // Permite inyectar API key de Groq al compilar sin versionarla en el repo.
-        buildConfigField("String", "GROQ_API_KEY", "\"$escapedGroqApiKeyFromBuild\"")
-        // Endpoint donde se reciben eventos de feedback en vivo (webhook/dashboard).
-        buildConfigField("String", "FEEDBACK_LIVE_ENDPOINT", "\"$escapedFeedbackLiveEndpointFromBuild\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -112,8 +92,7 @@ android {
 
     packaging {
         resources {
-            // Excluir modelos MindSpore grandes de los assets del APK
-            // (la ruta en el APK es "assets/...")
+            // Mantener fuera del APK los artefactos grandes provisionados localmente.
             excludes += "assets/sentence_encoder.ms"
             excludes += "assets/plant_disease_model.ms"
         }

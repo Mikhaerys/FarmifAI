@@ -1,302 +1,112 @@
-# FarmifAI (AgroChat Mobile)
+# FarmifAI
 
-![Android](https://img.shields.io/badge/Android-API%2024%2B-3DDC84)
-![Offline First](https://img.shields.io/badge/Mode-Offline--First-2E7D32)
-![Local LLM](https://img.shields.io/badge/LLM-Qwen%202.5%200.5B%20GGUF-455A64)
-![Semantic Retrieval](https://img.shields.io/badge/Retrieval-Dense%20Bi--Encoder-1565C0)
-![Status](https://img.shields.io/badge/Status-Research%20Prototype-607D8B)
+FarmifAI es una aplicacion Android para asistencia agricola en campo. El proyecto integra consulta conversacional, recuperacion aumentada por conocimiento local, razonamiento con un modelo generativo GGUF y diagnostico visual de enfermedades vegetales con inferencia en dispositivo.
 
-> Offline-first Android assistant for agriculture that combines local voice, dense semantic retrieval with embeddings, and on-device LLM inference.
+La documentacion tecnica consolidada del proyecto se mantiene en un unico informe:
 
-![FarmifAI Hero](docs2/docs/assets/Logo.png)
+[docs/FarmifAI_Informe_Avances.docx](docs/FarmifAI_Informe_Avances.docx)
 
-Core technical docs: [docs2/docs/TECHNICAL_DOCUMENTATION.md](docs2/docs/TECHNICAL_DOCUMENTATION.md)
+## Estado Del Proyecto
 
-## Demo
+- Rama principal: `master`.
+- Modo de ejecucion: local en dispositivo, sin servicios remotos en el flujo de aplicacion.
+- Modelo generativo objetivo: Qwen 3.5 en formato GGUF cuantizado.
+- Runtime LLM: `llama.cpp` mediante JNI Android.
+- Recuperacion de conocimiento: KB local con embeddings de 384 dimensiones y fallback lexical local.
+- Vision: clasificador MindSpore Lite para enfermedades de plantas.
+- Feedback: registro local JSONL en el almacenamiento privado de la app.
 
-- APK (ready to install): [FarmifAI-release-signed-20260415_132722.apk](FarmifAI-release-signed-20260415_132722.apk)
-- Architecture visual: [docs2/docs/assets/fig_system_architecture.png](docs2/docs/assets/fig_system_architecture.png)
-- RAG pipeline visual: [docs2/docs/assets/fig_rag_pipeline.png](docs2/docs/assets/fig_rag_pipeline.png)
-- Product feature visual: [docs2/docs/assets/fig_vision_inference.png](docs2/docs/assets/fig_vision_inference.png)
-- Technical paper (EN): [docs2/docs/FarmifAI_Paper_EN.pdf](docs2/docs/FarmifAI_Paper_EN.pdf)
-- Technical paper (ES): [docs2/docs/FarmifAI_Paper_ES.pdf](docs2/docs/FarmifAI_Paper_ES.pdf)
-- Demo video: pending public upload
+## Capacidades Principales
 
-## Quick Evaluation Path
+- Chat agricola en espanol con contexto local.
+- RAG sobre una base de conocimiento empaquetada en `app/src/main/assets/kb_nueva/extract`.
+- Separacion de razonamiento y respuesta final para modelos que emiten trazas tipo `<think>`.
+- Enrutamiento de respuesta con politica explicita: `KB_DIRECT`, `LLM_WITH_KB`, `LLM_GENERAL` y `ABSTAIN`.
+- Diagnostico visual con 21 clases distribuidas en cafe, maiz, papa, pimiento y tomate.
+- Entrada por voz con Vosk cuando el modelo de voz esta provisionado localmente.
+- Sintesis de voz mediante el motor TTS del sistema.
 
-1. Install [FarmifAI-release-signed-20260415_132722.apk](FarmifAI-release-signed-20260415_132722.apk) on an Android device.
-2. Launch the app with internet enabled for first-time model download (one-time setup).
-3. After setup, disable internet (airplane mode or Wi-Fi/mobile data off).
-4. Ask three queries:
-	 - `que es una arvense`
-	 - `que son las buenas practicas agricolas`
-	 - `como reducir la roya en cafe`
-5. Verify that responses are generated with local assets and no cloud dependency in the core flow.
+## Evidencia Local Versionada
 
-Question bank for extended testing: [docs2/docs/BANCO_PREGUNTAS_TEST_KB.md](docs2/docs/BANCO_PREGUNTAS_TEST_KB.md)
+El informe de avances resume y contextualiza la evidencia real del repositorio. Como referencia rapida:
 
-## Problem
+| Componente | Evidencia |
+|---|---|
+| Base de conocimiento | 12 archivos JSONL, 293 registros agronomicos |
+| Embeddings | `kb_embeddings.npy`, matriz `(2842, 384)` en `float32` |
+| Mapeo RAG | `kb_embeddings_mapping.json` |
+| LLM local | `LlamaService.kt` usa `Qwen3.5-0.8B-Q4_K_M.gguf` como modelo preferido |
+| Razonamiento | `MainActivity.kt` separa contenido `<think>` y respuesta visible |
+| Vision | `plant_disease_labels.json` declara 21 clases y `plant_disease_model_old.ms` se carga desde assets |
+| Feedback | `FeedbackEventStore.kt` persiste eventos localmente en JSONL |
 
-Smallholder farmers often work in areas with weak or intermittent connectivity, where cloud-dependent assistants become unreliable exactly when guidance is needed in the field.
+## Arquitectura
 
-Agronomic questions are context-dependent (crop, disease, nutrition, management stage). A practical assistant must answer quickly, in Spanish, and remain useful even with no internet.
+FarmifAI se organiza en cuatro capas funcionales:
 
-## Solution
+1. Interfaz Android: Jetpack Compose para chat, voz, configuracion y diagnostico visual.
+2. Orquestacion: `MainActivity.kt` coordina estado, enrutamiento, streaming local, diagnostico y feedback.
+3. Inteligencia local: `SemanticSearchHelper.kt`, `LlamaService.kt`, `PlantDiseaseClassifier.kt` y puentes JNI.
+4. Datos locales: registros JSONL, embeddings, mapeos, etiquetas de vision y modelos provisionados.
 
-FarmifAI is an Android app that integrates voice I/O, plant disease vision, and a retrieval-augmented chat pipeline. The core QA path uses dense semantic retrieval over local embeddings, then routes to local LLM generation when needed.
+La rama `master` no declara permisos de red, no incluye clientes HTTP para LLM remoto y no sincroniza feedback hacia endpoints externos.
 
-The retrieval stack uses a bi-encoder style flow: user query and KB questions are encoded independently in the same embedding space, then ranked by cosine similarity.
+## Requisitos
 
-## Key Features
+- Android Studio reciente.
+- JDK 11.
+- Android SDK y NDK configurados.
+- Dispositivo o emulador Android API 24+.
+- Modelo GGUF local compatible con Qwen 3.5 para habilitar generacion en dispositivo.
 
-- Offline chat and voice assistant for agricultural Q&A in Spanish.
-- Dense semantic retrieval with 384-d embeddings and top-k context selection.
-- Bi-encoder style retrieval and explicit cosine similarity scoring.
-- Local LLM inference using llama.cpp-compatible GGUF models (default Qwen 2.5 0.5B Q4_K_M).
-- Camera-based plant disease support for common crops.
-- Optional online acceleration path (Groq) without removing offline capability.
+## Compilacion
 
-## System Architecture
-
-![System Architecture](docs2/docs/assets/fig_system_architecture.png)
-
-High-level layers:
-
-- UI layer: Compose chat, voice controls, camera diagnosis UI.
-- Domain orchestration: response routing policy (`KB_DIRECT`, `LLM_WITH_KB`, `LLM_GENERAL`).
-- Data layer: local KB records, embedding matrix, mapping metadata.
-- Inference layer: MindSpore Lite for embeddings/vision and llama.cpp for local generation.
-- Optional online layer: Groq service when internet and API key are available.
-
-Additional architecture notes: [docs2/docs/ESTRUCTURA_PROYECTO.md](docs2/docs/ESTRUCTURA_PROYECTO.md)
-
-## AI / Model Details
-
-### Base Model
-
-- Semantic encoder: `paraphrase-multilingual-MiniLM-L12-v2` exported for MindSpore runtime.
-- Local generation model (default): `Qwen2.5-0.5B-Instruct-Q4_K_M.gguf`.
-- Vision model: MobileNetV2-based plant disease classifier exported to MindSpore.
-- Speech: Vosk small Spanish model + Android TTS.
-
-### Quantization / Format
-
-- LLM format: GGUF (`Q4_K_M` default), ~379 MB download.
-- Semantic embeddings: `kb_embeddings.npy` float32 matrix, 384 dimensions per vector.
-- MindSpore assets: `.ms` model files loaded at runtime.
-
-### On-Device Runtime
-
-- MindSpore JNI bridge for sentence encoder and vision inference.
-- llama.cpp Android JNI for local text generation.
-- Retrieval defaults in helper: `topK=3`, `minScore=0.4`.
-
-### Knowledge Source
-
-- Primary KB records: `app/src/main/assets/kb_nueva/extract/*.jsonl`
-- Embedding matrix: `app/src/main/assets/kb_embeddings.npy`
-- Mapping metadata: `app/src/main/assets/kb_embeddings_mapping.json`
-
-### Retrieval Method (Dense + Bi-Encoder + Cosine)
-
-- Dense semantic retrieval with L2-normalized embeddings.
-- Bi-encoder style formulation:
-	- Encode query once: `q = Enc(query)`
-	- Encode KB entries offline: `d_i = Enc(question_i)`
-- Ranking by cosine similarity:
-
-$$
-\operatorname{score}(q, d_i) = \frac{q \cdot d_i}{\|q\|\,\|d_i\|}
-$$
-
-- Top-ranked contexts are merged for RAG prompting.
-
-### Intended Use
-
-- Agricultural guidance for field users in Spanish.
-- Fast first-pass assistance for crop management, pests, nutrition, and practices.
-- Educational and operational support in low-connectivity settings.
-
-### Out-of-Scope Use
-
-- Not a replacement for certified agronomist diagnosis in high-risk decisions.
-- Not a legal, medical, or regulatory authority.
-- Not intended for autonomous action without human review in critical cases.
-
-### Known Limitations
-
-- First launch requires internet to download models.
-- Local LLM latency can vary significantly by device and generation settings.
-- Retrieval quality depends on encoder/tokenizer/embedding alignment.
-- KB coverage is bounded by loaded records and curated content.
-
-### Evaluation Results
-
-Detailed reports are available in:
-
-- [docs2/docs/TECHNICAL_DOCUMENTATION.md](docs2/docs/TECHNICAL_DOCUMENTATION.md)
-- [docs2/docs/ANALISIS_LATENCIA_RESPUESTA_6MIN.md](docs2/docs/ANALISIS_LATENCIA_RESPUESTA_6MIN.md)
-
-## Offline-First Design
-
-What is offline after setup:
-
-- Voice recognition (Vosk) and TTS.
-- Semantic retrieval over local embeddings.
-- Local LLM generation path.
-- Plant disease local inference.
-
-What may require internet:
-
-- First-time download of required models.
-- Optional Groq path for online acceleration.
-- Optional feedback synchronization endpoint.
-
-## Evaluation And Benchmarks
-
-### Benchmarks On Device
-
-Reported technical metrics (project documentation and code constants):
-
-| Metric | Value | Source |
-|---|---|---|
-| Plant disease Top-1 accuracy | 92.3% | docs2/docs/TECHNICAL_DOCUMENTATION.md |
-| Plant disease Top-3 accuracy | 98.1% | docs2/docs/TECHNICAL_DOCUMENTATION.md |
-| Query encoding latency | 50-100 ms | docs2/docs/TECHNICAL_DOCUMENTATION.md |
-| Similarity search latency | 10-30 ms | docs2/docs/TECHNICAL_DOCUMENTATION.md |
-| LLM expected model size | ~379 MB | app/src/main/java/edu/unicauca/app/agrochat/llm/LlamaService.kt |
-| LLM loading time | 2-4 s | docs2/docs/TECHNICAL_DOCUMENTATION.md |
-| LLM memory usage | ~1.2 GB during inference | docs2/docs/TECHNICAL_DOCUMENTATION.md |
-| Retrieval Top-1 accuracy | 94.4% | docs2/docs/TECHNICAL_DOCUMENTATION.md |
-| Retrieval Top-3 accuracy | 98.1% | docs2/docs/TECHNICAL_DOCUMENTATION.md |
-
-Observed latency case analysis (log-based):
-
-| Stage | Observed Time | Notes | Source |
-|---|---|---|---|
-| Retrieval + routing | ~1.36 s | Not the main bottleneck | docs2/docs/ANALISIS_LATENCIA_RESPUESTA_6MIN.md |
-| LLM generation phase | ~348.14 s | Dominant latency in analyzed case | docs2/docs/ANALISIS_LATENCIA_RESPUESTA_6MIN.md |
-| Fallback delivery | <0.05 s | Fast once fallback is selected | docs2/docs/ANALISIS_LATENCIA_RESPUESTA_6MIN.md |
-
-Benchmark limitations:
-
-- Current public metrics combine controlled tests and targeted log-case analysis.
-- Hardware-normalized benchmark matrix (same prompt set across multiple devices) is pending publication.
-
-## Privacy, Security And Permissions
-
-Core privacy posture:
-
-- Main inference pipeline runs on-device after setup.
-- App requests only functional permissions used by enabled features.
-- No continuous internet requirement for the main offline workflow.
-
-Permissions in `AndroidManifest.xml`:
-
-- `android.permission.RECORD_AUDIO`: voice input.
-- `android.permission.CAMERA`: visual diagnosis.
-- `android.permission.INTERNET`: optional online services and model downloads.
-- `android.permission.ACCESS_NETWORK_STATE`: connectivity-aware routing.
-
-Feedback data notes:
-
-- Feedback events are persisted locally in JSONL under app files.
-- Remote sync is optional and triggered by feedback actions when configured.
-
-## Installation
-
-
-
-1. Install [FarmifAI-release-signed-20260415_132722.apk](FarmifAI-release-signed-20260415_132722.apk).
-2. Open the app once with internet to complete model setup.
-3. Switch to offline mode and run the quick prompts in the evaluation path.
-
-
-
-
-
-Requirements:
-
-- Android Studio (recent stable)
-- JDK 11+ (project targets Java/Kotlin 11)
-- Android SDK / NDK configured in local Android setup
-
-Optional environment/build variables:
-
-- `GROQ_API_KEY`
-- `FEEDBACK_LIVE_ENDPOINT`
-
-### For Reproducibility
-
-- Runtime models are intentionally decoupled from the APK/repository footprint.
-- MindSpore and Vosk required assets are downloaded on first setup by [app/src/main/java/edu/unicauca/app/agrochat/models/ModelDownloadService.kt](app/src/main/java/edu/unicauca/app/agrochat/models/ModelDownloadService.kt) from `https://media.githubusercontent.com/media/pazussa/models_FarmifAI/main`.
-- Default local GGUF model is downloaded by [app/src/main/java/edu/unicauca/app/agrochat/llm/LlamaService.kt](app/src/main/java/edu/unicauca/app/agrochat/llm/LlamaService.kt) from Hugging Face (`Qwen2.5-0.5B-Instruct-Q4_K_M.gguf`).
-- After one-time downloads complete, the core QA workflow can be validated offline.
-
-## Build From Source
-
-Build debug APK with Gradle:
+Compilar APK debug:
 
 ```bash
 ./gradlew :app:assembleDebug
 ```
 
-Or use helper script:
+Ejecutar pruebas unitarias:
+
+```bash
+./gradlew :app:testDebugUnitTest
+```
+
+Tambien se conserva el script auxiliar de construccion:
 
 ```bash
 ./scripts/build_apk.sh debug
 ```
 
-Install latest debug APK wirelessly (ADB):
+## Provisionamiento Local De Modelos
 
-```bash
-./scripts/install_latest_apk_wireless.sh <device_ip:port> [pair_ip:port] [pair_code]
-```
+El repositorio mantiene los datos y modelos livianos necesarios para documentar y validar la arquitectura. Los modelos pesados se tratan como artefactos locales.
 
-## Repository Structure
+- Copiar el GGUF preferido a la carpeta externa privada de la aplicacion. El nombre recomendado es `Qwen3.5-0.8B-Q4_K_M.gguf`.
+- Para el encoder semantico opcional, provisionar `sentence_encoder.ms` y `sentence_tokenizer.json` en `files/models`.
+- Si el encoder no esta disponible, la app conserva recuperacion local mediante fallback lexical.
+- Para voz STT con Vosk, provisionar el directorio `model-es-small` localmente o incluirlo como asset.
+
+## Estructura Del Repositorio
 
 ```text
 AgroChat_Project/
-	app/                 # Android app (Compose + JNI + assets)
-	docs2/docs/          # Technical docs, paper, architecture figures
-	nlp_dev/             # NLP/export scripts and data tooling
-	tools/               # Vision training/export utilities
-	scripts/             # Build/deploy/install helper scripts
-	pc_rag_clone/        # PC replica and llama.cpp vendor clone
-	README.md
+  app/           # Aplicacion Android, assets locales y codigo de inferencia
+  docs/          # Informe unico de avances del proyecto
+  nlp_dev/       # Herramientas de procesamiento y experimentacion NLP
+  tools/         # Entrenamiento/exportacion de vision
+  scripts/       # Scripts de build, instalacion y despliegue local
+  pc_rag_clone/  # Replica de experimentacion y vendor llama.cpp
+  README.md
 ```
 
-## Limitations
+## Alcance Y Limitaciones
 
-- No public demo video link is bundled yet in the repository.
-- Local generation latency can be high on low-end hardware or high token budgets.
-- Evaluation metrics are documented, but hardware-standardized benchmark suites are still limited.
-- Root-level licensing and citation metadata files are not yet formalized.
+FarmifAI esta orientado a asistencia tecnica preliminar y educativa. No sustituye el criterio de un agronomo certificado en decisiones de alto riesgo. La cobertura de respuestas depende de la KB local y de los modelos provisionados en el dispositivo. El informe de avances documenta las evidencias verificables y evita declarar metricas no respaldadas por archivos versionados.
 
-## Future Work
+## Referencia Tecnica
 
-- Publish official demo video and reproducible benchmark dashboard.
-- Improve low-latency presets per device profile.
-- Expand KB domain coverage with stronger grounding checks.
-- Add formal CI workflows for mobile regression and performance tests.
-- Add root-level `LICENSE`, `CITATION.cff`, `SECURITY.md`, and `CONTRIBUTING.md`.
+Para detalles de arquitectura, evidencia, decisiones de diseno y estado de avance, consultar exclusivamente:
 
-## License
-
-No root `LICENSE` file is currently present in this repository snapshot. Define project licensing before external redistribution.
-
-## Citation
-
-If you need to cite this work, use the project paper as current reference:
-
-- [docs2/docs/FarmifAI_Paper_EN.pdf](docs2/docs/FarmifAI_Paper_EN.pdf)
-- [docs2/docs/FarmifAI_Paper_ES.pdf](docs2/docs/FarmifAI_Paper_ES.pdf)
-
-A `CITATION.cff` file is recommended for future updates.
-
-## Acknowledgements
-
-- MindSpore Lite (on-device inference runtime)
-- llama.cpp (local LLM runtime)
-- Vosk (offline ASR)
-- Android Jetpack Compose ecosystem
+[docs/FarmifAI_Informe_Avances.docx](docs/FarmifAI_Informe_Avances.docx)

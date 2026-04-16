@@ -268,7 +268,7 @@ class LLamaAndroid private constructor() {
     }
     
     /**
-     * Descarga el modelo y libera recursos
+     * Libera de memoria el modelo y sus recursos
      */
     suspend fun unload() {
         withContext(runLoop) {

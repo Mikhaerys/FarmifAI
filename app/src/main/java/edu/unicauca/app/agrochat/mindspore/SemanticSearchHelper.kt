@@ -5,7 +5,7 @@ import android.util.Log
 import edu.unicauca.app.agrochat.AppLogger
 import edu.unicauca.app.agrochat.MindSporeHelper
 import edu.unicauca.app.agrochat.UniversalNativeTokenizer
-import edu.unicauca.app.agrochat.models.ModelDownloadService
+import edu.unicauca.app.agrochat.models.LocalModelRegistry
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedInputStream
@@ -273,8 +273,8 @@ class SemanticSearchHelper(private val context: Context) {
         try {
             AppLogger.log(TAG, "Cargando encoder MindSpore...")
             
-            // Verificar si existe el modelo en almacenamiento interno (descargado)
-            val modelService = ModelDownloadService.getInstance()
+            // Verificar si existe el modelo provisionado en almacenamiento interno.
+            val modelService = LocalModelRegistry.getInstance()
             val modelPath = modelService.getModelPath(context, MODEL_FILE)
             if (modelPath == null) {
                 AppLogger.log(TAG, "$MODEL_FILE not available in internal storage")
@@ -1245,29 +1245,59 @@ class SemanticSearchHelper(private val context: Context) {
             return ContextResult(emptyList(), "", null)
         }
         
-        val embeddings = kbEmbeddings ?: return ContextResult(emptyList(), "", null)
+        val embeddings = kbEmbeddings
         val questions = kbQuestions ?: return ContextResult(emptyList(), "", null)
         val entryIds = kbEntryIds ?: return ContextResult(emptyList(), "", null)
         val entries = kbEntries ?: return ContextResult(emptyList(), "", null)
         
         val startTime = System.currentTimeMillis()
         
-        // Recuperacion semantica pura: sin fallback lexical.
-        val shouldUseEncoder = useMindSporeEncoder && embeddingIndexAligned && !forceTextOnlyMode
-        if (!shouldUseEncoder) {
-            AppLogger.log(TAG, "findTopKContexts: semantic encoder unavailable, returning empty context")
-            return ContextResult(emptyList(), "", null)
-        }
         val normalizedQuery = normalizeQueryForSearch(userQuery)
+        val queryTokens = informativeTokensFromText(normalizedQuery)
+
+        val shouldUseEncoder = embeddings != null && useMindSporeEncoder && embeddingIndexAligned && !forceTextOnlyMode
+        if (!shouldUseEncoder) {
+            val ranked = rankLexicalCandidates(
+                questions = questions,
+                entryIds = entryIds,
+                entries = entries,
+                queryTokens = queryTokens,
+                minScore = minScore
+            )
+
+            if (ranked.isEmpty()) {
+                AppLogger.log(TAG, "findTopKContexts: sin resultados locales por fallback lexical")
+                return ContextResult(
+                    contexts = emptyList(),
+                    combinedContext = "",
+                    groundingAssessment = buildGroundingAssessment(userQuery, null, null)
+                )
+            }
+
+            AppLogger.log(
+                TAG,
+                "findTopKContexts: fallback lexical activo best=${String.format("%.2f", ranked.first().score)}"
+            )
+            return buildContextFromRankedCandidates(
+                ranked = ranked,
+                questions = questions,
+                entryIds = entryIds,
+                entries = entries,
+                topK = topK,
+                userQuery = userQuery,
+                queryEmbedding = null,
+                startTime = startTime,
+                modeLabel = "lexical"
+            )
+        }
         val queryEmbedding = computeEmbedding(normalizedQuery) ?: run {
             AppLogger.log(TAG, "findTopKContexts: no se pudo calcular embedding de query")
             return ContextResult(emptyList(), "", null)
         }
 
-        val queryTokens = informativeTokensFromText(normalizedQuery)
         val ranked = rankSemanticCandidates(
             queryEmbedding = queryEmbedding,
-            embeddings = embeddings,
+            embeddings = embeddings!!,
             minScore = minScore,
             queryTokens = queryTokens
         )
@@ -1287,7 +1317,30 @@ class SemanticSearchHelper(private val context: Context) {
             "Busqueda semantica: best=${String.format("%.2f", bestCandidate.score)} base=${String.format("%.2f", bestCandidate.baseScore)} expanded=${String.format("%.2f", bestCandidate.expandedScore)} entry=${String.format("%.2f", bestCandidate.entryScore)} q='${questions[bestCandidate.index]}'"
         )
 
-        // Evitar duplicados de la misma entrada (múltiples preguntas pueden mapear a la misma respuesta)
+        return buildContextFromRankedCandidates(
+            ranked = ranked,
+            questions = questions,
+            entryIds = entryIds,
+            entries = entries,
+            topK = topK,
+            userQuery = userQuery,
+            queryEmbedding = queryEmbedding,
+            startTime = startTime,
+            modeLabel = "semantic"
+        )
+    }
+
+    private fun buildContextFromRankedCandidates(
+        ranked: List<RankedSemanticCandidate>,
+        questions: List<String>,
+        entryIds: List<Int>,
+        entries: Map<Int, KnowledgeEntry>,
+        topK: Int,
+        userQuery: String,
+        queryEmbedding: FloatArray?,
+        startTime: Long,
+        modeLabel: String
+    ): ContextResult {
         val seenEntryIds = mutableSetOf<Int>()
         val uniqueResults = mutableListOf<MatchResult>()
 
@@ -1310,7 +1363,7 @@ class SemanticSearchHelper(private val context: Context) {
         }
 
         val elapsedTime = System.currentTimeMillis() - startTime
-        Log.d(TAG, "findTopKContexts: ${uniqueResults.size} contextos en ${elapsedTime}ms")
+        Log.d(TAG, "findTopKContexts: ${uniqueResults.size} contextos en ${elapsedTime}ms ($modeLabel)")
 
         // Construir contexto combinado para el LLM
         val combinedContext = buildCombinedContext(uniqueResults)
@@ -1331,6 +1384,55 @@ class SemanticSearchHelper(private val context: Context) {
         }
         
         return ContextResult(uniqueResults, combinedContext, groundingAssessment)
+    }
+
+    private fun rankLexicalCandidates(
+        questions: List<String>,
+        entryIds: List<Int>,
+        entries: Map<Int, KnowledgeEntry>,
+        queryTokens: Set<String>,
+        minScore: Float
+    ): List<RankedSemanticCandidate> {
+        if (queryTokens.isEmpty()) return emptyList()
+
+        val ranked = ArrayList<RankedSemanticCandidate>(questions.size)
+        for (idx in questions.indices) {
+            val entryId = entryIds.getOrNull(idx) ?: continue
+            val entry = entries[entryId] ?: continue
+
+            val questionTokens = informativeTokensFromText(questions[idx])
+            val answerTokens = informativeTokensFromText(entry.answer)
+            val entryTokens = questionTokens + answerTokens + entry.entityTokens
+
+            val questionOverlap = queryTokens.count { it in questionTokens }.toFloat() / queryTokens.size.toFloat()
+            val entryOverlap = queryTokens.count { it in entryTokens }.toFloat() / queryTokens.size.toFloat()
+            val entityOverlap = queryTokens.count { it in entry.entityTokens }
+            val entityScore = if (entityOverlap > 0) {
+                (0.58f + entityOverlap * 0.12f).coerceAtMost(0.95f)
+            } else {
+                0f
+            }
+
+            val score = maxOf(
+                questionOverlap * 0.85f + entryOverlap * 0.15f,
+                entryOverlap * 0.75f,
+                entityScore
+            ).coerceIn(0f, 1f)
+
+            if (score >= minScore) {
+                ranked.add(
+                    RankedSemanticCandidate(
+                        index = idx,
+                        score = score,
+                        baseScore = questionOverlap.coerceIn(0f, 1f),
+                        expandedScore = score,
+                        entryScore = entryOverlap.coerceIn(0f, 1f)
+                    )
+                )
+            }
+        }
+
+        return ranked.sortedByDescending { it.score }
     }
     
     /**

@@ -38,7 +38,6 @@ import androidx.compose.material.icons.filled.MicOff
 import androidx.compose.material.icons.filled.PhotoCamera
 import androidx.compose.material.icons.filled.RecordVoiceOver
 import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material.icons.filled.Cloud
 import androidx.compose.material.icons.filled.CloudOff
 import androidx.compose.material.icons.filled.PhotoLibrary
 import androidx.compose.material.icons.filled.KeyboardArrowDown
@@ -66,10 +65,8 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import edu.unicauca.app.agrochat.feedback.FeedbackEventStore
-import edu.unicauca.app.agrochat.llm.GroqService
 import edu.unicauca.app.agrochat.llm.LlamaService
 import edu.unicauca.app.agrochat.mindspore.SemanticSearchHelper
-import edu.unicauca.app.agrochat.models.ModelDownloadService
 import edu.unicauca.app.agrochat.routing.ResponseRoutingPolicy
 import edu.unicauca.app.agrochat.ui.theme.AgroChatTheme
 import edu.unicauca.app.agrochat.vision.CameraHelper
@@ -163,44 +160,11 @@ data class FeedbackMessageContext(
 
 enum class AppMode { VOICE, CHAT, CAMERA }
 
-// Estado de descarga para pantalla de bienvenida
-data class DownloadItem(
-    val name: String,
-    val description: String,
-    val sizeMB: Int,
-    val status: DownloadItemStatus = DownloadItemStatus.PENDING,
-    val progress: Int = 0
-)
-
-enum class DownloadItemStatus {
-    PENDING, DOWNLOADING, COMPLETED, FAILED
-}
-
-private const val ONLINE_ONLY_VISIT_MODE = false
-private const val ONLINE_FEATURES_ENABLED = false
-
-// Características de la app para mostrar durante la descarga
-object AppFeatures {
-    val features = listOf(
-        "🧠 IA local Qwen 3.5 con razonamiento",
-        "🌱 Asesoría agrícola personalizada",
-        "📸 Diagnóstico visual de enfermedades",
-        "🎯 Reconocimiento de voz en español",
-        "📱 Operación local sin dependencia cloud",
-        "🔍 Búsqueda semántica avanzada",
-        "📊 Base de conocimiento agrícola",
-        "🌿 Soporte para múltiples cultivos",
-        "🐛 Control de plagas y enfermedades",
-        "💧 Recomendaciones de riego"
-    )
-}
-
 class MainActivity : ComponentActivity() {
 
     companion object {
         private const val LANGUAGE_PREFS = "farmifai_prefs"
         private const val LANGUAGE_KEY = "language"
-        private const val VISIT_FIXED_GROQ_API_KEY = ""
         private val STRICT_TERMINAL_PARITY_MODE = false
         private const val PARITY_SIMILARITY_THRESHOLD = 0.45f
         private const val PARITY_KB_FAST_PATH_THRESHOLD = 0.70f
@@ -253,23 +217,16 @@ class MainActivity : ComponentActivity() {
     private var currentMode by mutableStateOf(AppMode.VOICE)
     private var semanticSearchHelper: SemanticSearchHelper? = null
     private var voiceHelper: VoiceHelper? = null
-    private var groqService: GroqService? = null
     private var llamaService: LlamaService? = null
     private var isLlamaLoaded by mutableStateOf(false)
     private var isListening by mutableStateOf(false)
     private var hasAudioPermission by mutableStateOf(false)
-    private var isOnlineMode by mutableStateOf(false)
     private var showSettingsDialog by mutableStateOf(false)
     private var isLlamaEnabled by mutableStateOf(false)
     private var llamaModelStatusText by mutableStateOf("LLM local no inicializado")
     private var llamaModelPathText by mutableStateOf("")
-    private var isLlamaDownloading by mutableStateOf(false)  // Evitar descargas duplicadas
-    private var llamaDownloadFailed by mutableStateOf(false)  // Para mostrar botón de reintentar
-    // Pantalla de bienvenida/setup
-    private var isFirstLaunch by mutableStateOf(false)
-    private var showWelcomeScreen by mutableStateOf(false)
-    private var downloadItems = mutableStateListOf<DownloadItem>()
-    private var currentTipIndex by mutableStateOf(0)
+    private var isLlamaChecking by mutableStateOf(false)
+    private var llamaModelMissing by mutableStateOf(false)
     
     // Para el botón "Continuar"
     private var lastUserQuery by mutableStateOf("")
@@ -304,7 +261,6 @@ class MainActivity : ComponentActivity() {
     
     // SharedPreferences keys
     private val PREFS_NAME = "agrochat_prefs"
-    private val KEY_GROQ_API = "groq_api_key"
     private val KEY_LLAMA_ENABLED = "llama_enabled"
 
     private val requestPermissionLauncher = registerForActivityResult(
@@ -369,53 +325,25 @@ class MainActivity : ComponentActivity() {
 
         feedbackStore = FeedbackEventStore(applicationContext)
         AppLogger.log("Feedback", "Storage path: ${feedbackStore.storagePath()}")
-        AppLogger.log("Feedback", "Sync manifest: ${feedbackStore.syncManifestPath()}")
-        AppLogger.log("Feedback", "Pending live queue: ${feedbackStore.pendingLivePath()}")
-        AppLogger.log("Feedback", "Live endpoint: ${BuildConfig.FEEDBACK_LIVE_ENDPOINT}")
+        AppLogger.log("Feedback", "Local manifest: ${feedbackStore.syncManifestPath()}")
 
         // Cargar preferencias
         loadPreferences()
         
-        // Verificar si es primera instalación (no hay modelos descargados)
-        checkFirstLaunch()
-        
-        // Modo offline-only en master
-        if (ONLINE_FEATURES_ENABLED) {
-            initializeGroq()
-        } else {
-            groqService = null
-            isOnlineMode = false
-        }
+        logLocalResourceStatus()
 
-        // Si es primera instalación, mostrar pantalla de bienvenida
-        // Si no, iniciar normalmente
-        if (showWelcomeScreen) {
-            lifecycleScope.launch {
-                startSequentialDownloads()
-            }
-        } else {
-            // Descargar (si es necesario) modelos MindSpore y luego inicializar
-            lifecycleScope.launch {
-                initializeLlama()
-                ensureMindSporeModelsAvailable()
-                initializeDiagnostic()
-                initializeSemanticSearch()
-                if (hasAudioPermission) {
-                    initializeVoice()
-                }
+        lifecycleScope.launch {
+            initializeLlama()
+            initializeDiagnostic()
+            initializeSemanticSearch()
+            if (hasAudioPermission) {
+                initializeVoice()
             }
         }
 
         setContent {
             AgroChatTheme {
-                // Mostrar pantalla de bienvenida o app principal
-                if (showWelcomeScreen) {
-                    WelcomeDownloadScreen(
-                        downloadItems = downloadItems,
-                        currentTipIndex = currentTipIndex
-                    )
-                } else {
-                    AgroChatApp(
+                AgroChatApp(
                         currentMode = currentMode,
                         messages = chatMessages,
                         lastResponse = lastResponse,
@@ -423,13 +351,12 @@ class MainActivity : ComponentActivity() {
                         isModelReady = isModelReady,
                         isProcessing = isProcessing,
                         isListening = isListening,
-                        isOnlineMode = isOnlineMode,
                         isLlamaEnabled = isLlamaEnabled,
                         isLlamaLoaded = isLlamaLoaded,
                         llamaModelStatusText = llamaModelStatusText,
                         llamaModelPathText = llamaModelPathText,
-                        isLlamaDownloading = isLlamaDownloading,
-                        llamaDownloadFailed = llamaDownloadFailed,
+                        isLlamaChecking = isLlamaChecking,
+                        llamaModelMissing = llamaModelMissing,
                         showSettingsDialog = showSettingsDialog,
                         isDiagnosticReady = isDiagnosticReady,
                         isDiagnosing = isDiagnosing,
@@ -444,9 +371,8 @@ class MainActivity : ComponentActivity() {
                         onApplyTodayFeedback = { messageId, wouldApply -> onApplyTodayFeedback(messageId, wouldApply) },
                         onSettingsClick = { showSettingsDialog = true },
                         onDismissSettings = { showSettingsDialog = false },
-                        onSaveApiKey = { key -> saveGroqApiKey(key) },
                         onToggleLlama = { enabled -> toggleLlama(enabled) },
-                        onRetryLlamaDownload = { downloadAndLoadLlama() },
+                        onCheckLlamaModel = { checkAndLoadLlamaModel() },
                         onCaptureImage = { bitmap -> processCapture(bitmap) },
                         onClearCapture = { clearCapture() },
                         onDiagnosisToChat = { result -> diagnosisToChat(result) },
@@ -479,235 +405,13 @@ class MainActivity : ComponentActivity() {
                             saveAdvancedPreferences()
                             Toast.makeText(this, "Configuración guardada", Toast.LENGTH_SHORT).show()
                         }
-                    )
-                }
-            }
-        }
-    }
-    
-    /**
-     * Verifica si es la primera instalación (sin modelos descargados)
-     */
-    private fun checkFirstLaunch() {
-        val service = ModelDownloadService.getInstance()
-        val localLlmService = LlamaService.getInstance()
-        
-        // Es primera instalación si faltan modelos MindSpore
-        val needsMindSpore = !service.areAllModelsAvailable(applicationContext)
-        val needsLocalLlm = !localLlmService.isModelAvailable(applicationContext)
-        
-        isFirstLaunch = needsMindSpore || needsLocalLlm
-        showWelcomeScreen = isFirstLaunch
-        
-        if (isFirstLaunch) {
-            AppLogger.log("MainActivity", "Primera instalación detectada - mostrando pantalla de bienvenida")
-            // Preparar lista de descargas
-            prepareDownloadItems()
-        }
-    }
-    
-    /**
-     * Prepara la lista de items a descargar para la pantalla de bienvenida
-     */
-    private fun prepareDownloadItems() {
-        downloadItems.clear()
-        
-        val service = ModelDownloadService.getInstance()
-        val localLlmService = LlamaService.getInstance()
-        
-        // Modelos MindSpore agrupados
-        if (!service.areAllModelsAvailable(applicationContext)) {
-            val totalMB = service.getTotalDownloadSizeMB(applicationContext)
-            downloadItems.add(DownloadItem(
-                name = "🧠 Motor de IA",
-                description = "Modelo de búsqueda semántica y diagnóstico",
-                sizeMB = totalMB
-            ))
-        }
-
-        if (!localLlmService.isModelAvailable(applicationContext)) {
-            downloadItems.add(
-                DownloadItem(
-                    name = "🦙 LLM Offline (Qwen)",
-                    description = "Modelo generativo local para respuestas sin internet",
-                    sizeMB = localLlmService.getExpectedDownloadSizeMB()
                 )
-            )
-        }
-        
-        // Modelo Vosk (speech recognition) - incluido en MindSpore downloads
-        // Ya está incluido arriba
-    }
-    
-    /**
-     * Inicia las descargas de forma secuencial con actualizaciones visuales
-     */
-    private suspend fun startSequentialDownloads() {
-        AppLogger.log("MainActivity", "Iniciando descargas secuenciales...")
-        
-        // Iniciar rotación de características
-        lifecycleScope.launch {
-            while (showWelcomeScreen) {
-                kotlinx.coroutines.delay(4000)  // Cambiar cada 4 segundos
-                currentTipIndex = (currentTipIndex + 1) % AppFeatures.features.size
-            }
-        }
-        
-        var allSuccess = true
-        
-        // Descargar cada item secuencialmente
-        for (index in downloadItems.indices) {
-            val item = downloadItems[index]
-            
-            // Actualizar estado a "descargando"
-            downloadItems[index] = item.copy(status = DownloadItemStatus.DOWNLOADING, progress = 0)
-            
-            val success = when {
-                item.name.contains("Motor de IA") -> downloadMindSporeModels(index)
-                item.name.contains("LLM Offline") -> downloadLlamaModel(index)
-                else -> true
-            }
-            
-            if (success) {
-                downloadItems[index] = downloadItems[index].copy(
-                    status = DownloadItemStatus.COMPLETED,
-                    progress = 100
-                )
-            } else {
-                downloadItems[index] = downloadItems[index].copy(
-                    status = DownloadItemStatus.FAILED
-                )
-                allSuccess = false
-            }
-        }
-        
-        // Esperar un momento para mostrar el estado final
-        kotlinx.coroutines.delay(1500)
-        
-        if (allSuccess) {
-            // Marcar setup completado y continuar a la app
-            showWelcomeScreen = false
-            
-            // Ahora inicializar todo
-            initializeLlama()
-            initializeDiagnostic()
-            initializeSemanticSearch()
-            if (hasAudioPermission) {
-                initializeVoice()
-            }
-        } else {
-            // Mostrar error y permitir reintentar
-            withContext(Dispatchers.Main) {
-                Toast.makeText(applicationContext, "Error en algunas descargas. Verifica tu conexión.", Toast.LENGTH_LONG).show()
             }
         }
     }
     
-    /**
-     * Descarga modelos MindSpore con actualización de progreso
-     */
-    private suspend fun downloadMindSporeModels(itemIndex: Int): Boolean {
-        val service = ModelDownloadService.getInstance()
-        
-        if (service.areAllModelsAvailable(applicationContext)) {
-            return true
-        }
-        
-        service.onProgress = { progress ->
-            runOnUiThread {
-                if (itemIndex < downloadItems.size) {
-                    downloadItems[itemIndex] = downloadItems[itemIndex].copy(
-                        progress = progress.progress
-                    )
-                }
-            }
-        }
-        
-        return service.downloadAllMissingModels(applicationContext)
-    }
-    
-    /**
-     * Descarga modelo LLM con actualización de progreso
-     */
-    private suspend fun downloadLlamaModel(itemIndex: Int): Boolean {
-        val llamaService = LlamaService.getInstance()
-        
-        // Verificar si ya existe ANTES de descargar
-        if (llamaService.isModelAvailable(applicationContext)) {
-            AppLogger.log("MainActivity", "Modelo LLM ya existe, saltando descarga")
-            return true
-        }
-        
-        llamaService.onDownloadProgress = { progress, _, _ ->
-            runOnUiThread {
-                if (itemIndex < downloadItems.size) {
-                    downloadItems[itemIndex] = downloadItems[itemIndex].copy(
-                        progress = progress
-                    )
-                }
-            }
-        }
-        
-        val result = llamaService.downloadModel(applicationContext)
-        
-        // Verificar DESPUÉS de descargar si el modelo existe
-        // (por si result.isSuccess falla pero el archivo sí se descargó)
-        if (result.isSuccess) {
-            AppLogger.log("MainActivity", "Descarga LLM exitosa")
-            return true
-        } else {
-            // Doble verificación: puede que el archivo se haya descargado correctamente
-            val exists = llamaService.isModelAvailable(applicationContext)
-            if (exists) {
-                AppLogger.log("MainActivity", "Modelo LLM existe después de descarga (verificación secundaria)")
-                return true
-            }
-            AppLogger.log("MainActivity", "Error descargando LLM: ${result.exceptionOrNull()?.message}")
-            return false
-        }
-    }
-
-    /**
-     * Asegura que los modelos MindSpore requeridos estén disponibles en almacenamiento interno.
-     * Si faltan, los descarga usando ModelDownloadService antes de inicializar SemanticSearch
-     * y el clasificador de enfermedades.
-     */
-    private suspend fun ensureMindSporeModelsAvailable() {
-        val service = ModelDownloadService.getInstance()
-
-        if (service.areAllModelsAvailable(applicationContext)) {
-            AppLogger.log("MainActivity", "Modelos MindSpore ya disponibles")
-            return
-        }
-
-        val totalMB = service.getTotalDownloadSizeMB(applicationContext)
-        AppLogger.log("MainActivity", "Descargando modelos MindSpore (~${totalMB}MB)...")
-
-        withContext(Dispatchers.Main) {
-            uiStatus = "Descargando modelos IA (~${totalMB}MB)..."
-        }
-
-        // Solo actualizar UI con progreso, no saturar logs
-        service.onProgress = { progress ->
-            // Solo loguear al inicio, completar, o error - no cada actualización
-            if (progress.progress == 0 || progress.progress == 100 || progress.status == ModelDownloadService.DownloadStatus.FAILED) {
-                AppLogger.log("MainActivity", "Descarga ${progress.modelName}: ${progress.status}")
-            }
-            // Actualizar UI
-            runOnUiThread {
-                uiStatus = "Descargando: ${progress.modelName} (${progress.progress}%)"
-            }
-        }
-
-        val success = service.downloadAllMissingModels(applicationContext)
-
-        withContext(Dispatchers.Main) {
-            uiStatus = if (success) {
-                "Modelos IA listos"
-            } else {
-                "Error descargando modelos IA"
-            }
-        }
+    private fun logLocalResourceStatus() {
+        AppLogger.log("MainActivity", "Modo local activo: sin servicios remotos ni provisionamiento automatico")
     }
     
     private fun initializeDiagnostic() {
@@ -911,15 +615,7 @@ class MainActivity : ComponentActivity() {
     
     private fun loadPreferences() {
         val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-        isLlamaEnabled = if (ONLINE_ONLY_VISIT_MODE) {
-            // Forzar modo visita (solo online) aunque existan preferencias previas.
-            if (prefs.getBoolean(KEY_LLAMA_ENABLED, true)) {
-                prefs.edit().putBoolean(KEY_LLAMA_ENABLED, false).apply()
-            }
-            false
-        } else {
-            prefs.getBoolean(KEY_LLAMA_ENABLED, true)
-        }
+        isLlamaEnabled = prefs.getBoolean(KEY_LLAMA_ENABLED, true)
         
         // Configuración avanzada (valores por defecto al máximo de la UI)
         advancedMaxTokens = prefs.getInt("advanced_max_tokens", ADAPTIVE_DEFAULT_MAX_TOKENS)
@@ -953,11 +649,6 @@ class MainActivity : ComponentActivity() {
     }
     
     private fun toggleLlama(enabled: Boolean) {
-        if (ONLINE_ONLY_VISIT_MODE) {
-            isLlamaEnabled = false
-            Toast.makeText(this, "Modo visita: LLM local deshabilitado", Toast.LENGTH_SHORT).show()
-            return
-        }
         isLlamaEnabled = enabled
         val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         prefs.edit().putBoolean(KEY_LLAMA_ENABLED, enabled).apply()
@@ -966,51 +657,7 @@ class MainActivity : ComponentActivity() {
         Toast.makeText(this, status, Toast.LENGTH_SHORT).show()
     }
     
-    private fun initializeGroq() {
-        if (!ONLINE_FEATURES_ENABLED) {
-            groqService = null
-            isOnlineMode = false
-            AppLogger.log("MainActivity", "Modo offline-only: Groq deshabilitado")
-            return
-        }
-
-        groqService = GroqService(applicationContext)
-        val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-
-        if (ONLINE_ONLY_VISIT_MODE) {
-            groqService?.setApiKey(VISIT_FIXED_GROQ_API_KEY)
-            prefs.edit().putString(KEY_GROQ_API, VISIT_FIXED_GROQ_API_KEY).apply()
-            updateOnlineStatus()
-            AppLogger.log("MainActivity", "Modo visita: API key de Groq forzada y modelo online activo")
-            return
-        }
-
-        // Cargar API key guardada; si no existe, usar la inyectada en build.
-        val savedKey = prefs.getString(KEY_GROQ_API, null)
-        val buildInjectedKey = BuildConfig.GROQ_API_KEY.trim()
-
-        if (!savedKey.isNullOrBlank()) {
-            groqService?.setApiKey(savedKey)
-            updateOnlineStatus()
-            return
-        }
-
-        if (buildInjectedKey.isNotBlank()) {
-            groqService?.setApiKey(buildInjectedKey)
-            prefs.edit().putString(KEY_GROQ_API, buildInjectedKey).apply()
-            updateOnlineStatus()
-            AppLogger.log("MainActivity", "API key de Groq cargada desde configuración de build")
-        }
-    }
-    
     private fun initializeLlama() {
-        if (ONLINE_ONLY_VISIT_MODE) {
-            isLlamaEnabled = false
-            isLlamaLoaded = false
-            llamaModelStatusText = "Desactivado en modo visita online"
-            llamaModelPathText = ""
-            return
-        }
         llamaService = LlamaService.getInstance()
 
         // Mostrar en UI dónde debe estar el modelo y si hay alguno detectado
@@ -1030,70 +677,47 @@ class MainActivity : ComponentActivity() {
             // Modelo existe, cargarlo
             loadLlamaModel()
         } else {
-            // Modelo no existe, descargar automáticamente
-            Log.i("MainActivity", "Modelo local no disponible - iniciando descarga automática...")
-            downloadAndLoadLlama()
+            Log.i("MainActivity", "Modelo local no disponible; provisionamiento automatico deshabilitado")
+            isLlamaLoaded = false
+            llamaModelMissing = true
+            llamaModelStatusText = "Modelo local no encontrado"
         }
     }
     
-    private fun downloadAndLoadLlama() {
-        if (ONLINE_ONLY_VISIT_MODE) {
-            isLlamaEnabled = false
-            isLlamaLoaded = false
-            llamaModelStatusText = "Desactivado en modo visita online"
-            return
-        }
-        // Evitar descargas duplicadas
-        if (isLlamaDownloading) {
-            Log.i("MainActivity", "Descarga ya en progreso, ignorando...")
+    private fun checkAndLoadLlamaModel() {
+        if (isLlamaChecking) {
+            Log.i("MainActivity", "Verificacion de modelo ya en progreso")
             return
         }
         
         lifecycleScope.launch {
             try {
-                isLlamaDownloading = true
-                llamaDownloadFailed = false
-                llamaModelStatusText = "Descargando modelo..."
-                uiStatus = "Descargando LLM (0%)..."
-                
-                llamaService?.onDownloadProgress = { progress, downloadedMB, totalMB ->
-                    runOnUiThread {
-                        llamaModelStatusText = "Descargando: $downloadedMB/$totalMB MB"
-                        uiStatus = "Descargando LLM ($progress%)..."
-                    }
-                }
-                
-                val result = llamaService?.downloadModel(applicationContext)
-                result?.onSuccess { file ->
-                    Log.i("MainActivity", "Model downloaded: ${file.absolutePath}")
-                    llamaModelStatusText = "Descargado: ${file.name}"
-                    isLlamaDownloading = false
+                isLlamaChecking = true
+                llamaModelMissing = false
+                llamaModelStatusText = "Verificando modelo local..."
+                uiStatus = "Verificando LLM local..."
+
+                if (llamaService?.isModelAvailable(applicationContext) == true) {
+                    isLlamaChecking = false
                     loadLlamaModel()
-                }?.onFailure { e ->
-                    Log.e("MainActivity", "Download error: ${e.message}")
-                    llamaModelStatusText = "Error descarga - Toca para reintentar"
-                    llamaDownloadFailed = true
-                    isLlamaDownloading = false
+                } else {
+                    llamaModelStatusText = "Modelo local no encontrado"
+                    llamaModelMissing = true
+                    isLlamaChecking = false
                     uiStatus = "Sin LLM local"
-                    Toast.makeText(applicationContext, "No se pudo descargar LLM", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "Copia un modelo GGUF en la carpeta de la app", Toast.LENGTH_LONG).show()
                 }
             } catch (e: Exception) {
-                Log.e("MainActivity", "Error en descarga", e)
-                llamaModelStatusText = "Error - Toca para reintentar"
-                llamaDownloadFailed = true
-                isLlamaDownloading = false
+                Log.e("MainActivity", "Error verificando Llama", e)
+                llamaModelStatusText = "Error verificando modelo"
+                llamaModelMissing = true
+                isLlamaChecking = false
                 uiStatus = "Sin LLM local"
             }
         }
     }
     
     private fun loadLlamaModel() {
-        if (ONLINE_ONLY_VISIT_MODE) {
-            isLlamaEnabled = false
-            isLlamaLoaded = false
-            llamaModelStatusText = "Desactivado en modo visita online"
-            return
-        }
         lifecycleScope.launch {
             try {
                 uiStatus = "Cargando LLM local..."
@@ -1104,13 +728,10 @@ class MainActivity : ComponentActivity() {
                     isLlamaLoaded = true
                     llamaModelStatusText = "Cargado: ${llamaService?.getModelFilename(applicationContext)} (${llamaService?.getModelSizeMB(applicationContext)}MB)"
                     Log.i("MainActivity", "Local model loaded")
-                    
-                    updateOnlineStatus()
-                    if (!isOnlineMode && isLlamaEnabled) {
-                        withContext(Dispatchers.Main) {
-                            uiStatus = "LLM local listo"
-                            Toast.makeText(applicationContext, "LLM Local listo", Toast.LENGTH_SHORT).show()
-                        }
+
+                    withContext(Dispatchers.Main) {
+                        uiStatus = "LLM local listo"
+                        Toast.makeText(applicationContext, "LLM Local listo", Toast.LENGTH_SHORT).show()
                     }
                 }?.onFailure { e ->
                     Log.w("MainActivity", "Error cargando Llama: ${e.message}")
@@ -1123,48 +744,6 @@ class MainActivity : ComponentActivity() {
                 llamaModelStatusText = "Error"
             }
         }
-    }
-    
-    private fun saveGroqApiKey(key: String) {
-        if (!ONLINE_FEATURES_ENABLED) {
-            Toast.makeText(this, "Modo offline-only: servicio online deshabilitado", Toast.LENGTH_SHORT).show()
-            showSettingsDialog = false
-            return
-        }
-
-        val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-        prefs.edit().putString(KEY_GROQ_API, key).apply()
-        groqService?.setApiKey(key)
-        updateOnlineStatus()
-        showSettingsDialog = false
-        
-        if (key.isNotBlank()) {
-            Toast.makeText(this, "API Key guardada ✓", Toast.LENGTH_SHORT).show()
-        }
-    }
-    
-    private fun updateOnlineStatus() {
-        if (!ONLINE_FEATURES_ENABLED) {
-            isOnlineMode = false
-            return
-        }
-
-        if (STRICT_TERMINAL_PARITY_MODE) {
-            isOnlineMode = false
-            Log.d("MainActivity", "updateOnlineStatus: STRICT_TERMINAL_PARITY_MODE=true, forcing local mode")
-            return
-        }
-
-        // Verificar conectividad de red
-        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as android.net.ConnectivityManager
-        val activeNetwork = connectivityManager.activeNetwork
-        val capabilities = connectivityManager.getNetworkCapabilities(activeNetwork)
-        val hasInternet = capabilities?.hasCapability(android.net.NetworkCapabilities.NET_CAPABILITY_INTERNET) == true
-        
-        // Solo está en modo online si hay internet Y Groq está configurado
-        isOnlineMode = hasInternet && groqService?.isAvailable() == true
-        
-        Log.d("MainActivity", "updateOnlineStatus: hasInternet=$hasInternet, groqAvailable=${groqService?.isAvailable()}, isOnlineMode=$isOnlineMode")
     }
 
     private suspend fun initializeSemanticSearch() {
@@ -1767,9 +1346,6 @@ class MainActivity : ComponentActivity() {
             var streamingAnswerMessageId: String? = null
             var thinkingBubbleHasModelContent = false
             
-            // Actualizar estado de conexión ANTES de procesar
-            updateOnlineStatus()
-            
             // Mostrar estado según modo disponible
             uiStatus = "Generando respuesta local..."
             
@@ -1874,7 +1450,7 @@ class MainActivity : ComponentActivity() {
                 val improvedResponse = improveResponseIfNeeded(userFacingResponse, qualityReport, userMessage)
                 
                 // Determinar si puede continuar basándose en autoconsciencia
-                val canContinue = !ONLINE_ONLY_VISIT_MODE && responseMeta.usedLlm && isLlamaEnabled && isLlamaLoaded && responseMeta.kbSupported &&
+                val canContinue = responseMeta.usedLlm && isLlamaEnabled && isLlamaLoaded && responseMeta.kbSupported &&
                                   (!qualityReport.isComplete || qualityReport.qualityScore < 0.7f)
 
                 val responseWithFollowUp = improvedResponse
@@ -2103,7 +1679,6 @@ class MainActivity : ComponentActivity() {
      * Continúa la última respuesta del LLM pidiendo más detalles
      */
     private fun continueLastResponse() {
-        if (ONLINE_ONLY_VISIT_MODE) return
         if (!isLlamaEnabled || !isLlamaLoaded || isProcessing) return
         if (lastUserQuery.isBlank()) return
         
@@ -2187,7 +1762,7 @@ class MainActivity : ComponentActivity() {
         forcedContext: String? = null,
         onLocalLlmChunk: (suspend (String) -> Unit)? = null
     ): ResponseMeta = withContext(Dispatchers.IO) {
-        Log.d("MainActivity", "findResponse: isOnlineMode=$isOnlineMode, isLlamaEnabled=$isLlamaEnabled, isLlamaLoaded=$isLlamaLoaded")
+        Log.d("MainActivity", "findResponse: localOnly=true, isLlamaEnabled=$isLlamaEnabled, isLlamaLoaded=$isLlamaLoaded")
         val rawSimilarityThreshold = if (STRICT_TERMINAL_PARITY_MODE) PARITY_SIMILARITY_THRESHOLD else advancedSimilarityThreshold
         val rawContextRelevanceThreshold = if (STRICT_TERMINAL_PARITY_MODE) PARITY_CONTEXT_RELEVANCE_THRESHOLD else advancedContextRelevanceThreshold
         val rawKbFastPathThreshold = if (STRICT_TERMINAL_PARITY_MODE) PARITY_KB_FAST_PATH_THRESHOLD else advancedKbFastPathThreshold
@@ -2202,7 +1777,7 @@ class MainActivity : ComponentActivity() {
         val effectiveUseLlmForAll = if (STRICT_TERMINAL_PARITY_MODE) false else advancedUseLlmForAll
         val effectiveDetectGreetings = if (STRICT_TERMINAL_PARITY_MODE) true else advancedDetectGreetings
         val retrievalMinScore = KB_RETRIEVAL_MIN_SCORE
-        val llmAvailable = (!ONLINE_ONLY_VISIT_MODE && isLlamaEnabled && isLlamaLoaded && llamaService != null)
+        val llmAvailable = isLlamaEnabled && isLlamaLoaded && llamaService != null
 
         if (rawSimilarityThreshold != effectiveSimilarityThreshold ||
             rawContextRelevanceThreshold != effectiveContextRelevanceThreshold ||
@@ -2375,67 +1950,7 @@ class MainActivity : ComponentActivity() {
             uiStatus = "Generando respuesta..."
         }
 
-        if (ONLINE_FEATURES_ENABLED && !STRICT_TERMINAL_PARITY_MODE && isOnlineMode && groqService?.isAvailable() == true) {
-            Log.d("MainActivity", "→ Usando Groq LLM (online, grounded)")
-
-            val historyWindow = if (effectiveChatHistoryEnabled) effectiveChatHistorySize.coerceIn(0, 20) else 0
-
-            val groqUserPrompt = if (isSimpleGreeting) {
-                userQuery
-            } else if (hasKbContext && !kbContextForPrompt.isNullOrBlank()) {
-                "DATOS DISPONIBLES:\n$kbContextForPrompt\n\nCONSULTA DEL AGRICULTOR:\n$userQuery"
-            } else {
-                userQuery
-            }
-
-            val groqSystemPrompt = when {
-                isSimpleGreeting -> "Eres FarmifAI. Responde SOLO con un saludo corto de maximo 10 palabras. Ejemplo: Hola! En que te puedo ayudar? NO agregues explicaciones, ofertas de ayuda detalladas ni listas."
-                hasKbContext -> "$effectiveSystemPrompt\nHabla como un asesor agricola conversando en campo. Usa los DATOS DISPONIBLES como tu unica fuente: cita las cifras y condiciones exactas que aparezcan ahi, pero explicandolas con tus propias palabras de forma natural. No copies los datos tal cual, reformulalos. No inventes informacion que no este en los datos."
-                else -> "$effectiveSystemPrompt\nNo tienes datos especificos para esta consulta. Responde brevemente que no cuentas con informacion sobre ese tema y sugiere reformular la pregunta."
-            }
-            val result = groqService!!.query(
-                userMessage = groqUserPrompt,
-                conversationHistory = conversationHistory,
-                config = GroqService.QueryConfig(
-                    systemPrompt = groqSystemPrompt,
-                    maxTokens = effectiveMaxTokens,
-                    historyWindow = historyWindow
-                )
-            )
-            result.fold(
-                onSuccess = { response ->
-                        val cleanResponse = response.trim()
-                        if (cleanResponse.length > 10) {
-                            val completedResponse = completeGroqResponseIfNeeded(
-                                initialResponse = cleanResponse,
-                                userQuery = userQuery,
-                                kbContextForPrompt = kbContextForPrompt,
-                                systemPrompt = groqSystemPrompt,
-                                maxTokens = effectiveMaxTokens
-                            )
-
-                            val anchored = !hasKbContext || kbContextForPrompt.isNullOrBlank() || isResponseAnchoredToContext(completedResponse, userQuery, kbContextForPrompt)
-                            AppLogger.log("MainActivity", "Groq response: ${completedResponse.length} chars anchored=$anchored")
-                            return@withContext ResponseMeta(
-                                response = completedResponse,
-                                usedLlm = true,
-                                kbSupported = hasKbContext,
-                                kbSupportScore = kbSupportScore,
-                                kbCoverage = kbCoverage,
-                                kbUnknownRatio = kbUnknownRatio,
-                                enforcedKbAbstention = false
-                            )
-                        } else {
-                            AppLogger.log("MainActivity", "Groq response too short (${cleanResponse.length}), abstain")
-                        }
-                },
-                onFailure = { error ->
-                    AppLogger.log("MainActivity", "✗ Groq falló: ${error.message}")
-                }
-            )
-        }
-
-        if (!ONLINE_ONLY_VISIT_MODE && isLlamaEnabled && isLlamaLoaded && llamaService != null) {
+        if (isLlamaEnabled && isLlamaLoaded && llamaService != null) {
             val finalSystemPrompt = if (isSimpleGreeting) {
                 "Eres FarmifAI. Responde SOLO con un saludo corto de maximo 10 palabras. Ejemplo: Hola! En que te puedo ayudar? NO agregues explicaciones, ofertas de ayuda detalladas ni listas."
             } else if (hasKbContext) {
@@ -2544,20 +2059,6 @@ class MainActivity : ComponentActivity() {
             kbUnknownRatio = kbUnknownRatio,
             enforcedKbAbstention = !kbSignal && !allowGeneralLlmMode
         )
-    }
-
-    private suspend fun completeGroqResponseIfNeeded(
-        initialResponse: String,
-        userQuery: String,
-        kbContextForPrompt: String?,
-        systemPrompt: String,
-        maxTokens: Int
-    ): String {
-        val combined = initialResponse.trim()
-        if (combined.isBlank()) return combined
-        // Ya no intentamos completar automáticamente — el LLM debe generar
-        // respuestas completas en un solo paso con el token budget asignado.
-        return combined
     }
 
     private fun buildKbDirectResponseFromRag(
@@ -2719,10 +2220,8 @@ class MainActivity : ComponentActivity() {
         semanticSearchHelper?.release()
         plantDiseaseClassifier?.release()
         cameraHelper?.release()
-        if (!ONLINE_ONLY_VISIT_MODE) {
-            lifecycleScope.launch {
-                llamaService?.unload()
-            }
+        lifecycleScope.launch {
+            llamaService?.unload()
         }
     }
 }
@@ -2736,13 +2235,12 @@ fun AgroChatApp(
     isModelReady: Boolean,
     isProcessing: Boolean,
     isListening: Boolean,
-    isOnlineMode: Boolean,
     isLlamaEnabled: Boolean,
     isLlamaLoaded: Boolean,
     llamaModelStatusText: String,
     llamaModelPathText: String,
-    isLlamaDownloading: Boolean,
-    llamaDownloadFailed: Boolean,
+    isLlamaChecking: Boolean,
+    llamaModelMissing: Boolean,
     showSettingsDialog: Boolean,
     isDiagnosticReady: Boolean,
     isDiagnosing: Boolean,
@@ -2757,9 +2255,8 @@ fun AgroChatApp(
     onApplyTodayFeedback: (String, Boolean) -> Unit,
     onSettingsClick: () -> Unit,
     onDismissSettings: () -> Unit,
-    onSaveApiKey: (String) -> Unit,
     onToggleLlama: (Boolean) -> Unit,
-    onRetryLlamaDownload: () -> Unit,
+    onCheckLlamaModel: () -> Unit,
     onCaptureImage: (Bitmap) -> Unit,
     onClearCapture: () -> Unit,
     onDiagnosisToChat: (DiseaseResult) -> Unit,
@@ -2792,7 +2289,7 @@ fun AgroChatApp(
         ) { mode ->
             when (mode) {
                 AppMode.VOICE -> VoiceModeScreen(
-                    lastResponse, statusMessage, isModelReady, isProcessing, isListening, isOnlineMode, 
+                    lastResponse, statusMessage, isModelReady, isProcessing, isListening,
                     isDiagnosticReady, onMicClick, onSettingsClick, onShowLogs,
                     onSwitchToChat = { onModeChange(AppMode.CHAT) },
                     onSwitchToCamera = { onModeChange(AppMode.CAMERA) }
@@ -2803,7 +2300,6 @@ fun AgroChatApp(
                     isModelReady = isModelReady,
                     isProcessing = isProcessing,
                     isListening = isListening,
-                    isOnlineMode = isOnlineMode,
                     isDiagnosticReady = isDiagnosticReady,
                     feedbackStates = feedbackStates,
                     onSendMessage = onSendMessage,
@@ -2840,15 +2336,14 @@ fun AgroChatApp(
         if (showSettingsDialog) {
             SettingsDialog(
                 onDismiss = onDismissSettings,
-                onSaveApiKey = onSaveApiKey,
                 isLlamaEnabled = isLlamaEnabled,
                 isLlamaLoaded = isLlamaLoaded,
                 llamaModelStatusText = llamaModelStatusText,
                 llamaModelPathText = llamaModelPathText,
-                isLlamaDownloading = isLlamaDownloading,
-                llamaDownloadFailed = llamaDownloadFailed,
+                isLlamaChecking = isLlamaChecking,
+                llamaModelMissing = llamaModelMissing,
                 onToggleLlama = onToggleLlama,
-                onRetryLlamaDownload = onRetryLlamaDownload,
+                onCheckLlamaModel = onCheckLlamaModel,
                 onShowLogs = onShowLogs,
                 // Configuración avanzada
                 advancedMaxTokens = advancedMaxTokens,
@@ -2874,7 +2369,6 @@ fun VoiceModeScreen(
     isModelReady: Boolean,
     isProcessing: Boolean,
     isListening: Boolean,
-    isOnlineMode: Boolean,
     isDiagnosticReady: Boolean,
     onMicClick: () -> Unit,
     onSettingsClick: () -> Unit,
@@ -2915,8 +2409,7 @@ fun VoiceModeScreen(
                     )
                     Text(stringResource(R.string.assistant_subtitle), style = MaterialTheme.typography.bodySmall, color = AgroColors.TextSecondary)
                 }
-                // Indicador online/offline + settings
-                OnlineIndicator(isOnlineMode, onSettingsClick)
+                LocalModeIndicator(onSettingsClick)
             }
             
             // Área de respuesta (scrolleable si es necesario)
@@ -3058,7 +2551,6 @@ fun ChatModeScreen(
     isModelReady: Boolean,
     isProcessing: Boolean,
     isListening: Boolean,
-    isOnlineMode: Boolean,
     isDiagnosticReady: Boolean,
     feedbackStates: Map<String, MessageFeedbackState>,
     onSendMessage: (String) -> Unit,
@@ -3099,7 +2591,7 @@ fun ChatModeScreen(
                     }
                 }
                 Row(horizontalArrangement = Arrangement.spacedBy(4.dp), verticalAlignment = Alignment.CenterVertically) {
-                    OnlineIndicator(isOnlineMode, onSettingsClick)
+                    LocalModeIndicator(onSettingsClick)
                     // Botón de cámara siempre visible
                     IconButton(
                         onClick = onSwitchToCamera, 
@@ -3436,27 +2928,26 @@ fun ModernListeningIndicator() {
 }
 
 @Composable
-fun OnlineIndicator(isOnline: Boolean, onClick: () -> Unit) {
-    val showOnline = ONLINE_FEATURES_ENABLED && isOnline
+fun LocalModeIndicator(onClick: () -> Unit) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
             .clip(RoundedCornerShape(20.dp))
-            .background(if (showOnline) AgroColors.Accent.copy(alpha = 0.2f) else AgroColors.SurfaceLight)
+            .background(AgroColors.SurfaceLight)
             .clickable { onClick() }
             .padding(horizontal = 12.dp, vertical = 6.dp)
     ) {
         Icon(
-            imageVector = if (showOnline) Icons.Default.Cloud else Icons.Default.CloudOff,
-            contentDescription = if (showOnline) "Online" else "Modo local",
-            tint = if (showOnline) AgroColors.Accent else AgroColors.TextSecondary,
+            imageVector = Icons.Default.CloudOff,
+            contentDescription = "Modo local",
+            tint = AgroColors.TextSecondary,
             modifier = Modifier.size(18.dp)
         )
         Spacer(Modifier.width(6.dp))
         Text(
-            text = if (showOnline) "Online" else "Modo local",
+            text = "Modo local",
             style = MaterialTheme.typography.labelSmall,
-            color = if (showOnline) AgroColors.Accent else AgroColors.TextSecondary,
+            color = AgroColors.TextSecondary,
             fontWeight = FontWeight.Medium
         )
     }
@@ -3465,15 +2956,14 @@ fun OnlineIndicator(isOnline: Boolean, onClick: () -> Unit) {
 @Composable
 fun SettingsDialog(
     onDismiss: () -> Unit,
-    onSaveApiKey: (String) -> Unit,
     isLlamaEnabled: Boolean,
     isLlamaLoaded: Boolean,
     llamaModelStatusText: String,
     llamaModelPathText: String,
-    isLlamaDownloading: Boolean,
-    llamaDownloadFailed: Boolean,
+    isLlamaChecking: Boolean,
+    llamaModelMissing: Boolean,
     onToggleLlama: (Boolean) -> Unit,
-    onRetryLlamaDownload: () -> Unit,
+    onCheckLlamaModel: () -> Unit,
     onShowLogs: () -> Unit,
     // Configuración avanzada
     advancedMaxTokens: Int,
@@ -3488,19 +2978,13 @@ fun SettingsDialog(
     advancedChatHistorySize: Int,
     onSaveAdvancedSettings: (Int, Float, Float, Float, String, Boolean, Int, Boolean, Boolean, Int) -> Unit
 ) {
-    var apiKey by remember { mutableStateOf("") }
     val context = LocalContext.current
-    val appPrefs = remember { context.getSharedPreferences("agrochat_prefs", Context.MODE_PRIVATE) }
     var selectedLanguage by remember { 
         mutableStateOf(
             context.getSharedPreferences("farmifai_prefs", Context.MODE_PRIVATE)
                 .getString("language", "es") ?: "es"
         )
     }
-    LaunchedEffect(Unit) {
-        apiKey = appPrefs.getString("groq_api_key", "") ?: ""
-    }
-    
     // Estados locales para configuración avanzada (se sincronizan al guardar)
     var showAdvanced by remember { mutableStateOf(false) }
     var localMaxTokens by remember { mutableStateOf(advancedMaxTokens) }
@@ -3627,8 +3111,7 @@ fun SettingsDialog(
                 
                 HorizontalDivider(color = AgroColors.SurfaceLight)
                 
-                if (!ONLINE_ONLY_VISIT_MODE) {
-                    // Sección LLM Local (GGUF)
+                // Sección LLM Local (GGUF)
                     Surface(
                         color = AgroColors.SurfaceLight,
                         shape = RoundedCornerShape(12.dp)
@@ -3663,8 +3146,8 @@ fun SettingsDialog(
                                         style = MaterialTheme.typography.bodySmall,
                                         color = when {
                                             isLlamaLoaded -> AgroColors.Accent
-                                            llamaDownloadFailed -> Color(0xFFE57373)
-                                            isLlamaDownloading -> AgroColors.TextSecondary
+                                            llamaModelMissing -> Color(0xFFE57373)
+                                            isLlamaChecking -> AgroColors.TextSecondary
                                             else -> AgroColors.TextSecondary
                                         }
                                     )
@@ -3682,22 +3165,20 @@ fun SettingsDialog(
                                 )
                             }
 
-                            // Botón de reintentar si falló la descarga
-                            if (llamaDownloadFailed && !isLlamaDownloading) {
+                            if (llamaModelMissing && !isLlamaChecking) {
                                 Spacer(Modifier.height(8.dp))
                                 Button(
-                                    onClick = onRetryLlamaDownload,
+                                    onClick = onCheckLlamaModel,
                                     colors = ButtonDefaults.buttonColors(
                                         containerColor = AgroColors.Accent
                                     ),
                                     modifier = Modifier.fillMaxWidth()
                                 ) {
-                                    Text("🔄 Reintentar descarga")
+                                    Text("Verificar modelo local")
                                 }
                             }
 
-                            // Indicador de descarga en progreso
-                            if (isLlamaDownloading) {
+                            if (isLlamaChecking) {
                                 Spacer(Modifier.height(8.dp))
                                 LinearProgressIndicator(
                                     modifier = Modifier.fillMaxWidth(),
@@ -3724,63 +3205,6 @@ fun SettingsDialog(
                             color = AgroColors.TextSecondary
                         )
                     }
-                } else {
-                    Surface(
-                        color = AgroColors.SurfaceLight,
-                        shape = RoundedCornerShape(12.dp)
-                    ) {
-                        Text(
-                            "Modo visita activo: respuestas solo con modelo online.",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = AgroColors.Accent,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(14.dp)
-                        )
-                    }
-                }
-                
-                if (ONLINE_FEATURES_ENABLED) {
-                    HorizontalDivider(color = AgroColors.SurfaceLight)
-
-                    // Sección Groq Online
-                    Text(
-                        "☁️ LLM Online (Groq)",
-                        style = MaterialTheme.typography.titleSmall,
-                        fontWeight = FontWeight.Bold,
-                        color = AgroColors.TextPrimary
-                    )
-
-                    Text(
-                        "Para respuestas más fluidas cuando hay internet.",
-                        style = MaterialTheme.typography.bodyMedium
-                    )
-
-                    Text(
-                        "Obtén tu key gratis en: console.groq.com",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = AgroColors.Accent
-                    )
-
-                    OutlinedTextField(
-                        value = apiKey,
-                        onValueChange = { apiKey = it },
-                        label = { Text("API Key de Groq") },
-                        placeholder = { Text("gsk_...") },
-                        singleLine = true,
-                        modifier = Modifier.fillMaxWidth(),
-                        colors = OutlinedTextFieldDefaults.colors(
-                            focusedBorderColor = AgroColors.Accent,
-                            unfocusedBorderColor = AgroColors.SurfaceLight,
-                            focusedLabelColor = AgroColors.Accent,
-                            unfocusedLabelColor = AgroColors.TextSecondary,
-                            cursorColor = AgroColors.Accent,
-                            focusedTextColor = AgroColors.TextPrimary,
-                            unfocusedTextColor = AgroColors.TextPrimary
-                        )
-                    )
-                }
-                
                 HorizontalDivider(color = AgroColors.SurfaceLight)
                 
                 // ===== SECCIÓN CONFIGURACIÓN AVANZADA (colapsable) =====
@@ -4049,9 +3473,6 @@ fun SettingsDialog(
         confirmButton = {
             TextButton(
                 onClick = {
-                    if (ONLINE_FEATURES_ENABLED) {
-                        onSaveApiKey(apiKey)
-                    }
                     onSaveAdvancedSettings(
                         localMaxTokens,
                         localSimThreshold / 100f,
@@ -4664,225 +4085,4 @@ fun LogsDialog(onDismiss: () -> Unit) {
             }
         }
     )
-}
-
-// ==================== PANTALLA DE BIENVENIDA ====================
-
-@Composable
-fun WelcomeDownloadScreen(
-    downloadItems: List<DownloadItem>,
-    currentTipIndex: Int
-) {
-    val feature = remember(currentTipIndex) {
-        AppFeatures.features.getOrElse(currentTipIndex % AppFeatures.features.size) { AppFeatures.features[0] }
-    }
-    
-    // Animación para el tip
-    val tipAlpha by animateFloatAsState(
-        targetValue = 1f,
-        animationSpec = tween(500),
-        label = "tipAlpha"
-    )
-    
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Brush.verticalGradient(listOf(AgroColors.Background, AgroColors.GradientEnd)))
-    ) {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(24.dp)
-                .statusBarsPadding()
-                .navigationBarsPadding(),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Spacer(Modifier.height(40.dp))
-            
-            // Logo de la app
-            Image(
-                painter = painterResource(id = R.drawable.ic_farmifai_logo),
-                contentDescription = "FarmifAI Logo",
-                modifier = Modifier.size(120.dp)
-            )
-            Spacer(Modifier.height(16.dp))
-            Text(
-                "FarmifAI",
-                style = MaterialTheme.typography.displaySmall,
-                fontWeight = FontWeight.Bold,
-                color = AgroColors.TextPrimary
-            )
-            Text(
-                "Tu asistente agrícola con IA",
-                style = MaterialTheme.typography.titleMedium,
-                color = AgroColors.TextSecondary
-            )
-            
-            Spacer(Modifier.height(48.dp))
-            
-            // Área de descargas
-            Surface(
-                modifier = Modifier.fillMaxWidth(),
-                color = AgroColors.Surface,
-                shape = RoundedCornerShape(20.dp)
-            ) {
-                Column(
-                    modifier = Modifier.padding(20.dp),
-                    verticalArrangement = Arrangement.spacedBy(16.dp)
-                ) {
-                    Text(
-                        "Preparando tu asistente...",
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.SemiBold,
-                        color = AgroColors.TextPrimary
-                    )
-                    
-                    downloadItems.forEach { item ->
-                        DownloadItemRow(item)
-                    }
-                }
-            }
-            
-            Spacer(Modifier.weight(1f))
-            
-            // Característica de la app rotativa
-            AnimatedContent(
-                targetState = feature,
-                transitionSpec = {
-                    fadeIn(tween(500)) togetherWith fadeOut(tween(500))
-                },
-                label = "feature"
-            ) { currentFeature ->
-                Surface(
-                    modifier = Modifier.fillMaxWidth(),
-                    color = AgroColors.Accent.copy(alpha = 0.15f),
-                    shape = RoundedCornerShape(16.dp)
-                ) {
-                    Column(
-                        modifier = Modifier.padding(20.dp),
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Text(
-                            "FarmifAI",
-                            style = MaterialTheme.typography.labelMedium,
-                            color = AgroColors.Accent,
-                            fontWeight = FontWeight.Bold
-                        )
-                        Spacer(Modifier.height(8.dp))
-                        Text(
-                            currentFeature,
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = AgroColors.TextPrimary,
-                            textAlign = TextAlign.Center
-                        )
-                    }
-                }
-            }
-            
-            Spacer(Modifier.height(24.dp))
-            
-            // Indicador de progreso total (solo mostrar barra, sin texto de componentes)
-            val totalItems = downloadItems.size
-            val overallProgress = if (totalItems > 0) {
-                downloadItems.sumOf { item ->
-                    when (item.status) {
-                        DownloadItemStatus.COMPLETED -> 100
-                        DownloadItemStatus.DOWNLOADING -> item.progress
-                        else -> 0
-                    }
-                } / (totalItems * 100f)
-            } else 0f
-            
-            LinearProgressIndicator(
-                progress = { overallProgress },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(8.dp)
-                    .clip(RoundedCornerShape(4.dp)),
-                color = AgroColors.Accent,
-                trackColor = AgroColors.SurfaceLight
-            )
-        }
-    }
-}
-
-@Composable
-fun DownloadItemRow(item: DownloadItem) {
-    val infiniteTransition = rememberInfiniteTransition(label = "download")
-    val shimmer by infiniteTransition.animateFloat(
-        initialValue = 0.3f,
-        targetValue = 0.7f,
-        animationSpec = infiniteRepeatable(tween(1000), RepeatMode.Reverse),
-        label = "shimmer"
-    )
-    
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(12.dp)
-    ) {
-        // Icono de estado
-        Box(
-            modifier = Modifier
-                .size(40.dp)
-                .background(
-                    when (item.status) {
-                        DownloadItemStatus.COMPLETED -> AgroColors.Accent.copy(alpha = 0.2f)
-                        DownloadItemStatus.DOWNLOADING -> AgroColors.Accent.copy(alpha = shimmer)
-                        DownloadItemStatus.FAILED -> Color.Red.copy(alpha = 0.2f)
-                        else -> AgroColors.SurfaceLight
-                    },
-                    CircleShape
-                ),
-            contentAlignment = Alignment.Center
-        ) {
-            when (item.status) {
-                DownloadItemStatus.COMPLETED -> Text("✓", color = AgroColors.Accent, fontWeight = FontWeight.Bold)
-                DownloadItemStatus.DOWNLOADING -> CircularProgressIndicator(
-                    modifier = Modifier.size(20.dp),
-                    color = AgroColors.Accent,
-                    strokeWidth = 2.dp
-                )
-                DownloadItemStatus.FAILED -> Text("✗", color = Color.Red, fontWeight = FontWeight.Bold)
-                else -> Text("○", color = AgroColors.TextSecondary)
-            }
-        }
-        
-        // Info
-        Column(modifier = Modifier.weight(1f)) {
-            Text(
-                item.name,
-                style = MaterialTheme.typography.bodyMedium,
-                fontWeight = FontWeight.Medium,
-                color = AgroColors.TextPrimary
-            )
-            Text(
-                when (item.status) {
-                    DownloadItemStatus.DOWNLOADING -> "${item.description} (${item.progress}%)"
-                    DownloadItemStatus.COMPLETED -> "Listo ✓"
-                    DownloadItemStatus.FAILED -> "Error - Verifica tu conexión"
-                    else -> "${item.sizeMB} MB"
-                },
-                style = MaterialTheme.typography.bodySmall,
-                color = when (item.status) {
-                    DownloadItemStatus.COMPLETED -> AgroColors.Accent
-                    DownloadItemStatus.FAILED -> Color.Red
-                    else -> AgroColors.TextSecondary
-                }
-            )
-        }
-        
-        // Progress bar para item en descarga
-        if (item.status == DownloadItemStatus.DOWNLOADING) {
-            LinearProgressIndicator(
-                progress = { item.progress / 100f },
-                modifier = Modifier
-                    .width(60.dp)
-                    .height(4.dp)
-                    .clip(RoundedCornerShape(2.dp)),
-                color = AgroColors.Accent,
-                trackColor = AgroColors.SurfaceLight
-            )
-        }
-    }
 }

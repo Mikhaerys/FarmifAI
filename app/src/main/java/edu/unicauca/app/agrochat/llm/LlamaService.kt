@@ -3,14 +3,9 @@ package edu.unicauca.app.agrochat.llm
 import android.content.Context
 import android.util.Log
 import android.llama.cpp.LLamaAndroid
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.withContext
 import java.io.File
-import java.io.FileOutputStream
-import java.net.HttpURLConnection
-import java.net.URL
 
 /**
  * LlamaService - Servicio de LLM local usando llama.cpp para inferencia offline
@@ -24,9 +19,6 @@ class LlamaService private constructor() {
         private const val DEFAULT_MODEL_FILENAME = "Qwen3.5-0.8B-Q4_K_M.gguf"
         private const val MAX_TOKENS = 1200  // Salidas más completas por defecto
 
-        // URL de descarga automática desde Hugging Face (Qwen3.5 0.8B Q4_K_M)
-        private const val MODEL_DOWNLOAD_URL = "https://huggingface.co/unsloth/Qwen3.5-0.8B-GGUF/resolve/main/Qwen3.5-0.8B-Q4_K_M.gguf"
-        private const val MODEL_SIZE_BYTES = 558_891_008L  // ~533MB
         private const val MIN_VALID_GGUF_BYTES = 100_000_000L
         private val MODEL_FILENAME_PREFERENCE = listOf(
             DEFAULT_MODEL_FILENAME,
@@ -54,9 +46,6 @@ class LlamaService private constructor() {
         QWEN,
         GENERIC
     }
-    
-    // Callback para progreso de descarga
-    var onDownloadProgress: ((progress: Int, downloadedMB: Int, totalMB: Int) -> Unit)? = null
     
     /**
      * Verifica si el modelo está disponible en el almacenamiento
@@ -102,78 +91,10 @@ class LlamaService private constructor() {
         return modelFile.length() / (1024 * 1024)
     }
 
-    fun getExpectedDownloadSizeMB(): Int = (MODEL_SIZE_BYTES / (1024 * 1024)).toInt()
-    
     /**
      * Verifica si el modelo está cargado
      */
     fun isLoaded(): Boolean = llama.isLoaded()
-    
-    /**
-     * Descarga el modelo GGUF automáticamente desde Hugging Face
-     */
-    suspend fun downloadModel(context: Context): Result<File> = withContext(Dispatchers.IO) {
-        try {
-            val dir = context.getExternalFilesDir(null) 
-                ?: return@withContext Result.failure(Exception("No se puede acceder al almacenamiento"))
-            
-            val modelFile = File(dir, DEFAULT_MODEL_FILENAME)
-            val tempFile = File(dir, "${DEFAULT_MODEL_FILENAME}.tmp")
-            
-            if (modelFile.exists() && modelFile.length() > MIN_VALID_GGUF_BYTES) {
-                Log.i(TAG, "Modelo ya existe: ${modelFile.absolutePath}")
-                return@withContext Result.success(modelFile)
-            }
-            
-            Log.i(TAG, "Descargando modelo desde: $MODEL_DOWNLOAD_URL")
-            
-            val url = URL(MODEL_DOWNLOAD_URL)
-            val connection = url.openConnection() as HttpURLConnection
-            connection.connectTimeout = 30_000
-            connection.readTimeout = 60_000
-            connection.setRequestProperty("User-Agent", "AgroChat/1.0")
-            
-            val totalSize = connection.contentLengthLong.takeIf { it > 0 } ?: MODEL_SIZE_BYTES
-            val totalMB = (totalSize / (1024 * 1024)).toInt()
-            
-            connection.inputStream.use { input ->
-                FileOutputStream(tempFile).use { output ->
-                    val buffer = ByteArray(8192)
-                    var downloaded = 0L
-                    var lastProgress = 0
-                    
-                    while (true) {
-                        val bytesRead = input.read(buffer)
-                        if (bytesRead == -1) break
-                        
-                        output.write(buffer, 0, bytesRead)
-                        downloaded += bytesRead
-                        
-                        val progress = ((downloaded * 100) / totalSize).toInt()
-                        if (progress > lastProgress) {
-                            lastProgress = progress
-                            val downloadedMB = (downloaded / (1024 * 1024)).toInt()
-                            onDownloadProgress?.invoke(progress, downloadedMB, totalMB)
-                        }
-                    }
-                }
-            }
-            
-            if (tempFile.exists() && tempFile.length() > MIN_VALID_GGUF_BYTES) {
-                modelFile.delete()
-                tempFile.renameTo(modelFile)
-                Log.i(TAG, "✅ Modelo descargado: ${modelFile.absolutePath}")
-                Result.success(modelFile)
-            } else {
-                tempFile.delete()
-                Result.failure(Exception("Descarga incompleta"))
-            }
-            
-        } catch (e: Exception) {
-            Log.e(TAG, "Error descargando modelo: ${e.message}", e)
-            Result.failure(e)
-        }
-    }
     
     /**
      * Carga el modelo GGUF
@@ -484,7 +405,7 @@ class LlamaService private constructor() {
     }
 
     /**
-     * Descarga el modelo y libera recursos
+     * Libera de memoria el modelo y sus recursos.
      */
     suspend fun unload() {
         try {

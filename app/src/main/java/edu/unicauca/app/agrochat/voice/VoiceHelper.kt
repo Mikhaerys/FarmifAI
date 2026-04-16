@@ -16,7 +16,7 @@ import java.util.Locale
  * VoiceHelper - Maneja Speech-to-Text (Vosk) y Text-to-Speech para AgroChat
  * 
  * Funciona 100% OFFLINE sin Google:
- * - STT: Vosk (modelo español ~50MB, se descarga automáticamente)
+ * - STT: Vosk (modelo español provisionado localmente)
  * - TTS: Motor del sistema (offline)
  */
 class VoiceHelper(private val context: Context) {
@@ -128,7 +128,7 @@ class VoiceHelper(private val context: Context) {
         onModelStatus?.invoke("Preparando modelo de voz...")
         Log.d(TAG, "Cargando modelo Vosk: $VOSK_MODEL")
         
-        // Copiar modelo desde assets o downloads a files en un hilo separado
+        // Copiar modelo desde assets o desde files/models a files en un hilo separado.
         Thread {
             try {
                 val modelDir = java.io.File(context.filesDir, "vosk-model")
@@ -140,15 +140,13 @@ class VoiceHelper(private val context: Context) {
                     return@Thread
                 }
                 
-                // Check if model was downloaded to filesDir/models/model-es-small
-                val downloadedModelDir = java.io.File(context.filesDir, "models/$VOSK_MODEL")
-                if (downloadedModelDir.exists() && java.io.File(downloadedModelDir, "am/final.mdl").exists()) {
-                    Log.i(TAG, "Usando modelo descargado desde: ${downloadedModelDir.absolutePath}")
+                val localModelDir = java.io.File(context.filesDir, "models/$VOSK_MODEL")
+                if (localModelDir.exists() && java.io.File(localModelDir, "am/final.mdl").exists()) {
+                    Log.i(TAG, "Usando modelo local desde: ${localModelDir.absolutePath}")
                     android.os.Handler(android.os.Looper.getMainLooper()).post {
                         onModelStatus?.invoke("Preparando modelo de voz...")
                     }
-                    // Copy downloaded model to vosk-model dir
-                    copyDirectory(downloadedModelDir, modelDir)
+                    copyDirectory(localModelDir, modelDir)
                     loadVoskModel(modelDir)
                     return@Thread
                 }
@@ -162,10 +160,10 @@ class VoiceHelper(private val context: Context) {
                     copyAssetFolder(VOSK_MODEL, modelDir)
                     loadVoskModel(modelDir)
                 } catch (e: Exception) {
-                    Log.e(TAG, "No se encontró modelo en assets ni descargas: ${e.message}")
+                    Log.e(TAG, "No se encontró modelo en assets ni almacenamiento local: ${e.message}")
                     android.os.Handler(android.os.Looper.getMainLooper()).post {
-                        onModelStatus?.invoke("Descarga el modelo de voz primero")
-                        onError?.invoke("Modelo de voz no disponible. Descárgalo desde configuración.")
+                        onModelStatus?.invoke("Modelo de voz no disponible")
+                        onError?.invoke("Modelo de voz no disponible. Provisiona el modelo localmente.")
                     }
                 }
                 
