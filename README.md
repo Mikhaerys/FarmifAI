@@ -16,8 +16,9 @@
 ## Demo
 
 - Video demo: pending public upload.
-- Latest APK (debug, generated): [app/build/outputs/apk/debug/FarmifAI-debug-v1.0-20260416_130249.apk](app/build/outputs/apk/debug/FarmifAI-debug-v1.0-20260416_130249.apk)
-- Latest APK (release, generated): [app/build/outputs/apk/release/FarmifAI-release-v1.0-20260416_004157.apk](app/build/outputs/apk/release/FarmifAI-release-v1.0-20260416_004157.apk)
+- Latest downloadable APK (debug): [FarmifAI-debug-v1.0-20260324_201415.apk](https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/download/apk-kb-records-20260324/FarmifAI-debug-v1.0-20260324_201415.apk)
+- Releases page (all published APK assets): [https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/latest](https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/latest)
+- Note: paths under `app/build/outputs/apk/` are local build artifacts and are not tracked in git.
 - Technical report: [docs/FarmifAI_Informe_Avances.docx](docs/FarmifAI_Informe_Avances.docx)
 - Technical visuals:
   - [docs/images/fig_system_architecture.png](docs/images/fig_system_architecture.png)
@@ -203,8 +204,9 @@ Citation metadata file (`CITATION.cff`) is pending.
 ## Demo
 
 - Video demo: pendiente de publicacion.
-- Ultima APK (debug, generada): [app/build/outputs/apk/debug/FarmifAI-debug-v1.0-20260416_130249.apk](app/build/outputs/apk/debug/FarmifAI-debug-v1.0-20260416_130249.apk)
-- Ultima APK (release, generada): [app/build/outputs/apk/release/FarmifAI-release-v1.0-20260416_004157.apk](app/build/outputs/apk/release/FarmifAI-release-v1.0-20260416_004157.apk)
+- Ultima APK descargable (debug): [FarmifAI-debug-v1.0-20260324_201415.apk](https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/download/apk-kb-records-20260324/FarmifAI-debug-v1.0-20260324_201415.apk)
+- Pagina de releases (todos los APK publicados): [https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/latest](https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/latest)
+- Nota: las rutas bajo `app/build/outputs/apk/` son artefactos locales de compilacion y no se versionan en git.
 - Informe tecnico: [docs/FarmifAI_Informe_Avances.docx](docs/FarmifAI_Informe_Avances.docx)
 - Recursos visuales:
   - [docs/images/fig_system_architecture.png](docs/images/fig_system_architecture.png)
