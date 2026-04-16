@@ -25,7 +25,7 @@
   - [docs_backup/capturasapp/diagnosticovisual.png](docs_backup/capturasapp/diagnosticovisual.png)
   - [docs_backup/capturasapp/diagnosticovis.jpeg](docs_backup/capturasapp/diagnosticovis.jpeg)
   - [docs_backup/capturasapp/recomendaciones.jpeg](docs_backup/capturasapp/recomendaciones.jpeg)
-- Technical report: [docs/FarmifAI_Informe_Avances.docx](docs/FarmifAI_Informe_Avances.docx)
+- Technical report: [docs/FarmifAI_Informe_Avances_ajustado.docx](docs/FarmifAI_Informe_Avances_ajustado.docx)
 - Technical visuals:
   - [docs/images/fig_system_architecture.png](docs/images/fig_system_architecture.png)
   - [docs/images/fig_rag_pipeline.png](docs/images/fig_rag_pipeline.png)
@@ -227,7 +227,7 @@ Citation metadata file (`CITATION.cff`) is pending.
   - [docs_backup/capturasapp/diagnosticovisual.png](docs_backup/capturasapp/diagnosticovisual.png)
   - [docs_backup/capturasapp/diagnosticovis.jpeg](docs_backup/capturasapp/diagnosticovis.jpeg)
   - [docs_backup/capturasapp/recomendaciones.jpeg](docs_backup/capturasapp/recomendaciones.jpeg)
-- Informe tecnico: [docs/FarmifAI_Informe_Avances.docx](docs/FarmifAI_Informe_Avances.docx)
+- Informe tecnico: [docs/FarmifAI_Informe_Avances_ajustado.docx](docs/FarmifAI_Informe_Avances_ajustado.docx)
 - Recursos visuales:
   - [docs/images/fig_system_architecture.png](docs/images/fig_system_architecture.png)
   - [docs/images/fig_rag_pipeline.png](docs/images/fig_rag_pipeline.png)
