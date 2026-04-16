@@ -36,6 +36,9 @@ set_target_properties(libmindspore-lite-train PROPERTIES IMPORTED_LOCATION
 file(GLOB_RECURSE NATIVE_SOURCES
         "${CMAKE_CURRENT_SOURCE_DIR}/src/main/cpp/*.cpp"
 )
+# La capa JNI de llama.cpp se distribuye como .so precompilado en jniLibs.
+# Excluimos este archivo fuente para evitar dependencia de headers externos en build local.
+list(FILTER NATIVE_SOURCES EXCLUDE REGEX ".*/llama_android_compat\\.cpp$")
 add_library(msjni SHARED ${NATIVE_SOURCES}) # Coincidir con System.loadLibrary("msjni")
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

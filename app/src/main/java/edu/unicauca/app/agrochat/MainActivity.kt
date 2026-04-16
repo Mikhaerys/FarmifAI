@@ -55,6 +55,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -132,7 +133,8 @@ data class ChatMessage(
     val diseaseResult: DiseaseResult? = null,  // Para resultados de diagnóstico
     val canContinue: Boolean = false,  // Para mostrar botón "Continuar" en respuestas LLM
     val feedbackEligible: Boolean = false,
-    val responseGuidanceType: ResponseGuidanceType? = null
+    val responseGuidanceType: ResponseGuidanceType? = null,
+    val isThinking: Boolean = false
 )
 
 enum class ResponseGuidanceType(val label: String) {
@@ -175,15 +177,16 @@ enum class DownloadItemStatus {
 }
 
 private const val ONLINE_ONLY_VISIT_MODE = false
+private const val ONLINE_FEATURES_ENABLED = false
 
 // Características de la app para mostrar durante la descarga
 object AppFeatures {
     val features = listOf(
-        "☁️ IA Online - Respuestas en tiempo real",
+        "🧠 IA local Qwen 3.5 con razonamiento",
         "🌱 Asesoría agrícola personalizada",
         "📸 Diagnóstico visual de enfermedades",
         "🎯 Reconocimiento de voz en español",
-        "🧠 Modelo cloud de alta capacidad",
+        "📱 Operación local sin dependencia cloud",
         "🔍 Búsqueda semántica avanzada",
         "📊 Base de conocimiento agrícola",
         "🌿 Soporte para múltiples cultivos",
@@ -376,8 +379,13 @@ class MainActivity : ComponentActivity() {
         // Verificar si es primera instalación (no hay modelos descargados)
         checkFirstLaunch()
         
-        // Inicializar Groq
-        initializeGroq()
+        // Modo offline-only en master
+        if (ONLINE_FEATURES_ENABLED) {
+            initializeGroq()
+        } else {
+            groqService = null
+            isOnlineMode = false
+        }
 
         // Si es primera instalación, mostrar pantalla de bienvenida
         // Si no, iniciar normalmente
@@ -800,7 +808,19 @@ class MainActivity : ComponentActivity() {
             try {
                 val query = result.toRagQuery()
                 val responseMeta = findResponseWithMeta(query)
-                val response = humanizeTechnicalTerms(sanitizeAssistantResponse(responseMeta.response))
+                val displayPayload = buildAssistantDisplayPayload(responseMeta.response)
+                val response = displayPayload.answer
+
+                if (displayPayload.thinking.isNotBlank()) {
+                    chatMessages.add(
+                        ChatMessage(
+                            text = displayPayload.thinking,
+                            isUser = false,
+                            isThinking = true,
+                            feedbackEligible = false
+                        )
+                    )
+                }
                 
                 val fullResponse = buildString {
                     append("${result.displayName}\n")
@@ -947,6 +967,13 @@ class MainActivity : ComponentActivity() {
     }
     
     private fun initializeGroq() {
+        if (!ONLINE_FEATURES_ENABLED) {
+            groqService = null
+            isOnlineMode = false
+            AppLogger.log("MainActivity", "Modo offline-only: Groq deshabilitado")
+            return
+        }
+
         groqService = GroqService(applicationContext)
         val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
@@ -1099,6 +1126,12 @@ class MainActivity : ComponentActivity() {
     }
     
     private fun saveGroqApiKey(key: String) {
+        if (!ONLINE_FEATURES_ENABLED) {
+            Toast.makeText(this, "Modo offline-only: servicio online deshabilitado", Toast.LENGTH_SHORT).show()
+            showSettingsDialog = false
+            return
+        }
+
         val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         prefs.edit().putString(KEY_GROQ_API, key).apply()
         groqService?.setApiKey(key)
@@ -1111,6 +1144,11 @@ class MainActivity : ComponentActivity() {
     }
     
     private fun updateOnlineStatus() {
+        if (!ONLINE_FEATURES_ENABLED) {
+            isOnlineMode = false
+            return
+        }
+
         if (STRICT_TERMINAL_PARITY_MODE) {
             isOnlineMode = false
             Log.d("MainActivity", "updateOnlineStatus: STRICT_TERMINAL_PARITY_MODE=true, forcing local mode")
@@ -1322,7 +1360,7 @@ class MainActivity : ComponentActivity() {
         }
         
         // 5. VERIFICAR CONTINUIDAD CON CHAT ANTERIOR
-        val lastBotMessage = chatHistory.lastOrNull { !it.isUser }?.text ?: ""
+        val lastBotMessage = chatHistory.lastOrNull { !it.isUser && !it.isThinking }?.text ?: ""
         val isContinuationRequest = userQuery.lowercase().let { q ->
             q in listOf("continúa", "continua", "sigue", "más", "mas", "y qué más", "y que mas", "explica más") ||
             q.startsWith("y ") || q.startsWith("pero ") || q.startsWith("entonces ")
@@ -1407,6 +1445,119 @@ class MainActivity : ComponentActivity() {
         }
         
         return improved
+    }
+
+    private data class ThinkAnswerParts(
+        val thinking: String,
+        val answer: String
+    )
+
+    private data class AssistantDisplayPayload(
+        val thinking: String,
+        val answer: String
+    )
+
+    private fun splitThinkAndAnswer(raw: String): ThinkAnswerParts {
+        if (raw.isBlank()) return ThinkAnswerParts(thinking = "", answer = "")
+
+        val source = raw
+            .replace("&lt;think&gt;", "<think>", ignoreCase = true)
+            .replace("&lt;/think&gt;", "</think>", ignoreCase = true)
+            .replace("<thinking>", "<think>", ignoreCase = true)
+            .replace("</thinking>", "</think>", ignoreCase = true)
+
+        val openTag = "<think>"
+        val closeTag = "</think>"
+        var index = 0
+        var inThink = false
+        val thinkingBuilder = StringBuilder()
+        val answerBuilder = StringBuilder()
+
+        while (index < source.length) {
+            if (!inThink && source.regionMatches(index, openTag, 0, openTag.length, ignoreCase = true)) {
+                inThink = true
+                index += openTag.length
+                continue
+            }
+
+            if (inThink && source.regionMatches(index, closeTag, 0, closeTag.length, ignoreCase = true)) {
+                inThink = false
+                index += closeTag.length
+                continue
+            }
+
+            if (inThink) {
+                thinkingBuilder.append(source[index])
+            } else {
+                answerBuilder.append(source[index])
+            }
+            index += 1
+        }
+
+        val thinking = stripUserFacingMarkdown(
+            thinkingBuilder.toString()
+                .replace(Regex("(?i)</?think>"), " ")
+                .replace(Regex("\\n{3,}"), "\n\n")
+                .replace(Regex("[ \\t]{2,}"), " ")
+                .trim()
+        )
+        val answer = answerBuilder.toString()
+            .replace(Regex("(?i)</?think>"), " ")
+            .trim()
+
+        return ThinkAnswerParts(thinking = thinking, answer = answer)
+    }
+
+    private fun buildAssistantDisplayPayload(raw: String): AssistantDisplayPayload {
+        val parts = splitThinkAndAnswer(raw)
+
+        val thinking = sanitizeAssistantResponse(parts.thinking)
+            .replace(Regex("[ \\t]{2,}"), " ")
+            .replace(Regex("\\n{3,}"), "\n\n")
+            .trim()
+
+        val answer = humanizeTechnicalTerms(
+            sanitizeAssistantResponse(parts.answer)
+        ).trim()
+
+        return AssistantDisplayPayload(thinking = thinking, answer = answer)
+    }
+
+    private fun upsertStreamingAssistantBubble(
+        existingId: String?,
+        text: String,
+        isThinking: Boolean
+    ): String {
+        if (existingId != null) {
+            val idx = chatMessages.indexOfFirst { it.id == existingId }
+            if (idx >= 0) {
+                chatMessages[idx] = chatMessages[idx].copy(
+                    text = text,
+                    isThinking = isThinking,
+                    feedbackEligible = false,
+                    canContinue = false,
+                    responseGuidanceType = null
+                )
+                return existingId
+            }
+        }
+
+        val message = ChatMessage(
+            text = text,
+            isUser = false,
+            feedbackEligible = false,
+            isThinking = isThinking
+        )
+        chatMessages.add(message)
+        return message.id
+    }
+
+    private fun removeMessageById(id: String?) {
+        if (id == null) return
+        val idx = chatMessages.indexOfFirst { it.id == id }
+        if (idx >= 0) {
+            chatMessages.removeAt(idx)
+        }
     }
 
     /**
@@ -1586,7 +1737,15 @@ class MainActivity : ComponentActivity() {
         chatMessages.add(ChatMessage(text = userMessage, isUser = true))
         AppLogger.log("MainActivity", "Mensaje: '$userMessage'")
         
-        val isContinuationIntent = isContinuationMessage(userMessage)
+        val canContinuePreviousAnswer = chatMessages
+            .lastOrNull { !it.isUser && !it.isThinking }
+            ?.canContinue == true
+        val isContinuationIntent = canContinuePreviousAnswer && isContinuationMessage(userMessage)
+
+        if (!canContinuePreviousAnswer && isContinuationMessage(userMessage)) {
+            AppLogger.log("MainActivity", "Texto de continuacion detectado pero ignorado porque no hay respuesta pendiente de continuar")
+        }
+
         if (!isContinuationIntent) {
             // Guardar última consulta temática real
             lastUserQuery = userMessage
@@ -1604,16 +1763,15 @@ class MainActivity : ComponentActivity() {
 
         lifecycleScope.launch {
             isProcessing = true
-            var streamingMessageId: String? = null
+            var streamingThinkingMessageId: String? = null
+            var streamingAnswerMessageId: String? = null
+            var thinkingBubbleHasModelContent = false
             
             // Actualizar estado de conexión ANTES de procesar
             updateOnlineStatus()
             
             // Mostrar estado según modo disponible
-            uiStatus = when {
-                isOnlineMode -> "Consultando IA online..."
-                else -> "Buscando información..."
-            }
+            uiStatus = "Generando respuesta local..."
             
             try {
                 val responseMeta = findResponseWithMeta(
@@ -1621,47 +1779,82 @@ class MainActivity : ComponentActivity() {
                     skipKbDirect = isContinuationIntent,
                     forcedContext = forcedContinuationContext,
                     onLocalLlmChunk = stream@{ partial ->
-                        val userFacingPartial = humanizeTechnicalTerms(sanitizeAssistantResponse(partial)).trim()
-                        if (userFacingPartial.length < 8) return@stream
+                        val displayPayload = buildAssistantDisplayPayload(partial)
+                        val thinkingPartial = displayPayload.thinking
+                        val answerPartial = displayPayload.answer
+
+                        if (thinkingPartial.length < 8 && answerPartial.length < 8) return@stream
 
                         withContext(Dispatchers.Main) {
-                            val existingId = streamingMessageId
-                            if (existingId == null) {
-                                val streamingMessage = ChatMessage(
-                                    text = userFacingPartial,
-                                    isUser = false,
-                                    feedbackEligible = false
+                            if (streamingThinkingMessageId == null) {
+                                streamingThinkingMessageId = upsertStreamingAssistantBubble(
+                                    existingId = null,
+                                    text = "Pensando...",
+                                    isThinking = true
                                 )
-                                streamingMessageId = streamingMessage.id
-                                chatMessages.add(streamingMessage)
-                            } else {
-                                val idx = chatMessages.indexOfFirst { it.id == existingId }
-                                if (idx >= 0) {
-                                    chatMessages[idx] = chatMessages[idx].copy(text = userFacingPartial)
-                                }
                             }
-                            lastResponse = userFacingPartial
+
+                            if (thinkingPartial.length >= 8) {
+                                thinkingBubbleHasModelContent = true
+                                streamingThinkingMessageId = upsertStreamingAssistantBubble(
+                                    existingId = streamingThinkingMessageId,
+                                    text = thinkingPartial,
+                                    isThinking = true
+                                )
+                            }
+
+                            if (answerPartial.length >= 8) {
+                                streamingAnswerMessageId = upsertStreamingAssistantBubble(
+                                    existingId = streamingAnswerMessageId,
+                                    text = answerPartial,
+                                    isThinking = false
+                                )
+                                lastResponse = answerPartial
+                            } else if (thinkingPartial.isNotBlank()) {
+                                lastResponse = thinkingPartial
+                            }
                         }
                     }
                 )
-                val sanitizedResponse = sanitizeAssistantResponse(responseMeta.response)
-                val userFacingResponse = humanizeTechnicalTerms(sanitizedResponse)
+                val finalDisplayPayload = buildAssistantDisplayPayload(responseMeta.response)
+                val thinkingResponse = finalDisplayPayload.thinking
+                val userFacingResponse = finalDisplayPayload.answer
+
+                if (thinkingResponse.isNotBlank()) {
+                    thinkingBubbleHasModelContent = true
+                    streamingThinkingMessageId = upsertStreamingAssistantBubble(
+                        existingId = streamingThinkingMessageId,
+                        text = thinkingResponse,
+                        isThinking = true
+                    )
+                } else if (!thinkingBubbleHasModelContent) {
+                    removeMessageById(streamingThinkingMessageId)
+                    streamingThinkingMessageId = null
+                }
 
                 // If LLM produced no response, don't add an empty bubble
                 if (userFacingResponse.isBlank()) {
-                    streamingMessageId?.let { streamId ->
-                        val streamIdx = chatMessages.indexOfFirst { it.id == streamId }
-                        if (streamIdx >= 0) chatMessages.removeAt(streamIdx)
+                    removeMessageById(streamingAnswerMessageId)
+                    streamingAnswerMessageId = null
+
+                    if (!thinkingBubbleHasModelContent || thinkingResponse.isBlank()) {
+                        removeMessageById(streamingThinkingMessageId)
+                        streamingThinkingMessageId = null
                     }
+
                     AppLogger.log("MainActivity", "Empty LLM response, no message shown")
-                    uiStatus = if (isOnlineMode) "Online" else "Sin conexion online"
+                    uiStatus = "LLM local listo"
                     return@launch
                 }
 
-                val qualityHistory = if (streamingMessageId != null) {
-                    chatMessages.filterNot { it.id == streamingMessageId }
+                val qualityHistory = if (streamingAnswerMessageId != null || streamingThinkingMessageId != null) {
+                    chatMessages.filterNot {
+                        it.id == streamingAnswerMessageId ||
+                        it.id == streamingThinkingMessageId ||
+                        it.isThinking
+                    }
                 } else {
-                    chatMessages.toList()
+                    chatMessages.filterNot { it.isThinking }
                 }
                 
                 // ═══════════════════════════════════════════════════════════════
@@ -1690,7 +1883,7 @@ class MainActivity : ComponentActivity() {
                 } else {
                     ResponseGuidanceType.GENERAL_GUIDANCE
                 }
-                val existingStreamIndex = streamingMessageId?.let { id ->
+                val existingStreamIndex = streamingAnswerMessageId?.let { id ->
                     chatMessages.indexOfFirst { it.id == id }
                 } ?: -1
                 val assistantMessage = if (existingStreamIndex >= 0) {
@@ -1698,7 +1891,8 @@ class MainActivity : ComponentActivity() {
                         text = responseWithFollowUp,
                         canContinue = canContinue,
                         feedbackEligible = true,
-                        responseGuidanceType = responseGuidanceType
+                        responseGuidanceType = responseGuidanceType,
+                        isThinking = false
                     )
                     chatMessages[existingStreamIndex] = updated
                     updated
@@ -1708,7 +1902,8 @@ class MainActivity : ComponentActivity() {
                         isUser = false,
                         canContinue = canContinue,
                         feedbackEligible = true,
-                        responseGuidanceType = responseGuidanceType
+                        responseGuidanceType = responseGuidanceType,
+                        isThinking = false
                     ).also { chatMessages.add(it) }
                 }
                 lastResponse = responseWithFollowUp
@@ -1727,15 +1922,13 @@ class MainActivity : ComponentActivity() {
                 AppLogger.log("MainActivity", "Respuesta: ${responseWithFollowUp.take(50)}...")
                 
                 // Actualizar status final
-                uiStatus = if (isOnlineMode) "Online ✓" else "Sin conexión online"
+                uiStatus = "LLM local activo"
                 
                 voiceHelper?.speak(responseWithFollowUp)
             } catch (e: Exception) {
                 Log.e("MainActivity", "Error en sendMessage", e)
-                streamingMessageId?.let { streamId ->
-                    val streamIdx = chatMessages.indexOfFirst { it.id == streamId }
-                    if (streamIdx >= 0) chatMessages.removeAt(streamIdx)
-                }
+                removeMessageById(streamingAnswerMessageId)
+                removeMessageById(streamingThinkingMessageId)
                 uiStatus = "Error"
             } finally {
                 isProcessing = false
@@ -1848,15 +2041,27 @@ class MainActivity : ComponentActivity() {
             .replace("í", "i")
             .replace("ó", "o")
             .replace("ú", "u")
+            .replace(Regex("[¿?¡!.,;:]"), "")
+            .replace(Regex("\\s+"), " ")
+
+        if (normalized.isBlank()) return false
+
+        val tokenCount = normalized.split(" ").size
+        if (tokenCount > 4) return false
 
         val exact = setOf(
-            "continua", "continua.", "continue", "continue.", "sigue", "sigue.",
-            "mas", "mas.", "amplia", "amplia."
+            "continua", "continue", "sigue", "mas", "amplia", "expande",
+            "continua por favor", "sigue por favor", "mas detalles", "mas informacion"
         )
-        return normalized in exact ||
-            normalized.startsWith("continua") ||
-            normalized.startsWith("sigue") ||
-            normalized.startsWith("mas ")
+
+        if (normalized in exact) return true
+
+        val shortPrefix = tokenCount <= 3 && (
+            normalized.startsWith("continua ") ||
+            normalized.startsWith("sigue ")
+        )
+
+        return shortPrefix
     }
 
     /**
@@ -1866,15 +2071,16 @@ class MainActivity : ComponentActivity() {
     private fun buildConversationHistory(maxTurns: Int): List<Pair<String, String>> {
         val pairs = mutableListOf<Pair<String, String>>()
         val messages = chatMessages.toList()
-        var i = 0
-        while (i < messages.size - 1) {
+        for (i in messages.indices) {
             val current = messages[i]
-            val next = messages[i + 1]
-            if (current.isUser && !next.isUser && current.text.isNotBlank() && next.text.isNotBlank()) {
-                pairs.add(current.text.take(300) to next.text.take(500))
-                i += 2
-            } else {
-                i++
+            if (!current.isUser || current.text.isBlank()) continue
+
+            val nextAssistant = messages
+                .drop(i + 1)
+                .firstOrNull { !it.isUser && !it.isThinking && it.text.isNotBlank() }
+
+            if (nextAssistant != null) {
+                pairs.add(current.text.take(300) to nextAssistant.text.take(500))
             }
         }
         return pairs.takeLast(maxTurns)
@@ -1908,9 +2114,6 @@ class MainActivity : ComponentActivity() {
             uiStatus = "Expandiendo respuesta..."
             
             try {
-                // Obtener la última respuesta del bot
-                val lastBotResponse = chatMessages.lastOrNull { !it.isUser }?.text ?: ""
-                
                 // Crear prompt para continuar con mas detalle
                 val continuePrompt = "Más sobre: $lastUserQuery"
                 val continuationMaxTokens = computeTokenBudgetPlan(
@@ -1934,12 +2137,33 @@ class MainActivity : ComponentActivity() {
                 
                 result?.fold(
                     onSuccess = { response ->
-                        val cleanResponse = sanitizeAssistantResponse(response).trim()
+                        val displayPayload = buildAssistantDisplayPayload(response)
+                        val thinking = displayPayload.thinking
+                        val cleanResponse = displayPayload.answer
+
+                        if (thinking.isNotBlank()) {
+                            chatMessages.add(
+                                ChatMessage(
+                                    text = thinking,
+                                    isUser = false,
+                                    isThinking = true,
+                                    feedbackEligible = false
+                                )
+                            )
+                        }
+
                         if (cleanResponse.length > 10) {
                             // Verificar si esta continuación está completa
                             val isComplete = isResponseComplete(cleanResponse)
                             // Agregar como continuación
-                            chatMessages.add(ChatMessage(text = "$cleanResponse", isUser = false, canContinue = !isComplete))
+                            chatMessages.add(
+                                ChatMessage(
+                                    text = cleanResponse,
+                                    isUser = false,
+                                    canContinue = !isComplete,
+                                    isThinking = false
+                                )
+                            )
                             lastResponse = cleanResponse
                             voiceHelper?.speak(cleanResponse)
                         }
@@ -1978,8 +2202,7 @@ class MainActivity : ComponentActivity() {
         val effectiveUseLlmForAll = if (STRICT_TERMINAL_PARITY_MODE) false else advancedUseLlmForAll
         val effectiveDetectGreetings = if (STRICT_TERMINAL_PARITY_MODE) true else advancedDetectGreetings
         val retrievalMinScore = KB_RETRIEVAL_MIN_SCORE
-        val llmAvailable = (!STRICT_TERMINAL_PARITY_MODE && isOnlineMode && groqService?.isAvailable() == true) ||
-            (!ONLINE_ONLY_VISIT_MODE && isLlamaEnabled && isLlamaLoaded && llamaService != null)
+        val llmAvailable = (!ONLINE_ONLY_VISIT_MODE && isLlamaEnabled && isLlamaLoaded && llamaService != null)
 
         if (rawSimilarityThreshold != effectiveSimilarityThreshold ||
             rawContextRelevanceThreshold != effectiveContextRelevanceThreshold ||
@@ -2041,7 +2264,7 @@ class MainActivity : ComponentActivity() {
             bestMatch.similarityScore >= semanticRelatedMinScore &&
             kbSupportScore >= 0.30f
         val hasKbContext = hasRelatedKbSignal
-        val allowGeneralLlmCandidate = !hasKbContext && llmAvailable
+        val allowGeneralLlmCandidate = llmAvailable
 
         if (forcedContext == null) {
             lastContext = if (!combinedKBContext.isNullOrBlank()) combinedKBContext else bestMatch?.answer
@@ -2076,19 +2299,7 @@ class MainActivity : ComponentActivity() {
         )
 
         if (routeResult.decision == ResponseRoutingPolicy.Decision.KB_DIRECT && forcedContext == null && bestMatch != null) {
-            if (!llmAvailable) {
-                AppLogger.log("MainActivity", "Decision: KB_DIRECT (LLM no disponible) id=${bestMatch.entryId}")
-                return@withContext ResponseMeta(
-                    response = bestMatch.answer,
-                    usedLlm = false,
-                    kbSupported = true,
-                    kbSupportScore = kbSupportScore,
-                    kbCoverage = kbCoverage,
-                    kbUnknownRatio = kbUnknownRatio,
-                    enforcedKbAbstention = false
-                )
-            }
-            AppLogger.log("MainActivity", "Decision: KB_DIRECT -> LLM_WITH_KB para redaccion razonada")
+            AppLogger.log("MainActivity", "Decision: KB_DIRECT detectado, se fuerza LLM_WITH_KB por política ALWAYS_LLM")
         }
 
         if (routeResult.decision == ResponseRoutingPolicy.Decision.ABSTAIN && !isSimpleGreeting && forcedContext == null && !llmAvailable) {
@@ -2107,8 +2318,7 @@ class MainActivity : ComponentActivity() {
                 enforcedKbAbstention = true
             )
         }
-        val allowGeneralLlmMode = routeResult.decision == ResponseRoutingPolicy.Decision.LLM_GENERAL ||
-            (routeResult.decision == ResponseRoutingPolicy.Decision.ABSTAIN && llmAvailable)
+        val allowGeneralLlmMode = routeResult.decision == ResponseRoutingPolicy.Decision.LLM_GENERAL
         if (allowGeneralLlmMode) {
             AppLogger.log(
                 "MainActivity",
@@ -2165,7 +2375,7 @@ class MainActivity : ComponentActivity() {
             uiStatus = "Generando respuesta..."
         }
 
-        if (!STRICT_TERMINAL_PARITY_MODE && isOnlineMode && groqService?.isAvailable() == true) {
+        if (ONLINE_FEATURES_ENABLED && !STRICT_TERMINAL_PARITY_MODE && isOnlineMode && groqService?.isAvailable() == true) {
             Log.d("MainActivity", "→ Usando Groq LLM (online, grounded)")
 
             val historyWindow = if (effectiveChatHistoryEnabled) effectiveChatHistorySize.coerceIn(0, 20) else 0
@@ -2247,9 +2457,9 @@ class MainActivity : ComponentActivity() {
                         systemPrompt = finalSystemPrompt,
                         conversationHistory = llamaHistory,
                         onPartialResponse = { partial ->
-                            val cleanedPartial = sanitizeAssistantResponse(partial).trim()
-                            if (cleanedPartial.length >= 5) {
-                                onLocalLlmChunk(cleanedPartial)
+                            val rawPartial = partial.trim()
+                            if (rawPartial.length >= 5) {
+                                onLocalLlmChunk(rawPartial)
                             }
                         }
                     )
@@ -2266,9 +2476,13 @@ class MainActivity : ComponentActivity() {
 
                 result.fold(
                     onSuccess = { response ->
-                        val cleanResponse = sanitizeAssistantResponse(response).trim()
-                        val kbGuardActive = hasKbContext
+                        val cleanResponse = response.trim()
                         if (cleanResponse.length > 10) {
+                            val anchored = !hasKbContext || kbContextForPrompt.isNullOrBlank() || isResponseAnchoredToContext(cleanResponse, userQuery, kbContextForPrompt)
+                            if (!anchored) {
+                                AppLogger.log("MainActivity", "LLM response con ancla KB débil; se mantiene por política ALWAYS_LLM")
+                            }
+
                             AppLogger.log("MainActivity", "LLM response: ${cleanResponse.length} chars mode=$mode")
                             return@withContext ResponseMeta(
                                 response = cleanResponse,
@@ -2997,7 +3211,8 @@ fun ModernMessageBubble(
     onClarityFeedback: (String, Boolean) -> Unit = { _, _ -> },
     onApplyTodayFeedback: (String, Boolean) -> Unit = { _, _ -> }
 ) {
-    val canToggleFeedback = !message.isUser && message.feedbackEligible
+    val isThinkingBubble = message.isThinking && !message.isUser
+    val canToggleFeedback = !message.isUser && message.feedbackEligible && !isThinkingBubble
     val bubbleModifier = Modifier
         .widthIn(max = 300.dp)
         .padding(4.dp)
@@ -3014,15 +3229,39 @@ fun ModernMessageBubble(
         horizontalAlignment = if (message.isUser) Alignment.End else Alignment.Start
     ) {
         Surface(
-            color = if (message.isUser) AgroColors.PrimaryLight else AgroColors.Surface,
+            color = when {
+                message.isUser -> AgroColors.PrimaryLight
+                isThinkingBubble -> AgroColors.SurfaceLight
+                else -> AgroColors.Surface
+            },
             shape = RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp, bottomStart = if (message.isUser) 20.dp else 4.dp, bottomEnd = if (message.isUser) 4.dp else 20.dp),
             modifier = bubbleModifier,
-            border = if (!message.isUser) androidx.compose.foundation.BorderStroke(1.dp, AgroColors.SurfaceLight) else null
+            border = when {
+                message.isUser -> null
+                isThinkingBubble -> androidx.compose.foundation.BorderStroke(1.dp, AgroColors.Accent.copy(alpha = 0.45f))
+                else -> androidx.compose.foundation.BorderStroke(1.dp, AgroColors.SurfaceLight)
+            }
         ) {
             Column(Modifier.padding(14.dp)) {
-                Text(message.text, style = MaterialTheme.typography.bodyLarge, color = AgroColors.TextPrimary, lineHeight = 22.sp)
+                if (isThinkingBubble) {
+                    Text(
+                        "Pensando...",
+                        style = MaterialTheme.typography.labelMedium,
+                        color = AgroColors.Accent,
+                        fontWeight = FontWeight.SemiBold
+                    )
+                    Spacer(Modifier.height(6.dp))
+                }
 
-                if (!message.isUser && message.responseGuidanceType != null) {
+                Text(
+                    message.text,
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = AgroColors.TextPrimary,
+                    lineHeight = 22.sp,
+                    fontStyle = if (isThinkingBubble) FontStyle.Italic else FontStyle.Normal
+                )
+
+                if (!message.isUser && !isThinkingBubble && message.responseGuidanceType != null) {
                     Spacer(Modifier.height(10.dp))
                     Surface(
                         shape = RoundedCornerShape(12.dp),
@@ -3198,25 +3437,26 @@ fun ModernListeningIndicator() {
 
 @Composable
 fun OnlineIndicator(isOnline: Boolean, onClick: () -> Unit) {
+    val showOnline = ONLINE_FEATURES_ENABLED && isOnline
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
             .clip(RoundedCornerShape(20.dp))
-            .background(if (isOnline) AgroColors.Accent.copy(alpha = 0.2f) else AgroColors.SurfaceLight)
+            .background(if (showOnline) AgroColors.Accent.copy(alpha = 0.2f) else AgroColors.SurfaceLight)
             .clickable { onClick() }
             .padding(horizontal = 12.dp, vertical = 6.dp)
     ) {
         Icon(
-            imageVector = if (isOnline) Icons.Default.Cloud else Icons.Default.CloudOff,
-            contentDescription = if (isOnline) "Online" else "Offline",
-            tint = if (isOnline) AgroColors.Accent else AgroColors.TextSecondary,
+            imageVector = if (showOnline) Icons.Default.Cloud else Icons.Default.CloudOff,
+            contentDescription = if (showOnline) "Online" else "Modo local",
+            tint = if (showOnline) AgroColors.Accent else AgroColors.TextSecondary,
             modifier = Modifier.size(18.dp)
         )
         Spacer(Modifier.width(6.dp))
         Text(
-            text = if (isOnline) "Online" else "Sin red",
+            text = if (showOnline) "Online" else "Modo local",
             style = MaterialTheme.typography.labelSmall,
-            color = if (isOnline) AgroColors.Accent else AgroColors.TextSecondary,
+            color = if (showOnline) AgroColors.Accent else AgroColors.TextSecondary,
             fontWeight = FontWeight.Medium
         )
     }
@@ -3500,44 +3740,46 @@ fun SettingsDialog(
                     }
                 }
                 
-                HorizontalDivider(color = AgroColors.SurfaceLight)
-                
-                // Sección Groq Online
-                Text(
-                    "☁️ LLM Online (Groq)",
-                    style = MaterialTheme.typography.titleSmall,
-                    fontWeight = FontWeight.Bold,
-                    color = AgroColors.TextPrimary
-                )
-                
-                Text(
-                    "Para respuestas más fluidas cuando hay internet.",
-                    style = MaterialTheme.typography.bodyMedium
-                )
-                
-                Text(
-                    "Obtén tu key gratis en: console.groq.com",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = AgroColors.Accent
-                )
-                
-                OutlinedTextField(
-                    value = apiKey,
-                    onValueChange = { apiKey = it },
-                    label = { Text("API Key de Groq") },
-                    placeholder = { Text("gsk_...") },
-                    singleLine = true,
-                    modifier = Modifier.fillMaxWidth(),
-                    colors = OutlinedTextFieldDefaults.colors(
-                        focusedBorderColor = AgroColors.Accent,
-                        unfocusedBorderColor = AgroColors.SurfaceLight,
-                        focusedLabelColor = AgroColors.Accent,
-                        unfocusedLabelColor = AgroColors.TextSecondary,
-                        cursorColor = AgroColors.Accent,
-                        focusedTextColor = AgroColors.TextPrimary,
-                        unfocusedTextColor = AgroColors.TextPrimary
+                if (ONLINE_FEATURES_ENABLED) {
+                    HorizontalDivider(color = AgroColors.SurfaceLight)
+
+                    // Sección Groq Online
+                    Text(
+                        "☁️ LLM Online (Groq)",
+                        style = MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.Bold,
+                        color = AgroColors.TextPrimary
                     )
-                )
+
+                    Text(
+                        "Para respuestas más fluidas cuando hay internet.",
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+
+                    Text(
+                        "Obtén tu key gratis en: console.groq.com",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = AgroColors.Accent
+                    )
+
+                    OutlinedTextField(
+                        value = apiKey,
+                        onValueChange = { apiKey = it },
+                        label = { Text("API Key de Groq") },
+                        placeholder = { Text("gsk_...") },
+                        singleLine = true,
+                        modifier = Modifier.fillMaxWidth(),
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedBorderColor = AgroColors.Accent,
+                            unfocusedBorderColor = AgroColors.SurfaceLight,
+                            focusedLabelColor = AgroColors.Accent,
+                            unfocusedLabelColor = AgroColors.TextSecondary,
+                            cursorColor = AgroColors.Accent,
+                            focusedTextColor = AgroColors.TextPrimary,
+                            unfocusedTextColor = AgroColors.TextPrimary
+                        )
+                    )
+                }
                 
                 HorizontalDivider(color = AgroColors.SurfaceLight)
                 
@@ -3807,7 +4049,9 @@ fun SettingsDialog(
         confirmButton = {
             TextButton(
                 onClick = {
-                    onSaveApiKey(apiKey)
+                    if (ONLINE_FEATURES_ENABLED) {
+                        onSaveApiKey(apiKey)
+                    }
                     onSaveAdvancedSettings(
                         localMaxTokens,
                         localSimThreshold / 100f,
