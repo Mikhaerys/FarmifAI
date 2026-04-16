@@ -136,7 +136,7 @@ FarmifAI is an Android app that combines local retrieval (RAG), local generation
 
 ## Installation
 
-### For Judges
+### Quick Validation
 
 1. Build and install the debug APK.
 2. Provision local model file.
@@ -179,7 +179,7 @@ AgroChat_Project/
 ## Future Work
 
 - Publish a short public demo video and reproducible benchmark sheet.
-- Add packaged judge-ready installation artifacts.
+- Add packaged installation artifacts for reproducible evaluation.
 - Add repository-level citation and security metadata files.
 
 ## License
@@ -323,11 +323,11 @@ FarmifAI es una app Android que integra recuperacion local (RAG), generacion loc
 
 ## Instalacion
 
-### Para Jurados
+### Validacion Rapida
 
 1. Compilar e instalar APK debug.
 2. Provisionar archivo de modelo local.
-3. Ejecutar la ruta de evaluacion rapida.
+3. Ejecutar la ruta de evaluacion rapida de esta guia.
 
 ### Para Desarrolladores
 
@@ -366,7 +366,7 @@ AgroChat_Project/
 ## Trabajo Futuro
 
 - Publicar video demo corto y hoja de benchmarks reproducibles.
-- Publicar artefactos listos para evaluacion de jurados.
+- Publicar artefactos de instalacion para evaluacion reproducible.
 - Agregar archivos de metadatos de citacion y seguridad a nivel raiz.
 
 ## Licencia
