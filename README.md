@@ -1,4 +1,4 @@
-# 🌱 FarmifAI — Offline AI for Agriculture
+# FarmifAI — Offline AI for Agriculture
 
 **FarmifAI** is an Android app that provides **agricultural recommendations fully offline**, using **Small Language Models (SLMs).**
 
@@ -6,17 +6,17 @@ Built for rural environments, it enables farmers to **diagnose crops and receive
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
-- 🧠 Offline AI chat (SLM + RAG)  
-- 📸 Plant disease detection (on-device vision model)  
-- 🎤 Voice interaction (offline STT + TTS)  
-- ⚡ Local inference (no cloud dependency)  
-- 🔒 Privacy-first (all processing on-device)  
+- Offline AI chat (SLM + RAG)  
+- Plant disease detection (on-device vision model)  
+- Voice interaction (offline STT + TTS)  
+- Local inference (no cloud dependency)  
+- Privacy-first (all processing on-device)  
 
 ---
 
-## 📽️ Demo
+## Demo
 
 - Final signed APK (direct download):  
    https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/latest/download/FarmifAI-release-v1.0-20260416_193105-signed.apk  
@@ -25,7 +25,7 @@ Built for rural environments, it enables farmers to **diagnose crops and receive
 
 ---
 
-## ⚡ Quick Start (under 5 minutes)
+## Quick Start (under 5 minutes)
 
 1. Download the final signed APK  
    https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/latest/download/FarmifAI-release-v1.0-20260416_193105-signed.apk  
@@ -42,7 +42,7 @@ Built for rural environments, it enables farmers to **diagnose crops and receive
 
 ---
 
-## 🧠 Problem
+## Problem
 
 Agricultural decision-making in rural areas is limited by:
 
@@ -54,7 +54,7 @@ Cloud-based AI solutions often fail in-field, where they are most needed.
 
 ---
 
-## 💡 Solution
+## Solution
 
 FarmifAI integrates:
 
@@ -67,7 +67,7 @@ All running **fully offline on the device**.
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ![Architecture](docs/images/fig_system_architecture.png)
 
@@ -78,23 +78,23 @@ All running **fully offline on the device**.
 
 ---
 
-## 🤖 AI / Model Details
+## AI / Model Details
 
-- 🤗 Hugging Face model: FarmifAI/Qwen3.5-0.8B_FarmifAI2.0
+- Hugging Face model: FarmifAI/Qwen3.5-0.8B_FarmifAI2.0
 - Runtime: llama.cpp (LLM) + MindSpore Lite (vision & sentence similarity)  
 - KB: app/src/main/assets/kb_nueva/extract/*.jsonl  
 - Embeddings: (2842, 384) float32  
 
 ---
 
-## ⚠️ Limitations
+## Limitations
 
 - Not a substitute for professional agronomic advice  
 - The model may still produce hallucinations  
 
 ---
 
-## 🔐 Privacy & Permissions
+## Privacy & Permissions
 
 - RECORD_AUDIO → voice input  
 - CAMERA → plant diagnosis  
@@ -102,7 +102,7 @@ All running **fully offline on the device**.
 
 ---
 
-## 🛠️ Installation (Developers)
+## Installation (Developers)
 
 Requirements:
 - Android Studio  
@@ -116,7 +116,7 @@ Build:
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 app/ → Android app & inference  
 docs/ → Reports & documentation  
@@ -125,13 +125,13 @@ scripts/ → Build scripts
 
 ---
 
-## 📄 License
+## License
 
 Pending  
 
 ---
 
-## 🤝 Acknowledgments
+## Acknowledgments
  
 - MindSpore Lite  
 - llama.cpp  
