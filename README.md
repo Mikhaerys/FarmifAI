@@ -25,7 +25,7 @@ Built for rural environments, it enables farmers to **diagnose crops and receive
 - GitHub Releases (alternative):  
    https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/latest  
 - Download guide + checksum:  
-   docs/APK_DOWNLOAD.md  
+   [docs/APK_DOWNLOAD.md](docs/APK_DOWNLOAD.md)  
 
 ---
 
