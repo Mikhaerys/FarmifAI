@@ -1,16 +1,22 @@
 # FarmifAI Signed APK Download
 
-This document points to the latest signed APK that can be installed directly.
+This document points to the official signed APK published in GitHub Releases.
 
 ## Direct Download
 
-- Latest signed release APK:
-  https://raw.githubusercontent.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/apk-builds/apk-artifacts/release/latest-release.apk
+- Direct asset URL:
+  https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/download/apk-final-signed-20260416/FarmifAI-release-v1.0-20260416_193105-signed.apk
 
-## Artifact History
+- Latest release shortcut:
+  https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/latest/download/FarmifAI-release-v1.0-20260416_193105-signed.apk
 
-- Browse all published signed APKs:
-  https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/tree/apk-builds/apk-artifacts/release
+- Release page:
+  https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/tag/apk-final-signed-20260416
+
+## All Releases
+
+- Browse all releases:
+  https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases
 
 ## Integrity Check (SHA-256)
 
@@ -22,7 +28,7 @@ Latest signed APK generated in this release cycle:
 Verification command:
 
 ```bash
-sha256sum latest-release.apk
+sha256sum FarmifAI-release-v1.0-20260416_193105-signed.apk
 ```
 
 Expected output prefix:
@@ -34,12 +40,12 @@ Expected output prefix:
 ## Installation
 
 ```bash
-adb install -r latest-release.apk
+adb install -r FarmifAI-release-v1.0-20260416_193105-signed.apk
 ```
 
 If an older version is already installed and signatures differ, uninstall first:
 
 ```bash
 adb uninstall edu.unicauca.app.agrochat
-adb install latest-release.apk
+adb install FarmifAI-release-v1.0-20260416_193105-signed.apk
 ```

@@ -19,10 +19,10 @@ Built for rural environments, it enables farmers to **diagnose crops and receive
 ## 📽️ Demo
 
 - Final signed APK (direct download):  
-   https://raw.githubusercontent.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/apk-builds/apk-artifacts/release/latest-release.apk  
-- Signed APK history (artifacts branch):  
-   https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/tree/apk-builds/apk-artifacts/release  
-- GitHub Releases (alternative):  
+   https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/download/apk-final-signed-20260416/FarmifAI-release-v1.0-20260416_193105-signed.apk  
+- Final release page:  
+   https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/tag/apk-final-signed-20260416  
+- GitHub Releases (latest):  
    https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/latest  
 - Download guide + checksum:  
    [docs/APK_DOWNLOAD.md](docs/APK_DOWNLOAD.md)  
@@ -32,10 +32,10 @@ Built for rural environments, it enables farmers to **diagnose crops and receive
 ## ⚡ Quick Start (under 5 minutes)
 
 1. Download the final signed APK  
-   https://raw.githubusercontent.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/apk-builds/apk-artifacts/release/latest-release.apk  
+   https://github.com/Bryan-Andres-Suarez-Sanchez/FarmifAI/releases/latest/download/FarmifAI-release-v1.0-20260416_193105-signed.apk  
 
 2. Install on Android device  
-   adb install -r latest-release.apk  
+   adb install -r FarmifAI-release-v1.0-20260416_193105-signed.apk  
 
 3. Open the app and wait for first-time model setup  
 
